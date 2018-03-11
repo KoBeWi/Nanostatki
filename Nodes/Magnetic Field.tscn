@@ -9,7 +9,6 @@ extents = Vector2( 50, 300 )
 
 [node name="Magnetic Field" type="Area2D"]
 
-editor/display_folded = true
 position = Vector2( 702.071, 297.642 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -19,6 +18,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+charge = 1
 
 [node name="Field" type="CollisionShape2D" parent="." index="0"]
 
