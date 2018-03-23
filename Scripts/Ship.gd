@@ -44,3 +44,5 @@ func swap_charge():
 
 func change_floor(i):
 	z_index = i+5
+	collision_layer = i+1
+	collision_mask = i+1
