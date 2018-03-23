@@ -41,3 +41,6 @@ func _physics_process(delta):
 func swap_charge():
 	charge = -charge
 	$Sprite.frame = 1 - (charge + 1)/2
+
+func change_floor(i):
+	z_index = i+5

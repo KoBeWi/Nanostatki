@@ -8,6 +8,7 @@
 "players",
 ]]
 
+z_index = 5
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -26,7 +27,6 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-z_index = 1
 texture = ExtResource( 3 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Z Index" ]
