@@ -39,6 +39,10 @@ func _process(delta):
 				mode = MODES[select]
 				state = PLAYERS
 				$Background.texture = texture2
+			elif Input.is_action_just_pressed("ui_down") and select < 1:
+				select += 1
+			elif Input.is_action_just_pressed("ui_up") and select > 0:
+				select -= 1
 		
 		PLAYERS:
 			players_ready = 0
@@ -75,7 +79,7 @@ func _process(delta):
 func _draw():
 	match state:
 		MAIN:
-			draw_string(font32, Vector2(260 + sin(OS.get_ticks_msec() / 64.0) * 8, 360), "o", Color(0.5, 1, 1))
+			draw_string(font32, Vector2(260 + sin(OS.get_ticks_msec() / 64.0) * 8, 360 + select * 40), "o", Color(0.5, 1, 1))
 			draw_string(font32, Vector2(300, 360), "TRYB WYśCIGU", Color(0, 1, 1))
 			draw_string(font32, Vector2(300, 400), "TRYB SUMO", Color(0, 1, 1))
 	

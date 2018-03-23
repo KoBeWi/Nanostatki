@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3vs3_yellowwon.png-544cc9646b89db5b3bf0c04528a469c9.stex"
+path="res://.import/2_4.png-e1d7d4d16a63ec65a50ed5126e1f86a6.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/3vs3_yellowwon.png"
-source_md5="f5ee8ecd7cf315ca94a939c1dc99d3a8"
+source_file="res://Sprites/Sumo/2_4.png"
+source_md5="2a55944afa79d4102a2dbaa5934e09bd"
 
-dest_files=[ "res://.import/3vs3_yellowwon.png-544cc9646b89db5b3bf0c04528a469c9.stex" ]
-dest_md5="f7b9ecbd68dd7efb8ff582c9f1eb77d8"
+dest_files=[ "res://.import/2_4.png-e1d7d4d16a63ec65a50ed5126e1f86a6.stex" ]
+dest_md5="85a85111887a0f2a0468e1270030647d"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3vs3_start.png-7b7ecb52500822021e066bd350d71357.stex"
+path="res://.import/4.png-830db7fd0f39e605d836d7738c0c9b68.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/3vs3_start.png"
-source_md5="f7364bef9fac9f1f4636a64914614fb3"
+source_file="res://Sprites/Sumo/4.png"
+source_md5="91b2f53e5808bc4eb213e6bc7e062087"
 
-dest_files=[ "res://.import/3vs3_start.png-7b7ecb52500822021e066bd350d71357.stex" ]
-dest_md5="00b62004e5ed4af325ed104729994e0c"
+dest_files=[ "res://.import/4.png-830db7fd0f39e605d836d7738c0c9b68.stex" ]
+dest_md5="6b7e298c6f9bd2dbc9142d68755ac350"
 
 [params]
 

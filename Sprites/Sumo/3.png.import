@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4vs4_greenwon.png-49871be286bd7fc7f3d81b551bc2c19f.stex"
+path="res://.import/3.png-dc98617fc7f8ead2766cb09aebe0809e.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/4vs4_greenwon.png"
-source_md5="31eb732875aa331b0907a84a2fdfbadc"
+source_file="res://Sprites/Sumo/3.png"
+source_md5="f7364bef9fac9f1f4636a64914614fb3"
 
-dest_files=[ "res://.import/4vs4_greenwon.png-49871be286bd7fc7f3d81b551bc2c19f.stex" ]
-dest_md5="d3d09a99d7ce2fc0d76a1c047c4302f1"
+dest_files=[ "res://.import/3.png-dc98617fc7f8ead2766cb09aebe0809e.stex" ]
+dest_md5="00b62004e5ed4af325ed104729994e0c"
 
 [params]
 

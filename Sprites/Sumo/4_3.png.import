@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2vs2_pinkwon.png-03bd2ec1a3b019b76b8ec096b4ee974c.stex"
+path="res://.import/4_3.png-436fc5032e57934ad9e650ebe7b77ed9.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/2vs2_pinkwon.png"
-source_md5="2a55944afa79d4102a2dbaa5934e09bd"
+source_file="res://Sprites/Sumo/4_3.png"
+source_md5="c0a8bb5e78efe574d9fa6a88c71d892c"
 
-dest_files=[ "res://.import/2vs2_pinkwon.png-03bd2ec1a3b019b76b8ec096b4ee974c.stex" ]
-dest_md5="85a85111887a0f2a0468e1270030647d"
+dest_files=[ "res://.import/4_3.png-436fc5032e57934ad9e650ebe7b77ed9.stex" ]
+dest_md5="ca1905d0a902e27d383e0ac8ceaacd7e"
 
 [params]
 

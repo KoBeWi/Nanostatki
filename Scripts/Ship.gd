@@ -9,6 +9,7 @@ const MIN_FORCE = 5
 export var team = 0
 export var player = 0
 
+var pause
 var race_distance = 0
 
 var velocity = Vector2()
@@ -19,6 +20,7 @@ func _ready():
 	$Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
+	if pause: return
 	var move = false
 	
 	if Input.is_action_pressed(action("forward")): move = true

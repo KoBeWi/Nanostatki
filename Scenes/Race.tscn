@@ -540,8 +540,8 @@ curve = SubResource( 3 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
 
-position = Vector2( 410, 400 )
-rotation = -0.00943752
+position = Vector2( 260, 390 )
+rotation = -0.00440203
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0

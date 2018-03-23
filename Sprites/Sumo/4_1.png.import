@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4vs4_yellowwon.png-1229bc52fb8e354c611aaf355a6b304f.stex"
+path="res://.import/4_1.png-68bf2f0fbf9e04c211bab4e7de29a275.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/4vs4_yellowwon.png"
+source_file="res://Sprites/Sumo/4_1.png"
 source_md5="dccb30f2d647ef6183fa6b2d60ffe102"
 
-dest_files=[ "res://.import/4vs4_yellowwon.png-1229bc52fb8e354c611aaf355a6b304f.stex" ]
+dest_files=[ "res://.import/4_1.png-68bf2f0fbf9e04c211bab4e7de29a275.stex" ]
 dest_md5="3724ac8f37baeb50999eda8d3d27e06e"
 
 [params]

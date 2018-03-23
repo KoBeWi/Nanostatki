@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4vs4_oceanwon.png-e8333c3dabadf0113d3bc541f6d408e7.stex"
+path="res://.import/4_4.png-0501dd1b90d2405896a6f4cb221ea95d.stex"
 
 [deps]
 
-source_file="res://Sprites/Sumo/4vs4_oceanwon.png"
-source_md5="c0a8bb5e78efe574d9fa6a88c71d892c"
+source_file="res://Sprites/Sumo/4_4.png"
+source_md5="92e28fa8801ad34c5f051af2074ff7ee"
 
-dest_files=[ "res://.import/4vs4_oceanwon.png-e8333c3dabadf0113d3bc541f6d408e7.stex" ]
-dest_md5="ca1905d0a902e27d383e0ac8ceaacd7e"
+dest_files=[ "res://.import/4_4.png-0501dd1b90d2405896a6f4cb221ea95d.stex" ]
+dest_md5="7653ac590cdd510433c3a63166afdcf1"
 
 [params]
 

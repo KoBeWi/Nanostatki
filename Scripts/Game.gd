@@ -6,6 +6,8 @@ var mode
 var players_joined
 var scene
 
+var pause = 3
+
 #const DZOOM = 0.1
 
 #var zoom = 1
@@ -21,12 +23,30 @@ func _ready():
 	for i in range(4):
 		if players_joined[i] > -1:
 			var player = load("res://Nodes/Ship.tscn").instance()
-			player.position = scene.get_node("StartingPositions/" + str(i+1)).position
+			var start = scene.get_node("StartingPositions/" + str(i+1))
+			
+			player.position = start.position
+			player.rotation = start.rotation
+			player.direction = Vector2(cos(start.rotation), sin(start.rotation))
 			player.team = i
 			player.player = players_joined[i]
+			
+			player.pause = true
 			players.add_child(player)
 
 func _physics_process(delta):
+	if pause:
+		pause -= delta
+		
+		if pause <= 0:
+			for player in players.get_children(): player.pause = false
+			pause = null
+			$Camera/Countdown/Label.queue_free()
+		else:
+			var s = (pause - int(pause)) * 10
+			$Camera/Countdown/Label.text = str(ceil(pause))
+			$Camera/Countdown.scale = Vector2(s, s)
+	
 	if !scene.process_camera(camera, players.get_children()):
 		var cam_pos = Vector2()
 		var min_y = 10000
