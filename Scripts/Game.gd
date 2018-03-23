@@ -19,7 +19,6 @@ func _ready():
 	add_child(scene)
 	
 	for i in range(4):
-		print(players_joined[i])
 		if players_joined[i] > -1:
 			var player = load("res://Nodes/Ship.tscn").instance()
 			player.position = scene.get_node("StartingPositions/" + str(i+1)).position

@@ -1,5 +1,4 @@
 extends KinematicBody2D
-onready var players = $"..".get_children()
 
 const ACCELERATION = 100
 const DAMP = 0.1
@@ -33,7 +32,7 @@ func _physics_process(delta):
 	
 	move_and_slide(velocity)
 
-	for player in players:
+	for player in get_parent().get_children():
 		if player != self:
 			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
 			if force.length() > MIN_FORCE: player.velocity -= force

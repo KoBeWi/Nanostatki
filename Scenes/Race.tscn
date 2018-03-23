@@ -23,6 +23,7 @@ script = ExtResource( 1 )
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -364,6 +365,7 @@ __meta__ = {
 
 [node name="Colliders" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 
 [node name="Lower" type="Node2D" parent="Colliders" index="0"]
