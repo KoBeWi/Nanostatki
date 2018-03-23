@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Race/Shade.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Race/Highlight.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Race/Border.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/FloorChanger.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -70,6 +70,18 @@ __meta__ = {
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
 position = Vector2( 260, 260 )
+
+[node name="2" type="Position2D" parent="StartingPositions" index="1"]
+
+position = Vector2( 260, 350 )
+
+[node name="3" type="Position2D" parent="StartingPositions" index="2"]
+
+position = Vector2( 260, 480 )
+
+[node name="4" type="Position2D" parent="StartingPositions" index="3"]
+
+position = Vector2( 260, 620 )
 
 [node name="FloorChangers" type="Node2D" parent="." index="2"]
 
@@ -352,7 +364,7 @@ __meta__ = {
 
 [node name="Colliders" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
+visible = false
 
 [node name="Lower" type="Node2D" parent="Colliders" index="0"]
 

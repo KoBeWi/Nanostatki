@@ -2,19 +2,30 @@ extends Node
 
 onready var camera = $Camera
 onready var players = $Players
+var mode
+var players_joined
 var scene
 
 #const DZOOM = 0.1
 
 #var zoom = 1
 
+func setup(_mode, _players_joined):
+	mode = _mode
+	players_joined = _players_joined
+
 func _ready():
-	scene = load("res://Scenes/Race.tscn").instance()
+	scene = load("res://Scenes/" + mode + ".tscn").instance()
 	add_child(scene)
 	
-	var player = load("res://Nodes/Ship.tscn").instance()
-	players.add_child(player)
-	player.position = scene.get_node("StartingPositions/1").position
+	for i in range(4):
+		print(players_joined[i])
+		if players_joined[i] > -1:
+			var player = load("res://Nodes/Ship.tscn").instance()
+			player.position = scene.get_node("StartingPositions/" + str(i+1)).position
+			player.team = i
+			player.player = players_joined[i]
+			players.add_child(player)
 
 func _physics_process(delta):
 	var cam_pos = Vector2()

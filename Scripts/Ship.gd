@@ -1,5 +1,4 @@
 extends KinematicBody2D
-onready var Com = get_node("/root/Commons")
 onready var players = $"..".get_children()
 
 const ACCELERATION = 100
@@ -8,6 +7,7 @@ const ROT_SPEED = -PI/60
 const FORCE = 25000
 const MIN_FORCE = 5
 
+export var team = 0
 export var player = 0
 
 var velocity = Vector2()
@@ -15,20 +15,20 @@ var direction = Vector2(1, 0)
 var charge = 1
 
 func _ready():
-	$Indicator.modulate = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)][player]
+	$Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
 	var move = false
 	
-	if Com.key_hold("up", player): move = true
-	if Com.key_hold("left", player): direction = direction.rotated(ROT_SPEED)
-	if Com.key_hold("right", player): direction = direction.rotated(-ROT_SPEED)
+	if Input.is_action_pressed(action("forward")): move = true
+	if Input.is_action_pressed(action("left")): direction = direction.rotated(ROT_SPEED)
+	if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
 	
 	if move: velocity += direction.normalized() * ACCELERATION
 	velocity += -velocity * DAMP
 	rotation = direction.angle()
 	
-	if Com.key_press("swap", player):
+	if Input.is_action_just_pressed(action("action")):
 		swap_charge()
 	
 	move_and_slide(velocity)
@@ -46,3 +46,6 @@ func change_floor(i):
 	z_index = i+5
 	collision_layer = i+1
 	collision_mask = i+1
+
+func action(action):
+	return "p" + str(player+1) + "_" + action
