@@ -9,6 +9,8 @@ const MIN_FORCE = 5
 export var team = 0
 export var player = 0
 
+var race_distance = 0
+
 var velocity = Vector2()
 var direction = Vector2(1, 0)
 var charge = 1

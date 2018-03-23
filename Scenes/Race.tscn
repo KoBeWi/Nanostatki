@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Race/Background.png" type="Texture" id=2]
@@ -17,7 +17,14 @@ extents = Vector2( 200, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 170 )
 
-[node name="Race" type="Node2D" index="0"]
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 260, 390, 0, 0, 0, 0, 2530, 380, 0, 0, 0, 0, 2570, -530, 0, 0, 0, 0, 1780, -1040, 0, 0, 0, 0, 40, -1030, 0, 0, 0, 0, -590, -520, 0, 0, 0, 0, 30, -310, 0, 0, 0, 0, 1570, -100, 0, 0, 0, 0, 1580, 1320, 0, 0, 0, 0, -1920, 1300, 0, 0, 0, 0, -2200, -1170, 0, 0, 0, 0, -1080, -1240, 0, 0, 0, 0, -920, 190, 0, 0, 0, 0, 260, 390 )
+}
+
+[node name="Race" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -525,6 +532,63 @@ _sections_unfolded = [ "Collision" ]
 
 build_mode = 0
 polygon = PoolVector2Array( 2770, 170, 2780, -820, 3120, -390 )
+
+[node name="TrackPath" type="Path2D" parent="." index="4"]
+
+editor/display_folded = true
+curve = SubResource( 3 )
+
+[node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
+
+position = Vector2( 410, 400 )
+rotation = -0.00943752
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player1Follower" type="PathFollow2D" parent="TrackPath" index="1"]
+
+position = Vector2( 260, 390 )
+rotation = -0.00440203
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player2Follower" type="PathFollow2D" parent="TrackPath" index="2"]
+
+position = Vector2( 260, 390 )
+rotation = -0.00440203
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player3Follower" type="PathFollow2D" parent="TrackPath" index="3"]
+
+position = Vector2( 260, 390 )
+rotation = -0.00440203
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 
