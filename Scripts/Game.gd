@@ -66,3 +66,7 @@ func _physics_process(delta):
 		var new_zoom = max(min(max(abs(min_x - max_x) / 600, abs(min_y - max_y) / 300), 4), 1)
 	#	if abs(new_zoom - zoom) > DZOOM: zoom += sign(new_zoom - zoom) * DZOOM
 		camera.zoom = Vector2(new_zoom, new_zoom)
+
+func register_UI(ui, old_owner):
+	old_owner.remove_child(ui)
+	$Camera.add_child(ui)
