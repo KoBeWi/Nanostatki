@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Indicator.png-b171b8f2eef452c9f7c973f19953e921.stex"
+path="res://.import/Indicator.png-a4c79fa83fe6d5beff00a9ddcd0c4ff0.stex"
 
 [deps]
 
-source_file="res://Sprites/Indicator.png"
+source_file="res://Sprites/Common/Indicator.png"
 source_md5="c20381d792810bd6e7dda72423932cac"
 
-dest_files=[ "res://.import/Indicator.png-b171b8f2eef452c9f7c973f19953e921.stex" ]
+dest_files=[ "res://.import/Indicator.png-a4c79fa83fe6d5beff00a9ddcd0c4ff0.stex" ]
 dest_md5="6239a4dd22160387659bbedba570aec3"
 
 [params]

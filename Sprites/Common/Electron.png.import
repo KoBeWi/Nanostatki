@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Proton.png-8f1cf72e39a6d9d1fb4f360bd1a228ed.stex"
+path="res://.import/Electron.png-9a0b3e54f0e2a40a2dd578e5871159b8.stex"
 
 [deps]
 
-source_file="res://Sprites/Proton.png"
-source_md5="f2d414257e07ef094809f606149a31cd"
+source_file="res://Sprites/Common/Electron.png"
+source_md5="fe7f88a7bf00ff126e9040f119b068f9"
 
-dest_files=[ "res://.import/Proton.png-8f1cf72e39a6d9d1fb4f360bd1a228ed.stex" ]
-dest_md5="b3692729d3a977c8d972188e6b7899f5"
+dest_files=[ "res://.import/Electron.png-9a0b3e54f0e2a40a2dd578e5871159b8.stex" ]
+dest_md5="6e51c327acc0a788a6d3ba9ae5233ebb"
 
 [params]
 

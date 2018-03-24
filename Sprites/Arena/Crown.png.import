@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Magnet2.png-c5c851b7c99baa1513fc89358a921f0d.stex"
+path="res://.import/Crown.png-7223690cd6fac6c257678e7f26bd57c7.stex"
 
 [deps]
 
-source_file="res://Sprites/Magnet2.png"
-source_md5="2c07aa99fe7b785684f895e2a636ef3e"
+source_file="res://Sprites/Arena/Crown.png"
+source_md5="7fbcdd6bdcc3f8c82de825b3a937e8ba"
 
-dest_files=[ "res://.import/Magnet2.png-c5c851b7c99baa1513fc89358a921f0d.stex" ]
-dest_md5="009c98d683c91ad30efa5c199a65fdb1"
+dest_files=[ "res://.import/Crown.png-7223690cd6fac6c257678e7f26bd57c7.stex" ]
+dest_md5="bb5d208f0ba29bddb5918c7b2e8b80df"
 
 [params]
 

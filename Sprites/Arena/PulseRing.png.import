@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Magnet.png-70e4b2bf19cf14a741eef194f834588e.stex"
+path="res://.import/PulseRing.png-b6053e6a99ae50575e955477624c5bd3.stex"
 
 [deps]
 
-source_file="res://Sprites/Magnet.png"
-source_md5="d3edbfea7197ace78d3bef65d35c4238"
+source_file="res://Sprites/Arena/PulseRing.png"
+source_md5="23013f5b6e956629756774484e7ac2c4"
 
-dest_files=[ "res://.import/Magnet.png-70e4b2bf19cf14a741eef194f834588e.stex" ]
-dest_md5="63754858bdac7e487c276169c45119cf"
+dest_files=[ "res://.import/PulseRing.png-b6053e6a99ae50575e955477624c5bd3.stex" ]
+dest_md5="97a2e41b7485cb766b5d64a97a0359ec"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Electron.png-26a5228c761513753f5846f1bbcd4efc.stex"
+path="res://.import/Magnet2.png-6906d0e4bf3ea26c301871a972dfef25.stex"
 
 [deps]
 
-source_file="res://Sprites/Electron.png"
-source_md5="fe7f88a7bf00ff126e9040f119b068f9"
+source_file="res://Sprites/Common/Magnet2.png"
+source_md5="2c07aa99fe7b785684f895e2a636ef3e"
 
-dest_files=[ "res://.import/Electron.png-26a5228c761513753f5846f1bbcd4efc.stex" ]
-dest_md5="6e51c327acc0a788a6d3ba9ae5233ebb"
+dest_files=[ "res://.import/Magnet2.png-6906d0e4bf3ea26c301871a972dfef25.stex" ]
+dest_md5="009c98d683c91ad30efa5c199a65fdb1"
 
 [params]
 

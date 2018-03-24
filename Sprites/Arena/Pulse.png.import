@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ship.png-d6898bd410dcafdd90baf6595b371339.stex"
+path="res://.import/Pulse.png-8bca3c926a5ee663ca44013a17c6461a.stex"
 
 [deps]
 
-source_file="res://Sprites/Ship.png"
-source_md5="a81a638eb1349b0e884b6c3c292e3214"
+source_file="res://Sprites/Arena/Pulse.png"
+source_md5="bee6186cfdf8cfb5be885d73130039bd"
 
-dest_files=[ "res://.import/Ship.png-d6898bd410dcafdd90baf6595b371339.stex" ]
-dest_md5="7308d502d317a2dcacbed6e8e8de35a3"
+dest_files=[ "res://.import/Pulse.png-8bca3c926a5ee663ca44013a17c6461a.stex" ]
+dest_md5="bdd260ae4c2446179ae27aec24f03026"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

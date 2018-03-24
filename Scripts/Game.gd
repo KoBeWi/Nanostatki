@@ -12,6 +12,7 @@ var scene
 var pause = 3
 
 signal init_players
+signal start
 
 func setup(_mode, _players_joined):
 	mode = _mode
@@ -45,6 +46,7 @@ func _physics_process(delta):
 			for player in players.get_children(): player.pause = false
 			pause = null
 			$Camera/Countdown/Label.queue_free()
+			emit_signal("start")
 		else:
 			var s = (pause - int(pause)) * 10
 			$Camera/Countdown/Label.text = str(ceil(pause))
@@ -71,4 +73,5 @@ func _physics_process(delta):
 
 func register_UI(ui, old_owner):
 	old_owner.remove_child(ui)
-	$Camera.add_child(ui)
+	$Camera/UI.add_child(ui)
+	return ui

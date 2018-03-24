@@ -20,8 +20,7 @@ func _ready():
 		point.position = Vector2(cos(deg2rad(i * deg)) * arena_size * START, sin(deg2rad(i * deg)) * arena_size * START)
 		point.rotation_degrees = deg * i + 180
 	
-	wintext = $WinText
-	get_parent().register_UI(wintext, self)
+	wintext = get_parent().register_UI($WinText, self)
 
 func _process(delta):
 	if win == -1 and players.get_child_count() == 1:

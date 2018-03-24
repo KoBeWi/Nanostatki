@@ -23,6 +23,7 @@ var players_out = [0, 0, 0, 0]
 var players_ready = 0
 
 func _ready():
+	randomize()
 	$Background.texture = texture1
 
 func _process(delta):
