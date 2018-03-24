@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/DragRace.gd" type="Script" id=1]
+
+[node name="DragRace" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="StartingPositions" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="1" type="Node2D" parent="StartingPositions" index="0"]
+
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="2" type="Node2D" parent="StartingPositions" index="1"]
+
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="3" type="Node2D" parent="StartingPositions" index="2"]
+
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="4" type="Node2D" parent="StartingPositions" index="3"]
+
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="Partcles" type="Node2D" parent="." index="1"]
+
+

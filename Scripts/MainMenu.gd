@@ -8,7 +8,8 @@ var texture1 = load("res://Sprites/Title.png")
 var texture2 = load("res://Sprites/PlayerScreen.png")
 
 enum {MAIN, PLAYERS}
-const MODES = ["Race", "Sumo"]
+const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
+const MODE_NAMES = {"Race": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
 
 var state = MAIN
 var select = 0
@@ -39,7 +40,7 @@ func _process(delta):
 				mode = MODES[select]
 				state = PLAYERS
 				$Background.texture = texture2
-			elif Input.is_action_just_pressed("ui_down") and select < 1:
+			elif Input.is_action_just_pressed("ui_down") and select < MODES.size()-1:
 				select += 1
 			elif Input.is_action_just_pressed("ui_up") and select > 0:
 				select -= 1
@@ -80,8 +81,8 @@ func _draw():
 	match state:
 		MAIN:
 			draw_string(font32, Vector2(260 + sin(OS.get_ticks_msec() / 64.0) * 8, 360 + select * 40), "o", Color(0.5, 1, 1))
-			draw_string(font32, Vector2(300, 360), "TRYB WYśCIGU", Color(0, 1, 1))
-			draw_string(font32, Vector2(300, 400), "TRYB SUMO", Color(0, 1, 1))
+			for i in range(MODES.size()):
+				draw_string(font32, Vector2(300, 360 + i * 40), MODE_NAMES[MODES[i]], Color(0, 1, 1))
 	
 		PLAYERS:
 			for i in range(4):

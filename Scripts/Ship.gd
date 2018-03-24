@@ -11,6 +11,7 @@ export var player = 0
 
 var pause
 var race_distance = 0
+var drag_race = false
 
 var velocity = Vector2()
 var direction = Vector2(1, 0)
@@ -23,16 +24,16 @@ func _physics_process(delta):
 	if pause: return
 	var move = false
 	
-	if Input.is_action_pressed(action("forward")): move = true
-	if Input.is_action_pressed(action("left")): direction = direction.rotated(ROT_SPEED)
-	if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
+	if !drag_race:
+		if Input.is_action_pressed(action("forward")): move = true
+		if Input.is_action_pressed(action("left")): direction = direction.rotated(ROT_SPEED)
+		if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
 	
 	if move: velocity += direction.normalized() * ACCELERATION
 	velocity += -velocity * DAMP
 	rotation = direction.angle()
 	
-	if Input.is_action_just_pressed(action("action")):
-		swap_charge()
+	if Input.is_action_just_pressed(action("action")): swap_charge()
 	
 	move_and_slide(velocity)
 
@@ -45,10 +46,10 @@ func swap_charge():
 	charge = -charge
 	$Sprite.frame = 1 - (charge + 1)/2
 
+func action(action):
+	return "p" + str(player+1) + "_" + action
+
 func change_floor(i):
 	z_index = i+5
 	collision_layer = i+1
 	collision_mask = i+1
-
-func action(action):
-	return "p" + str(player+1) + "_" + action
