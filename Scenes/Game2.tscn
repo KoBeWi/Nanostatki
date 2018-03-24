@@ -49,6 +49,13 @@ editor_draw_drag_margin = false
 [node name="Ship" parent="Players" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 440, 270 )
+team = 0
+
+[node name="Ship2" parent="Players" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 720, 270 )
+team = 0
+player = 1
 
 [node name="Magnetic Field2" parent="." index="3" instance=ExtResource( 4 )]
 

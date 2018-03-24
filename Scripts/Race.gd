@@ -40,11 +40,11 @@ func process_camera(camera, players):
 		if _player.race_distance > player.race_distance: player = _player
 		
 	for _player in players:
-		x_diff = max(abs(_player.position.x - player.position.x), x_diff)
-		y_diff = max(abs(_player.position.y - player.position.y), y_diff)
+		x_diff = max(abs(_player.position.x - player.position.x) + get_parent().CAMERA_OFFSET, x_diff)
+		y_diff = max(abs(_player.position.y - player.position.y) + get_parent().CAMERA_OFFSET, y_diff)
 	
 	camera.position = player.position
-	var new_zoom = max(min(max(abs(x_diff) / 400, abs(y_diff) / 300), 4), 1)
+	var new_zoom = max(min(max(x_diff / 850, y_diff / 650), 4), 1)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 		
 	return true

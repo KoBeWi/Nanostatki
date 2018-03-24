@@ -2,15 +2,14 @@ extends Node
 
 onready var camera = $Camera
 onready var players = $Players
+
+const CAMERA_OFFSET = 128
+
 var mode
 var players_joined
 var scene
 
 var pause = 3
-
-#const DZOOM = 0.1
-
-#var zoom = 1
 
 func setup(_mode, _players_joined):
 	mode = _mode
@@ -55,16 +54,15 @@ func _physics_process(delta):
 		var max_x = -10000
 		
 		for player in players.get_children():
-			min_y = min(player.position.y, min_y)
-			min_x = min(player.position.x, min_x)
-			max_y = max(player.position.y, max_y)
-			max_x = max(player.position.x, max_x)
+			min_y = min(player.position.y - CAMERA_OFFSET, min_y)
+			min_x = min(player.position.x - CAMERA_OFFSET, min_x)
+			max_y = max(player.position.y + CAMERA_OFFSET, max_y)
+			max_x = max(player.position.x + CAMERA_OFFSET, max_x)
 			cam_pos += player.position
 		
 		camera.position = cam_pos / players.get_child_count()
 		
-		var new_zoom = max(min(max(abs(min_x - max_x) / 600, abs(min_y - max_y) / 300), 4), 1)
-	#	if abs(new_zoom - zoom) > DZOOM: zoom += sign(new_zoom - zoom) * DZOOM
+		var new_zoom = max(min(max(abs(max_x - min_x) / 1024, abs(max_y - min_y) / 600), 4), 1)
 		camera.zoom = Vector2(new_zoom, new_zoom)
 
 func register_UI(ui, old_owner):
