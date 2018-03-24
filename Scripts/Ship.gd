@@ -4,7 +4,7 @@ const ACCELERATION = 100
 const DAMP = 0.1
 const ROT_SPEED = -PI/60
 const FORCE = 25000
-const MIN_FORCE = 5
+const FORCE_RANGE = 400
 
 export var team = 0
 export var player = 0
@@ -37,9 +37,9 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 
 	for player in get_parent().get_children():
-		if player != self:
+		if player != self and position.distance_to(player.position) < FORCE_RANGE:
 			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
-			if force.length() > MIN_FORCE: player.velocity -= force
+			player.velocity -= force
 
 func swap_charge():
 	charge = -charge

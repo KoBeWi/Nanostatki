@@ -2,7 +2,7 @@ extends Node2D
 
 const FOLLOWER_SPEED = 100
 const FOLLOWER_ITERATIONS = 5
-
+#okrążenie = 19900
 func _ready():
 	var background = $"Track/Background".texture
 	$"../Camera".limit_left = -background.get_width()/2
@@ -44,7 +44,7 @@ func process_camera(camera, players):
 		y_diff = max(abs(_player.position.y - player.position.y) + get_parent().CAMERA_OFFSET, y_diff)
 	
 	camera.position = player.position
-	var new_zoom = max(min(max(x_diff / 850, y_diff / 650), 4), 1)
+	var new_zoom = max(min(max(x_diff / 500, y_diff / 300), 4), 1)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 		
 	return true
