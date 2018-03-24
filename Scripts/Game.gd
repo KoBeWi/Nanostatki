@@ -11,6 +11,8 @@ var scene
 
 var pause = 3
 
+signal init_players
+
 func setup(_mode, _players_joined):
 	mode = _mode
 	players_joined = _players_joined
@@ -32,6 +34,8 @@ func _ready():
 			
 			player.pause = true
 			players.add_child(player)
+	
+	emit_signal("init_players", players.get_children())
 
 func _physics_process(delta):
 	if pause:
