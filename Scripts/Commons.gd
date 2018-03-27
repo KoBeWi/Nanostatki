@@ -2,6 +2,8 @@ extends Node
 
 const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
 
+var race_backgrounds = [load("res://Sprites/Race/Background1.png"), load("res://Sprites/Race/Background2.png")]
+
 ##wszystko na dole jest niepotrzebne :/
 
 var pressed = {}

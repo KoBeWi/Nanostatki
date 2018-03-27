@@ -3,19 +3,17 @@ extends Node2D
 const FOLLOWER_SPEED = 100
 const FOLLOWER_ITERATIONS = 5
 
-onready var background1 = $Track/Background.texture
-var background2 = load("res://Sprites/Race/Background1.png")
-#okrążenie = 19900
+export var lap_length = 0
+
 func _ready():
-	var background = $"Track/Background".texture
+	var background = Com.race_backgrounds[randi() % Com.race_backgrounds.size()]
+	$"Track/Background".texture = background 
 	$"../Camera".limit_left = -background.get_width()/2
 	$"../Camera".limit_right = background.get_width()/2
 	$"../Camera".limit_top = -background.get_height()/2
 	$"../Camera".limit_bottom = background.get_height()/2
 
 func _process(delta):
-	$Track/Background.texture = background1 if $Track/Background.texture == background2 else background2
-	
 	for player in $"../Players".get_children():
 		var follower = get_node("TrackPath/Player" + str(player.team) + "Follower")
 		var start_offset = follower.offset
@@ -35,6 +33,7 @@ func _process(delta):
 			if follower.offset != start_offset: break
 		
 		player.race_distance = follower.offset
+		print(player.race_distance)
 
 func process_camera(camera, players):
 	var player = players[0]

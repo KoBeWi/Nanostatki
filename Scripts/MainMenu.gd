@@ -8,13 +8,14 @@ var texture1 = load("res://Sprites/Title.png")
 var texture2 = load("res://Sprites/PlayerScreen.png")
 
 enum {MAIN, PLAYERS}
-const MODES = ["Race2", "Drag", "Sumo", "Arena", "Survival"]
-const MODE_NAMES = {"Race2": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
+const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
+const MODE_NAMES = {"Race": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
 
 var state = MAIN
 var select = 0
 var mode
 var started = false
+var options = []
 
 var players_joined = [-1, -1, -1, -1]
 var players_in = [false, false, false, false]
@@ -29,7 +30,7 @@ func _ready():
 func _process(delta):
 	if started:
 		var game = load("res://Scenes/Game.tscn").instance()
-		game.setup(mode, players_joined)
+		game.setup(mode, players_joined, options)
 		$"/root".add_child(game)
 		get_tree().current_scene = game
 		queue_free()
@@ -41,6 +42,9 @@ func _process(delta):
 				mode = MODES[select]
 				state = PLAYERS
 				$Background.texture = texture2
+				
+				match mode:
+					"Race": options = [1, 3]
 			elif Input.is_action_just_pressed("ui_down") and select < MODES.size()-1:
 				select += 1
 			elif Input.is_action_just_pressed("ui_up") and select > 0:
@@ -49,6 +53,14 @@ func _process(delta):
 		PLAYERS:
 			players_ready = 0
 			var start = true
+			
+				
+			match mode:
+				"Race":
+					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 2)
+					if Input.is_action_just_released("ui_left"): options[0] = max(options[0]-1, 1)
+					if Input.is_action_just_released("ui_up"): options[1] = min(options[1]+1, 100)
+					if Input.is_action_just_released("ui_down"): options[1] = max(options[1]-1, 1)
 			
 			for i in range(4):
 				if Input.is_action_just_pressed("p" + str(i+1) + "_action"):
@@ -109,6 +121,11 @@ func _draw():
 			if players_ready > 0 and OS.get_ticks_msec() % 500 < 250:
 				draw_string(font16, Vector2(300, 550), "PRZYTRZYMAJ AKCJĘ, BY ROZPOCZĄĆ", Color(0, 1, 1))
 				draw_string(font16, Vector2(300, 580), "WCIŚNIJ AKCJĘ, BY SIĘ WYCOFAĆ", Color(0, 1, 1))
+			
+			match mode:
+				"Race":
+					draw_string(font16, Vector2(20, 40), "LEWO/PRAWO BY ZMIENIĆ TRASIĘ (AKTUALNIE %s)" % str(options[0]), Color(0, 1, 1))
+					draw_string(font16, Vector2(20, 60), "GÓRA/DÓŁ, BY ZMIENIĆ LICZBĘ OKRĄŻEŃ (AKTUALNIE %s)" % str(options[1]), Color(0, 1, 1))
 				
 func add_player(i):
 	players_in[i] = true

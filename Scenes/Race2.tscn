@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Race/Background2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Race/Track2/Shade.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Race/Track2/Highlight.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Race/Start.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,18 +34,19 @@ extents = Vector2( 10, 136.648 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 263.485 )
+extents = Vector2( 10.0046, 263.485 )
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=7]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 260, 390, 0, 0, 0, 0, 2530, 380, 0, 0, 0, 0, 2570, -530, 0, 0, 0, 0, 1780, -1040, 0, 0, 0, 0, 40, -1030, 0, 0, 0, 0, -590, -520, 0, 0, 0, 0, 30, -310, 0, 0, 0, 0, 1570, -100, 0, 0, 0, 0, 1580, 1320, 0, 0, 0, 0, -1920, 1300, 0, 0, 0, 0, -2200, -1170, 0, 0, 0, 0, -1080, -1240, 0, 0, 0, 0, -920, 190, 0, 0, 0, 0, 260, 390 )
+"points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 1263.68, -282.046, 0, 0, 0, 0, -2174.65, -687.378, 0, 0, 0, 0, -1340.7, -1265.09, 0, 0, 0, 0, 2358.54, -1004.19, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
 }
 
 [node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+lap_length = 20500
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
@@ -86,6 +88,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Start" type="Sprite" parent="Track" index="4"]
+
+position = Vector2( -640, 1260 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 512 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
@@ -95,29 +105,35 @@ __meta__ = {
 
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
-position = Vector2( -646.33, 1102.95 )
+position = Vector2( -640, 1104 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
-position = Vector2( -646.33, 1192.95 )
+position = Vector2( -640, 1210 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
-position = Vector2( -646.33, 1322.95 )
+position = Vector2( -640, 1316 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="4" type="Position2D" parent="StartingPositions" index="3"]
 
-position = Vector2( -646.33, 1462.95 )
+position = Vector2( -640, 1422 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="FloorChangers" type="Node2D" parent="." index="2"]
 
-script = ExtResource( 6 )
+editor/display_folded = true
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="ChangerUp1" type="Area2D" parent="FloorChangers" index="0"]
 
+editor/display_folded = true
 position = Vector2( -816.83, -1021.39 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -230,7 +246,7 @@ __meta__ = {
 [node name="ChangerDown6" type="Area2D" parent="FloorChangers" index="5"]
 
 editor/display_folded = true
-position = Vector2( -1050, -240 )
+position = Vector2( -1050, -211 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -298,6 +314,8 @@ __meta__ = {
 
 [node name="Colliders" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="Lower" type="Node2D" parent="Colliders" index="0"]
 
 editor/display_folded = true
@@ -357,7 +375,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="Shape" type="CollisionPolygon2D" parent="Colliders/Upper/UpperCollider1" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -1187, 1544, -561, 1536, 126, 1538, 393, 1535, 455, 1520, 607, 1411, 1414.8, 772.028, 1545, 656, 1637, 549, 1691, 452, 1732.43, 272.81, 1739, 165, 1730, 43, 1687, -99, 1607, -247, 1513, -369, 1393, -477, 1270, -541, 1119, -570, 893, -577, 536, -570, 442, -588, 337, -648, 255, -708, 179, -733, -58, -746, -1586.86, -747.144, -1709.4, -759.743, -1792.48, -793.952, -1834.19, -832.169, -1871.74, -904.345, -1892.71, -996.516, -1884.92, -1080.12, -1849, -1159.75, -1779.54, -1227.4, -1712.48, -1261.53, -1632.85, -1279.49, -1342.47, -1289.67, -971.248, -1290.27, -882.037, -1274.71, -777.236, -1172.5, -805.099, -1164.54, -1493.73, -1163.87, -1475.39, -878.425, -264.899, -866.814, 732.906, -862.138, 1297.37, -853.432, 1455.6, -840.737, 1596.32, -803.064, 1745.9, -733.258, 1840.09, -663.452, 1898.81, -561.513, 1917.09, -440.613, 1924.45, -293.285, 1909.72, 248.148, 1897.44, 598.053, 1863.07, 745.381, 1800.45, 823.956, 1714.56, 868.13, 1634.13, 875.388, 1561.7, 864.339, 1540, 1438, 1649, 1450, 1790.44, 1439.98, 1964.4, 1391.86, 2132.8, 1293.78, 2346.28, 1089.9, 2548.98, 836.875, 2679.19, 633.76, 2801.44, 395.102, 2814.71, -756.772, 2811.56, -1144.12, 2781.5, -1244.53, 2723, -1305.75, 2585.18, -1349.37, 2191.83, -1359.34, -122.195, -1359.42, -623, -1359, -754, -1490, -793, -1517, -1003.58, -1529.75, -1445.76, -1533.09, -1722.52, -1516.9, -1888.41, -1487.18, -1963.32, -1450.37, -2042.91, -1371.11, -2114.22, -1271.88, -2155.52, -1155.93, -2180.07, -1045.8, -2182.39, -951.57, -2171.37, -854.538, -2127.06, -735.977, -2055.38, -648.011, -1948.68, -570.633, -1819.99, -519.319, -1705.12, -497.841, -1559.22, -483.791, -680.915, -482.641, -146.737, -483.21, -25.2625, -485.851, 42.0769, -477.048, 126.141, -448, 231.771, -393.864, 244.975, -376.259, -2414.83, -226.243, -2334.09, -1867.54, 3252.98, -2600.41, 3370.76, 1964.29 )
+polygon = PoolVector2Array( -1187, 1544, -561, 1536, 126, 1538, 393, 1535, 455, 1520, 607, 1411, 1414.8, 772.028, 1545, 656, 1637, 549, 1691, 452, 1732.43, 272.81, 1739, 165, 1730, 43, 1687, -99, 1607, -247, 1513, -369, 1393, -477, 1270, -541, 1119, -570, 893, -577, 536, -570, 442, -588, 337, -648, 255, -708, 179, -733, -58, -746, -1586.86, -747.144, -1709.4, -759.743, -1792.48, -793.952, -1834.19, -832.169, -1871.74, -904.345, -1892.71, -996.516, -1884.92, -1080.12, -1849, -1159.75, -1779.54, -1227.4, -1712.48, -1261.53, -1632.85, -1279.49, -1342.47, -1289.67, -971.248, -1290.27, -882.037, -1274.71, -777.236, -1172.5, -805.099, -1164.54, -1493.73, -1163.87, -1475.39, -878.425, -264.899, -866.814, 732.906, -862.138, 1297.37, -853.432, 1455.6, -840.737, 1596.32, -803.064, 1745.9, -733.258, 1840.09, -663.452, 1898.81, -561.513, 1917.09, -440.613, 1924.45, -293.285, 1909.72, 248.148, 1897.44, 598.053, 1863.07, 745.381, 1800.45, 823.956, 1714.56, 868.13, 1634.13, 875.388, 1561.7, 864.339, 1540, 1438, 1649, 1450, 1790.44, 1439.98, 1964.4, 1391.86, 2132.8, 1293.78, 2346.28, 1089.9, 2548.98, 836.875, 2679.19, 633.76, 2801.44, 395.102, 2814.71, -756.772, 2811.56, -1144.12, 2781.5, -1244.53, 2723, -1305.75, 2585.18, -1349.37, 2191.83, -1359.34, -122.195, -1359.42, -623, -1359, -754, -1490, -793, -1517, -1003.58, -1529.75, -1445.76, -1533.09, -1722.52, -1516.9, -1888.41, -1487.18, -1963.32, -1450.37, -2042.91, -1371.11, -2114.22, -1271.88, -2155.52, -1155.93, -2180.07, -1045.8, -2182.39, -951.57, -2171.37, -854.538, -2127.06, -735.977, -2055.38, -648.011, -1948.68, -570.633, -1819.99, -519.319, -1705.12, -497.841, -1559.22, -483.791, -680.915, -482.641, -146.737, -483.21, -25.2625, -485.851, 42.0769, -477.048, 126.141, -448, 231.771, -393.864, 244.975, -376.259, -701, -370, -2391, -379, -2334.09, -1867.54, 3252.98, -2600.41, 3370.76, 1964.29 )
 
 [node name="UpperCollider2" type="StaticBody2D" parent="Colliders/Upper" index="1"]
 
@@ -396,15 +414,12 @@ polygon = PoolVector2Array( -1184.41, 987.005, 83.399, 999.431, 243.939, 987.726
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
 editor/display_folded = true
-curve = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+curve = SubResource( 7 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
 
-position = Vector2( 260, 390 )
-rotation = -0.00440203
+position = Vector2( -651.615, 1260.02 )
+rotation = -0.107006
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -416,8 +431,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player1Follower" type="PathFollow2D" parent="TrackPath" index="1"]
 
-position = Vector2( 260, 390 )
-rotation = -0.00440203
+position = Vector2( -651.615, 1260.02 )
+rotation = -0.107006
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -429,8 +444,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player2Follower" type="PathFollow2D" parent="TrackPath" index="2"]
 
-position = Vector2( 260, 390 )
-rotation = -0.00440203
+position = Vector2( -651.615, 1260.02 )
+rotation = -0.107006
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -442,8 +457,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player3Follower" type="PathFollow2D" parent="TrackPath" index="3"]
 
-position = Vector2( 260, 390 )
-rotation = -0.00440203
+position = Vector2( -651.615, 1260.02 )
+rotation = -0.107006
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0

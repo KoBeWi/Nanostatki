@@ -14,9 +14,12 @@ var pause = 3
 signal init_players
 signal start
 
-func setup(_mode, _players_joined):
+func setup(_mode, _players_joined, options):
 	mode = _mode
 	players_joined = _players_joined
+	
+	if mode == "Race":
+		mode = "Race" + str(options[0])
 
 func _ready():
 	scene = load("res://Scenes/" + mode + ".tscn").instance()

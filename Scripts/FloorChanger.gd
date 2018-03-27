@@ -1,8 +1,5 @@
 extends Node2D
 
-func _ready():
-	pass
-
 func _on_up_enter(body):
 	if body.is_in_group("players"):
 		body.change_floor(1)
