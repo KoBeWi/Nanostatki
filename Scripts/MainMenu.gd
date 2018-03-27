@@ -8,8 +8,8 @@ var texture1 = load("res://Sprites/Title.png")
 var texture2 = load("res://Sprites/PlayerScreen.png")
 
 enum {MAIN, PLAYERS}
-const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
-const MODE_NAMES = {"Race": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
+const MODES = ["Race2", "Drag", "Sumo", "Arena", "Survival"]
+const MODE_NAMES = {"Race2": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
 
 var state = MAIN
 var select = 0
