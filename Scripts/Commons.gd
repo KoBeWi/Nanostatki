@@ -3,6 +3,7 @@ extends Node
 const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
 
 var race_backgrounds = [load("res://Sprites/Race/Background1.png"), load("res://Sprites/Race/Background2.png")]
+var sumo_arenas = [load("res://Sprites/Sumo/2a.png"), load("res://Sprites/Sumo/2b.png"), null, null, load("res://Sprites/Sumo/3a.png"), load("res://Sprites/Sumo/3b.png"), load("res://Sprites/Sumo/3c.png"), null, load("res://Sprites/Sumo/4a.png"), load("res://Sprites/Sumo/4b.png"), load("res://Sprites/Sumo/4c.png"), load("res://Sprites/Sumo/4d.png")]
 
 ##wszystko na dole jest niepotrzebne :/
 

@@ -1,6 +1,8 @@
 extends Node
 
 const START = 0.4
+const ARENA_SIZE = 764
+const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.5, 1, 0), Color(0, 1, 1): Color(0.25, 0.5, 1), Color(1, 0, 1): Color(0.5, 0, 1)}
 
 onready var players = $"../Players"
 var wintext
@@ -8,17 +10,24 @@ var wintext
 var win = -1
 
 func _ready():
-	var arena_size = $Arena.texture.get_width()/2
-	$Inside/Shape.shape.radius = arena_size
+	$Inside/Shape.shape.radius = ARENA_SIZE
 	
+	var teams = []
 	var players = 0
-	for i in get_parent().players_joined: if i > -1: players += 1
+	for i in range(4): if get_parent().players_joined[i] > -1:
+		players += 1
+		teams.append(i)
 	
 	var deg = 360 / players
 	for i in range(players):
-		var point = $StartingPositions.get_child(i)
-		point.position = Vector2(cos(deg2rad(i * deg)) * arena_size * START, sin(deg2rad(i * deg)) * arena_size * START)
+		var point = $StartingPositions.get_child(teams[i])
+		point.position = Vector2(cos(deg2rad(i * deg)) * ARENA_SIZE * START, sin(deg2rad(i * deg)) * ARENA_SIZE * START)
 		point.rotation_degrees = deg * i + 180
+		
+		var piece = $Arena.get_child(i)
+		piece.visible = true
+		piece.modulate = ARENA_COLORS[Com.PLAYER_COLORS[teams[i]]]
+		piece.texture = Com.sumo_arenas[(players-2)*4 + i]
 	
 	wintext = get_parent().register_UI($WinText, self)
 

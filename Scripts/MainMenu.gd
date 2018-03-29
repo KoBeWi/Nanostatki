@@ -51,10 +51,10 @@ func _process(delta):
 				select -= 1
 		
 		PLAYERS:
+			if Input.is_action_just_pressed("ui_cancel"): state = MAIN
 			players_ready = 0
 			var start = true
 			
-				
 			match mode:
 				"Race":
 					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 2)

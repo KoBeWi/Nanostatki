@@ -25,19 +25,18 @@ func _ready():
 	scene = load("res://Scenes/" + mode + ".tscn").instance()
 	add_child(scene)
 	
-	for i in range(4):
-		if players_joined[i] > -1:
-			var player = load("res://Nodes/Ship.tscn").instance()
-			var start = scene.get_node("StartingPositions/" + str(i+1))
-			
-			player.position = start.position
-			player.rotation = start.rotation
-			player.direction = Vector2(cos(start.rotation), sin(start.rotation))
-			player.team = i
-			player.player = players_joined[i]
-			
-			player.pause = true
-			players.add_child(player)
+	for i in range(4): if players_joined[i] > -1:
+		var player = load("res://Nodes/Ship.tscn").instance()
+		var start = scene.get_node("StartingPositions/" + str(i+1))
+		
+		player.position = start.position
+		player.rotation = start.rotation
+		player.direction = Vector2(cos(start.rotation), sin(start.rotation))
+		player.team = i
+		player.player = players_joined[i]
+		
+		player.pause = true
+		players.add_child(player)
 	
 	emit_signal("init_players", players.get_children())
 

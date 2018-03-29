@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Scripts/Electrofield.gd" type="Script" id=1]
 
-[node name="Electrofield" type="Node2D"]
+[node name="Electrofield" type="Node2D" index="0"]
 
+position = Vector2( 151, 79 )
 script = ExtResource( 1 )
 
 

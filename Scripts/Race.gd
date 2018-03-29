@@ -33,7 +33,6 @@ func _process(delta):
 			if follower.offset != start_offset: break
 		
 		player.race_distance = follower.offset
-		print(player.race_distance)
 
 func process_camera(camera, players):
 	var player = players[0]
