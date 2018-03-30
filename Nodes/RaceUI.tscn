@@ -1,0 +1,164 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Font32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "RaceUI"
+script/source = "extends Control
+
+var dot = load(\"res://Sprites/Race/PosDot.png\")
+var track = load(\"res://Sprites/Race/Track.png\")
+var lap = load(\"res://Sprites/Race/LapLine.png\")
+var font = load(\"res://Resources/Font16.tres\")
+
+var lap_length = 1
+var lap_count = 1
+var start_time = 0
+var players = []
+
+func init_game(lap, laps):
+	lap_length = float(lap)
+	lap_count = laps
+
+func start(time):
+	start_time = time
+	$Timer.visible = true
+	
+func init_players(_players):
+	players = _players
+
+func _process(delta):
+	var time = OS.get_ticks_msec() - start_time
+	$Timer.text = str(time / 60000) + \" : \" + str(time / 1000 % 60) + \" : \" + str(time / 10 % 100)
+	update()
+
+func _draw():
+	draw_texture(track, Vector2(12, 4))
+	for i in range(lap_count-1):
+		draw_texture(lap, Vector2(12 + 1000.0 / lap_count * (i+1), 4))
+	
+	for player in players:
+		var x = 4 + 1000 * clamp(player.race_distance / (lap_length * lap_count), 0, 1)
+		draw_texture(dot, Vector2(x, 4), Com.PLAYER_COLORS[player.team])
+		draw_string(font, Vector2(x - 4, 40), \"P\" + str(player.team+1), Com.PLAYER_COLORS[player.team])"
+_sections_unfolded = [ "Resource" ]
+
+[node name="RaceUI" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 1 )
+
+[node name="WinText" type="Label" parent="." index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 245.0
+margin_right = 1018.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "GRACZ 1 ZAJMUJE 1 MIEJSCE!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Timer" type="Label" parent="." index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 32.0
+margin_right = 1024.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "0 : 0 : 0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Results" type="Label" parent="." index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 432.0
+margin_top = 314.0
+margin_right = 623.0
+margin_bottom = 441.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Gracz 1: 0 : 0 : 0
+Gracz 2: 0 : 0 : 0
+Gracz 3: 0 : 0 : 0
+Gracz 4: 0 : 0 : 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="End" type="Label" parent="." index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 559.0
+margin_right = 406.0
+margin_bottom = 586.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "WCIŚNIJ ENTER, BY WRÓCIĆ DO MENU"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+

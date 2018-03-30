@@ -8,6 +8,7 @@ const CAMERA_OFFSET = 128
 var mode
 var players_joined
 var scene
+var settings = {}
 
 var pause = 3
 
@@ -20,6 +21,7 @@ func setup(_mode, _players_joined, options):
 	
 	if mode == "Race":
 		mode = "Race" + str(options[0])
+		settings["laps"] = options[1]
 
 func _ready():
 	scene = load("res://Scenes/" + mode + ".tscn").instance()

@@ -14,13 +14,13 @@ custom_solver_bias = 0.0
 extents = Vector2( 9.70654, 153.958 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 464.067, 12.5207 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.2701, 281.773 )
@@ -31,22 +31,22 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 136.648 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.0046, 263.485 )
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=6]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 1263.68, -282.046, 0, 0, 0, 0, -2174.65, -687.378, 0, 0, 0, 0, -1340.7, -1265.09, 0, 0, 0, 0, 2358.54, -1004.19, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
+"points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 977.422, -140.63, 0, 0, 0, 0, -1854.55, -195.697, 0, 0, 0, 0, -1827.15, -990.248, 0, 0, 0, 0, 2347.17, -1025.84, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-lap_length = 20500
+lap_length = 20300
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
@@ -191,7 +191,7 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp3" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -214,7 +214,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown1" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -237,7 +237,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown7" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -306,7 +306,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp4" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -414,12 +414,12 @@ polygon = PoolVector2Array( -1184.41, 987.005, 83.399, 999.431, 243.939, 987.726
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
 editor/display_folded = true
-curve = SubResource( 7 )
+curve = SubResource( 6 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
 
-position = Vector2( -651.615, 1260.02 )
-rotation = -0.107006
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -431,8 +431,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player1Follower" type="PathFollow2D" parent="TrackPath" index="1"]
 
-position = Vector2( -651.615, 1260.02 )
-rotation = -0.107006
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -444,8 +444,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player2Follower" type="PathFollow2D" parent="TrackPath" index="2"]
 
-position = Vector2( -651.615, 1260.02 )
-rotation = -0.107006
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -457,8 +457,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player3Follower" type="PathFollow2D" parent="TrackPath" index="3"]
 
-position = Vector2( -651.615, 1260.02 )
-rotation = -0.107006
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
