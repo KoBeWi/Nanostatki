@@ -25,18 +25,7 @@ func _ready():
 	scene = load("res://Scenes/" + mode + ".tscn").instance()
 	add_child(scene)
 	
-	for i in range(4): if players_joined[i] > -1:
-		var player = load("res://Nodes/Ship.tscn").instance()
-		var start = scene.get_node("StartingPositions/" + str(i+1))
-		
-		player.position = start.position
-		player.rotation = start.rotation
-		player.direction = Vector2(cos(start.rotation), sin(start.rotation))
-		player.team = i
-		player.player = players_joined[i]
-		
-		player.pause = true
-		players.add_child(player)
+	start_scene()
 	
 	emit_signal("init_players", players.get_children())
 
@@ -47,7 +36,7 @@ func _physics_process(delta):
 		if pause <= 0:
 			for player in players.get_children(): player.pause = false
 			pause = null
-			$Camera/Countdown/Label.queue_free()
+			$Camera/Countdown/Label.visible = false
 			emit_signal("start")
 		else:
 			var s = (pause - int(pause)) * 10
@@ -72,6 +61,26 @@ func _physics_process(delta):
 		
 		var new_zoom = max(min(max(abs(max_x - min_x) / 1024, abs(max_y - min_y) / 600), 4), 1)
 		camera.zoom = Vector2(new_zoom, new_zoom)
+
+func restart_scene():
+	for player in $Players.get_children(): player.queue_free()
+	pause = 3
+	$Camera/Countdown/Label.visible = true
+	start_scene()
+
+func start_scene():
+	for i in range(4): if players_joined[i] > -1:
+		var player = load("res://Nodes/Ship.tscn").instance()
+		var start = scene.get_node("StartingPositions/" + str(i+1))
+		
+		player.position = start.position
+		player.rotation = start.rotation
+		player.direction = Vector2(cos(start.rotation), sin(start.rotation))
+		player.team = i
+		player.player = players_joined[i]
+		
+		player.pause = true
+		players.add_child(player)
 
 func register_UI(ui, old_owner):
 	old_owner.remove_child(ui)

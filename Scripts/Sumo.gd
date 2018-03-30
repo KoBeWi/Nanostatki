@@ -6,13 +6,22 @@ const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.
 
 onready var players = $"../Players"
 var wintext
+var o_wintext
+var continu
+var stats
 
 var win = -1
+var wins = [0, 0, 0, 0]
+var teams = []
 
 func _ready():
 	$Inside/Shape.shape.radius = ARENA_SIZE
+	var background = $Arena.texture
+	$"../Camera".limit_left = -background.get_width()/2
+	$"../Camera".limit_right = background.get_width()/2
+	$"../Camera".limit_top = -background.get_height()/2
+	$"../Camera".limit_bottom = background.get_height()/2
 	
-	var teams = []
 	var players = 0
 	for i in range(4): if get_parent().players_joined[i] > -1:
 		players += 1
@@ -30,16 +39,41 @@ func _ready():
 		piece.texture = Com.sumo_arenas[(players-2)*4 + i]
 	
 	wintext = get_parent().register_UI($WinText, self)
+	continu = get_parent().register_UI($Continue, self)
+	stats = get_parent().register_UI($Stats, self)
+	o_wintext = wintext.text
 
 func _process(delta):
 	if win == -1 and players.get_child_count() == 1:
 		var player = players.get_child(0)
 		player.pause = true
 		win = player.team
+		wins[win] += 1
+		
+		var text = "ZWYCIĘSTWA: \n"
+		for i in range(teams.size()):
+			text += "GRACZ" + str(teams[i]+1) + ": " + str(wins[teams[i]]) + "        "
+		stats.text = text
 		
 		wintext.visible = true
-		wintext.text = wintext.text % str(player.team+1)
+		stats.visible = true
+		wintext.text = o_wintext % str(player.team+1)
 		wintext.modulate = Com.PLAYER_COLORS[win]
+		for piece in $Arena.get_children(): piece.modulate = Com.PLAYER_COLORS[player.team]
+		
+		yield(get_tree().create_timer(3), "timeout")
+		
+		if stats.visible: continu.visible = true
+		
+	elif win > -1:
+		if Input.is_action_just_pressed("ui_accept"):
+			stats.visible = false
+			wintext.visible = false
+			continu.visible = false
+			win = -1
+			get_parent().restart_scene()
+		elif Input.is_action_just_pressed("ui_cancel"):
+			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func process_camera(camera, players):
 	if win > -1:

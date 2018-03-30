@@ -7,10 +7,10 @@ path="res://.import/4d.png-f9c4e014ea5465eed96d458c6c41479a.stex"
 [deps]
 
 source_file="res://Sprites/Sumo/4d.png"
-source_md5="588337da24c97a911c28e75153ec79f8"
+source_md5="9decd3db5bfb33f87ff81773e8c4c411"
 
 dest_files=[ "res://.import/4d.png-f9c4e014ea5465eed96d458c6c41479a.stex" ]
-dest_md5="0eda8fe20ff0cbff5c30c4990a5f9399"
+dest_md5="3c545c14dff34914e0b27b4d91ddcee8"
 
 [params]
 
