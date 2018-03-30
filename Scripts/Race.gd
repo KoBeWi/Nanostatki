@@ -4,6 +4,7 @@ const FOLLOWER_SPEED = 100
 const FOLLOWER_ITERATIONS = 5
 
 export var lap_length = 0
+var laps = [0, 0, 0, 0]
 
 func _ready():
 	var background = Com.race_backgrounds[randi() % Com.race_backgrounds.size()]
@@ -33,6 +34,9 @@ func _process(delta):
 			if follower.offset != start_offset: break
 		
 		player.race_distance = follower.offset
+		
+		if player.race_distance > lap_length * (laps[player.team] + 1):
+			laps[player.team] += 1
 
 func process_camera(camera, players):
 	var player = players[0]

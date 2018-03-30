@@ -1,11 +1,13 @@
 extends Node2D
 
 var texture = load("res://Sprites/Common/Electrofield.png")
+var offset = 0
 
 func _ready():
 	pass
 
 func _process(delta):
+	offset += delta * 100
 	update()
 
 func _draw():
@@ -17,4 +19,4 @@ func _draw():
 	
 	for x in range(width/w + 1):
 		var rw = w - min(x * w, width) % w
-		draw_texture_rect_region(texture, Rect2(x * w, 0, rw, 64), Rect2(0, 0, rw, 64))
+		draw_texture_rect_region(texture, Rect2(-w + x * w + offset, 0, rw, 64), Rect2(0, 0, rw, 64))
