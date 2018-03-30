@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Survival.gd" type="Script" id=1]
+[ext_resource path="res://Nodes/Electrofield.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 147, 94 )
 
 [node name="Survival" type="Node2D"]
 
@@ -17,5 +23,14 @@ editor/display_folded = true
 [node name="3" type="Node2D" parent="StartingPositions" index="2"]
 
 [node name="4" type="Node2D" parent="StartingPositions" index="3"]
+
+[node name="Electrofield" parent="." index="1" instance=ExtResource( 2 )]
+
+direction = null
+
+[node name="Shape" type="CollisionShape2D" parent="Electrofield" index="0"]
+
+position = Vector2( -1.10803, 17.7285 )
+shape = SubResource( 1 )
 
 

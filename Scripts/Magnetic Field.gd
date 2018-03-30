@@ -2,7 +2,7 @@ extends Area2D
 
 onready var tex1 = load("res://Sprites/Magnet.png")
 onready var tex2 = load("res://Sprites/Magnet2.png")
-onready var size = $Field.shape.extents*2
+onready var size = $Field.shape.extents * 2
 onready var players = $"../Players".get_children()
 
 const FORCE = PI/40

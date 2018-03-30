@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/Magnetic Field.gd" type="Script" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 50, 300 )
 
 [node name="Magnetic Field" type="Area2D"]
 
@@ -19,14 +14,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 charge = 1
-
-[node name="Field" type="CollisionShape2D" parent="." index="0"]
-
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="body_entered" from="." to="." method="_on_enter"]
 

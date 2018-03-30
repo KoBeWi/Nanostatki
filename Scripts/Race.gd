@@ -71,7 +71,7 @@ func _process(delta):
 					var results = ui.get_node("Results")
 					results.text = ""
 					for winner in won:
-						results.text += "Gracz " + str(winner.team+1) + ": " + str(winner.time / 60000) + " : " + str(winner.time / 1000 % 60) + " : " + str(winner.time / 10 % 100)
+						results.text += "Gracz " + str(winner.team+1) + ": " + str(winner.time / 60000) + " : " + str(winner.time / 1000 % 60) + " : " + str(winner.time / 10 % 100) + "\n"
 					results.visible = true
 					
 					ui.get_node("WinText").text = "KONIEC WYŚCIGU!"

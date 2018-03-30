@@ -2,9 +2,21 @@
 
 [ext_resource path="res://Scripts/Electrofield.gd" type="Script" id=1]
 
-[node name="Electrofield" type="Node2D" index="0"]
+[node name="Electrofield" type="Area2D"]
 
 position = Vector2( 151, 79 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
+direction = null
+
+[connection signal="body_entered" from="." to="." method="_on_enter"]
+
+[connection signal="body_exited" from="." to="." method="_on_exit"]
 
 
