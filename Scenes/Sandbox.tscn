@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/Background.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Electrofield.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Magnetic Field.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Laser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -75,5 +77,15 @@ charge = -1
 [node name="Field" type="CollisionShape2D" parent="Magnetic Field" index="0"]
 
 shape = SubResource( 2 )
+
+[node name="Laser" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 70.2705, -94.5596 )
+
+[node name="End" type="Sprite" parent="Laser" index="1"]
+
+position = Vector2( 391.44, -148.367 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 

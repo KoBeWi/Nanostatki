@@ -4,7 +4,6 @@
 
 [node name="Magnetic Field" type="Area2D"]
 
-position = Vector2( 702.071, 297.642 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -13,6 +12,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 charge = 1
 
 [connection signal="body_entered" from="." to="." method="_on_enter"]

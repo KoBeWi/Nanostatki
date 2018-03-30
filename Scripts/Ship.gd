@@ -9,7 +9,8 @@ const FORCE_RANGE = 400
 export var team = 0
 export var player = 0
 
-var pause
+var pause = false
+var paralyzed = false
 var race_distance = 0
 var drag_race = false
 
@@ -24,7 +25,7 @@ func _physics_process(delta):
 	if pause: return
 	var move = false
 	
-	if !drag_race:
+	if !drag_race and !paralyzed:
 		if Input.is_action_pressed(action("forward")): move = true
 		if Input.is_action_pressed(action("left")): direction = direction.rotated(ROT_SPEED)
 		if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
@@ -33,7 +34,7 @@ func _physics_process(delta):
 	velocity += -velocity * DAMP
 	rotation = direction.angle()
 	
-	if Input.is_action_just_pressed(action("action")): swap_charge()
+	if !paralyzed and Input.is_action_just_pressed(action("action")): swap_charge()
 	
 	move_and_slide(velocity)
 
