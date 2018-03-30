@@ -1,19 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Background.png" type="Texture" id=1]
 [ext_resource path="res://Nodes/Ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Electrofield.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/Magnetic Field.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 204.084, 187.586 )
 
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 222.088, 124 )
+
 [node name="Sandbox" type="Sprite" index="0"]
 
+position = Vector2( 0.902527, 0 )
 texture = ExtResource( 1 )
 
 [node name="Players" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="Ship" parent="Players" index="0" instance=ExtResource( 2 )]
 
@@ -48,7 +57,7 @@ editor_draw_drag_margin = false
 [node name="Electrofield" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -6.716, 243.521 )
-direction = 0
+direction = 1
 
 [node name="Field" type="CollisionShape2D" parent="Electrofield" index="0"]
 
@@ -57,5 +66,14 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Magnetic Field" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -312.616, -387.996 )
+charge = -1
+
+[node name="Field" type="CollisionShape2D" parent="Magnetic Field" index="0"]
+
+shape = SubResource( 2 )
 
 
