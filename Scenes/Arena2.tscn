@@ -1,0 +1,386 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Arena/Arena2/Background.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Arena/Arena2/Floor.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/Arena/Crown.png" type="Texture" id=5]
+
+[node name="Arena" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Arena" type="Node2D" parent="." index="0"]
+
+[node name="Background" type="Sprite" parent="Arena" index="0"]
+
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Floor" type="Sprite" parent="Arena" index="1"]
+
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UpperBoundary" type="StaticBody2D" parent="Arena" index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Shape" type="CollisionPolygon2D" parent="Arena/UpperBoundary" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1146.76, -3.59753, -1138.64, -130.85, -1097.12, -286.08, -1023.12, -435.895, -912.11, -566.757, -792.98, -657.91, -651.288, -729.207, -518.62, -767.112, -327.29, -779.747, -310.143, -895.267, -231.175, -1021.07, -112.615, -1103.06, 1.51239, -1124.12, 111, -1110, 231, -1053, 308, -960, 349, -860, 361, -796, 497, -784, 645.32, -749.155, 770.767, -685.98, 875.457, -613.78, 972.025, -518.115, 1062.27, -380.033, 1126.35, -218.485, 1143.49, -110.53, 1149.48, 0.522476, 2102.45, -1071.15, -1575.98, -1318.08 )
+
+[node name="LowerBoundary" type="StaticBody2D" parent="Arena" index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Shape" type="CollisionPolygon2D" parent="Arena/LowerBoundary" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1148.7, 1.48271, 1141.76, 92.336, 1122.57, 191.119, 1075.47, 308.545, 1029.03, 393.462, 956.713, 491.649, 868.478, 577.23, 759.014, 652.86, 667.703, 696.882, 540.771, 736.398, 358.156, 754.361, 341.99, 892.07, 279.123, 1002.84, 217.453, 1060.91, 147.401, 1099.23, 68.3676, 1122.58, -22.6405, 1122.58, -93.2914, 1108.81, -174.121, 1064.51, -253.154, 996.849, -298.059, 919.013, -326.799, 830.999, -327.398, 762.144, -468.699, 760.348, -550.128, 745.379, -655.505, 713.646, -745.316, 669.939, -829.139, 617.25, -905.777, 553.185, -970.441, 483.731, -1026.72, 406.494, -1065.04, 334.646, -1103.96, 250.224, -1128.51, 152.031, -1147.07, 42.4623, -1147.67, -9.62784, -1511.18, 1227.53, 2006.07, 1227.53 )
+
+[node name="StartingPositions" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="StartingPositions" index="0"]
+
+position = Vector2( 153.47, 18.4227 )
+
+[node name="2" type="Position2D" parent="StartingPositions" index="1"]
+
+position = Vector2( 15.062, -306.758 )
+
+[node name="3" type="Position2D" parent="StartingPositions" index="2"]
+
+position = Vector2( -153.534, -1.67938 )
+
+[node name="4" type="Position2D" parent="StartingPositions" index="3"]
+
+position = Vector2( -1.70467, 131.261 )
+
+[node name="PulseSpawners" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Spawner6" type="Position2D" parent="PulseSpawners" index="0"]
+
+position = Vector2( 794.146, -364.687 )
+
+[node name="Spawner33" type="Position2D" parent="PulseSpawners" index="1"]
+
+position = Vector2( 568.196, -194.527 )
+
+[node name="Spawner34" type="Position2D" parent="PulseSpawners" index="2"]
+
+position = Vector2( 657.831, 482.373 )
+
+[node name="Spawner35" type="Position2D" parent="PulseSpawners" index="3"]
+
+position = Vector2( 314.744, 497.828 )
+
+[node name="Spawner36" type="Position2D" parent="PulseSpawners" index="4"]
+
+position = Vector2( 175.655, 185.65 )
+
+[node name="Spawner37" type="Position2D" parent="PulseSpawners" index="5"]
+
+position = Vector2( 290.017, -151.255 )
+
+[node name="Spawner38" type="Position2D" parent="PulseSpawners" index="6"]
+
+position = Vector2( 419.834, -355.252 )
+
+[node name="Spawner39" type="Position2D" parent="PulseSpawners" index="7"]
+
+position = Vector2( -250.885, -685.975 )
+
+[node name="Spawner23" type="Position2D" parent="PulseSpawners" index="8"]
+
+position = Vector2( 962.29, -137.077 )
+
+[node name="Spawner24" type="Position2D" parent="PulseSpawners" index="9"]
+
+position = Vector2( 716.225, -11.9933 )
+
+[node name="Spawner25" type="Position2D" parent="PulseSpawners" index="10"]
+
+position = Vector2( 826.954, 176.657 )
+
+[node name="Spawner26" type="Position2D" parent="PulseSpawners" index="11"]
+
+position = Vector2( -1019.01, -189.795 )
+
+[node name="Spawner27" type="Position2D" parent="PulseSpawners" index="12"]
+
+position = Vector2( -611.456, -443.229 )
+
+[node name="Spawner28" type="Position2D" parent="PulseSpawners" index="13"]
+
+position = Vector2( 258.44, -703.513 )
+
+[node name="Spawner29" type="Position2D" parent="PulseSpawners" index="14"]
+
+position = Vector2( 125.154, -832.697 )
+
+[node name="Spawner30" type="Position2D" parent="PulseSpawners" index="15"]
+
+position = Vector2( 53.3854, -986.488 )
+
+[node name="Spawner31" type="Position2D" parent="PulseSpawners" index="16"]
+
+position = Vector2( -170.124, -916.77 )
+
+[node name="Spawner19" type="Position2D" parent="PulseSpawners" index="17"]
+
+position = Vector2( 291.437, -456.892 )
+
+[node name="Spawner5" type="Position2D" parent="PulseSpawners" index="18"]
+
+position = Vector2( 515.061, 247.086 )
+
+[node name="Spawner17" type="Position2D" parent="PulseSpawners" index="19"]
+
+position = Vector2( 278.28, 77.752 )
+
+[node name="Spawner7" type="Position2D" parent="PulseSpawners" index="20"]
+
+position = Vector2( -339.924, 469.16 )
+
+[node name="Spawner8" type="Position2D" parent="PulseSpawners" index="21"]
+
+position = Vector2( -88.1708, 705.808 )
+
+[node name="Spawner15" type="Position2D" parent="PulseSpawners" index="22"]
+
+position = Vector2( 166.1, 816.579 )
+
+[node name="Spawner16" type="Position2D" parent="PulseSpawners" index="23"]
+
+position = Vector2( 70.4336, 980.219 )
+
+[node name="Spawner18" type="Position2D" parent="PulseSpawners" index="24"]
+
+position = Vector2( -176.285, 854.342 )
+
+[node name="Spawner21" type="Position2D" parent="PulseSpawners" index="25"]
+
+position = Vector2( -825.808, 527.063 )
+
+[node name="Spawner22" type="Position2D" parent="PulseSpawners" index="26"]
+
+position = Vector2( -589.16, 348.319 )
+
+[node name="Spawner9" type="Position2D" parent="PulseSpawners" index="27"]
+
+position = Vector2( -232.588, 287.8 )
+
+[node name="Spawner10" type="Position2D" parent="PulseSpawners" index="28"]
+
+position = Vector2( -547.193, 178.613 )
+
+[node name="Spawner20" type="Position2D" parent="PulseSpawners" index="29"]
+
+position = Vector2( -826.658, 19.5679 )
+
+[node name="Spawner32" type="Position2D" parent="PulseSpawners" index="30"]
+
+position = Vector2( -688.062, -203.095 )
+
+[node name="Spawner11" type="Position2D" parent="PulseSpawners" index="31"]
+
+position = Vector2( -500.927, -102.681 )
+
+[node name="Spawner12" type="Position2D" parent="PulseSpawners" index="32"]
+
+position = Vector2( -326.969, -432.09 )
+
+[node name="Spawner13" type="Position2D" parent="PulseSpawners" index="33"]
+
+position = Vector2( 98.927, -584.077 )
+
+[node name="Spawner14" type="Position2D" parent="PulseSpawners" index="34"]
+
+position = Vector2( -17.9857, -375.304 )
+
+[node name="Time" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 288.0
+margin_top = 10.0
+margin_right = 514.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "POZOSTAŁY CZAS: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Crown" type="TextureRect" parent="." index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 288.0
+margin_top = 40.0
+margin_right = 328.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Scores" type="Control" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player1" type="Label" parent="Scores" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 70.0
+margin_right = 140.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "GRACZ1: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Player2" type="Label" parent="Scores" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 288.0
+margin_top = 70.0
+margin_right = 402.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "GRACZ2: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Player3" type="Label" parent="Scores" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 544.0
+margin_top = 70.0
+margin_right = 656.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 1, 1, 1 )
+text = "GRACZ3: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Player4" type="Label" parent="Scores" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 800.0
+margin_top = 70.0
+margin_right = 914.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0, 1, 1 )
+text = "GRACZ4: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+

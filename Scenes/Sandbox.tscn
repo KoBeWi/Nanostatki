@@ -17,7 +17,7 @@ extents = Vector2( 204.084, 187.586 )
 custom_solver_bias = 0.0
 extents = Vector2( 222.088, 124 )
 
-[node name="Sandbox" type="Sprite" index="0"]
+[node name="Sandbox" type="Sprite"]
 
 position = Vector2( 0.902527, 0 )
 texture = ExtResource( 1 )

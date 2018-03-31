@@ -10,7 +10,7 @@ var timer
 var crown
 var started
 
-var time_left = 30
+onready var time_left = get_parent().settings.time
 var pulse_delay = 0
 var occupied = []
 var occupcount = 0
@@ -21,12 +21,6 @@ var highest_score = 0
 func _ready():
 	var players = 0
 	for i in get_parent().players_joined: if i > -1: players += 1
-	
-	var deg = 360 / players
-	for i in range(players):
-		var point = $StartingPositions.get_child(i)
-		point.position = Vector2(cos(deg2rad(i * deg)) * 400, sin(deg2rad(i * deg)) * 400)
-		point.rotation_degrees = deg * i + 180
 	
 	occupied.resize($PulseSpawners.get_child_count())
 	get_parent().connect("start", self, "start")

@@ -45,6 +45,7 @@ func _process(delta):
 				
 				match mode:
 					"Race": options = [1, 3]
+					"Arena": options = [1, 30]
 			elif Input.is_action_just_pressed("ui_down") and select < MODES.size()-1:
 				select += 1
 			elif Input.is_action_just_pressed("ui_up") and select > 0:
@@ -57,6 +58,12 @@ func _process(delta):
 			
 			match mode:
 				"Race":
+					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 2)
+					if Input.is_action_just_released("ui_left"): options[0] = max(options[0]-1, 1)
+					if Input.is_action_just_released("ui_up"): options[1] = min(options[1]+1, 100)
+					if Input.is_action_just_released("ui_down"): options[1] = max(options[1]-1, 1)
+					
+				"Arena":
 					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 2)
 					if Input.is_action_just_released("ui_left"): options[0] = max(options[0]-1, 1)
 					if Input.is_action_just_released("ui_up"): options[1] = min(options[1]+1, 100)
@@ -124,8 +131,11 @@ func _draw():
 			
 			match mode:
 				"Race":
-					draw_string(font16, Vector2(20, 40), "LEWO/PRAWO BY ZMIENIĆ TRASIĘ (AKTUALNIE %s)" % str(options[0]), Color(0, 1, 1))
+					draw_string(font16, Vector2(20, 40), "LEWO/PRAWO BY ZMIENIĆ TRASĘ (AKTUALNIE %s)" % str(options[0]), Color(0, 1, 1))
 					draw_string(font16, Vector2(20, 60), "GÓRA/DÓŁ, BY ZMIENIĆ LICZBĘ OKRĄŻEŃ (AKTUALNIE %s)" % str(options[1]), Color(0, 1, 1))
+				"Arena":
+					draw_string(font16, Vector2(20, 40), "LEWO/PRAWO BY ZMIENIĆ ARENĘ (AKTUALNIE %s)" % str(options[0]), Color(0, 1, 1))
+					draw_string(font16, Vector2(20, 60), "GÓRA/DÓŁ, BY ZMIENIĆ CZAS (AKTUALNIE %sS)" % str(options[1]), Color(0, 1, 1))
 				
 func add_player(i):
 	players_in[i] = true
