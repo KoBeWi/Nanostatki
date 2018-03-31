@@ -64,7 +64,7 @@ func _process(delta):
 					if Input.is_action_just_released("ui_down"): options[1] = max(options[1]-1, 1)
 					
 				"Arena":
-					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 2)
+					if Input.is_action_just_released("ui_right"): options[0] = min(options[0]+1, 4)
 					if Input.is_action_just_released("ui_left"): options[0] = max(options[0]-1, 1)
 					if Input.is_action_just_released("ui_up"): options[1] = min(options[1]+1, 100)
 					if Input.is_action_just_released("ui_down"): options[1] = max(options[1]-1, 1)
