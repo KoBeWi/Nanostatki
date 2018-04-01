@@ -1,0 +1,487 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Race/Background2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Race/Track2/Shade.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Race/Track2/Highlight.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Race/Start.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.70654, 153.958 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 464.067, 12.5207 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.2701, 281.773 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 136.648 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.0046, 263.485 )
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 977.422, -140.63, 0, 0, 0, 0, -1854.55, -195.697, 0, 0, 0, 0, -1827.15, -990.248, 0, 0, 0, 0, 2347.17, -1025.84, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
+}
+
+[node name="Race" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+lap_length = 20300
+
+[node name="Track" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="Track" index="0"]
+
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shade" type="Sprite" parent="Track" index="1"]
+
+z_index = 5
+z_as_relative = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Highlight" type="Sprite" parent="Track" index="2"]
+
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Border" type="Sprite" parent="Track" index="3"]
+
+z_index = 10
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Start" type="Sprite" parent="Track" index="4"]
+
+position = Vector2( -640, 1260 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 512 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="StartingPositions" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="1" type="Position2D" parent="StartingPositions" index="0"]
+
+position = Vector2( -640, 1104 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="2" type="Position2D" parent="StartingPositions" index="1"]
+
+position = Vector2( -640, 1210 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="3" type="Position2D" parent="StartingPositions" index="2"]
+
+position = Vector2( -640, 1316 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="4" type="Position2D" parent="StartingPositions" index="3"]
+
+position = Vector2( -640, 1422 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FloorChangers" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerUp1" type="Area2D" parent="FloorChangers" index="0"]
+
+editor/display_folded = true
+position = Vector2( -816.83, -1021.39 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp1" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerUp2" type="Area2D" parent="FloorChangers" index="1"]
+
+editor/display_folded = true
+position = Vector2( -157.064, -216.469 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp2" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerUp3" type="Area2D" parent="FloorChangers" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2144.45, 838.585 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp3" index="0"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerDown1" type="Area2D" parent="FloorChangers" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1650.1, 1170 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown1" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerDown7" type="Area2D" parent="FloorChangers" index="4"]
+
+editor/display_folded = true
+position = Vector2( -1157.62, 1265.07 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown7" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerDown6" type="Area2D" parent="FloorChangers" index="5"]
+
+editor/display_folded = true
+position = Vector2( -1050, -211 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown6" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerDown3" type="Area2D" parent="FloorChangers" index="6"]
+
+editor/display_folded = true
+position = Vector2( -1345.9, -1022.68 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerDown3" index="0"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ChangerUp4" type="Area2D" parent="FloorChangers" index="7"]
+
+editor/display_folded = true
+position = Vector2( 61.7255, 1271.36 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="FloorChangers/ChangerUp4" index="0"]
+
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Colliders" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Lower" type="Node2D" parent="Colliders" index="0"]
+
+editor/display_folded = true
+visible = false
+
+[node name="LowerCollider1" type="StaticBody2D" parent="Colliders/Lower" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Colliders/Lower/LowerCollider1" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 127.427, 996.412, -1842.43, 979.032, -1913.64, 938.517, -1936.97, 785.05, -1881.72, 689.286, -1790.87, 677.009, 357.672, 688.058, 420.287, 713.841, 970.313, 1137.41, 1293.21, 1352.26, 1456.5, 1421.02, 1595.23, 1448.03, 1776.94, 1441.89, 1943.91, 1398.92, 2090.01, 1325.25, 2259.19, 1177, 2403.9, 1015.72, 2524.49, 868, 2661.65, 663.002, 2800.33, 406.754, 2814.57, -706.644, 3569.4, 170.86, 1543.89, 2034.77, -3246.55, 1613.81, -2878.03, -1508.89, -802.108, -1165.64, -1631.94, -1161.56, -1821.42, -1135.19, -2170.85, -1091.2, -2434.7, -1037.44, -2562.38, -976.055, -2657.03, -889.454, -2716.89, -764.299, -2744.1, -603.775, -2722.33, -375.232, -2645.88, -252.158, -2524.33, -171.127, -2330.35, -95.0072, -2151.05, -61.2159, -1035.68, -50.6034, -97.5779, -47.8379, -94.6369, -368.859, -1229.43, -373.216, -1537.5, -381.803, -1672.76, -418.557, -1716.86, -448.696, -1752.15, -504.563, -1711.41, -771.251, -1680.49, -819.516, -1646.99, -846.534, -1590.8, -864.906, -1490.83, -879.496, -809.261, -876.897, 1827.14, 798.232, 1752.23, 854.187, 1673.72, 874.945, 1578.95, 870.432, 1456.52, 809.108, 493.022, 90.255, 166.317, 83.9375, -1261.21, 96.1811, -2302.33, 102.32, -2585.2, 140.007, -2681.76, 193.255, -2755.14, 286.015, -2813, 570, -2809.04, 1062.05, -2783.07, 1256.37, -2729.41, 1397.51, -2655.75, 1472.74, -2575.93, 1509.39, -2476.56, 1534.64, -2289.14, 1553.48, -1610.56, 1553.21, -632.529, 1535.47, 146.473, 1536.48 )
+
+[node name="LowerCollider2" type="StaticBody2D" parent="Colliders/Lower" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Colliders/Lower/LowerCollider2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1846.18, 441.619, -124.612, 434.532, -94.6955, 420.127, -102.452, 373.59, -250.928, 370.266, -1073.09, 383.562, -1747.88, 381.346, -1850.93, 389.102 )
+
+[node name="Upper" type="Node2D" parent="Colliders" index="1"]
+
+editor/display_folded = true
+visible = false
+
+[node name="UpperCollider1" type="StaticBody2D" parent="Colliders/Upper" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Colliders/Upper/UpperCollider1" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1187, 1544, -561, 1536, 126, 1538, 393, 1535, 455, 1520, 607, 1411, 1414.8, 772.028, 1545, 656, 1637, 549, 1691, 452, 1732.43, 272.81, 1739, 165, 1730, 43, 1687, -99, 1607, -247, 1513, -369, 1393, -477, 1270, -541, 1119, -570, 893, -577, 536, -570, 442, -588, 337, -648, 255, -708, 179, -733, -58, -746, -1586.86, -747.144, -1709.4, -759.743, -1792.48, -793.952, -1834.19, -832.169, -1871.74, -904.345, -1892.71, -996.516, -1884.92, -1080.12, -1849, -1159.75, -1779.54, -1227.4, -1712.48, -1261.53, -1632.85, -1279.49, -1342.47, -1289.67, -971.248, -1290.27, -882.037, -1274.71, -777.236, -1172.5, -805.099, -1164.54, -1493.73, -1163.87, -1475.39, -878.425, -264.899, -866.814, 732.906, -862.138, 1297.37, -853.432, 1455.6, -840.737, 1596.32, -803.064, 1745.9, -733.258, 1840.09, -663.452, 1898.81, -561.513, 1917.09, -440.613, 1924.45, -293.285, 1909.72, 248.148, 1897.44, 598.053, 1863.07, 745.381, 1800.45, 823.956, 1714.56, 868.13, 1634.13, 875.388, 1561.7, 864.339, 1540, 1438, 1649, 1450, 1790.44, 1439.98, 1964.4, 1391.86, 2132.8, 1293.78, 2346.28, 1089.9, 2548.98, 836.875, 2679.19, 633.76, 2801.44, 395.102, 2814.71, -756.772, 2811.56, -1144.12, 2781.5, -1244.53, 2723, -1305.75, 2585.18, -1349.37, 2191.83, -1359.34, -122.195, -1359.42, -623, -1359, -754, -1490, -793, -1517, -1003.58, -1529.75, -1445.76, -1533.09, -1722.52, -1516.9, -1888.41, -1487.18, -1963.32, -1450.37, -2042.91, -1371.11, -2114.22, -1271.88, -2155.52, -1155.93, -2180.07, -1045.8, -2182.39, -951.57, -2171.37, -854.538, -2127.06, -735.977, -2055.38, -648.011, -1948.68, -570.633, -1819.99, -519.319, -1705.12, -497.841, -1559.22, -483.791, -680.915, -482.641, -146.737, -483.21, -25.2625, -485.851, 42.0769, -477.048, 126.141, -448, 231.771, -393.864, 244.975, -376.259, -701, -370, -2391, -379, -2334.09, -1867.54, 3252.98, -2600.41, 3370.76, 1964.29 )
+
+[node name="UpperCollider2" type="StaticBody2D" parent="Colliders/Upper" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Colliders/Upper/UpperCollider2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 2251.58, 776.727, 2370.67, 612.21, 2471.34, 431.733, 2516.67, 318.643, 2531.02, -423.654, 2520.93, -548.893, 2501.98, -594.92, 2403.61, -609.36, 2281.77, -592.213, 2272, -458, 2269.01, -84.6344, 2248, 731 )
+
+[node name="UpperCollider3" type="StaticBody2D" parent="Colliders/Upper" index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Colliders/Upper/UpperCollider3" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1184.41, 987.005, 83.399, 999.431, 243.939, 987.726, 365.485, 923.883, 694.518, 685.702, 1150.93, 345.211, 1229.26, 257.878, 1274.69, 180.316, 1275.79, 103.861, 1231.47, 16.3269, 1162.78, -32.4266, 677.457, -47.939, -1236.12, -51.2631 )
+
+[node name="TrackPath" type="Path2D" parent="." index="4"]
+
+editor/display_folded = true
+curve = SubResource( 6 )
+
+[node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
+
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player1Follower" type="PathFollow2D" parent="TrackPath" index="1"]
+
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player2Follower" type="PathFollow2D" parent="TrackPath" index="2"]
+
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player3Follower" type="PathFollow2D" parent="TrackPath" index="3"]
+
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerUp2" to="FloorChangers" method="_on_up_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerUp3" to="FloorChangers" method="_on_up_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerDown1" to="FloorChangers" method="_on_down_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerDown7" to="FloorChangers" method="_on_down_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerDown6" to="FloorChangers" method="_on_down_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerDown3" to="FloorChangers" method="_on_down_enter"]
+
+[connection signal="body_entered" from="FloorChangers/ChangerUp4" to="FloorChangers" method="_on_up_enter"]
+
+
