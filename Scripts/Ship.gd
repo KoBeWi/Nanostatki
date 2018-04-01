@@ -13,6 +13,7 @@ var pause = false
 var paralyzed = false
 var race_distance = 0
 var drag_race = false
+var survival = false
 
 var velocity = Vector2()
 var direction = Vector2(1, 0)

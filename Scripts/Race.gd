@@ -12,7 +12,7 @@ var start_time = 0
 
 func _ready():
 	var background = Com.race_backgrounds[randi() % Com.race_backgrounds.size()]
-	$"Track/Background".texture = background 
+	$"Track/Background".texture = background
 	$"../Camera".limit_left = -background.get_width()/2
 	$"../Camera".limit_right = background.get_width()/2
 	$"../Camera".limit_top = -background.get_height()/2

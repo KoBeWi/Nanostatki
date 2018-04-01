@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Survival.gd" type="Script" id=1]
-[ext_resource path="res://Nodes/Electrofield.tscn" type="PackedScene" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 147, 94 )
+[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=3]
+[ext_resource path="res://Nodes/Proton.tscn" type="PackedScene" id=4]
 
 [node name="Survival" type="Node2D"]
 
@@ -24,13 +21,62 @@ editor/display_folded = true
 
 [node name="4" type="Node2D" parent="StartingPositions" index="3"]
 
-[node name="Electrofield" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Distance" type="Label" parent="." index="1"]
 
-direction = null
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 294.0
+margin_top = 2.0
+margin_right = 694.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "POKONANY DYSTANS: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Shape" type="CollisionShape2D" parent="Electrofield" index="0"]
+[node name="Background" type="ParallaxBackground" parent="." index="2"]
 
-position = Vector2( -1.10803, 17.7285 )
-shape = SubResource( 1 )
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="Layer" type="ParallaxLayer" parent="Background" index="0"]
+
+editor/display_folded = true
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 2048, 2048 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="Background/Layer" index="0"]
+
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 2048 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="Proton" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 529.171, -507.101 )
 
 

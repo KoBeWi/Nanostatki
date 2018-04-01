@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.stex"
+path="res://.import/HealthBack.png-fa88f3551a1b4aaa73925e736998f977.stex"
 
 [deps]
 
-source_file="res://Sprites/Background.png"
-source_md5="be35a4373a513a2bbd22b6dc4d37fbe5"
+source_file="res://Sprites/Survival/HealthBack.png"
+source_md5="18b530cbcc735721c00d9be18af6de5d"
 
-dest_files=[ "res://.import/Background.png-35d93eb57723ae0fb58ad0b59abe54b6.stex" ]
-dest_md5="c5253cdf45080380b2a8eb676ad48bac"
+dest_files=[ "res://.import/HealthBack.png-fa88f3551a1b4aaa73925e736998f977.stex" ]
+dest_md5="fa4fc013049e54397b2892e02d9285c7"
 
 [params]
 
