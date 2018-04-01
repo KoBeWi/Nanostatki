@@ -15,4 +15,5 @@ func _physics_process(delta):
 		
 		var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
 		if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
+		if player.survival: force /= 4
 		player.velocity -= force
