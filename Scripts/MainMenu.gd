@@ -6,6 +6,7 @@ onready var key = load("res://Sprites/UI/Key.png")
 
 var texture1 = load("res://Sprites/Title.png")
 var texture2 = load("res://Sprites/PlayerScreen.png")
+var videos = [load("res://Resources/Video/Video1.ogm"), null,load("res://Resources/Video/Video3.webm") , null, null]
 
 enum {MAIN, PLAYERS}
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
@@ -15,6 +16,7 @@ const ARENA_COUNT = 7
 
 var state = MAIN
 var select = 0
+var video_state = -1
 var mode
 var started = false
 var options = []
@@ -28,6 +30,7 @@ var players_ready = 0
 func _ready():
 	randomize()
 	$Background.texture = texture1
+	$VideoPlayer.connect("disappeared", self, "change_video")
 
 func _process(delta):
 	if started:
@@ -40,6 +43,10 @@ func _process(delta):
 	
 	match state:
 		MAIN:
+			if video_state != select:
+				video_state = select
+				$VideoPlayer.disappear()
+			
 			if Input.is_action_just_pressed("ui_accept"):
 				mode = MODES[select]
 				state = PLAYERS
@@ -161,3 +168,8 @@ func action_text(player, action):
 func display_button(pos, player, action):
 	draw_texture(key, pos)
 	draw_string(font16, pos + Vector2(18, 32), action_text(player, action), Color(0, 0, 0))
+
+func change_video():
+	$VideoPlayer.stream = videos[select]
+	$VideoPlayer.play()
+	$VideoPlayer.appear()
