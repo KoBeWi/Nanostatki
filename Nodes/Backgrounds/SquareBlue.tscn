@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Common/Backgrounds/Background1.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "Background"
+script/source = "extends Sprite
+
+const SQ_COUNT = 10
+
+onready var camera = $\"/root/Game/Camera\"
+var square = load(\"res://Nodes/Backgrounds/Particles/Square.tscn\")
+
+func _ready():
+	pass
+
+func _physics_process(delta):
+	if get_child_count() < SQ_COUNT:
+		var sq = square.instance()
+		var angle = randf() * PI * 2
+		sq.position = camera.position + Vector2(cos(angle), -sin(angle)) * 1024 * camera.zoom.x
+		sq.angle = angle
+		sq.camera = camera
+		add_child(sq)"
+_sections_unfolded = [ "Resource" ]
+
+[node name="Background" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+

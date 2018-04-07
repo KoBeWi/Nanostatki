@@ -2,6 +2,8 @@ extends Node2D
 
 const FOLLOWER_SPEED = 100
 const FOLLOWER_ITERATIONS = 5
+const BACKGROUND_W = 5760
+const BACKGROUND_H = 3240
 
 var ui
 
@@ -11,12 +13,10 @@ var won = []
 var start_time = 0
 
 func _ready():
-	var background = Com.race_backgrounds[randi() % Com.race_backgrounds.size()]
-	$"Track/Background".texture = background
-	$"../Camera".limit_left = -background.get_width()/2
-	$"../Camera".limit_right = background.get_width()/2
-	$"../Camera".limit_top = -background.get_height()/2
-	$"../Camera".limit_bottom = background.get_height()/2
+	$"../Camera".limit_left = -BACKGROUND_W/2
+	$"../Camera".limit_right = BACKGROUND_W/2
+	$"../Camera".limit_top = -BACKGROUND_H/2
+	$"../Camera".limit_bottom = BACKGROUND_H/2
 	
 	ui = load("res://Nodes/RaceUI.tscn").instance()
 	add_child(ui)
@@ -96,7 +96,10 @@ func process_camera(camera, players):
 		y_diff = max(abs(_player.position.y - player.position.y) + get_parent().CAMERA_OFFSET, y_diff)
 	
 	camera.position = player.position
-	var new_zoom = max(min(max(x_diff / 500, y_diff / 300), 4), 1)
+	var new_zoom = max(min(max(x_diff / 500, y_diff / 300), 8), 1)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 		
 	return true
+
+func ahead_player(player):
+	

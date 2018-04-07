@@ -51,6 +51,7 @@ func _process(delta):
 				mode = MODES[select]
 				state = PLAYERS
 				$Background.texture = texture2
+				$VideoPlayer.disappear()
 				
 				match mode:
 					"Race": options = [1, 3]
@@ -61,7 +62,11 @@ func _process(delta):
 				select -= 1
 		
 		PLAYERS:
-			if Input.is_action_just_pressed("ui_cancel"): state = MAIN
+			if Input.is_action_just_pressed("ui_cancel"):
+				state = MAIN
+				change_video()
+				return
+			
 			players_ready = 0
 			var start = true
 			
@@ -170,6 +175,7 @@ func display_button(pos, player, action):
 	draw_string(font16, pos + Vector2(18, 32), action_text(player, action), Color(0, 0, 0))
 
 func change_video():
+	if state == PLAYERS: return
 	$VideoPlayer.stream = videos[select]
 	$VideoPlayer.play()
 	$VideoPlayer.appear()

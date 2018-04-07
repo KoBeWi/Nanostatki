@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Common/Backgrounds/Background2.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "Background"
+script/source = "extends Sprite
+
+const TR_COUNT = 10
+
+onready var camera = $\"/root/Game/Camera\"
+var triangle = load(\"res://Nodes/Backgrounds/Particles/Triangle.tscn\")
+
+func _ready():
+	pass
+
+func _physics_process(delta):
+	if get_child_count() < TR_COUNT:
+		var tr = triangle.instance()
+		var angle = randf() * PI * 2
+		tr.position = camera.position + Vector2(cos(angle), -sin(angle)) * 1024 * camera.zoom.x
+		tr.angle = angle
+		tr.camera = camera
+		add_child(tr)"
+_sections_unfolded = [ "Resource" ]
+
+[node name="Background" type="Sprite"]
+
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+
