@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Race/Track2/Shade.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Race/Track2/Highlight.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Race/Start.png" type="Texture" id=5]
-[ext_resource path="res://Nodes/BackgroundLoader.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nodes/BackgroundLoader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Race/Track2/Shade.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Race/Track2/Highlight.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Race/Start.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -43,7 +43,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 977.422, -140.63, 0, 0, 0, 0, -1854.55, -195.697, 0, 0, 0, 0, -1827.15, -990.248, 0, 0, 0, 0, 2347.17, -1025.84, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 lap_length = 20300
@@ -54,41 +54,41 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shade" type="Sprite" parent="Track" index="0"]
+[node name="Background" parent="Track" index="0" instance=ExtResource( 2 )]
+
+[node name="Shade" type="Sprite" parent="Track" index="1"]
 
 z_index = 5
 z_as_relative = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Highlight" type="Sprite" parent="Track" index="1"]
+[node name="Highlight" type="Sprite" parent="Track" index="2"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Border" type="Sprite" parent="Track" index="2"]
+[node name="Border" type="Sprite" parent="Track" index="3"]
 
 z_index = 10
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Start" type="Sprite" parent="Track" index="3"]
+[node name="Start" type="Sprite" parent="Track" index="4"]
 
 position = Vector2( -640, 1260 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 512 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
-
-[node name="Background" parent="Track" index="4" instance=ExtResource( 6 )]
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
@@ -407,7 +407,6 @@ polygon = PoolVector2Array( -1184.41, 987.005, 83.399, 999.431, 243.939, 987.726
 
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 curve = SubResource( 6 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
@@ -461,6 +460,18 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 _sections_unfolded = [ "Transform" ]
+
+[node name="CameraTrack" type="PathFollow2D" parent="TrackPath" index="4"]
+
+position = Vector2( -640.981, 1260.6 )
+rotation = -0.108426
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 

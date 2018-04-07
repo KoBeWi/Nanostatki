@@ -56,11 +56,11 @@ func _physics_process(delta):
 		var max_x = -10000
 		
 		for player in players.get_children():
-			min_y = min(player.position.y - CAMERA_OFFSET, min_y)
-			min_x = min(player.position.x - CAMERA_OFFSET, min_x)
-			max_y = max(player.position.y + CAMERA_OFFSET, max_y)
-			max_x = max(player.position.x + CAMERA_OFFSET, max_x)
-			cam_pos += player.position
+			min_y = min(player.get_pos().y - CAMERA_OFFSET, min_y)
+			min_x = min(player.get_pos().x - CAMERA_OFFSET, min_x)
+			max_y = max(player.get_pos().y + CAMERA_OFFSET, max_y)
+			max_x = max(player.get_pos().x + CAMERA_OFFSET, max_x)
+			cam_pos += player.get_pos()
 		
 		camera.position = cam_pos / players.get_child_count()
 		

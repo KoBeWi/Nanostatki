@@ -12,6 +12,7 @@ export var player = 0
 var pause = false
 var paralyzed = false
 var race_distance = 0
+var race_leader = false
 var drag_race = false
 var survival = false
 
@@ -55,3 +56,12 @@ func change_floor(i):
 	z_index = i+5
 	collision_layer = i+1
 	collision_mask = i+1
+
+func ahead():
+	return position + direction * velocity.length() / 2
+
+func get_pos():
+	if race_leader:
+		return position + direction * velocity.length() / 2
+	else:
+		return position

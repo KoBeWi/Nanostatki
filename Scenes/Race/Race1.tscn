@@ -543,7 +543,6 @@ polygon = PoolVector2Array( 2770, 170, 2780, -820, 3120, -390 )
 
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
@@ -597,6 +596,18 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 _sections_unfolded = [ "Transform" ]
+
+[node name="CameraTrack" type="PathFollow2D" parent="TrackPath" index="4"]
+
+position = Vector2( 260, 390 )
+rotation = -0.00440203
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 

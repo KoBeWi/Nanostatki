@@ -12,6 +12,8 @@ var laps = [0, 0, 0, 0]
 var won = []
 var start_time = 0
 
+onready var camera_track = $TrackPath/CameraTrack
+
 func _ready():
 	$"../Camera".limit_left = -BACKGROUND_W/2
 	$"../Camera".limit_right = BACKGROUND_W/2
@@ -84,22 +86,11 @@ func _process(delta):
 
 func process_camera(camera, players):
 	var player = players[0]
-	var x_diff = 0
-	var y_diff = 0
 	
 	for _player in players:
+		_player.race_leader = false
 		if (_player.race_distance > player.race_distance and _player.visible) or !player.visible: player = _player
-		
-	for _player in players:
-		if !_player.visible: continue
-		x_diff = max(abs(_player.position.x - player.position.x) + get_parent().CAMERA_OFFSET, x_diff)
-		y_diff = max(abs(_player.position.y - player.position.y) + get_parent().CAMERA_OFFSET, y_diff)
 	
-	camera.position = player.position
-	var new_zoom = max(min(max(x_diff / 500, y_diff / 300), 8), 1)
-	camera.zoom = Vector2(new_zoom, new_zoom)
-		
-	return true
-
-func ahead_player(player):
+	player.race_leader = true
 	
+	return false
