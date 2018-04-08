@@ -1,8 +1,8 @@
 extends Node2D
 
 var track = load("res://Sprites/DragRace/Track.png")
-var electron = load("res://Nodes/Electron.tscn")
-var proton = load("res://Nodes/Proton.tscn")
+var electron = load("res://Nodes/Obstacles/Electron.tscn")
+var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
 const DISTANCE_TEXT = "POKONANY DYSTANS: %s"
 var FAIL_TIME = 2

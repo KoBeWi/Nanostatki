@@ -1,8 +1,8 @@
 extends Node2D
 
 var health = load("res://Nodes/ShipHealth.tscn")
-var electron = load("res://Nodes/Electron.tscn")
-var proton = load("res://Nodes/Proton.tscn")
+var electron = load("res://Nodes/Obstacles/Electron.tscn")
+var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
 var distance = 0
 var distance_label
