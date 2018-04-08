@@ -50,6 +50,7 @@ lap_length = 20300
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -407,6 +408,7 @@ polygon = PoolVector2Array( -1184.41, 987.005, 83.399, 999.431, 243.939, 987.726
 
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
+editor/display_folded = true
 curve = SubResource( 6 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
@@ -472,6 +474,8 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[node name="Obstacles" type="Node2D" parent="." index="5"]
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 

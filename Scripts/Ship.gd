@@ -10,7 +10,7 @@ export var team = 0
 export var player = 0
 
 var pause = false
-var paralyzed = false
+var paralyzed = false setget set_paralyzed
 var race_distance = 0
 var race_leader = false
 var drag_race = false
@@ -65,3 +65,7 @@ func get_pos():
 		return position + direction * velocity.length() / 2
 	else:
 		return position
+
+func set_paralyzed(value):
+	paralyzed = value
+	$Indicator.modulate.a = 0.5 if value else 1

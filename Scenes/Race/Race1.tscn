@@ -25,13 +25,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 260, 390, 0, 0, 0, 0, 2530, 380, 0, 0, 0, 0, 2570, -530, 0, 0, 0, 0, 1780, -1040, 0, 0, 0, 0, 40, -1030, 0, 0, 0, 0, -590, -520, 0, 0, 0, 0, 30, -310, 0, 0, 0, 0, 1570, -100, 0, 0, 0, 0, 1580, 1320, 0, 0, 0, 0, -1920, 1300, 0, 0, 0, 0, -2200, -1170, 0, 0, 0, 0, -1080, -1240, 0, 0, 0, 0, -920, 190, 0, 0, 0, 0, 260, 390 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 lap_length = 19900
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -543,6 +544,7 @@ polygon = PoolVector2Array( 2770, 170, 2780, -820, 3120, -390 )
 
 [node name="TrackPath" type="Path2D" parent="." index="4"]
 
+editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="Player0Follower" type="PathFollow2D" parent="TrackPath" index="0"]
@@ -608,6 +610,8 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[node name="Obstacles" type="Node2D" parent="." index="5"]
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 
