@@ -6,10 +6,7 @@
 [ext_resource path="res://Nodes/Obstacles/Magnetic Field.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Laser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Video/Video1.webm" type="VideoStream" id=7]
-
-
-
+[ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,7 +18,7 @@ extents = Vector2( 204.084, 187.586 )
 custom_solver_bias = 0.0
 extents = Vector2( 222.088, 124 )
 
-[node name="Sandbox" type="Sprite"]
+[node name="Sandbox" type="Sprite" index="0"]
 
 position = Vector2( 0.902527, 0 )
 texture = ExtResource( 1 )
@@ -76,10 +73,11 @@ __meta__ = {
 [node name="Magnetic Field" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -312.616, -387.996 )
-charge = -1
+orientation = 0
 
 [node name="Field" type="CollisionShape2D" parent="Magnetic Field" index="0"]
 
+position = Vector2( 0, -1.85062 )
 shape = SubResource( 2 )
 
 [node name="Laser" parent="." index="3" instance=ExtResource( 5 )]
@@ -92,29 +90,8 @@ position = Vector2( 391.44, -148.367 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="VideoPlayer" type="VideoPlayer" parent="." index="4"]
+[node name="DarkMatter" parent="." index="4" instance=ExtResource( 7 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 529.0
-margin_top = -207.0
-margin_right = 977.0
-margin_bottom = 156.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-audio_track = 0
-stream = ExtResource( 7 )
-volume_db = 0.0
-autoplay = true
-paused = false
-expand = true
-buffering_msec = 500
-bus = "Master"
+position = Vector2( 762.475, 49.6752 )
 
 

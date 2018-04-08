@@ -1,29 +1,29 @@
 extends Area2D
 
-onready var tex1 = load("res://Sprites/Common/MagnetDot.png")
-onready var tex2 = load("res://Sprites/Common/MagnetCross.png")
+onready var textures = [load("res://Sprites/Common/MagnetDot.png"), load("res://Sprites/Common/MagnetCross.png")]
 
 const FORCE = PI/40
 const DDIST = 50
+enum DIRECTION {OUT, IN}
 
 onready var size = $Field.shape.extents * 2
 onready var cols = int(size.x / DDIST) + 2
 onready var rows = int(size.y / DDIST) + 2
 
-export var charge = 1
+export(DIRECTION) var orientation = 0
 
 var players_in = []
 
 func _physics_process(delta):
 	for player in players_in:
-		player.velocity = player.velocity.rotated(FORCE * player.charge * charge)
-		#player.direction = player.direction.rotated(PI/50)
+		player.velocity = player.velocity.rotated(FORCE * player.charge * (orientation * 2 - 1))
+#		player.direction = player.direction.rotated(FORCE * player.charge * (orientation * 2 - 1))
 	
 	update()
 
 func _draw():
 	var color = Color(1, 1, 1, abs(sin(OS.get_ticks_msec() / 250.0)) + 0.5)
-	var texture = [tex1, tex2][(2 - charge)/2]
+	var texture = textures[orientation]
 	for x in range(cols):
 		for y in range(rows):
 			draw_texture(texture, Vector2(-DDIST/2 - size.x/2 + x * DDIST, -DDIST/2 - size.y/2 + y * DDIST), color)

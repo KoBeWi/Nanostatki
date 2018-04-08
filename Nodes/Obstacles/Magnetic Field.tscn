@@ -13,7 +13,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-charge = 1
+orientation = 0
 
 [connection signal="body_entered" from="." to="." method="_on_enter"]
 
