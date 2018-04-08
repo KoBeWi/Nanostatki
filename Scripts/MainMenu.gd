@@ -60,6 +60,12 @@ func _process(delta):
 				select += 1
 			elif Input.is_action_just_pressed("ui_up") and select > 0:
 				select -= 1
+			
+			if Input.is_key_pressed(KEY_F1): ##debug
+				players_joined = [0, -1, -1, -1]
+				mode = MODES[select]
+				options = [1, 3]
+				started = true
 		
 		PLAYERS:
 			if Input.is_action_just_pressed("ui_cancel"):
