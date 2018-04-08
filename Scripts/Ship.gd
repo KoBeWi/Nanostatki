@@ -4,7 +4,7 @@ const ACCELERATION = 100
 const DAMP = 0.1
 const ROT_SPEED = -PI/60
 const FORCE = 25000
-const FORCE_RANGE = 400
+const FORCE_RANGE = 4000
 
 export var team = 0
 export var player = 0
@@ -33,14 +33,22 @@ func _physics_process(delta):
 		if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
 	
 	if move: velocity += direction.normalized() * ACCELERATION
-	velocity += -velocity * DAMP
+	if !drag_race: velocity *= 1-DAMP
 	rotation = direction.angle()
 	
 	if !paralyzed and Input.is_action_just_pressed(action("action")): swap_charge()
 	
+	if drag_race and velocity.y>-70: velocity.y -= 40
+	if drag_race: velocity.y *= 1 - DAMP / 100
+#	if (velocity.x != 0): print(velocity.length(), ", ", position)
+	if !drag_race and velocity.length() > 2000: velocity *= DAMP * 8 
+	if drag_race and velocity.length() > 5000: velocity *= DAMP * 9 
+	
+#	print(velocity, " ", position)
+	
 	move_and_slide(velocity)
 
-	for player in get_parent().get_children():
+	if !drag_race: for player in get_parent().get_children():
 		if player != self and position.distance_to(player.position) < FORCE_RANGE:
 			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
 			player.velocity -= force
