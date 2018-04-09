@@ -63,7 +63,7 @@ func _process(delta):
 			the_end = true
 	
 		if min_y < last_particle + 100:
-			last_particle -= 600
+			last_particle -= 1600
 			for track in tracks: create_particles(electron if randi()%2 == 0 else proton, Vector2(track, last_particle))
 
 func create_particles(particle, pos):
@@ -87,4 +87,4 @@ func process_camera(camera, players):
 
 func _draw():
 	for tr in tracks:
-		draw_texture(track, Vector2(tr - width/2, camera.position.y - 300))
+		draw_texture(track, Vector2(tr - width/2, camera.position.y - 300), self_modulate)

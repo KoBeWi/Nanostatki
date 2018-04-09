@@ -5,8 +5,8 @@
 
 [node name="DragRace" type="Node2D" index="0"]
 
-rotation = -0.0010595
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="StartingPositions" type="Node2D" parent="." index="0"]
 

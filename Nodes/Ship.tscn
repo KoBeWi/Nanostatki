@@ -4,8 +4,6 @@
 [ext_resource path="res://Sprites/Common/Indicator.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=3]
 
-
-
 [node name="Ship" type="KinematicBody2D" groups=[
 "players",
 ]]
@@ -17,6 +15,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Collision", "Transform", "Z Index" ]
+team = 0
 player = 0
 
 [node name="Indicator" type="Sprite" parent="." index="0"]
