@@ -4,10 +4,10 @@ var fx = load("res://Sprites/Common/DarknessFX.png")
 
 var counter = 0
 
-func _process(delta):
+func _physics_process(delta):
 	counter += 1
 	
-	if counter%8 == 0: update()
+	if counter%2 == 0: update()
 
 func _draw():
 	for i in range(3):
