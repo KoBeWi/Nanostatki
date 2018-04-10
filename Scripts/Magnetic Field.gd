@@ -16,7 +16,7 @@ var players_in = []
 
 func _physics_process(delta):
 	for player in players_in:
-		player.velocity = player.velocity.rotated(FORCE * player.charge * (orientation * 2 - 1))
+		player.velocity = player.velocity.rotated(FORCE * player.charge * -(orientation * 2 - 1))
 #		player.direction = player.direction.rotated(FORCE * player.charge * (orientation * 2 - 1))
 	
 	update()

@@ -1,21 +1,47 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/Common/Backgrounds/Background1.png" type="Texture" id=1]
+[sub_resource type="Shader" id=4]
 
-[sub_resource type="GDScript" id=1]
+code = "shader_type canvas_item; 
 
-resource_name = "Background"
+uniform vec3 upper_color;
+uniform vec3 lower_color;
+
+void fragment() {
+	COLOR = vec4(mix(upper_color, lower_color, UV.y), 1);
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+
+render_priority = 0
+shader = SubResource( 4 )
+shader_param/upper_color = null
+shader_param/lower_color = null
+
+[sub_resource type="ImageTexture" id=6]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 100, 100 )
+
+[sub_resource type="GDScript" id=3]
+
+resource_name = "SquareBlue"
 script/source = "extends Sprite
 
 const SQ_COUNT = 10
 
-onready var camera = $\"/root/Game/Camera\"
+onready var camera# = $\"/root/Game/Camera\"
 var square = load(\"res://Nodes/Backgrounds/Particles/Square.tscn\")
 
 func _ready():
-	pass
+	material.set_shader_param(\"upper_color\", Vector3(1, 0, 0))
+	material.set_shader_param(\"lower_color\", Vector3(0, 0, 1))
 
 func _physics_process(delta):
+	return
 	if get_child_count() < SQ_COUNT:
 		var sq = square.instance()
 		var angle = randf() * PI * 2
@@ -25,12 +51,12 @@ func _physics_process(delta):
 		add_child(sq)"
 _sections_unfolded = [ "Resource" ]
 
-[node name="Background" type="Sprite" index="0"]
+[node name="Background" type="Sprite"]
 
-texture = ExtResource( 1 )
-script = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+material = SubResource( 5 )
+position = Vector2( 403.957, 231.712 )
+texture = SubResource( 6 )
+script = SubResource( 3 )
+_sections_unfolded = [ "Material" ]
 
 

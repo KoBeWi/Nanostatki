@@ -30,7 +30,6 @@ editor/display_folded = true
 [node name="Ship" parent="Players" index="0" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-team = 0
 
 [node name="Camera2D" type="Camera2D" parent="Players/Ship" index="3"]
 
@@ -73,7 +72,6 @@ __meta__ = {
 [node name="Magnetic Field" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -312.616, -387.996 )
-orientation = 0
 
 [node name="Field" type="CollisionShape2D" parent="Magnetic Field" index="0"]
 

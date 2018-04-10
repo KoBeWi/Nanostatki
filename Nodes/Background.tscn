@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item; 
+
+uniform vec3 upper_color;
+uniform vec3 lower_color;
+
+void fragment() {
+	COLOR = vec4(mix(upper_color, lower_color, UV.y), 1);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+shader_param/upper_color = null
+shader_param/lower_color = null
+
+[sub_resource type="ImageTexture" id=3]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[node name="Background" type="Sprite"]
+
+material = SubResource( 2 )
+texture = SubResource( 3 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform" ]
+
+
