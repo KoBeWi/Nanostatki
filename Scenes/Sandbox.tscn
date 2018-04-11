@@ -58,6 +58,7 @@ editor_draw_drag_margin = false
 
 [node name="Electrofield" parent="." index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( -6.716, 243.521 )
 direction = 1
 
@@ -71,6 +72,7 @@ __meta__ = {
 
 [node name="Magnetic Field" parent="." index="2" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 position = Vector2( -312.616, -387.996 )
 
 [node name="Field" type="CollisionShape2D" parent="Magnetic Field" index="0"]
@@ -80,11 +82,11 @@ shape = SubResource( 2 )
 
 [node name="Laser" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 70.2705, -94.5596 )
+position = Vector2( 163.346, -122.261 )
 
 [node name="End" type="Sprite" parent="Laser" index="1"]
 
-position = Vector2( 391.44, -148.367 )
+position = Vector2( 215.851, -97.3933 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 

@@ -1,6 +1,7 @@
+tool
 extends Area2D
 
-onready var textures = [load("res://Sprites/Common/MagnetDot.png"), load("res://Sprites/Common/MagnetCross.png")]
+var textures = [load("res://Sprites/Common/MagnetDot.png"), load("res://Sprites/Common/MagnetCross.png")]
 
 const FORCE = PI/40
 const DDIST = 50
@@ -15,9 +16,10 @@ export(DIRECTION) var orientation = 0
 var players_in = []
 
 func _physics_process(delta):
-	for player in players_in:
-		player.velocity = player.velocity.rotated(FORCE * player.charge * -(orientation * 2 - 1))
-#		player.direction = player.direction.rotated(FORCE * player.charge * (orientation * 2 - 1))
+	if !Engine.editor_hint:
+		for player in players_in:
+			player.velocity = player.velocity.rotated(FORCE * player.charge * -(orientation * 2 - 1))
+	#		player.direction = player.direction.rotated(FORCE * player.charge * (orientation * 2 - 1))
 	
 	update()
 

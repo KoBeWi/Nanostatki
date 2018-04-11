@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+extents = Vector2( 191.546, 8 )
 
 [node name="Laser" type="Sprite"]
 
@@ -35,7 +35,7 @@ shape = SubResource( 1 )
 show_behind_parent = true
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 32, 8 )
+region_rect = Rect2( 1402, 0, 32, 8 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [connection signal="body_entered" from="Effector" to="." method="_on_enter"]

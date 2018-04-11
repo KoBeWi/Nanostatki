@@ -1,3 +1,4 @@
+tool
 extends Area2D
 
 var fx = load("res://Sprites/Common/DarknessFX.png")
