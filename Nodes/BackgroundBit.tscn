@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Common/BackgroundBits/Square.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/BackgroundBit.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item; 
+
+uniform vec3 upper_color;
+uniform vec3 lower_color;
+
+void fragment() {
+	COLOR = vec4(mix(upper_color, lower_color,  min(max(0, UV.y * 3.0 - 1.5), 1.0)), texture(TEXTURE, UV).a);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+shader_param/upper_color = null
+shader_param/lower_color = null
+
+[node name="Sprite" type="Sprite" index="0"]
+
+material = SubResource( 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Transform" ]
+
+

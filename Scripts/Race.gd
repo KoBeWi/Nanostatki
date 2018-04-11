@@ -27,7 +27,6 @@ func _ready():
 	get_parent().connect("init_players", ui, "init_players")
 	get_parent().connect("start", self, "race_start")
 	
-	$Track/Background.set_colors(Vector3(54, 142, 221), Vector3(29, 30, 101))
 	$Track/Background.set_texture_size(5760, 3240)
 
 func race_start():
