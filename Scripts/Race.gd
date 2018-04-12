@@ -27,7 +27,7 @@ func _ready():
 	get_parent().connect("init_players", ui, "init_players")
 	get_parent().connect("start", self, "race_start")
 	
-	$Track/Background.set_texture_size(5760, 3240)
+	$Track/Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
 
 func race_start():
 	start_time = OS.get_ticks_msec()

@@ -4,9 +4,16 @@ const FIG_COUNT = 10
 const SWATCHES = [
 [Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
 [Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
-[Color("00e75d"), Color("004a1e"), Color("809e00"), Color("3a4700")]
+[Color("00e75d"), Color("004a1e"), Color("809e00"), Color("3a4700")],
+[Color("ff420e"), Color("80bd9e"), Color("ff420e"), Color("80bd9e")],
+[Color("00cfff"), Color("e2ff00"), Color("00cfff"), Color("e2ff00")],
+[Color("e33c00"), Color("d8e313"), Color("e33c00"), Color("d8e313")],
+[Color("122275"), Color("1eb2d9"), Color("122275"), Color("1eb2d9")],
+[Color("d72878"), Color("0bf505"), Color("d72878"), Color("0bf505")],
+[Color("fa709a"), Color("fee140"), Color("fa709a"), Color("fee140")],
+[Color("13547a"), Color("80d0c7"), Color("13547a"), Color("80d0c7")]
 ]
-const FIGURES = ["Square", "Triangle"]
+const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSqure", "TiltedTriangle", "WideTriangle"]
 var FIGURE = load("res://Nodes/BackgroundBit.tscn")
 
 onready var camera = $"/root/Game/Camera"

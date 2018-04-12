@@ -21,7 +21,7 @@ shader = SubResource( 1 )
 shader_param/upper_color = null
 shader_param/lower_color = null
 
-[node name="Sprite" type="Sprite"]
+[node name="Sprite" type="Sprite" index="0"]
 
 material = SubResource( 2 )
 texture = ExtResource( 1 )

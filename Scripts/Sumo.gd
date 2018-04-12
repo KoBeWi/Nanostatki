@@ -3,6 +3,8 @@ extends Node
 const START = 0.4
 const ARENA_SIZE = 764
 const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.5, 1, 0), Color(0, 1, 1): Color(0.25, 0.5, 1), Color(1, 0, 1): Color(0.5, 0, 1)}
+const BACKGROUND_W = 3508
+const BACKGROUND_H = 2480
 
 onready var players = $"../Players"
 var wintext
@@ -16,11 +18,10 @@ var teams = []
 
 func _ready():
 	$Inside/Shape.shape.radius = ARENA_SIZE
-	var background = $Arena.texture
-	$"../Camera".limit_left = -background.get_width()/2
-	$"../Camera".limit_right = background.get_width()/2
-	$"../Camera".limit_top = -background.get_height()/2
-	$"../Camera".limit_bottom = background.get_height()/2
+	$"../Camera".limit_left = -BACKGROUND_W/2
+	$"../Camera".limit_right = BACKGROUND_W/2
+	$"../Camera".limit_top = -BACKGROUND_H/2
+	$"../Camera".limit_bottom = BACKGROUND_H/2
 	
 	var players = 0
 	for i in range(4): if get_parent().players_joined[i] > -1:
@@ -32,16 +33,13 @@ func _ready():
 		var point = $StartingPositions.get_child(teams[i])
 		point.position = Vector2(cos(deg2rad(i * deg)) * ARENA_SIZE * START, sin(deg2rad(i * deg)) * ARENA_SIZE * START)
 		point.rotation_degrees = deg * i + 180
-		
-		var piece = $Arena.get_child(i)
-		piece.visible = true
-		piece.modulate = ARENA_COLORS[Com.PLAYER_COLORS[teams[i]]]
-		piece.texture = Com.sumo_arenas[(players-2)*4 + i]
 	
 	wintext = get_parent().register_UI($WinText, self)
 	continu = get_parent().register_UI($Continue, self)
 	stats = get_parent().register_UI($Stats, self)
 	o_wintext = wintext.text
+	
+	$Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
 
 func _process(delta):
 	if win == -1 and players.get_child_count() == 1:
@@ -59,7 +57,7 @@ func _process(delta):
 		stats.visible = true
 		wintext.text = o_wintext % str(player.team+1)
 		wintext.modulate = Com.PLAYER_COLORS[win]
-		for piece in $Arena.get_children(): piece.modulate = Com.PLAYER_COLORS[player.team]
+		$Arena.modulate = Com.PLAYER_COLORS[player.team]
 		
 		yield(get_tree().create_timer(3), "timeout")
 		

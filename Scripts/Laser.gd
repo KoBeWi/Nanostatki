@@ -1,15 +1,23 @@
 tool
-extends Node2D
+extends Sprite
 
-var last_position = $End.position
+var last_position
 
 func _ready():
+	if !has_node("End"):
+		var end = Sprite.new()
+		end.texture = texture
+		end.position += Vector2(64, 0)
+		end.name = "End"
+		add_child(end)
+	
 	move_end()
+	last_position = $End.position
 
 func _process(delta):
 	$Sprite.region_rect.position.x += 1
 	
-	if $End.position != last_position:
+	if has_node("End") and $End.position != last_position:
 		move_end()
 		last_position = $End.position
 

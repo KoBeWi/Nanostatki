@@ -94,4 +94,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 762.475, 49.6752 )
 
+[node name="Laser2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 179.122, -302.972 )
+
+[node name="Laser3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 143.958, -417.066 )
+
 

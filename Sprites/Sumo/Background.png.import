@@ -7,10 +7,10 @@ path="res://.import/Background.png-a6bd68ccaca850ee2ec7033c27f16128.stex"
 [deps]
 
 source_file="res://Sprites/Sumo/Background.png"
-source_md5="a3f72b848f0fee514f19398e385c033b"
+source_md5="00e888297c5588d5fb08f0bc4dbd94c7"
 
 dest_files=[ "res://.import/Background.png-a6bd68ccaca850ee2ec7033c27f16128.stex" ]
-dest_md5="368c18669d228032e50188686a62e9c4"
+dest_md5="60547c3af52ec1d88daf99d6c7a9380c"
 
 [params]
 

@@ -1,24 +1,19 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Arena/Arena7/Background.png" type="Texture" id=2]
+[ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Arena/Arena7/Floor.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Arena/Arena7/Border.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Sprites/Arena/Crown.png" type="Texture" id=6]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
 
-[node name="Background" type="Sprite" parent="Arena" index="0"]
-
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
 
