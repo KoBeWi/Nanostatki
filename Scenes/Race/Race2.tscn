@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
-[ext_resource path="res://Nodes/BackgroundLoader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Race/Track2/Shade.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Race/Track2/Highlight.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=5]
@@ -43,14 +43,13 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 977.422, -140.63, 0, 0, 0, 0, -1854.55, -195.697, 0, 0, 0, 0, -1827.15, -990.248, 0, 0, 0, 0, 2347.17, -1025.84, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 lap_length = 20300
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
