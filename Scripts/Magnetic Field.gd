@@ -7,9 +7,8 @@ const FORCE = PI/40
 const DDIST = 50
 enum DIRECTION {OUT, IN}
 
-onready var size = $Field.shape.extents * 2
-onready var cols = int(size.x / DDIST) + 2
-onready var rows = int(size.y / DDIST) + 2
+export var width = 32 setget set_width
+export var height = 32 setget set_height
 
 export(DIRECTION) var orientation = 0
 
@@ -26,9 +25,19 @@ func _physics_process(delta):
 func _draw():
 	var color = Color(1, 1, 1, abs(sin(OS.get_ticks_msec() / 250.0)) + 0.5)
 	var texture = textures[orientation]
-	for x in range(cols):
-		for y in range(rows):
-			draw_texture(texture, Vector2(-DDIST/2 - size.x/2 + x * DDIST, -DDIST/2 - size.y/2 + y * DDIST), color)
+	for x in range(int(width / DDIST) + 2):
+		for y in range(int(height / DDIST) + 2):
+			draw_texture(texture, Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), color)
+
+func set_width(neww):
+	width = neww
+	if has_node("Shape"):
+		$Shape.shape.extents.x = neww/2
+
+func set_height(newh):
+	height = newh
+	if has_node("Shape"):
+		$Shape.shape.extents.y = newh/2
 
 func _on_enter(body):
 	if body.is_in_group("players"):

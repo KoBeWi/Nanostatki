@@ -7,10 +7,10 @@ path="res://.import/Ship.png-9009f313cb7a2d8b5f557853d8221664.stex"
 [deps]
 
 source_file="res://Sprites/Common/Ship.png"
-source_md5="a81a638eb1349b0e884b6c3c292e3214"
+source_md5="f3f82d569487601da2eda61fd0b13516"
 
 dest_files=[ "res://.import/Ship.png-9009f313cb7a2d8b5f557853d8221664.stex" ]
-dest_md5="7308d502d317a2dcacbed6e8e8de35a3"
+dest_md5="1794ae977df9adc00de07a9b5f3cf670"
 
 [params]
 

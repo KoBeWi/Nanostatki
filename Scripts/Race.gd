@@ -87,6 +87,7 @@ func _process(delta):
 			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func process_camera(camera, players):
+	return
 	var player = players[0]
 	
 	for _player in players:
