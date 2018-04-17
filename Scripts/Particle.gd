@@ -13,28 +13,22 @@ func _physics_process(delta):
 	if !Engine.editor_hint:
 		for player in players.get_children():
 			if player.pause: break
-			if position.distance_to(player.position) > FORCE_RANGE: continue
+			var d = position.distance_to(player.position)
+			if d > FORCE_RANGE or d == 0: continue
 			
-			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
+			var dist = (position - player.position)
+			
+			var force = Vector2()
+			if !player.drag_race:
+				force = dist / dist.length() / sqrt(dist.length()) / 20 * FORCE * charge * player.charge
+				#if dist.length() < 50:
+					#force = force.normalized() * MAX_FORCE
+			elif abs(dist.y) > 50:
+				force.y = sign(dist.y) / sqrt(abs(dist.y)) / 50 * FORCE * charge * player.charge
+			else: force.y = sign(dist.y) / sqrt(50) / 50 * FORCE * charge * player.charge
 			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
 			if player.survival: force /= 4
 			player.velocity -= force
-			
-#			if player.pause: break
-#			var d = position.distance_to(player.position)
-#			if d > FORCE_RANGE or d == 0: continue
-#
-#			var dist = (position - player.position)
-#
-#			var force = Vector2()
-#			if !player.drag_race:
-#				force = dist / dist.length() / 150 * FORCE * charge * player.charge
-#			elif abs(dist.y) > 50:
-#				force.y = sign(dist.y) / sqrt(abs(dist.y)) / 50 * FORCE * charge * player.charge
-#			else: force.y = sign(dist.y) / sqrt(50) / 50 * FORCE * charge * player.charge
-#			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
-#			if player.survival: force /= 4
-#			player.velocity -= force
 	
 	update()
 
