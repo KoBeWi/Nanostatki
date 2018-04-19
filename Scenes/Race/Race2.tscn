@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Race.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Sprites/Race/Track2/Border.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Race/Start.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/FloorChanger.gd" type="Script" id=7]
+[ext_resource path="res://Nodes/Obstacles/Laser.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=9]
+[ext_resource path="res://Nodes/Obstacles/Magnetic Field.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Nodes/Obstacles/Proton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Nodes/Obstacles/Electron.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,13 +49,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -640.981, 1260.6, 0, 0, 0, 0, 634.24, 1121.85, 0, 0, 0, 0, 1533.9, 235.102, 0, 0, 0, 0, 977.422, -140.63, 0, 0, 0, 0, -1854.55, -195.697, 0, 0, 0, 0, -1827.15, -990.248, 0, 0, 0, 0, 2347.17, -1025.84, 0, 0, 0, 0, 2091.34, 1003.62, 0, 0, 0, 0, 1425.85, 1105.03, 0, 0, 0, 0, 350.642, 333.623, 0, 0, 0, 0, -2370.21, 487.369, 0, 0, 0, 0, -2183.85, 1274.74, 0, 0, 0, 0, -641.175, 1260.41 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 lap_length = 20300
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -475,6 +482,63 @@ loop = true
 lookahead = 4.0
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
+
+[node name="Laser" parent="Obstacles" index="0" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+position = Vector2( -2230.27, 129.829 )
+
+[node name="End" type="Sprite" parent="Obstacles/Laser" index="2"]
+
+position = Vector2( 2698.06, -9.78378 )
+texture = ExtResource( 9 )
+
+[node name="Laser2" parent="Obstacles" index="1" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+position = Vector2( -1856.28, 649.766 )
+
+[node name="End" type="Sprite" parent="Obstacles/Laser2" index="2"]
+
+position = Vector2( 2203.66, 2.96252 )
+texture = ExtResource( 9 )
+
+[node name="Magnetic Field" parent="Obstacles" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -439.954, 392.261 )
+width = 512
+height = 512
+
+[node name="Magnetic Field2" parent="Obstacles" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( -1193.12, 383.893 )
+width = 512
+height = 512
+orientation = 1
+
+[node name="DarkMatter" parent="Obstacles" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( -1513.56, -127.959 )
+
+[node name="DarkMatter2" parent="Obstacles" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( -2280.04, -413.96 )
+
+[node name="DarkMatter3" parent="Obstacles" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( -1673.72, -1066.04 )
+
+[node name="DarkMatter4" parent="Obstacles" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( -1845.32, -316.72 )
+
+[node name="Proton" parent="Obstacles" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 2401.64, -485.119 )
+
+[node name="Electron" parent="Obstacles" index="9" instance=ExtResource( 13 )]
+
+position = Vector2( 2378.3, 355.266 )
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 

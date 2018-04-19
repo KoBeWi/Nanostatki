@@ -12,6 +12,7 @@ var ui
 var timer
 var crown
 var started
+var win
 
 onready var time_left = get_parent().settings.time
 var pulse_delay = 0
@@ -33,12 +34,10 @@ func _ready():
 	occupied.resize($PulseSpawners.get_child_count())
 	get_parent().connect("start", self, "start")
 	
-	ui = get_parent().register_UI($Scores, self)
-	timer = get_parent().register_UI($Time, self)
-	crown = get_parent().register_UI($Crown, self)
-	for i in range(ui.get_children().size()):
-		ui.get_child(i).visible = get_parent().players_joined[i] > -1
-	timer.text = TIME_TEXT % str(ceil(time_left))
+	ui = get_parent().register_UI($ArenaUI, self)
+	for i in range(ui.get_node("Scores").get_children().size()):
+		ui.get_node("Scores").get_child(i).visible = get_parent().players_joined[i] > -1
+	ui.get_node("Time").text = TIME_TEXT % str(ceil(time_left))
 	
 	$Arena/Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
 
@@ -62,19 +61,35 @@ func _process(delta):
 	pulse_delay -= delta
 	time_left -= delta
 	
-	timer.text = TIME_TEXT % str(ceil(time_left))
+	
+	if time_left <= 0 and !win:
+		win = true
+		
+		ui.get_node("Time").visible = false
+		ui.get_node("Wintext").visible = true
+		ui.get_node("Exit").visible = true
+		
+		if ui.get_node("Crown").visible:
+			var player
+			for _player in $"../Players".get_children(): if players_score[_player.team] == highest_score: player = _player
+			ui.get_node("Wintext").text = ui.get_node("Wintext").text % str(player.team+1)
+			ui.get_node("Wintext").modulate = Com.PLAYER_COLORS[player.team]
+		else:
+			ui.get_node("Wintext").text = "REMIS!"
+	else:
+		ui.get_node("Time").text = TIME_TEXT % str(ceil(time_left))
 
 func free_pulse(id, player):
 	occupied[id] = false
 	players_score[player] += 1
-	ui.get_node("Player" + str(player+1)).text = SCORE_TEXT % [str(player+1), str(players_score[player])]
+	ui.get_node("Scores/Player" + str(player+1)).text = SCORE_TEXT % [str(player+1), str(players_score[player])]
 	
 	if players_score[player] > highest_score:
-		crown.visible = true
-		crown.rect_position.x = 64 + player * 256
+		ui.get_node("Crown").visible = true
+		ui.get_node("Crown").rect_position.x = 64 + player * 256
 		highest_score = players_score[player]
 	elif players_score[player] == highest_score:
-		crown.visible = false
+		ui.get_node("Crown").visible = false
 		
 	occupcount -= 1
 

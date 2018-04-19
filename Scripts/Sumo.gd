@@ -70,8 +70,8 @@ func _process(delta):
 			continu.visible = false
 			win = -1
 			get_parent().restart_scene()
-		elif Input.is_action_just_pressed("ui_cancel"):
-			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
+#		elif Input.is_action_just_pressed("ui_cancel"): ##może być niepotrzebne, bo jest w game
+#			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func process_camera(camera, players):
 	camera.position = Vector2()

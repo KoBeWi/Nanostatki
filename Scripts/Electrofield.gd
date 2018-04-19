@@ -23,7 +23,7 @@ func _physics_process(delta):
 		player.velocity += FORCE_V[direction] * FORCE * player.charge
 	
 	$Sprite.region_rect.position.y += 1
-	$Sprite.rotation_degrees = direction * 90
+	$Sprite.rotation_degrees = direction * 90 ##do poprawienia, bo nie działa z prostokątnym polem
 
 func set_width(neww):
 	width = neww

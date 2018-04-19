@@ -667,7 +667,11 @@ orientation = 1
 
 [node name="DarkMatter" parent="Obstacles" index="7" instance=ExtResource( 12 )]
 
-position = Vector2( -0.00939941, 1326.64 )
+position = Vector2( 78.0972, 1463.33 )
+
+[node name="DarkMatter2" parent="Obstacles" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( -44.6417, 1220.64 )
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 
