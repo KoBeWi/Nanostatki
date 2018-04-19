@@ -55,7 +55,7 @@ func _process(delta):
 				
 				match mode:
 					"Race": options = [1, 3]
-					"Arena": options = [1, 30]
+					"Arena": options = [1, 90]
 			elif Input.is_action_just_pressed("ui_down") and select < MODES.size()-1:
 				select += 1
 			elif Input.is_action_just_pressed("ui_up") and select > 0:

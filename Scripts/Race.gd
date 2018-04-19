@@ -2,8 +2,8 @@ extends Node2D
 
 const FOLLOWER_SPEED = 100
 const FOLLOWER_ITERATIONS = 5
-const BACKGROUND_W = 5760
-const BACKGROUND_H = 3240
+const BACKGROUND_W = 11520
+const BACKGROUND_H = 6480
 
 var ui
 

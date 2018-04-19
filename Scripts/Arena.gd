@@ -1,6 +1,7 @@
 extends Node2D
 
 const PULSE_DELAY = 2
+const MAX_PULSES = 3
 const SCORE_TEXT = "GRACZ %s: %s"
 const TIME_TEXT = "POZOSTAŁY CZAS: %s"
 const BACKGROUND_W = 3508
@@ -44,7 +45,7 @@ func _ready():
 func _process(delta):
 	if !started: return
 	
-	if pulse_delay <= 0 and occupcount < occupied.size():
+	if pulse_delay <= 0 and occupcount < MAX_PULSES:#occupied.size():
 		var i = randi() % occupied.size()
 		while occupied[i]: i = randi() % occupied.size()
 		occupied[i] = true
@@ -81,4 +82,6 @@ func start():
 	started = true
 
 func process_camera(camera, players):
-	pass
+	camera.position = Vector2()
+	camera.zoom = Vector2(3, 3)
+	return true

@@ -1,6 +1,6 @@
 extends Sprite
 
-const FIG_COUNT = 10
+const FIG_COUNT = 50
 const SWATCHES = [
 [Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
 [Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
@@ -41,7 +41,7 @@ func _physics_process(delta):
 		fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 		
 		var angle = randf() * PI * 2
-		fig.position = camera.position + Vector2(cos(angle), -sin(angle)) * 1024 * camera.zoom.x
+		fig.position = Vector2(camera.limit_left + randi() % (camera.limit_right - camera.limit_left), camera.limit_top + randi() % (camera.limit_bottom - camera.limit_top))
 		fig.angle = angle
 		add_child(fig)
 

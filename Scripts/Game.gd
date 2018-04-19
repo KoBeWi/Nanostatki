@@ -64,8 +64,11 @@ func _physics_process(delta):
 		
 		camera.position = cam_pos / players.get_child_count()
 		
-		var new_zoom = max(min(max(abs(max_x - min_x) / 1024, abs(max_y - min_y) / 600), 4), 1)
+		var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 1)
 		camera.zoom = Vector2(new_zoom, new_zoom)
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func restart_scene():
 	for player in $Players.get_children(): player.queue_free()

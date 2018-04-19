@@ -74,10 +74,9 @@ func _process(delta):
 			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func process_camera(camera, players):
-	if win > -1:
-		camera.position = Vector2()
-		camera.zoom = Vector2(3, 3)
-		return true
+	camera.position = Vector2()
+	camera.zoom = Vector2(3, 3)
+	return true
 
 func _player_left(body):
 	if body.is_in_group("players") and players.get_child_count() > 1:
