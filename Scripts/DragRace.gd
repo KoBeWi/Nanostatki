@@ -24,7 +24,7 @@ func _ready():
 	get_parent().connect("init_players", self, "init_players")
 	get_parent().connect("start", self, "start")
 	for i in get_parent().players_joined: if i > -1: players += 1
-	var dx = 1024 / (players+1)
+	var dx = 2048 / (players+1)
 	
 	for i in range(players):
 		tracks.append(dx * (i+1))
@@ -92,12 +92,10 @@ func start():
 	started = true
 
 func process_camera(camera, players):
-	var min_y = 0
-	for player in players: min_y = min(player.position.y, min_y)
-	
-	camera.position = Vector2(512, min_y - 256)
+	camera.position = Vector2(1024, -768)
+	camera.zoom = Vector2(3, 3)
 	return true
 
 func _draw():
 	for i in range(tracks.size()):
-		draw_texture_rect_region(track, Rect2(tracks[i] - width/2, camera.position.y - 300, 262, 600), Rect2(0, $"../Players".get_child(i).drag_race, 262, 600), self_modulate)
+		draw_texture_rect_region(track, Rect2(tracks[i] - width/2, camera.position.y - 900, 262, 1800), Rect2(0, $"../Players".get_child(i).drag_race, 262, 1800))

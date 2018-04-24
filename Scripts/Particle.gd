@@ -39,6 +39,6 @@ func _draw():
 		draw_circle(Vector2(), FORCE_RANGE, Color(1, 1, 1, 0.1))
 		return
 	
-	if players.get_child(0).drag_race and position.y < $"/root/Game/Camera".position.y - 512:
-		$"../..".self_modulate = [Color(0, 0, 1), Color(1, 0, 0)][(charge + 1)/2]
+#	if players.get_child(0).drag_race and position.y < $"/root/Game/Camera".position.y - 512:
+#		$"../..".self_modulate = [Color(0, 0, 1), Color(1, 0, 0)][(charge + 1)/2]
 #		draw_texture($Sprite.texture, Vector2(-32, $"/root/Game/Camera".position.y - position.y - 332))
