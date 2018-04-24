@@ -35,13 +35,14 @@ func _ready():
 	camera.smoothing_enabled = false
 	
 	last_particle = -400
-	for track in tracks: create_particles(electron, Vector2(track, last_particle))
+	for i in range(tracks.size()):
+		create_particles(i, electron, Vector2(tracks[i], last_particle))
 	
 	distance = get_parent().register_UI($Distance, self)
 	end = get_parent().register_UI($TheEnd, self)
 
 func init_players(players):
-	for player in players: player.drag_race = true
+	for player in players: player.drag_race = 1
 
 func _process(delta):
 	update()
@@ -49,7 +50,16 @@ func _process(delta):
 	
 	if !the_end:
 		var min_y = 0
-		for player in $"../Players".get_children(): min_y = min(player.position.y, min_y)
+		var move = [0, 0, 0, 0]
+		
+		for player in $"../Players".get_children():
+			move[player.team] = player.position.y
+			player.drag_race += move[player.team]
+			player.position.y = 0
+			min_y = min(player.drag_race, min_y)
+		
+		for particle in $Particles.get_children(): 
+			particle.position.y -= move[particle.drag_track]
 		
 		if min_y >= last_distance:
 			fail_time += delta
@@ -64,16 +74,19 @@ func _process(delta):
 	
 		if min_y < last_particle + 100:
 			last_particle -= 1600
-			for track in tracks: create_particles(electron if randi()%2 == 0 else proton, Vector2(track, last_particle))
+			for i in range(tracks.size()):
+				create_particles(i, electron if randi()%2 == 0 else proton, Vector2(tracks[i], last_particle))
 
-func create_particles(particle, pos):
+func create_particles(track, particle, pos):
 	var e = particle.instance()
 	e.position = pos - Vector2(90, 0)
-	$Partcles.add_child(e)
+	e.drag_track = track
+	$Particles.add_child(e)
 	
 	e = particle.instance()
 	e.position = pos + Vector2(90, 0)
-	$Partcles.add_child(e)
+	e.drag_track = track
+	$Particles.add_child(e)
 
 func start():
 	started = true
@@ -86,5 +99,5 @@ func process_camera(camera, players):
 	return true
 
 func _draw():
-	for tr in tracks:
-		draw_texture(track, Vector2(tr - width/2, camera.position.y - 300), self_modulate)
+	for i in range(tracks.size()):
+		draw_texture_rect_region(track, Rect2(tracks[i] - width/2, camera.position.y - 300, 262, 600), Rect2(0, $"../Players".get_child(i).drag_race, 262, 600), self_modulate)

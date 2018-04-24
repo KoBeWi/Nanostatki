@@ -9,6 +9,8 @@ onready var players = $"/root/Game/Players"
 
 export var charge = 1
 
+var drag_track
+
 func _physics_process(delta):
 	if !Engine.editor_hint:
 		for player in players.get_children():

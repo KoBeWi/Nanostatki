@@ -7,10 +7,10 @@ path="res://.import/Track.png-d438bfc69838ab0e2cde50eb1cbfdf74.stex"
 [deps]
 
 source_file="res://Sprites/DragRace/Track.png"
-source_md5="73d336915748b2feeb6af09a0c871ed9"
+source_md5="b6e377677307732d3ac599ff533edcec"
 
 dest_files=[ "res://.import/Track.png-d438bfc69838ab0e2cde50eb1cbfdf74.stex" ]
-dest_md5="12073e954cbb5c7d26bf0b816992f578"
+dest_md5="8c01f669c75766ce78301e3d40c71f6e"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
