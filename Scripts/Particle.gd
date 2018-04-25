@@ -21,13 +21,13 @@ func _physics_process(delta):
 			var dist = (position - player.position)
 			
 			var force = Vector2()
+			
 			if !player.drag_race:
 				force = dist / dist.length() / sqrt(dist.length()) / 20 * FORCE * charge * player.charge
-				#if dist.length() < 50:
-					#force = force.normalized() * MAX_FORCE
-			elif abs(dist.y) > 50:
+			elif abs(dist.y) > 100:
 				force.y = sign(dist.y) / sqrt(abs(dist.y)) / 50 * FORCE * charge * player.charge
 			else: force.y = sign(dist.y) / sqrt(50) / 50 * FORCE * charge * player.charge
+			
 			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
 			if player.survival: force /= 4
 			player.velocity -= force

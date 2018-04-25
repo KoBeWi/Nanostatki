@@ -33,18 +33,17 @@ func _physics_process(delta):
 		if Input.is_action_pressed(action("right")): direction = direction.rotated(-ROT_SPEED)
 	
 	if move: velocity += direction.normalized() * ACCELERATION
-	if !drag_race: velocity *= 1-DAMP
 	rotation = direction.angle()
 	
 	if !paralyzed and Input.is_action_just_pressed(action("action")): swap_charge()
 	
-	if drag_race and velocity.y>-70: velocity.y -= 40
-	if drag_race: velocity.y *= 1 - DAMP / 100
-#	if (velocity.x != 0): print(velocity.length(), ", ", position)
-	if !drag_race and velocity.length() > 2000: velocity *= DAMP * 8 
-	if drag_race and velocity.length() > 5000: velocity *= DAMP * 9 
-	
-#	print(velocity, " ", position)
+	if drag_race:
+		if !paralyzed and velocity.y > -70: velocity.y -= 40
+		velocity.y *= 1 - DAMP / 100
+		if velocity.length() > 5000: velocity *= DAMP * 9
+	else:
+		velocity *= 1-DAMP
+		if !drag_race > 2000: velocity *= DAMP * 8
 	
 	move_and_slide(velocity)
 
