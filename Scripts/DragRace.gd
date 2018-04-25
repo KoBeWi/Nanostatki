@@ -1,6 +1,8 @@
 extends Node2D
 
 var track = load("res://Sprites/DragRace/Track.png")
+var background = load("res://Sprites/DragRace/Background.png")
+var split = load("res://Sprites/DragRace/SplitScreen.png")
 var electron = load("res://Nodes/Obstacles/Electron.tscn")
 var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
@@ -23,15 +25,17 @@ func _ready():
 	get_parent().connect("start", self, "start")
 	var players = 0
 	for i in get_parent().players_joined: if i > -1: players += 1
-	var dx = 2048 / (players+1)
+	
+	var dx = 3072 / players
+	var x0 = [0, -768, -1024, -1152][players-1]
 	
 	for i in range(players):
-		tracks.append(dx * (i+1))
+		tracks.append(x0 + dx*i)
 		var point = $StartingPositions.get_child(i)
 		point.position = Vector2(tracks.back(), 0)
 		get_node("Distance/" + str(i+1)).visible = true
-		get_node("Distance/" + str(i+1)).rect_position.x = tracks.back()/3 + 76
-		get_node("TheEnd/" + str(i+1)).rect_position.x = tracks.back()/3 - 8
+		get_node("Distance/" + str(i+1)).rect_position.x = tracks.back()/3 - 96 + 512
+		get_node("TheEnd/" + str(i+1)).rect_position.x = tracks.back()/3 - 192 + 512
 	
 	camera = $"../Camera"
 	camera.smoothing_enabled = false
@@ -93,7 +97,7 @@ func start():
 	started = true
 
 func process_camera(camera, players):
-	camera.position = Vector2(1024, -768)
+	camera.position = Vector2(0, -768)
 	camera.zoom = Vector2(3, 3)
 	return true
 
@@ -101,4 +105,8 @@ func _draw():
 	for i in range(tracks.size()):
 		var player = $"../Players".get_child(i)
 		var end = fail_time[player.team] / FAIL_TIME
+		draw_texture_rect_region(background, Rect2(tracks[i] - 3072 / tracks.size() / 2, camera.position.y - 900, 3072 / tracks.size(), 1800), Rect2(0, player.drag_race, 3072, 1800))
 		draw_texture_rect_region(track, Rect2(tracks[i] - width/2, camera.position.y - 900, 262, 1800), Rect2(0, player.drag_race, 262, 1800), Color(1 - end, 1 - end, 1 - end))
+	
+	for i in range(tracks.size()-1):
+		draw_texture(split, Vector2((tracks[i] + tracks[i+1])/2 - 4, camera.position.y - 900))
