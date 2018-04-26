@@ -50,8 +50,14 @@ func init_players(_players):
 
 func obstacle_hit(body, team):
 	if body.is_in_group("obstacles"):
-		healths[team] -= 1
-		players[team].get_node("Survival/Indicator").value -= 1
+		var damage = 1
+		if body.name == "Death": damage = 8
+		
+		healths[team] -= damage
+		players[team].get_node("Survival/Indicator").value -= damage
+		
+		if healths[team] <= 0:
+			players[team].visible = false
 
 func spawn_obstacles(distance, pos, dir):
 	pos.x += 2048
@@ -72,14 +78,21 @@ func process_camera(camera, players):
 	var max_y = -1000000000
 	var max_x = -1000000000
 	
+	var playnum = 0
+	
 	for player in players:
+		if !player.visible: continue
+		playnum += 1
+		
 		min_y = min(player.get_pos().y - CAMERA_OFFSET, min_y)
 		min_x = min(player.get_pos().x - CAMERA_OFFSET, min_x)
 		max_y = max(player.get_pos().y + CAMERA_OFFSET, max_y)
 		max_x = max(player.get_pos().x + CAMERA_OFFSET, max_x)
 		cam_pos += player.get_pos()
 	
-	camera.position = cam_pos / players.size()
+	if playnum == 0: return true
+	
+	camera.position = cam_pos / playnum
 	
 	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 3.5), 2)
 	camera.zoom = Vector2(new_zoom, new_zoom)

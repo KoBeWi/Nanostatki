@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Survival.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=2]
@@ -44,6 +44,16 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Emission Shape", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15, 1024 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1024 )
 
 [sub_resource type="GDScript" id=3]
 
@@ -171,6 +181,40 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Z Index" ]
+
+[node name="Death" type="StaticBody2D" parent="WallOfDeath" index="0" groups=[
+"obstacles",
+]]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="WallOfDeath/Death" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="Wall" type="StaticBody2D" parent="WallOfDeath" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 4
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="Shape" type="CollisionShape2D" parent="WallOfDeath/Wall" index="0"]
+
+shape = SubResource( 5 )
 
 [node name="Border" type="Node2D" parent="." index="5"]
 
