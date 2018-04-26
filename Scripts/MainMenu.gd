@@ -9,8 +9,7 @@ var texture2 = load("res://Sprites/PlayerScreen.png")
 var videos = [load("res://Resources/Video/Video1.ogm"), null,load("res://Resources/Video/Video3.webm") , null, null]
 
 enum {MAIN, PLAYERS}
-const MODES = ["Race", "Drag", "Sumo", "Arena"]
-#const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
+const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 const MODE_NAMES = {"Race": "WYŚCIG STANDARDOWY", "Drag": "WYŚCIG RÓWNOLEGŁY", "Sumo": "ARENA SUMO", "Arena": "ARENA PUNKTOWA", "Survival": "PRZETRWANIE"}
 const RACE_COUNT = 2
 const ARENA_COUNT = 7

@@ -43,7 +43,7 @@ func _physics_process(delta):
 		if velocity.length() > 5000: velocity *= DAMP * 9
 	else:
 		velocity *= 1-DAMP
-		if !drag_race > 2000: velocity *= DAMP * 8
+		if velocity.length() > 2000: velocity *= DAMP * 8
 	
 	move_and_slide(velocity)
 
