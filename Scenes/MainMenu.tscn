@@ -33,7 +33,7 @@ func disappear():
 		emit_signal(\"disappeared\")"
 _sections_unfolded = [ "Resource" ]
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 
