@@ -10,6 +10,7 @@ var electron = load("res://Nodes/Obstacles/Electron.tscn")
 var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
 var distance = 0
+var start_time = 0
 var distance_label
 var players = [null, null, null, null]
 var healths = [8, 8, 8, 8]
@@ -20,18 +21,19 @@ func _ready():
 	$"/root/Game/Camera".limit_top = -1048
 	$"/root/Game/Camera".limit_bottom = 1048
 	
+	start_time = OS.get_ticks_msec()
 	distance_label = get_parent().register_UI($Distance, self)
 
 func _physics_process(delta):
 	var prevd = distance
-	distance = max(distance, $"../Players".get_child(0).position.length())
+	distance = max(distance, $"../Players".get_child(0).position.x)
 	if distance > prevd:
 		distance_label.text = "POKONANY DYSTANS: " + str(int(distance))
 	
 		if int(distance) % 512 < int(prevd) % 512:
 			spawn_obstacles(int(distance), $"../Players".get_child(0).position, $"../Players".get_child(0).direction)
 	
-	death.position.x += 1
+	death.position.x += (OS.get_ticks_msec() - start_time) / 10000 + 1
 	camera.limit_left = death.position.x
 
 func init_players(_players):
@@ -55,9 +57,9 @@ func spawn_obstacles(distance, pos, dir):
 	pos.x += 2048
 	
 	var x = int(pos.x) / 512 * 512
-	var y = int(pos.y) / 512 * 512 - 1280 + x/512%2 * 256
+	var y = int(pos.y) / 512 * 512 - 1024 + x/512%2 * 256
 	
-	for i in range(10):
+	for i in range(8):
 		var particle = (proton if randi()%2 == 0 else electron).instance()
 		particle.position = Vector2(x, y + i * 512)
 		
@@ -79,6 +81,6 @@ func process_camera(camera, players):
 	
 	camera.position = cam_pos / players.size()
 	
-	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
+	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 3.5), 2)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 	return true
