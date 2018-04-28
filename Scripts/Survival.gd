@@ -9,11 +9,11 @@ var health = load("res://Nodes/ShipHealth.tscn")
 var electron = load("res://Nodes/Obstacles/Electron.tscn")
 var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
-var distance = 0
 var start_time = 0
 var distance_label
 var players = [null, null, null, null]
 var healths = [8, 8, 8, 8]
+var distance = [0, 0, 0, 0]
 
 func _ready():
 	get_parent().connect("init_players", self, "init_players")
@@ -25,19 +25,31 @@ func _ready():
 	distance_label = get_parent().register_UI($Distance, self)
 
 func _physics_process(delta):
-	var prevd = distance
-	distance = max(distance, $"../Players".get_child(0).position.x)
-	if distance > prevd:
-		distance_label.text = "POKONANY DYSTANS: " + str(int(distance))
+	var prev_maxd = 0
+	var maxd = 0
 	
-		if int(distance) % 512 < int(prevd) % 512:
-			spawn_obstacles(int(distance), $"../Players".get_child(0).position, $"../Players".get_child(0).direction)
+	for player in players:
+		if !player or !player.visible: continue
+		if distance[player.team] > prev_maxd: prev_maxd = distance[player.team]
+		
+		if player.position.x > distance[player.team]:
+			distance[player.team] = player.position.x
+			distance_label.get_child(player.team).text = str(int(distance[player.team]))
+			
+			if distance[player.team] > maxd: maxd = distance[player.team]
+	
+	if maxd > prev_maxd and int(maxd) % 512 < int(prev_maxd) % 512:
+		spawn_obstacles(int(maxd))
+	
+	for obstacle in $Obstacles.get_children():
+		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
 	
 	death.position.x += (OS.get_ticks_msec() - start_time) / 10000 + 1
 	camera.limit_left = death.position.x
 
 func init_players(_players):
 	for player in _players:
+		distance_label.get_child(player.team).visible = true
 		var hl = health.instance()
 		hl.modulate = Com.PLAYER_COLORS[player.team]
 		hl.connect("body_entered", self, "obstacle_hit", [player.team])
@@ -59,17 +71,16 @@ func obstacle_hit(body, team):
 		if healths[team] <= 0:
 			players[team].visible = false
 
-func spawn_obstacles(distance, pos, dir):
-	pos.x += 2048
+func spawn_obstacles(distance):
+	distance += 2048
 	
-	var x = int(pos.x) / 512 * 512
-	var y = int(pos.y) / 512 * 512 - 1024 + x/512%2 * 256
+	var x = int(distance) / 512 * 512
+	var y = -976 + x/512%2 * 256
 	
-	for i in range(8):
+	for i in range(4):
 		var particle = (proton if randi()%2 == 0 else electron).instance()
-		particle.position = Vector2(x, y + i * 512)
-		
-		add_child(particle)
+		particle.position = Vector2(x, y + i * 568)
+		$Obstacles.add_child(particle)
 
 func process_camera(camera, players):
 	var cam_pos = Vector2()
