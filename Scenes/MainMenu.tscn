@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/UI/StartCircle.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/UI/StartFill.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/UI/StartIcon.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/UI/AuthorsCircle.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/UI/AuthorsFill.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/AuthorsIcon.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/UI/OptionsFill.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/UI/OptionsIcon.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/OptionsFill.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/OptionsIcon.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/StartCircle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/StartFill.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/StartIcon.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/AuthorsCircle.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/UI/AuthorsFill.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/UI/AuthorsIcon.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/UI/ExitCircle.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/UI/ExitFill.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/UI/ExitIcon.png" type="Texture" id=14]
@@ -44,7 +44,69 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Start" type="TextureRect" parent="CanvasLayer" index="0"]
+[node name="Options" type="TextureRect" parent="CanvasLayer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_top = 220.0
+margin_right = 443.0
+margin_bottom = 501.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="Fill" type="TextureRect" parent="CanvasLayer/Options" index="0"]
+
+editor/display_folded = true
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 150.0
+margin_bottom = 153.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Options/Fill" index="0"]
+
+self_modulate = Color( 0.815686, 0.717647, 0.580392, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 46.0
+margin_top = 53.0
+margin_right = 103.0
+margin_bottom = 107.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 4
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Start" type="TextureRect" parent="CanvasLayer" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -61,12 +123,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 
 [node name="Fill" type="TextureRect" parent="CanvasLayer/Start" index="0"]
 
 editor/display_folded = true
+show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -79,12 +142,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Start/Fill" index="0"]
 
+self_modulate = Color( 0.988235, 0.580392, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -100,12 +164,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Authors" type="TextureRect" parent="CanvasLayer" index="1"]
+[node name="Authors" type="TextureRect" parent="CanvasLayer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -120,12 +185,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
 [node name="Fill" type="TextureRect" parent="CanvasLayer/Authors" index="0"]
 
 editor/display_folded = true
+show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -138,12 +204,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Authors/Fill" index="0"]
 
+self_modulate = Color( 0.611765, 0.65098, 0.831373, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -159,71 +226,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
-stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
-
-[node name="Options" type="TextureRect" parent="CanvasLayer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 220.0
-margin_right = 443.0
-margin_bottom = 501.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 9 )
-stretch_mode = 0
-
-[node name="Fill" type="TextureRect" parent="CanvasLayer/Options" index="0"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 150.0
-margin_bottom = 153.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 10 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Options/Fill" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 46.0
-margin_top = 53.0
-margin_right = 103.0
-margin_bottom = 107.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 11 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Exit" type="TextureRect" parent="CanvasLayer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -243,6 +252,7 @@ stretch_mode = 0
 
 [node name="Fill" type="TextureRect" parent="CanvasLayer/Exit" index="0"]
 
+show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -257,10 +267,11 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 13 )
 stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Exit/Fill" index="0"]
 
+self_modulate = Color( 0.996078, 0.160784, 0.160784, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -278,7 +289,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 14 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Title" type="TextureRect" parent="CanvasLayer" index="4"]
 
