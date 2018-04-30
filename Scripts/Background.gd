@@ -22,6 +22,7 @@ var figure
 var swatches
 
 func _ready():
+	randomize() ##hack?
 	figure = load("res://Sprites/Common/BackgroundBits/" + FIGURES[randi() % FIGURES.size()] + ".png")
 	swatches = SWATCHES[randi() % SWATCHES.size()]
 	set_colors(vec(swatches[0]), vec(swatches[1]))
@@ -41,7 +42,8 @@ func _physics_process(delta):
 		fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 		
 		var angle = randf() * PI * 2
-		fig.position = Vector2(camera.limit_left + randi() % (camera.limit_right - camera.limit_left), camera.limit_top + randi() % (camera.limit_bottom - camera.limit_top))
+#		fig.position = Vector2(camera.limit_left + randi() % (camera.limit_right - camera.limit_left), camera.limit_top + randi() % (camera.limit_bottom - camera.limit_top))
+		fig.position = Vector2(-texture.get_width()/2 + randi() % texture.get_width(), -texture.get_height()/2 + randi() % texture.get_height())
 		fig.angle = angle
 		add_child(fig)
 
