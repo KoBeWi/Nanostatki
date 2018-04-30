@@ -17,6 +17,12 @@ func move_selection(new_choice):
 	for i in range(4):
 		var menu = $CanvasLayer.get_child(i)
 		if i == choice:
-			menu.self_modulate = menu.get_node("Fill/Icon").self_modulate
+			var color = menu.get_node("Fill/Icon").self_modulate
+			menu.get_node("Fill").self_modulate = color
+			menu.self_modulate = color
+			menu.get_node("Fill/Icon").self_modulate = Color(color.r * 2, color.g * 2, color.b * 2)
 		else:
-			menu.self_modulate = Color(1, 1, 1)
+			if menu.self_modulate != Color(1, 1, 1):
+				menu.get_node("Fill/Icon").self_modulate = menu.self_modulate
+				menu.get_node("Fill").self_modulate = Color(1, 1, 1)
+				menu.self_modulate = Color(1, 1, 1)
