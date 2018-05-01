@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MainMenuOld.gd" type="Script" id=1]
 
 [sub_resource type="GDScript" id=1]
 
@@ -33,7 +33,7 @@ func disappear():
 		emit_signal(\"disappeared\")"
 _sections_unfolded = [ "Resource" ]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

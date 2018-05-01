@@ -1,4 +1,4 @@
-extends Sprite
+extends ColorRect
 
 const FIG_COUNT = 50
 const SWATCHES = [
@@ -16,7 +16,7 @@ const SWATCHES = [
 const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSqure", "TiltedTriangle", "WideTriangle"]
 var FIGURE = load("res://Nodes/BackgroundBit.tscn")
 
-onready var camera = $"/root/Game/Camera"
+var camera
 
 var figure
 var swatches
@@ -26,13 +26,16 @@ func _ready():
 	figure = load("res://Sprites/Common/BackgroundBits/" + FIGURES[randi() % FIGURES.size()] + ".png")
 	swatches = SWATCHES[randi() % SWATCHES.size()]
 	set_colors(vec(swatches[0]), vec(swatches[1]))
+	
+	if $"/root".has_node("Game/Camera"): camera = $"/root/Game/Camera"
 
 func set_colors(upper_color, lower_color):
 	material.set_shader_param("upper_color", upper_color)
 	material.set_shader_param("lower_color", lower_color)
 
 func set_texture_size(width, height):
-	texture.size = Vector2(width, height)
+	rect_position = Vector2(-width/2, -height/2)
+	rect_size = Vector2(width, height)
 
 func _physics_process(delta):
 	if get_child_count() < FIG_COUNT:
@@ -42,8 +45,7 @@ func _physics_process(delta):
 		fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 		
 		var angle = randf() * PI * 2
-#		fig.position = Vector2(camera.limit_left + randi() % (camera.limit_right - camera.limit_left), camera.limit_top + randi() % (camera.limit_bottom - camera.limit_top))
-		fig.position = Vector2(-texture.get_width()/2 + randi() % texture.get_width(), -texture.get_height()/2 + randi() % texture.get_height())
+		fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
 		fig.angle = angle
 		add_child(fig)
 

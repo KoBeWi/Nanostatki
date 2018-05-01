@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
@@ -17,24 +17,16 @@
 [ext_resource path="res://Sprites/UI/Title.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/UI/Mockup.png" type="Texture" id=16]
 
-[sub_resource type="ImageTexture" id=1]
-
-flags = 7
-storage = 0
-lossy_quality = 0.7
-flags = 7
-size = Vector2( 1024, 600 )
-
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Background" parent="." index="0" instance=ExtResource( 2 )]
 
-texture = SubResource( 1 )
-centered = false
-_sections_unfolded = [ "Material", "Offset", "Transform" ]
+margin_right = 1024.0
+margin_bottom = 600.0
+_sections_unfolded = [ "Material", "Offset", "Rect", "Transform" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
