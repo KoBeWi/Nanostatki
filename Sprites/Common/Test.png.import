@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ship.png-9009f313cb7a2d8b5f557853d8221664.stex"
+path="res://.import/Test.png-0b0407dd4b5f3feee1e1fecdb0a7470d.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/Ship.png"
-source_md5="13a7468d70d8269e34e617f3ae3d1974"
+source_file="res://Sprites/Common/Test.png"
+source_md5="2fc498a237e8a2f91fb7633ac1198599"
 
-dest_files=[ "res://.import/Ship.png-9009f313cb7a2d8b5f557853d8221664.stex" ]
-dest_md5="f4bfa68608987cf881d1e8a76c66cafa"
+dest_files=[ "res://.import/Test.png-0b0407dd4b5f3feee1e1fecdb0a7470d.stex" ]
+dest_md5="5dc241bfa6cfdfc08c3a9040e9bfce72"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

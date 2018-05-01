@@ -21,7 +21,7 @@ var direction = Vector2(1, 0)
 var charge = 1
 
 func _ready():
-	$Indicator.modulate = Com.PLAYER_COLORS[team]
+	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
 	if pause: return
@@ -54,7 +54,7 @@ func _physics_process(delta):
 
 func swap_charge():
 	charge = -charge
-	$Sprite.frame = 1 - (charge + 1)/2
+	$Sprite/Orb.modulate = (Color(0, 0, 1) if charge < 0 else Color(1, 0, 0))
 
 func action(action):
 	return "p" + str(player+1) + "_" + action

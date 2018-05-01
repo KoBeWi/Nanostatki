@@ -1,8 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Common/Indicator.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Common/ShipOrb.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Common/ShipColor.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Idle"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
 
 [node name="Ship" type="KinematicBody2D" groups=[
 "players",
@@ -18,27 +38,47 @@ _sections_unfolded = [ "Animation", "Collision", "Transform", "Z Index" ]
 team = 0
 player = 0
 
-[node name="Indicator" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Orb" type="Sprite" parent="Sprite" index="0"]
 
+editor/display_folded = true
+modulate = Color( 1, 0, 0, 1 )
+show_behind_parent = true
+position = Vector2( 4.47762, 264.041 )
+rotation = 3.41332
 texture = ExtResource( 3 )
-hframes = 2
-_sections_unfolded = [ "Animation", "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
+_sections_unfolded = [ "Transform" ]
 
-[node name="Shape" type="CollisionPolygon2D" parent="." index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Orb" index="0"]
+
+root_node = NodePath("..")
+autoplay = "Idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Idle = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Indicator" type="Sprite" parent="Sprite" index="1"]
+
+modulate = Color( 1, 1, 0, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Shape" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( -16, 32, 16, 32, 32, 16, 32, -16, 16, -32, -16, -32, -32, -16, -32, 16 )
+polygon = PoolVector2Array( -101.202, -75.7959, -109.501, -0.784416, -101.668, 74.9812, -64.035, 93.5515, 12.5579, 58.7171, 98.644, -0.5401, 15.3256, -58.6755, -62.9983, -97.0768 )
 __meta__ = {
 "_edit_lock_": true
 }
