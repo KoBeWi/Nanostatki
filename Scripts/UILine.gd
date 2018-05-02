@@ -4,19 +4,8 @@ extends Sprite
 export(NodePath) var start setget set_start
 export(NodePath) var end setget set_end
 
-var start_start
-var end_start
-
-func _ready():
-	if !Engine.editor_hint:
-		start_start = get_node(start).position
-		end_start = get_node(end).position
-		update_start_end()
-
 func _process(delta):
 	if !Engine.editor_hint:
-		get_node(start).position += Vector2(-1 + randf()*2, -1 + randf()*2) * 0.1
-		get_node(end).position += Vector2(-1 + randf()*2, -1 + randf()*2) * 0.1
 		update_start_end()
 
 func set_start(_start):

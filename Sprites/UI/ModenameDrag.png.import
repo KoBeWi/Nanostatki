@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.png-a7a5badcfdffa64b93e9b69276017cd9.stex"
+path="res://.import/ModenameDrag.png-ee40ed07827dc787a0e1e5d6790d14d3.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/Background.png"
-source_md5="7446a33bdb0194ee5821f423154bd74c"
+source_file="res://Sprites/UI/ModenameDrag.png"
+source_md5="a19c92de8e08723638debca72722e4a9"
 
-dest_files=[ "res://.import/Background.png-a7a5badcfdffa64b93e9b69276017cd9.stex" ]
-dest_md5="1904d2d2c9a8d15e42c0192c7c9c67bc"
+dest_files=[ "res://.import/ModenameDrag.png-ee40ed07827dc787a0e1e5d6790d14d3.stex" ]
+dest_md5="f47b271686be50df1d9cf57d5045893c"
 
 [params]
 
