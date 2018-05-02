@@ -28,6 +28,7 @@ func _ready():
 	get_parent().connect("start", self, "race_start")
 	
 	$Track/Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
+	Jukebox.play_music("CORTE COSTURA")
 
 func race_start():
 	start_time = OS.get_ticks_msec()

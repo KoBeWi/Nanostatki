@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/D BAILE.ogg-9f283d77e5930d5e1430ab06107a4226.oggstr"
+
+[deps]
+
+source_file="res://Music/D BAILE.ogg"
+source_md5="76bcfe090c88aaa9812c696bf1e10b9a"
+
+dest_files=[ "res://.import/D BAILE.ogg-9f283d77e5930d5e1430ab06107a4226.oggstr" ]
+dest_md5="fa0ddddafdc28463cb82f69f6e4f5be5"
+
+[params]
+
+loop=true
+loop_offset=0

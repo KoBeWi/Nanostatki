@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Com="*res://Scripts/Commons.gd"
+Jukebox="*res://Nodes/Jukebox.tscn"
 
 [input]
 

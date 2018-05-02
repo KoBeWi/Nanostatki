@@ -23,6 +23,7 @@ func _ready():
 	
 	start_time = OS.get_ticks_msec()
 	distance_label = get_parent().register_UI($Distance, self)
+	Jukebox.play_music("MAU")
 
 func _physics_process(delta):
 	var prev_maxd = 0

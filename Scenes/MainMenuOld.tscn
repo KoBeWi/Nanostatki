@@ -1,6 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MainMenuOld.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Common/Proton.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=2]
+
+code = "shader_type canvas_item; 
+
+uniform sampler2D mask;
+
+void fragment() {
+	vec4 c = texture(TEXTURE, UV);
+	c.a = texture(mask, UV).a;
+	COLOR = c;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+shader = SubResource( 2 )
+shader_param/mask = ExtResource( 2 )
+_sections_unfolded = [ "shader_param" ]
 
 [sub_resource type="GDScript" id=1]
 
@@ -33,7 +53,7 @@ func disappear():
 		emit_signal(\"disappeared\")"
 _sections_unfolded = [ "Resource" ]
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -47,6 +67,7 @@ _sections_unfolded = [ "Offset" ]
 
 visible = false
 modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 3 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -70,6 +91,6 @@ expand = true
 buffering_msec = 500
 bus = "Master"
 script = SubResource( 1 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
 

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/IDY.ogg-37dcd7a5f223d3293853e38be0d9af01.oggstr"
+
+[deps]
+
+source_file="res://Music/IDY.ogg"
+source_md5="59b39c6cfcf70a3b36e6c93575136cd5"
+
+dest_files=[ "res://.import/IDY.ogg-37dcd7a5f223d3293853e38be0d9af01.oggstr" ]
+dest_md5="3e03e8111fa92fd40edb8920af0baede"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SURDO.ogg-938bcd42d4e197f24b74cd6e9659b814.oggstr"
+
+[deps]
+
+source_file="res://Music/SURDO.ogg"
+source_md5="aa76817ea4901fc510bffd3447c2f32e"
+
+dest_files=[ "res://.import/SURDO.ogg-938bcd42d4e197f24b74cd6e9659b814.oggstr" ]
+dest_md5="c52514201461b372e44787cd5eecbf8e"
+
+[params]
+
+loop=true
+loop_offset=0

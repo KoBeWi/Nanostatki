@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HORNSONG.ogg-61129f4886c17e8d63db7810a8a43851.oggstr"
+
+[deps]
+
+source_file="res://Music/HORNSONG.ogg"
+source_md5="da42311b0b1bd0007dcf2f9dc091fcb3"
+
+dest_files=[ "res://.import/HORNSONG.ogg-61129f4886c17e8d63db7810a8a43851.oggstr" ]
+dest_md5="22847f74744567654b608d07b5c896dd"
+
+[params]
+
+loop=true
+loop_offset=0

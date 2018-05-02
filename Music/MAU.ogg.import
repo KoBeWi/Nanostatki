@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MAU.ogg-7d51b7c9ffea94399fd1b1e9b60ee560.oggstr"
+
+[deps]
+
+source_file="res://Music/MAU.ogg"
+source_md5="d3a324403a8e57fad248e425f2d5f7e7"
+
+dest_files=[ "res://.import/MAU.ogg-7d51b7c9ffea94399fd1b1e9b60ee560.oggstr" ]
+dest_md5="ab7498c717149aece401fd2f0f2e2b04"
+
+[params]
+
+loop=true
+loop_offset=0

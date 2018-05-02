@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "Jukebox"
+script/source = "extends AudioStreamPlayer
+
+var music = {}
+
+func play_music(name):
+	stream = load_music(name)
+	play()
+
+func load_music(name):
+	if !music.has(name):
+		music[name] = load(\"res://Music/\" + name + \".ogg\")
+	
+	return music[name]"
+_sections_unfolded = [ "Resource" ]
+
+[node name="Jukebox" type="AudioStreamPlayer"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = SubResource( 1 )
+
+

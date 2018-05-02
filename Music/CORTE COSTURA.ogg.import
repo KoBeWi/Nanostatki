@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CORTE COSTURA.ogg-444c5e55d3559046cf1737e27e5ad8d4.oggstr"
+
+[deps]
+
+source_file="res://Music/CORTE COSTURA.ogg"
+source_md5="a7692fd794604a1dabd949918265c725"
+
+dest_files=[ "res://.import/CORTE COSTURA.ogg-444c5e55d3559046cf1737e27e5ad8d4.oggstr" ]
+dest_md5="afb452a7c8ac31e4dee537247c9e510c"
+
+[params]
+
+loop=true
+loop_offset=0

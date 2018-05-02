@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EL ECTRO.ogg-73a7118c8bc02f73c77ffff16696437d.oggstr"
+
+[deps]
+
+source_file="res://Music/EL ECTRO.ogg"
+source_md5="5cb4e400f752b350a4577a5b32832057"
+
+dest_files=[ "res://.import/EL ECTRO.ogg-73a7118c8bc02f73c77ffff16696437d.oggstr" ]
+dest_md5="5830d4203cea5ad146f841f08c7d5fbb"
+
+[params]
+
+loop=true
+loop_offset=0

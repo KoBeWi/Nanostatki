@@ -54,7 +54,7 @@ func _physics_process(delta):
 
 func swap_charge():
 	charge = -charge
-	$Sprite/Orb.modulate = (Color(0, 0, 1) if charge < 0 else Color(1, 0, 0))
+	$Sprite/Orb.modulate = (Color(0, 0, 0) if charge < 0 else Color(1, 1, 1))
 
 func action(action):
 	return "p" + str(player+1) + "_" + action

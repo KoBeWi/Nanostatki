@@ -40,6 +40,7 @@ func _ready():
 	ui.get_node("Time").text = TIME_TEXT % str(ceil(time_left))
 	
 	$Arena/Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
+	Jukebox.play_music("TONTURA")
 
 func _process(delta):
 	if !started: return

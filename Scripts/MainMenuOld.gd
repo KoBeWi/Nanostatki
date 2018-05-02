@@ -31,6 +31,7 @@ func _ready():
 	randomize()
 	$Background.texture = texture1
 	$VideoPlayer.connect("disappeared", self, "change_video")
+	Jukebox.play_music("IDY")
 
 func _process(delta):
 	if started:

@@ -4,12 +4,15 @@ var choice setget move_selection
 
 func _ready():
 	self.choice = 1
+	Jukebox.play_music("IDY")
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right") and choice < 3:
 		self.choice += 1
 	elif Input.is_action_just_pressed("ui_left") and choice > 0:
 		self.choice -= 1
+	
+	if Input.is_action_just_pressed("ui_accept"): get_tree().change_scene("Scenes/MainMenuOld.tscn")
 
 func move_selection(new_choice):
 	choice = new_choice
