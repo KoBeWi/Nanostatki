@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Title.png-7362e0bee3c99d95e13efe8bc4e072d5.stex"
+path="res://.import/ModeSumo.png-9a3fe67fea3c1aaa1924f45f85eb164d.stex"
 
 [deps]
 
-source_file="res://Sprites/Title.png"
-source_md5="3e340ecdc123c1942814d7ecaea461c5"
+source_file="res://Sprites/UI/ModeSumo.png"
+source_md5="342e63a1260ba2b1c06b314dab44a4e9"
 
-dest_files=[ "res://.import/Title.png-7362e0bee3c99d95e13efe8bc4e072d5.stex" ]
-dest_md5="7ed5e752472754753c070993c7b046f0"
+dest_files=[ "res://.import/ModeSumo.png-9a3fe67fea3c1aaa1924f45f85eb164d.stex" ]
+dest_md5="56b58167cb0cfcfef0eb8fd289e998ca"
 
 [params]
 

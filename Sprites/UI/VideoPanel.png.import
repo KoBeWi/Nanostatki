@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerScreen.png-23c8be317fc500b45e697ee89f741ace.stex"
+path="res://.import/VideoPanel.png-86fafa60a5b325a01bed27c930964f6b.stex"
 
 [deps]
 
-source_file="res://Sprites/PlayerScreen.png"
-source_md5="2d34846f895b10463af3cb2c57550317"
+source_file="res://Sprites/UI/VideoPanel.png"
+source_md5="eaf734c5de36690bd99cd168411cf9a1"
 
-dest_files=[ "res://.import/PlayerScreen.png-23c8be317fc500b45e697ee89f741ace.stex" ]
-dest_md5="da174aa90386d1805ecd537aff0254d9"
+dest_files=[ "res://.import/VideoPanel.png-86fafa60a5b325a01bed27c930964f6b.stex" ]
+dest_md5="9a09302daa88800248abd6402c5073a6"
 
 [params]
 

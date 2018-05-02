@@ -75,4 +75,4 @@ func get_pos():
 
 func set_paralyzed(value):
 	paralyzed = value
-	$Indicator.modulate.a = 0.5 if value else 1
+	$Sprite/Orb.modulate.a = 0.5 if value else 1

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Indicator.png-a4c79fa83fe6d5beff00a9ddcd0c4ff0.stex"
+path="res://.import/ReturnFill.png-7f0fb96737af68f6a3a94f44d7f9aa23.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/Indicator.png"
-source_md5="c20381d792810bd6e7dda72423932cac"
+source_file="res://Sprites/UI/ReturnFill.png"
+source_md5="5308fffb853effef6de6a41692270487"
 
-dest_files=[ "res://.import/Indicator.png-a4c79fa83fe6d5beff00a9ddcd0c4ff0.stex" ]
-dest_md5="6239a4dd22160387659bbedba570aec3"
+dest_files=[ "res://.import/ReturnFill.png-7f0fb96737af68f6a3a94f44d7f9aa23.stex" ]
+dest_md5="3f449e1bf76aa4e55b035252bd889ee7"
 
 [params]
 

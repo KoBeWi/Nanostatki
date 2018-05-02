@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Key.png-bd797b90387de213d0eb167ae76cc13a.stex"
+path="res://.import/UI_WYBORG.png-141ab3b4f2221533021e3df703cfb9f4.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/Key.png"
-source_md5="b530b8a0a511afb06a22f7639a13d92d"
+source_file="res://Sprites/UI/UI_WYBORG.png"
+source_md5="d1a9fdb1ceb491dcdd81793024dda352"
 
-dest_files=[ "res://.import/Key.png-bd797b90387de213d0eb167ae76cc13a.stex" ]
-dest_md5="b29cd8ddf615eb12807c6547ae41e24e"
+dest_files=[ "res://.import/UI_WYBORG.png-141ab3b4f2221533021e3df703cfb9f4.stex" ]
+dest_md5="35ddf079143a9e58174cf175bf12259d"
 
 [params]
 

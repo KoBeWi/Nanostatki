@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ExitCircle.png-1ae481828d76d8b53fa112a2b528c39e.stex"
+path="res://.import/ModeDrag.png-a1c0a81a0df5d355c140af331e9e136e.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/ExitCircle.png"
-source_md5="fa57e981303e6861879da8d9f83600fe"
+source_file="res://Sprites/UI/ModeDrag.png"
+source_md5="319c3697c998f14a2b28ed9f571687c2"
 
-dest_files=[ "res://.import/ExitCircle.png-1ae481828d76d8b53fa112a2b528c39e.stex" ]
-dest_md5="6d8a7c0f75fad03201e0b23a86fe4417"
+dest_files=[ "res://.import/ModeDrag.png-a1c0a81a0df5d355c140af331e9e136e.stex" ]
+dest_md5="7722808cd8d14259fa5b1db6f7a77e3a"
 
 [params]
 
