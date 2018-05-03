@@ -65,9 +65,9 @@ func _process(delta):
 				self.choice = -1
 				screen = "Lobby"
 				
-				$Lobby/RaceText.visible = (gamemode == 0)
-				$Lobby/ArenaText.visible = (gamemode == 3)
 				$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
+				$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
+				$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
 	
 	$Camera.position += (camera_target - $Camera.position).normalized() * CAMERA_SPEED
 	if $Camera.position.distance_squared_to(camera_target) < CAMERA_SPEED*CAMERA_SPEED: $Camera.position = camera_target
