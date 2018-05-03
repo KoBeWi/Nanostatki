@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=2]
@@ -31,20 +31,19 @@
 [ext_resource path="res://Sprites/UI/VideoPanel.png" type="Texture" id=29]
 [ext_resource path="res://Resources/Video/Video1.ogm" type="VideoStream" id=30]
 [ext_resource path="res://Sprites/UI/ModenameRace.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/UI/UI_LOBBY2.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=36]
-[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=37]
-[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=38]
-[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=39]
-[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=40]
-[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=41]
-[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=42]
-[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=44]
-[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=35]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=36]
+[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=39]
+[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=40]
+[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=44]
 
 [sub_resource type="Animation" id=1]
 
@@ -555,17 +554,9 @@ texture = ExtResource( 31 )
 
 [node name="Lobby" type="Node2D" parent="." index="3"]
 
-[node name="DO WYWALENIA" type="Sprite" parent="Lobby" index="0"]
+[node name="Nodes" type="Node2D" parent="Lobby" index="0"]
 
-visible = false
-position = Vector2( 2501, 1352 )
-z_index = -10
-texture = ExtResource( 32 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Nodes" type="Node2D" parent="Lobby" index="1"]
-
-[node name="Return" type="Sprite" parent="Lobby" index="2"]
+[node name="Return" type="Sprite" parent="Lobby" index="1"]
 
 editor/display_folded = true
 position = Vector2( 2056.35, 1583.62 )
@@ -583,40 +574,42 @@ texture = ExtResource( 20 )
 self_modulate = Color( 1, 0.160784, 0.160784, 1 )
 texture = ExtResource( 21 )
 
-[node name="RaceArena" type="Node2D" parent="Lobby" index="3"]
+[node name="RaceArena" type="Node2D" parent="Lobby" index="2"]
 
 [node name="Dice" type="Sprite" parent="Lobby/RaceArena" index="0"]
 
+editor/display_folded = true
 position = Vector2( 2391.68, 1148.23 )
-texture = ExtResource( 33 )
+texture = ExtResource( 32 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Dice" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 34 )
+texture = ExtResource( 33 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Dice/Fill" index="0"]
 
 self_modulate = Color( 0.941176, 0.0117647, 0.513726, 1 )
-texture = ExtResource( 35 )
+texture = ExtResource( 34 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2500.06, 1148.23 )
-texture = ExtResource( 33 )
+texture = ExtResource( 32 )
 script = ExtResource( 4 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Vertical" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 34 )
+texture = ExtResource( 33 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Vertical/Fill" index="0"]
 
-texture = ExtResource( 36 )
+texture = ExtResource( 35 )
 
 [node name="VerticalNumber" type="Label" parent="Lobby/RaceArena/Vertical/Fill" index="1"]
 
@@ -634,7 +627,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 37 )
+custom_fonts/font = ExtResource( 36 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -646,18 +639,19 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
 
+editor/display_folded = true
 position = Vector2( 2613.22, 1148.23 )
-texture = ExtResource( 33 )
+texture = ExtResource( 32 )
 script = ExtResource( 4 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Horizontal" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 34 )
+texture = ExtResource( 33 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Horizontal/Fill" index="0"]
 
-texture = ExtResource( 38 )
+texture = ExtResource( 37 )
 
 [node name="HorizontalNumber2" type="Label" parent="Lobby/RaceArena/Horizontal/Fill" index="1"]
 
@@ -675,7 +669,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 37 )
+custom_fonts/font = ExtResource( 36 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -701,12 +695,12 @@ position = Vector2( 2698.38, 1207.1 )
 
 editor/display_folded = true
 position = Vector2( 2823.33, 1148.53 )
-texture = ExtResource( 39 )
+texture = ExtResource( 38 )
 
 [node name="Preview" type="Sprite" parent="Lobby/RaceArena/Frame" index="0"]
 
 scale = Vector2( 0.04, 0.04 )
-texture = ExtResource( 40 )
+texture = ExtResource( 39 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RaceText" type="Label" parent="Lobby/RaceArena" index="7"]
@@ -726,7 +720,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ TRASĘ
@@ -754,7 +748,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ ARENĘ
@@ -826,7 +820,7 @@ _sections_unfolded = [ "Region" ]
 start = NodePath("../../Horizontal")
 end = NodePath("../../NearFrame2")
 
-[node name="Players" type="Node2D" parent="Lobby" index="4"]
+[node name="Players" type="Node2D" parent="Lobby" index="3"]
 
 [node name="1Inactive" type="Node2D" parent="Lobby/Players" index="0"]
 
@@ -848,7 +842,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -861,7 +855,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/1Inactive" index="1"]
 
 position = Vector2( 2158.57, 1313.29 )
-texture = ExtResource( 42 )
+texture = ExtResource( 41 )
 
 [node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
 
@@ -884,7 +878,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 1, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -897,12 +891,12 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Movement" type="Sprite" parent="Lobby/Players/1Active" index="1"]
 
 position = Vector2( 2163.25, 1472.71 )
-texture = ExtResource( 43 )
+texture = ExtResource( 42 )
 
 [node name="Action" type="Sprite" parent="Lobby/Players/1Active" index="2"]
 
 position = Vector2( 2160.81, 1547.81 )
-texture = ExtResource( 42 )
+texture = ExtResource( 41 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
@@ -924,7 +918,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -937,7 +931,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/2Inactive" index="1"]
 
 position = Vector2( 2385.7, 1315.08 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Inactive/Action" index="0"]
 
@@ -955,7 +949,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CTRL"
@@ -987,7 +981,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -1004,7 +998,7 @@ position = Vector2( 2387.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/2Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/U" index="0"]
 
@@ -1022,7 +1016,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "W"
@@ -1036,7 +1030,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [node name="R" type="Sprite" parent="Lobby/Players/2Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/R" index="0"]
 
@@ -1054,7 +1048,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "D"
@@ -1068,7 +1062,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/2Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/D" index="0"]
 
@@ -1086,7 +1080,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "S"
@@ -1100,7 +1094,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/2Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/L" index="0"]
 
@@ -1118,7 +1112,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "A"
@@ -1132,7 +1126,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/2Active" index="2"]
 
 position = Vector2( 2385.53, 1547.81 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Action" index="0"]
 
@@ -1150,7 +1144,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CTRL"
@@ -1181,7 +1175,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -1194,7 +1188,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Inactive" index="1"]
 
 position = Vector2( 2609.94, 1319.9 )
-texture = ExtResource( 45 )
+texture = ExtResource( 44 )
 
 [node name="3Active" type="Node2D" parent="Lobby/Players" index="5"]
 
@@ -1217,7 +1211,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0.752941, 0.752941, 1 )
 custom_constants/shadow_as_outline = 1
@@ -1234,7 +1228,7 @@ position = Vector2( 2618.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/3Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/U" index="0"]
 
@@ -1252,7 +1246,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "I"
@@ -1266,7 +1260,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/3Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/R" index="0"]
 
@@ -1284,7 +1278,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "L"
@@ -1298,7 +1292,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/3Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/D" index="0"]
 
@@ -1316,7 +1310,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "K"
@@ -1330,7 +1324,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/3Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/L" index="0"]
 
@@ -1348,7 +1342,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "J"
@@ -1362,7 +1356,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Active" index="2"]
 
 position = Vector2( 2616.53, 1540.46 )
-texture = ExtResource( 45 )
+texture = ExtResource( 44 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
@@ -1384,7 +1378,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -1397,7 +1391,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/4Inactive" index="1"]
 
 position = Vector2( 2835.47, 1315.08 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Inactive/Action" index="0"]
 
@@ -1415,7 +1409,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "5"
@@ -1447,7 +1441,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 1, 0, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0, 1, 1 )
 custom_constants/shadow_as_outline = 1
@@ -1464,7 +1458,7 @@ position = Vector2( 2835.61, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/4Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/U" index="0"]
 
@@ -1482,7 +1476,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "8"
@@ -1496,7 +1490,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/4Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/R" index="0"]
 
@@ -1514,7 +1508,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "6"
@@ -1528,7 +1522,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/4Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/D" index="0"]
 
@@ -1546,7 +1540,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "2"
@@ -1560,7 +1554,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/4Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/L" index="0"]
 
@@ -1578,7 +1572,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "4"
@@ -1592,7 +1586,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/4Active" index="2"]
 
 position = Vector2( 2833.17, 1547.81 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Action" index="0"]
 
@@ -1610,7 +1604,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "5"
@@ -1631,7 +1625,7 @@ playback_speed = 1.0
 anims/Idle = SubResource( 1 )
 blend_times = [  ]
 
-[node name="RealContinue" type="Node2D" parent="Lobby" index="5"]
+[node name="RealContinue" type="Node2D" parent="Lobby" index="4"]
 
 editor/display_folded = true
 visible = false
@@ -1651,7 +1645,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "PRZYTRZYMAJ AKCJĘ, BY ROZPOCZĄĆ

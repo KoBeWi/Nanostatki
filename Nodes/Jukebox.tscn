@@ -8,7 +8,6 @@ script/source = "extends AudioStreamPlayer
 var music = {}
 
 func play_music(name):
-	return
 	stream = load_music(name)
 	play()
 

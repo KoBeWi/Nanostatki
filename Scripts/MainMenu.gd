@@ -1,6 +1,8 @@
 extends Node2D
 
 const CAMERA_SPEED = 4
+const ACTIVE_TIME = 1.5
+const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 
 onready var camera_target = $Camera.position
 var modenames = Com.load_nodenames()
@@ -13,6 +15,14 @@ var prev_node
 var modename_visible
 
 var gamemode
+var options = [1, 1]
+
+var players_joined = [-1, -1, -1, -1]
+var players_in = [false, false, false, false]
+var players_clutch = [false, false, false, false]
+var players_out = [0, 0, 0, 0]
+var players_ready = 0
+var start
 
 func _ready():
 	self.choice = 1
@@ -68,6 +78,50 @@ func _process(delta):
 				$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
 				$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
 				$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
+				
+				return
+	
+	if screen == "Lobby":
+		players_ready = 0
+		start = true
+		
+		for i in range(4):
+			if Input.is_action_just_pressed("p" + str(i+1) + "_action"):
+				if players_in[i]:
+					players_out[i] = 1
+				else:
+					add_player(i)
+					players_clutch[i] = true
+					
+			if Input.is_action_just_released("p" + str(i+1) + "_action"):
+				if !players_clutch[i] and players_out[i] < 1.5:
+					remove_player(i)
+				
+				players_out[i] = 0
+				players_clutch[i] = false
+			
+			if players_out[i] > 0:
+				players_out[i] += delta
+			
+			if players_in[i]:
+				players_ready += 1
+				if players_out[i] < ACTIVE_TIME:
+					start = false
+					get_node("Lobby/Players/" + str(i+1) + "Active").modulate = Color(1, 1, 1)
+				else:
+					get_node("Lobby/Players/" + str(i+1) + "Active").modulate = Com.PLAYER_COLORS[i]
+			
+			get_node("Lobby/Players/" + str(i+1) + "Inactive").visible = !players_in[i]
+			get_node("Lobby/Players/" + str(i+1) + "Active").visible = players_in[i]
+		
+		if players_ready > 0 and start:
+			var game = load("res://Scenes/Loading.tscn").instance()
+			game.setup = [MODES[gamemode], players_joined, options]
+			$"/root".add_child(game)
+			get_tree().current_scene = game
+			queue_free()
+		
+		$Lobby/RealContinue.visible = (players_ready > 0)
 	
 	$Camera.position += (camera_target - $Camera.position).normalized() * CAMERA_SPEED
 	if $Camera.position.distance_squared_to(camera_target) < CAMERA_SPEED*CAMERA_SPEED: $Camera.position = camera_target
@@ -115,3 +169,19 @@ func move_selection(new_choice):
 			$Modes/VideoPanel/VideoPlayer.play()
 		else:
 			modename_visible = false
+
+func add_player(i):
+	players_in[i] = true
+	
+	for j in range(4):
+		if players_joined[j] == -1:
+			players_joined[j] = i
+			return
+
+func remove_player(i):
+	players_in[i] = false
+	
+	for j in range(4):
+		if players_joined[j] == i:
+			players_joined[j] = -1
+			return
