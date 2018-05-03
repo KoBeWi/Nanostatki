@@ -1,7 +1,7 @@
 tool
 extends Area2D
 
-var textures = [load("res://Sprites/Common/MagnetDot.png"), load("res://Sprites/Common/MagnetCross.png")]
+var TEXTURES = [load("res://Sprites/Common/MagnetDot.png"), load("res://Sprites/Common/MagnetCross.png"), load("res://Sprites/Common/MagnetArrow.png"), load("res://Sprites/Common/MagnetArrow2.png")]
 
 const FORCE = PI/40
 const DDIST = 50
@@ -24,10 +24,15 @@ func _physics_process(delta):
 
 func _draw():
 	var color = Color(1, 1, 1, abs(sin(OS.get_ticks_msec() / 250.0)) + 0.5)
-	var texture = textures[orientation]
+	
 	for x in range(int(width / DDIST) + 2):
 		for y in range(int(height / DDIST) + 2):
-			draw_texture(texture, Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), color)
+			draw_texture(TEXTURES[orientation], Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), color)
+			
+			if !(x % 4 == 0 and y % 2 == 0) and !(x % 4 == 2 and y % 2 == 1): continue
+			draw_set_transform(Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), OS.get_ticks_msec() / 250.0 * -(orientation * 2 - 1), Vector2(1, 1))
+			draw_texture(TEXTURES[2 + orientation], Vector2(-32, -32), color)
+			draw_set_transform(Vector2(), 0, Vector2(1, 1))
 
 func set_width(neww):
 	width = neww

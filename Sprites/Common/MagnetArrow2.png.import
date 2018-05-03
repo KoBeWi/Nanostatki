@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Triangle.png-db1d81151a5e81863b747c05bb4a02f2.stex"
+path="res://.import/MagnetArrow2.png-6a0f5071b38eaf8acee702f591db2312.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/BackgroundBits/Triangle.png"
-source_md5="7755a4d16503c348d5c598905cf233f1"
+source_file="res://Sprites/Common/MagnetArrow2.png"
+source_md5="8997b82bc41f8342dc36c7d4c101bec2"
 
-dest_files=[ "res://.import/Triangle.png-db1d81151a5e81863b747c05bb4a02f2.stex" ]
-dest_md5="833eea2a1ea6f8a4daedc6acbb375aac"
+dest_files=[ "res://.import/MagnetArrow2.png-6a0f5071b38eaf8acee702f591db2312.stex" ]
+dest_md5="5030c346eaa2333cc91706799a11d7d0"
 
 [params]
 

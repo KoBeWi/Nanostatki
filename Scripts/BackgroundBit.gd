@@ -1,8 +1,5 @@
 extends Sprite
 
-const TIMEOUT = 2.0
-var timeout = TIMEOUT
-
 var angle = 0
 var rotating = -0.05 + randf() * 0.1
 var speed = randf() * 2
@@ -14,11 +11,10 @@ func _ready():
 	scale = Vector2(sc, sc)
 
 func _physics_process(delta):
-	timeout -= delta
 	position -= Vector2(cos(angle), -sin(angle)) * speed
 	rotation += rotating
 	
-	if camera and global_position.distance_to(camera.global_position) > 1024 * camera.zoom.x or !camera and position.distance_to(Vector2()) > 1024:
+	if camera and global_position.distance_to(camera.global_position) > 2048 * camera.zoom.x or !camera and position.length() > 2048:
 		queue_free()
 
 func set_colors(upper_color, lower_color):

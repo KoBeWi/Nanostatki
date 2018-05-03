@@ -14,6 +14,10 @@ var load_time
 
 func _ready():
 	get_tree().paused = true
+	
+	var trivia = randi() % Com.TRIVIA.size()
+	$CanvasLayer/TriviaNumber.text = $CanvasLayer/TriviaNumber.text + str(trivia+1)
+	$CanvasLayer/Trivia.text = Com.TRIVIA[trivia]
 
 func _process(delta):
 	if !game:
@@ -25,9 +29,9 @@ func _process(delta):
 		$CanvasLayer/RealAnyKey.visible = true
 
 func _input(event):
-	if game and event.is_pressed() and !event.is_echo() and OS.get_ticks_msec() - load_time > 1000:
+	if load_time and event.is_pressed() and !event.is_echo() and OS.get_ticks_msec() - load_time > 1000:
 		get_tree().current_scene = game
-		game = null
+		load_time = null
 		queue_free()
 		get_tree().paused = false"
 _sections_unfolded = [ "Resource" ]
@@ -51,7 +55,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Loading" type="Node2D" index="0"]
+[node name="Loading" type="Node2D"]
 
 pause_mode = 2
 z_index = 4096
@@ -126,7 +130,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0.507813, 1, 1 )
 custom_constants/shadow_as_outline = 1
-text = "FIZYCZNA CIEKAWOSTKA #1"
+text = "FIZYCZNA CIEKAWOSTKA #"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

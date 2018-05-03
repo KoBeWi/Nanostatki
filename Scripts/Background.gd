@@ -13,7 +13,7 @@ const SWATCHES = [
 [Color("fa709a"), Color("fee140"), Color("fa709a"), Color("fee140")],
 [Color("13547a"), Color("80d0c7"), Color("13547a"), Color("80d0c7")]
 ]
-const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSqure", "TiltedTriangle", "WideTriangle"]
+const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSquare", "TiltedTriangle", "WideTriangle"]
 var FIGURE = load("res://Nodes/BackgroundBit.tscn")
 
 var camera
@@ -22,7 +22,6 @@ var figure
 var swatches
 
 func _ready():
-	randomize() ##hack?
 	figure = load("res://Sprites/Common/BackgroundBits/" + FIGURES[randi() % FIGURES.size()] + ".png")
 	swatches = SWATCHES[randi() % SWATCHES.size()]
 	set_colors(vec(swatches[0]), vec(swatches[1]))
@@ -36,18 +35,27 @@ func set_colors(upper_color, lower_color):
 func set_texture_size(width, height):
 	rect_position = Vector2(-width/2, -height/2)
 	rect_size = Vector2(width, height)
+	
+	for i in range(FIG_COUNT):
+		create_figure(false)
 
 func _physics_process(delta):
 	if get_child_count() < FIG_COUNT:
-		var fig = FIGURE.instance()
-		fig.camera = camera
-		fig.texture = figure
-		fig.set_colors(vec(swatches[2]), vec(swatches[3]))
-		
-		var angle = randf() * PI * 2
-		fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
-		fig.angle = angle
-		add_child(fig)
+		create_figure()
 
 func vec(color):
 	return Vector3(color.r, color.g, color.b)
+
+func create_figure(check_camera = true):
+	var fig = FIGURE.instance()
+	add_child(fig)
+	
+	fig.camera = camera
+	fig.texture = figure
+	fig.set_colors(vec(swatches[2]), vec(swatches[3]))
+	
+	var angle = randf() * PI * 2
+	fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
+	while check_camera and fig.global_position.distance_to(camera.global_position) < 1536 * camera.zoom.x: fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
+	fig.angle = angle
+	

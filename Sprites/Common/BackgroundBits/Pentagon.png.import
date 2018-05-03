@@ -7,10 +7,10 @@ path="res://.import/Pentagon.png-1a4e9b26a66475655a53ff3276228ae6.stex"
 [deps]
 
 source_file="res://Sprites/Common/BackgroundBits/Pentagon.png"
-source_md5="7dcde85ae5ff6e11ff8a22af89a7fd5a"
+source_md5="c3f5fb1b935b4311c0eddbf959570503"
 
 dest_files=[ "res://.import/Pentagon.png-1a4e9b26a66475655a53ff3276228ae6.stex" ]
-dest_md5="a063434e9c3ed869d6e3694113328ea4"
+dest_md5="a078cdeaa02ddd113935a026371031d7"
 
 [params]
 

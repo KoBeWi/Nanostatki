@@ -7,10 +7,10 @@ path="res://.import/Diamond.png-dc2ddee34e2d7f26e4c7b0b4c17c510c.stex"
 [deps]
 
 source_file="res://Sprites/Common/BackgroundBits/Diamond.png"
-source_md5="4894bc1658162a69ae21d0e09e24f627"
+source_md5="ac2dea3d79245cf48825f4c262135503"
 
 dest_files=[ "res://.import/Diamond.png-dc2ddee34e2d7f26e4c7b0b4c17c510c.stex" ]
-dest_md5="0a2a879fbd36dadf85e4a428029f1651"
+dest_md5="4daa3c2a8617cd54cb8e547ea4d413cd"
 
 [params]
 

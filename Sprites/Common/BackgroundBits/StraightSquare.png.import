@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Triangle.png-db1d81151a5e81863b747c05bb4a02f2.stex"
+path="res://.import/StraightSquare.png-f05210916b5a658a8e93151ad14145f2.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/BackgroundBits/Triangle.png"
-source_md5="7755a4d16503c348d5c598905cf233f1"
+source_file="res://Sprites/Common/BackgroundBits/StraightSquare.png"
+source_md5="d248fd70a7d44cfa29a151bac46295af"
 
-dest_files=[ "res://.import/Triangle.png-db1d81151a5e81863b747c05bb4a02f2.stex" ]
-dest_md5="833eea2a1ea6f8a4daedc6acbb375aac"
+dest_files=[ "res://.import/StraightSquare.png-f05210916b5a658a8e93151ad14145f2.stex" ]
+dest_md5="c84220775ce9018fa26c1356b49d4aee"
 
 [params]
 

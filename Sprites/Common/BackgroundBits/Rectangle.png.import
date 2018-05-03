@@ -7,10 +7,10 @@ path="res://.import/Rectangle.png-3f16f712720746229d920ab33625d33a.stex"
 [deps]
 
 source_file="res://Sprites/Common/BackgroundBits/Rectangle.png"
-source_md5="18ecb48bda8fdd2f1e183db5a2aee144"
+source_md5="3fef086269471356e452bd7842429de9"
 
 dest_files=[ "res://.import/Rectangle.png-3f16f712720746229d920ab33625d33a.stex" ]
-dest_md5="79f99c57c22c0b725ae022758496a21a"
+dest_md5="0ab2ab6067896ba78ee97562b5e23536"
 
 [params]
 

@@ -7,10 +7,10 @@ path="res://.import/WideTriangle.png-2a667c91dab255d6c2463f9297bd3da0.stex"
 [deps]
 
 source_file="res://Sprites/Common/BackgroundBits/WideTriangle.png"
-source_md5="a9948810c19859c309e062846d5019a7"
+source_md5="3b8cc222b90ba708cb4e157f5a3f0c1f"
 
 dest_files=[ "res://.import/WideTriangle.png-2a667c91dab255d6c2463f9297bd3da0.stex" ]
-dest_md5="c9f25528207ecdd8cf1fd9ebc685f282"
+dest_md5="04235614637478dd0a32596426fd4e93"
 
 [params]
 

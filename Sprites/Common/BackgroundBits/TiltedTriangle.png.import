@@ -7,10 +7,10 @@ path="res://.import/TiltedTriangle.png-af7d3b7233b71ddae79b7d45e9e0d579.stex"
 [deps]
 
 source_file="res://Sprites/Common/BackgroundBits/TiltedTriangle.png"
-source_md5="96d3e80d659520a9f00a417f6a1da243"
+source_md5="b2cc840ceccd2218bdbf51dc5ec6689a"
 
 dest_files=[ "res://.import/TiltedTriangle.png-af7d3b7233b71ddae79b7d45e9e0d579.stex" ]
-dest_md5="d104ec3e96fe3560f1245267bd93d336"
+dest_md5="0ae34f3d4cc7c577411659e718e9ecda"
 
 [params]
 

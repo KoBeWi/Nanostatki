@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StraightSqure.png-7f5467232cc065a392020d4ec3d467d6.stex"
+path="res://.import/MagnetArrow.png-cdbfe1f17f67076fa51d5b60506ca265.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/BackgroundBits/StraightSqure.png"
-source_md5="9861d3e9d383d190300667ffb9eb4a8a"
+source_file="res://Sprites/Common/MagnetArrow.png"
+source_md5="f108d59548c9b00aa99019fe62fe5b55"
 
-dest_files=[ "res://.import/StraightSqure.png-7f5467232cc065a392020d4ec3d467d6.stex" ]
-dest_md5="baabab334b58c5109906b326a52a699a"
+dest_files=[ "res://.import/MagnetArrow.png-cdbfe1f17f67076fa51d5b60506ca265.stex" ]
+dest_md5="cf7b299d44f7ce030680a42f4b9b72de"
 
 [params]
 
