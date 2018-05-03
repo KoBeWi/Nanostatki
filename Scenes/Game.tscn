@@ -6,6 +6,7 @@
 [node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="Players" type="Node2D" parent="." index="0"]
 
