@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ReturnCircle.png-e4646eaad168ccd3b5ef852d17d79465.stex"
+path="res://.import/Authors.png-88bf4c45e6f4c435504d75403d448be9.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/ReturnCircle.png"
-source_md5="a536ad91b8e51aa938a43ccb38be0c11"
+source_file="res://Sprites/UI/Authors.png"
+source_md5="e64f12d197ed20326f5833311ca2ebdf"
 
-dest_files=[ "res://.import/ReturnCircle.png-e4646eaad168ccd3b5ef852d17d79465.stex" ]
-dest_md5="845b007e4026ddedc0a9fd548c710639"
+dest_files=[ "res://.import/Authors.png-88bf4c45e6f4c435504d75403d448be9.stex" ]
+dest_md5="1c74dd42148c520eae325b3fdab81103"
 
 [params]
 

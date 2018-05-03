@@ -42,6 +42,12 @@ func _process(delta):
 				screen = "Title"
 				self.choice = 1
 			
+			"Authors":
+				camera_target = Vector2(512, 300)
+				self.choice = -1
+				screen = "Title"
+				self.choice = 2
+			
 			"Lobby":
 				camera_target = Vector2(1082, 987)
 				screen = "Modes"
@@ -54,12 +60,24 @@ func _process(delta):
 				self.choice = -1
 				screen = "Modes"
 				self.choice = 1
+				
+			["Title", 2]:
+				camera_target = Vector2(1512, -526)
+				self.choice = -1
+				screen = "Authors"
+				self.choice = 0
 			
 			["Title", 3]:
 				camera_target.x = 10000
 				exiting = 1
 				yield(get_tree().create_timer(1.1), "timeout")
 				get_tree().quit()
+			
+			["Authors", 0]:
+				camera_target = Vector2(512, 300)
+				self.choice = -1
+				screen = "Title"
+				self.choice = 2
 			
 			["Modes", 0]:
 				camera_target = Vector2(512, 300)
