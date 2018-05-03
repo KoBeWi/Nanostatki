@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=2]
@@ -31,6 +31,73 @@
 [ext_resource path="res://Sprites/UI/VideoPanel.png" type="Texture" id=29]
 [ext_resource path="res://Resources/Video/Video1.ogm" type="VideoStream" id=30]
 [ext_resource path="res://Sprites/UI/ModenameRace.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/UI/UI_LOBBY2.png" type="Texture" id=32]
+[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=33]
+[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=43]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Idle"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("1Inactive/Join:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2Inactive/Join:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("3Inactive/Join:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("4Inactive/Join:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
 
 [node name="MainMenu" type="Node2D" index="0"]
 
@@ -39,7 +106,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 512, 300 )
 anchor_mode = 1
 rotating = false
@@ -67,8 +133,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Background" type="Sprite" parent="Camera" index="0"]
 
+z_index = -10
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -244,13 +311,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="2"]
 
-[node name="DO WYWALENIA" type="Sprite" parent="Modes" index="0"]
-
-position = Vector2( 1082, 987 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Nodes" type="Node2D" parent="Modes" index="1"]
+[node name="Nodes" type="Node2D" parent="Modes" index="0"]
 
 editor/display_folded = true
 z_index = 1
@@ -367,7 +428,7 @@ position = Vector2( 0, -2.51758 )
 texture = ExtResource( 28 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Lines" type="Node2D" parent="Modes" index="2"]
+[node name="Lines" type="Node2D" parent="Modes" index="1"]
 
 editor/display_folded = true
 
@@ -436,7 +497,7 @@ _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
 end = NodePath("../../Nodes/Survival")
 
-[node name="VideoPanel" type="TextureRect" parent="Modes" index="3"]
+[node name="VideoPanel" type="TextureRect" parent="Modes" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -482,12 +543,426 @@ expand = true
 buffering_msec = 500
 bus = "Master"
 
-[node name="Modename" type="Sprite" parent="Modes" index="4"]
+[node name="Modename" type="Sprite" parent="Modes" index="3"]
 
 position = Vector2( 1075.46, 1027.69 )
 texture = ExtResource( 31 )
 
-[node name="CrossLines" type="Node2D" parent="." index="3"]
+[node name="Lobby" type="Node2D" parent="." index="3"]
+
+[node name="DO WYWALENIA" type="Sprite" parent="Lobby" index="0"]
+
+position = Vector2( 2501, 1352 )
+z_index = -10
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Nodes" type="Node2D" parent="Lobby" index="1"]
+
+[node name="Return" type="Sprite" parent="Lobby" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2056.35, 1583.62 )
+texture = ExtResource( 19 )
+script = ExtResource( 4 )
+
+[node name="Fill" type="Sprite" parent="Lobby/Return" index="0"]
+
+editor/display_folded = true
+show_behind_parent = true
+texture = ExtResource( 20 )
+
+[node name="Icon" type="Sprite" parent="Lobby/Return/Fill" index="0"]
+
+self_modulate = Color( 1, 0.160784, 0.160784, 1 )
+texture = ExtResource( 21 )
+
+[node name="Lines" type="Node2D" parent="Lobby" index="3"]
+
+editor/display_folded = true
+
+[node name="D" type="Sprite" parent="Lobby/Lines" index="0"]
+
+position = Vector2( 2321.76, 722.19 )
+rotation = -1.73346
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 783.486, 18 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Region" ]
+start = NodePath("../../RaceArena/Dice")
+end = NodePath("../../RaceArena/Out")
+
+[node name="VD" type="Sprite" parent="Lobby/Lines" index="1"]
+
+position = Vector2( 2445.87, 1148.23 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 28.3716, 18 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Region" ]
+start = NodePath("../../RaceArena/Vertical")
+end = NodePath("../../RaceArena/Dice")
+
+[node name="VH" type="Sprite" parent="Lobby/Lines" index="2"]
+
+position = Vector2( 2556.64, 1148.23 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 33.1611, 18 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Region" ]
+start = NodePath("../../RaceArena/Vertical")
+end = NodePath("../../RaceArena/Horizontal")
+
+[node name="RaceText" type="Label" parent="Lobby" index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2010.0
+margin_top = 1068.0
+margin_right = 2365.0
+margin_bottom = 1191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "LEWO/PRAWO - ZMIEŃ TRASĘ
+R - LOSUJ TRASĘ
+GÓRA/DÓŁ - ZMIEŃ LICZBĘ OKRĄŻEŃ"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="ArenaText" type="Label" parent="Lobby" index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2010.0
+margin_top = 1068.0
+margin_right = 2365.0
+margin_bottom = 1191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "LEWO/PRAWO - ZMIEŃ ARENĘ
+R - LOSUJ ARENĘ
+GÓRA/DÓŁ - ZMIEŃ LIMIT CZASU"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="RaceArena" type="Node2D" parent="Lobby" index="6"]
+
+editor/display_folded = true
+
+[node name="Dice" type="Sprite" parent="Lobby/RaceArena" index="0"]
+
+editor/display_folded = true
+position = Vector2( 2391.68, 1148.23 )
+texture = ExtResource( 34 )
+
+[node name="Fill" type="Sprite" parent="Lobby/RaceArena/Dice" index="0"]
+
+editor/display_folded = true
+show_behind_parent = true
+texture = ExtResource( 35 )
+
+[node name="Icon" type="Sprite" parent="Lobby/RaceArena/Dice/Fill" index="0"]
+
+texture = ExtResource( 36 )
+
+[node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
+
+editor/display_folded = true
+position = Vector2( 2500.06, 1148.23 )
+texture = ExtResource( 34 )
+
+[node name="Fill" type="Sprite" parent="Lobby/RaceArena/Vertical" index="0"]
+
+show_behind_parent = true
+texture = ExtResource( 35 )
+
+[node name="Icon" type="Sprite" parent="Lobby/RaceArena/Vertical/Fill" index="0"]
+
+texture = ExtResource( 37 )
+
+[node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2613.22, 1148.23 )
+texture = ExtResource( 34 )
+
+[node name="Fill" type="Sprite" parent="Lobby/RaceArena/Horizontal" index="0"]
+
+show_behind_parent = true
+texture = ExtResource( 35 )
+
+[node name="Icon" type="Sprite" parent="Lobby/RaceArena/Horizontal/Fill" index="0"]
+
+texture = ExtResource( 38 )
+
+[node name="Out" type="Position2D" parent="Lobby/RaceArena" index="3"]
+
+position = Vector2( 2258.32, 335.619 )
+
+[node name="Frame" type="Sprite" parent="Lobby/RaceArena" index="4"]
+
+editor/display_folded = true
+position = Vector2( 2823.33, 1148.53 )
+texture = ExtResource( 39 )
+
+[node name="Preview" type="Sprite" parent="Lobby/RaceArena/Frame" index="0"]
+
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Controls" type="Node2D" parent="Lobby" index="7"]
+
+[node name="1Inactive" type="Node2D" parent="Lobby/Controls" index="0"]
+
+editor/display_folded = true
+
+[node name="Join" type="Label" parent="Lobby/Controls/1Inactive" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2114.0
+margin_top = 1354.0
+margin_right = 2217.0
+margin_bottom = 1411.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WCIŚNIJ AKCJĘ
+BY DOŁĄCZYĆ"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
+
+[node name="Action" type="Sprite" parent="Lobby/Controls/1Inactive" index="1"]
+
+position = Vector2( 2158.57, 1313.29 )
+texture = ExtResource( 41 )
+
+[node name="1Active" type="Node2D" parent="Lobby/Controls" index="1"]
+
+[node name="Action" type="Sprite" parent="Lobby/Controls/1Active" index="0"]
+
+position = Vector2( 2160.81, 1547.81 )
+texture = ExtResource( 41 )
+
+[node name="2Inactive" type="Node2D" parent="Lobby/Controls" index="2"]
+
+editor/display_folded = true
+
+[node name="Join" type="Label" parent="Lobby/Controls/2Inactive" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2338.0
+margin_top = 1354.0
+margin_right = 2441.0
+margin_bottom = 1411.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WCIŚNIJ AKCJĘ
+BY DOŁĄCZYĆ"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants" ]
+
+[node name="Action" type="Sprite" parent="Lobby/Controls/2Inactive" index="1"]
+
+editor/display_folded = true
+position = Vector2( 2385.7, 1315.08 )
+texture = ExtResource( 42 )
+
+[node name="Label" type="Label" parent="Lobby/Controls/2Inactive/Action" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -18.0
+margin_top = -18.0
+margin_right = 18.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
+custom_constants/shadow_as_outline = 1
+text = "CTRL"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="3Inactive" type="Node2D" parent="Lobby/Controls" index="3"]
+
+editor/display_folded = true
+
+[node name="Join" type="Label" parent="Lobby/Controls/3Inactive" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2563.0
+margin_top = 1354.0
+margin_right = 2666.0
+margin_bottom = 1411.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WCIŚNIJ AKCJĘ
+BY DOŁĄCZYĆ"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
+
+[node name="Action" type="Sprite" parent="Lobby/Controls/3Inactive" index="1"]
+
+position = Vector2( 2609.94, 1319.9 )
+texture = ExtResource( 43 )
+
+[node name="4Inactive" type="Node2D" parent="Lobby/Controls" index="4"]
+
+editor/display_folded = true
+
+[node name="Join" type="Label" parent="Lobby/Controls/4Inactive" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2785.0
+margin_top = 1354.0
+margin_right = 2888.0
+margin_bottom = 1411.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "WCIŚNIJ AKCJĘ
+BY DOŁĄCZYĆ"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants" ]
+
+[node name="Action" type="Sprite" parent="Lobby/Controls/4Inactive" index="1"]
+
+editor/display_folded = true
+position = Vector2( 2835.47, 1315.08 )
+texture = ExtResource( 42 )
+
+[node name="Label" type="Label" parent="Lobby/Controls/4Inactive/Action" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -18.0
+margin_top = -18.0
+margin_right = 18.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 33 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
+custom_constants/shadow_as_outline = 1
+text = "5"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="Blink" type="AnimationPlayer" parent="Lobby/Controls" index="5"]
+
+root_node = NodePath("..")
+autoplay = "Idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Idle = SubResource( 1 )
+blend_times = [  ]
+
+[node name="CrossLines" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="SR" type="Sprite" parent="CrossLines" index="0"]
 
@@ -501,5 +976,19 @@ script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Title/Nodes/Start")
 end = NodePath("../../Modes/Nodes/Return")
+
+[node name="MODE" type="Sprite" parent="CrossLines" index="1"]
+
+position = Vector2( 1964.83, 1522.12 )
+rotation = 0.59167
+scale = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 130.526, 18 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Region", "Z Index" ]
+start = NodePath("")
+end = NodePath("../../Lobby/Return")
 
 

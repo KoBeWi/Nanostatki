@@ -12,6 +12,8 @@ var exiting
 var prev_node
 var modename_visible
 
+var gamemode
+
 func _ready():
 	self.choice = 1
 	Jukebox.play_music("IDY")
@@ -29,7 +31,12 @@ func _process(delta):
 				self.choice = -1
 				screen = "Title"
 				self.choice = 1
-		
+			
+			"Lobby":
+				camera_target = Vector2(1082, 987)
+				screen = "Modes"
+				self.choice = gamemode+1
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		match [screen, choice]:
 			["Title", 1]:
@@ -41,7 +48,7 @@ func _process(delta):
 			["Title", 3]:
 				camera_target.x = 10000
 				exiting = 1
-				yield(get_tree().create_timer(1), "timeout")
+				yield(get_tree().create_timer(1.1), "timeout")
 				get_tree().quit()
 			
 			["Modes", 0]:
@@ -49,6 +56,18 @@ func _process(delta):
 				self.choice = -1
 				screen = "Title"
 				self.choice = 1
+			
+			["Modes", _]:
+				camera_target = Vector2(2501, 1352)
+				modename_visible = false
+				gamemode = choice-1
+				$CrossLines/MODE.start = NodePath("../../Modes/Nodes/" + $Modes/Nodes.get_child(choice).name)
+				self.choice = -1
+				screen = "Lobby"
+				
+				$Lobby/RaceText.visible = (gamemode == 0)
+				$Lobby/ArenaText.visible = (gamemode == 3)
+				$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
 	
 	$Camera.position += (camera_target - $Camera.position).normalized() * CAMERA_SPEED
 	if $Camera.position.distance_squared_to(camera_target) < CAMERA_SPEED*CAMERA_SPEED: $Camera.position = camera_target
@@ -63,6 +82,8 @@ func _process(delta):
 	elif !modename_visible and $Modes/VideoPanel.modulate.a > 0:
 		$Modes/VideoPanel.modulate.a -= 0.05
 		$Modes/Modename.modulate.a -= 0.05
+	elif !modename_visible:
+		$Modes/VideoPanel/VideoPlayer.stop()
 
 func move_selection(new_choice):
 	choice = new_choice

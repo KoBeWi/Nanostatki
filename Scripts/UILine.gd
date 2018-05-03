@@ -1,8 +1,8 @@
 tool
 extends Sprite
 
-export(NodePath) var start setget set_start
-export(NodePath) var end setget set_end
+export(NodePath) var start = NodePath() setget set_start
+export(NodePath) var end = NodePath() setget set_end
 
 func _process(delta):
 	if !Engine.editor_hint:
