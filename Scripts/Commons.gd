@@ -1,6 +1,7 @@
 extends Node
 
 const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
+const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 var TRIVIA = []
 
 var scoreboard
@@ -53,6 +54,10 @@ func add_score(name, score):
 		break
 	
 	scores.insert(pos, {"name": name, "score": score})
+
+func locate_score(name, score):
+	for i in range(scores.size()): if score >= scores[i].score: return i
+	return scores.size()
 
 func get_score(pos):
 	if scores.size() > pos: return scores[pos]

@@ -2,7 +2,6 @@ extends Node2D
 
 const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
-const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 const SMUTECZEK = "Wygląda na to, że niczego tu nie ma :("
 
 onready var camera_target = $Camera.position
@@ -111,7 +110,7 @@ func _process(delta):
 				self.choice = 2
 			
 			"Lobby":
-				get_node("Modes/Lines/" + MODES[gamemode]).end = "../../../ScreenPosition/ " + MODES[gamemode] + "/Position2D"
+				get_node("Modes/Lines/" + Com.MODES[gamemode]).end = "../../../ScreenPosition/ " + Com.MODES[gamemode] + "/Position2D"
 				camera_target = $ScreenPositions/Modes.position
 				screen = "Modes"
 				self.choice = gamemode
@@ -163,12 +162,12 @@ func _process(delta):
 			["Modes", _]:
 				modename_visible = false
 				gamemode = choice
-				camera_target = get_node("ScreenPositions/" + MODES[gamemode]).position
+				camera_target = get_node("ScreenPositions/" + Com.MODES[gamemode]).position
 				
 				$Lobby.position = camera_target
-				$Lobby/Return.position = get_node("ScreenPositions/" + MODES[gamemode] + "/Position2D").position
+				$Lobby/Return.position = get_node("ScreenPositions/" + Com.MODES[gamemode] + "/Position2D").position
 				$Lobby/Return.start_pos = $Lobby/Return.position
-				get_node("Modes/Lines/" + MODES[gamemode]).end = NodePath("../../../Lobby/Return")
+				get_node("Modes/Lines/" + Com.MODES[gamemode]).end = NodePath("../../../Lobby/Return")
 				
 				self.choice = -1
 				screen = "Lobby"
@@ -272,7 +271,7 @@ func _process(delta):
 		if players_ready > 0 and start:
 			Jukebox.stop()
 			var game = load("res://Scenes/Loading.tscn").instance()
-			game.setup = [MODES[gamemode], players_joined, options]
+			game.setup = [Com.MODES[gamemode], players_joined, options]
 			$"/root".add_child(game)
 			get_tree().current_scene = game
 			queue_free()
@@ -312,7 +311,7 @@ func move_selection(new_choice):
 		$Modes/Modename.texture = modenames[choice]
 		for mode in $Modes/Nodes.get_children():
 			if mode.has_node("VideoPlayer"): mode.remove_child(video)
-		get_node("Modes/Nodes/" + MODES[choice]).add_child(video)
+		get_node("Modes/Nodes/" + Com.MODES[choice]).add_child(video)
 		video.rect_position = Vector2(-64, -64)
 		video.stream = videos[choice]
 		video.play()
@@ -322,6 +321,8 @@ func move_selection(new_choice):
 
 func add_player(i):
 	players_in[i] = true
+	players_joined[i] = i
+	return #;_;
 	
 	for j in range(4):
 		if players_joined[j] == -1:

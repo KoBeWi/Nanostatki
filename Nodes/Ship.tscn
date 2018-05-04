@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Common/ShipOrb.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Common/ShipColor.png" type="Texture" id=4]
-[ext_resource path="res://Samples/Ship.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/Common/ShipColor.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Common/ShipOrbPart1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Common/ShipOrbPart2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Common/ShipOrbPart3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Common/ShipOrbPart4.png" type="Texture" id=7]
+[ext_resource path="res://Samples/Ship.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -13,7 +16,7 @@ length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/path = NodePath("./Orb1:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,8 +27,44 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 360.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("./Orb2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("./Orb3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("./Orb4:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
 
-[node name="Ship" type="KinematicBody2D" groups=[
+[node name="Ship" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -41,7 +80,6 @@ player = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 rotation = 1.5708
 scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 2 )
@@ -50,16 +88,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Orb" type="Sprite" parent="Sprite" index="0"]
+[node name="Indicator" type="Sprite" parent="Sprite" index="0"]
+
+modulate = Color( 1, 1, 0, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Orb" type="Node2D" parent="Sprite" index="1"]
 
 editor/display_folded = true
-show_behind_parent = true
-position = Vector2( 4.47762, 264.041 )
-rotation = 2.20499
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Orb" index="0"]
+[node name="OrbAnimator" type="AnimationPlayer" parent="Sprite/Orb" index="0"]
 
 root_node = NodePath("..")
 autoplay = "Idle"
@@ -69,11 +108,41 @@ playback_speed = 1.0
 anims/Idle = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Indicator" type="Sprite" parent="Sprite" index="1"]
+[node name="Orb1" type="Sprite" parent="Sprite/Orb" index="1"]
 
-modulate = Color( 1, 1, 0, 1 )
+show_behind_parent = true
+position = Vector2( 4.47762, 264.041 )
+rotation = 5.81603
+scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Orb2" type="Sprite" parent="Sprite/Orb" index="2"]
+
+show_behind_parent = true
+position = Vector2( 4.47762, 264.041 )
+rotation = 0.467151
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Orb3" type="Sprite" parent="Sprite/Orb" index="3"]
+
+show_behind_parent = true
+position = Vector2( 4.47762, 264.041 )
+rotation = 5.81603
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Orb4" type="Sprite" parent="Sprite/Orb" index="4"]
+
+show_behind_parent = true
+position = Vector2( 4.47762, 264.041 )
+rotation = 0.467151
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Shape" type="CollisionPolygon2D" parent="." index="1"]
 
@@ -85,7 +154,7 @@ __meta__ = {
 
 [node name="Engine" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 8 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0

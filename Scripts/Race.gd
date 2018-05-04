@@ -96,8 +96,12 @@ func _process(delta):
 					ui.get_node("End").visible = true
 		
 		if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene_to(load("res://Scenes/Summary.tscn"))
-			get_tree().current_scene.setup(get_parent().players_in, best_lap, get_parent().scoreboard)
+			var summary = load("res://Scenes/Summary.tscn").instance()
+			summary.setup(get_parent().players_joined, best_lap, get_parent().scoreboard)
+			$"/root".add_child(summary)
+			
+			get_tree().current_scene.queue_free()
+			get_tree().current_scene = summary
 
 func process_camera(camera, players):
 	return

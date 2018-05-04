@@ -24,7 +24,9 @@ func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
-	if pause: return
+	if pause:
+		$Engine.stop()
+		return
 	var move = false
 	
 	if !drag_race and !paralyzed:
