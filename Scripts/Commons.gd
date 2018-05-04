@@ -54,6 +54,7 @@ func add_score(name, score):
 		break
 	
 	scores.insert(pos, {"name": name, "score": score})
+	return pos
 
 func locate_score(score):
 	for i in range(scores.size()): if score >= scores[i].score: return i

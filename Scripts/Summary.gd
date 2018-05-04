@@ -15,7 +15,12 @@ func setup(_players, _scores, scoreboard):
 	scores = _scores
 	for _mode in Com.MODES: if scoreboard.find(_mode) > -1: mode = _mode
 	
-	for i in range(4): Com.add_score(_scores[i])
+	for i in range(4):
+		if _players[i] > -1:
+			spots[i] = Com.add_score("", _scores[i])
+			
+			for j in range(i):
+				if spots[i] < spots[j]: spots[j] += 1
 	
 	for i in range(4):
 		var spot = get_node("Player" + str(i+1))
