@@ -7,10 +7,10 @@ path="res://.import/Start.png-c9c3c9f012543dc0b318602777594674.stex"
 [deps]
 
 source_file="res://Sprites/Race/Start.png"
-source_md5="a9fc9ce41d4a04506064fd20bcf6f905"
+source_md5="0d87598fd7d4c8930255b6adbfa6c98a"
 
 dest_files=[ "res://.import/Start.png-c9c3c9f012543dc0b318602777594674.stex" ]
-dest_md5="0372ec77a8b61ba3b757ad330271029f"
+dest_md5="f44c98b0b6567ad88ff463d49d4e721f"
 
 [params]
 

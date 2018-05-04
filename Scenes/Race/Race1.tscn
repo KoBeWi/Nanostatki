@@ -30,14 +30,13 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 260, 390, 0, 0, 0, 0, 2530, 380, 0, 0, 0, 0, 2570, -530, 0, 0, 0, 0, 1780, -1040, 0, 0, 0, 0, 40, -1030, 0, 0, 0, 0, -590, -520, 0, 0, 0, 0, 30, -310, 0, 0, 0, 0, 1570, -100, 0, 0, 0, 0, 1580, 1320, 0, 0, 0, 0, -1920, 1300, 0, 0, 0, 0, -2200, -1170, 0, 0, 0, 0, -1080, -1240, 0, 0, 0, 0, -920, 190, 0, 0, 0, 0, 260, 390 )
 }
 
-[node name="Race" type="Node2D"]
+[node name="Race" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 lap_length = 19900
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -72,9 +71,8 @@ __meta__ = {
 
 [node name="Start" type="Sprite" parent="Track" index="4"]
 
-position = Vector2( 260, 448 )
+position = Vector2( 260, 508.567 )
 texture = ExtResource( 6 )
-region_enabled = true
 region_rect = Rect2( 0, 0, 64, 640 )
 _sections_unfolded = [ "Region", "Transform" ]
 
