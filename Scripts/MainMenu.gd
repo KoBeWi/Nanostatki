@@ -5,6 +5,7 @@ const ACTIVE_TIME = 1.5
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 
 onready var camera_target = $Camera.position
+onready var video = $Modes/VideoPlayer
 var modenames = Com.load_nodenames()
 var videos = Com.load_videos()
 var tracks = Com.load_tracks()
@@ -27,6 +28,7 @@ var players_ready = 0
 var start
 
 func _ready():
+	$Modes.remove_child(video)
 	self.choice = 1
 	Jukebox.play_music("IDY")
 
@@ -218,15 +220,6 @@ func _process(delta):
 	if exiting:
 		exiting -= 0.005
 		$".".modulate = Color(exiting, exiting, exiting)
-	
-	if modename_visible and $Modes/VideoPanel.modulate.a < 1:
-		$Modes/VideoPanel.modulate.a += 0.05
-		$Modes/Modename.modulate.a += 0.05
-	elif !modename_visible and $Modes/VideoPanel.modulate.a > 0:
-		$Modes/VideoPanel.modulate.a -= 0.05
-		$Modes/Modename.modulate.a -= 0.05
-	elif !modename_visible:
-		$Modes/VideoPanel/VideoPlayer.stop()
 
 func move_selection(new_choice):
 	choice = new_choice
@@ -251,13 +244,13 @@ func move_selection(new_choice):
 				menu.self_modulate = Color(1, 1, 1)
 	
 	if screen == "Modes":
-		if choice > 0:
-			modename_visible = true
-			$Modes/Modename.texture = modenames[choice-1]
-			$Modes/VideoPanel/VideoPlayer.stream = videos[choice-1]
-			$Modes/VideoPanel/VideoPlayer.play()
-		else:
-			modename_visible = false
+		$Modes/Modename.texture = modenames[choice]
+		for mode in $Modes/Nodes.get_children():
+			if mode.has_node("VideoPlayer"): mode.remove_child(video)
+		get_node("Modes/Nodes/" + MODES[choice]).add_child(video)
+		video.rect_position = Vector2(-64, -64)
+		video.stream = videos[choice]
+		video.play()
 
 func add_player(i):
 	players_in[i] = true
