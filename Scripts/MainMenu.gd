@@ -94,12 +94,6 @@ func _process(delta):
 				screen = "Title"
 				self.choice = 2
 			
-			["Modes", 0]:
-				camera_target = $ScreenPositions/Title.position
-				self.choice = -1
-				screen = "Title"
-				self.choice = 1
-			
 			["Modes", _]:
 				modename_visible = false
 				gamemode = choice
