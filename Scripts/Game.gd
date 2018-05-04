@@ -10,6 +10,8 @@ var players_joined
 var scene
 var settings = {}
 var music
+var finished
+var scoreboard
 
 var pause = 3
 
@@ -22,10 +24,14 @@ func setup(_mode, _players_joined, options):
 	
 	if mode == "Race":
 		mode = "Race/Race" + str(options[0])
+		scoreboard = "Race" + str(options[0])
 		settings.laps = options[1]
 	elif mode == "Arena":
 		mode = "Arena/Arena" + str(options[0])
+		scoreboard = "Arena" + str(options[0])
 		settings.time = options[1]
+	else:
+		scoreboard = mode
 
 func _ready():
 	scene = load("res://Scenes/" + mode + ".tscn").instance()
@@ -68,7 +74,7 @@ func _physics_process(delta):
 		var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 1)
 		camera.zoom = Vector2(new_zoom, new_zoom)
 	
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_key_pressed(KEY_ESCAPE) and !finished: ##zrobić, że trzeba chwilę
 		get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func restart_scene():

@@ -96,7 +96,8 @@ func _process(delta):
 					ui.get_node("End").visible = true
 		
 		if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
+			get_tree().change_scene_to(load("res://Scenes/Summary.tscn"))
+			get_tree().current_scene.setup(get_parent().players_in, best_lap, get_parent().scoreboard)
 
 func process_camera(camera, players):
 	return

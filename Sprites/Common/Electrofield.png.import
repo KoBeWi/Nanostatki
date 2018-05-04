@@ -7,10 +7,10 @@ path="res://.import/Electrofield.png-4240d371d9edcaf7dea8025648d9a285.stex"
 [deps]
 
 source_file="res://Sprites/Common/Electrofield.png"
-source_md5="ca329c03f2fb2e8ec05305902ccdcce6"
+source_md5="24f4d17f1eb4d80d86659ec3aea2a8cf"
 
 dest_files=[ "res://.import/Electrofield.png-4240d371d9edcaf7dea8025648d9a285.stex" ]
-dest_md5="5ab12eb62ba8212593de29fe272fd1db"
+dest_md5="4891c39dd213a82766b7942dbe8b7686"
 
 [params]
 
