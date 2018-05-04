@@ -147,8 +147,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenPositions" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Title" type="Sprite" parent="ScreenPositions" index="0"]
 
 position = Vector2( 512, 300 )
@@ -172,7 +170,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Race" type="Sprite" parent="ScreenPositions" index="3"]
 
-editor/display_folded = true
 position = Vector2( -540.849, 1035 )
 z_index = -10
 texture = ExtResource( 2 )
@@ -180,7 +177,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Position2D" type="Position2D" parent="ScreenPositions/Race" index="0"]
 
-position = Vector2( 451, 223 )
+position = Vector2( 446.866, 10.37 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Drag" type="Sprite" parent="ScreenPositions" index="4"]
@@ -224,7 +221,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Survival" type="Sprite" parent="ScreenPositions" index="7"]
 
-editor/display_folded = true
 position = Vector2( 1559.57, 1024.73 )
 z_index = -10
 texture = ExtResource( 2 )
@@ -232,7 +228,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Position2D" type="Position2D" parent="ScreenPositions/Survival" index="0"]
 
-position = Vector2( -436.08, 102.456 )
+position = Vector2( -442.397, 114.188 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera2D" parent="." index="1"]
@@ -499,6 +495,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Sumo" type="Sprite" parent="Modes/Nodes" index="2"]
 
+editor/display_folded = true
 position = Vector2( 522.635, 1133.58 )
 texture = ExtResource( 23 )
 script = ExtResource( 5 )
@@ -556,8 +553,6 @@ texture = ExtResource( 29 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Lines" type="Node2D" parent="Modes" index="2"]
-
-editor/display_folded = true
 
 [node name="RR" type="Sprite" parent="Modes/Lines" index="0"]
 
@@ -621,11 +616,11 @@ end = NodePath("../../Nodes/Survival")
 
 [node name="Race" type="Sprite" parent="Modes/Lines" index="5"]
 
-position = Vector2( 7.34424, 1170.98 )
-rotation = 2.41139
+position = Vector2( -2.87713, 1043.86 )
+rotation = 3.12498
 texture = ExtResource( 17 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 260.908, 18 )
+region_rect = Rect2( 0, 0, 182.237, 18 )
 script = ExtResource( 18 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Race")
@@ -669,11 +664,11 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 
 [node name="Survival" type="Sprite" parent="Modes/Lines" index="9"]
 
-position = Vector2( 1058.3, 1132.52 )
-rotation = -0.0816278
+position = Vector2( 1055.24, 1140.29 )
+rotation = -0.0220976
 texture = ExtResource( 17 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 130.806, 18 )
+region_rect = Rect2( 0, 0, 123.885, 18 )
 script = ExtResource( 18 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Survival")

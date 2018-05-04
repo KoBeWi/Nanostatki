@@ -56,7 +56,7 @@ func _process(delta):
 				get_node("Modes/Lines/" + MODES[gamemode]).end = "../../../ScreenPosition/ " + MODES[gamemode] + "/Position2D"
 				camera_target = $ScreenPositions/Modes.position
 				screen = "Modes"
-				self.choice = gamemode+1
+				self.choice = gamemode
 			
 			"Scores":
 				camera_target = $ScreenPositions/Title.position

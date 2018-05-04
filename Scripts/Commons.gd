@@ -54,6 +54,9 @@ func add_score(name, score):
 	
 	scores.insert(pos, {"name": name, "score": score})
 
+func get_score(pos):
+	if scores.size() > pos: return scores[pos]
+
 func save_scoreboard():
 	var file = File.new()
 	file.open("user://" + scoreboard, file.WRITE)
