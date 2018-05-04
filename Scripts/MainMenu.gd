@@ -55,14 +55,26 @@ func _process(delta):
 				camera_target = $ScreenPositions/Modes.position
 				screen = "Modes"
 				self.choice = gamemode+1
+			
+			"Scores":
+				camera_target = $ScreenPositions/Title.position
+				self.choice = -1
+				screen = "Title"
+				self.choice = 0
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		match [screen, choice]:
+			["Title", 0]:
+				camera_target = $ScreenPositions/Scores.position
+				self.choice = -1
+				screen = "Scores"
+				self.choice = 0
+			
 			["Title", 1]:
 				camera_target = $ScreenPositions/Modes.position
 				self.choice = -1
 				screen = "Modes"
-				self.choice = 1
+				self.choice = 0
 				
 			["Title", 2]:
 				camera_target = Vector2(1512, -526)
@@ -90,7 +102,7 @@ func _process(delta):
 			
 			["Modes", _]:
 				modename_visible = false
-				gamemode = choice-1
+				gamemode = choice
 				camera_target = get_node("ScreenPositions/" + MODES[gamemode]).position
 				
 				$Lobby.position = camera_target

@@ -45,6 +45,11 @@ func _physics_process(delta):
 		velocity *= 1-DAMP
 		if velocity.length() > 2000: velocity *= DAMP * 8
 	
+	if move and !$Engine.playing:
+		$Engine.play()
+	elif !move:
+		$Engine.stop()
+	
 	move_and_slide(velocity)
 
 	if !drag_race: for player in get_parent().get_children():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Common/ShipOrb.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Common/ShipColor.png" type="Texture" id=4]
+[ext_resource path="res://Samples/Ship.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -81,5 +82,15 @@ polygon = PoolVector2Array( -73.1074, -54.6051, -80.6724, -2.19012, -74.1881, 55
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Engine" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
