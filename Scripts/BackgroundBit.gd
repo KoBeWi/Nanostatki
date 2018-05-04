@@ -1,8 +1,8 @@
 extends Sprite
 
 var angle = 0
-var rotating = -0.05 + randf() * 0.1
-var speed = randf() * 2
+var rotating = -0.01 + randf() * 0.02
+var speed = randf()/2
 var camera
 
 func _ready():

@@ -555,8 +555,6 @@ texture = ExtResource( 31 )
 
 [node name="Lobby" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Nodes" type="Node2D" parent="Lobby" index="0"]
 
 [node name="Return" type="Sprite" parent="Lobby" index="1"]
@@ -600,7 +598,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
 
-editor/display_folded = true
 position = Vector2( 2500.06, 1148.23 )
 texture = ExtResource( 32 )
 script = ExtResource( 4 )
@@ -642,7 +639,6 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
 
-editor/display_folded = true
 position = Vector2( 2613.22, 1148.23 )
 texture = ExtResource( 32 )
 script = ExtResource( 4 )
@@ -656,7 +652,7 @@ texture = ExtResource( 33 )
 
 texture = ExtResource( 37 )
 
-[node name="HorizontalNumber2" type="Label" parent="Lobby/RaceArena/Horizontal/Fill" index="1"]
+[node name="HorizontalNumber" type="Label" parent="Lobby/RaceArena/Horizontal/Fill" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0

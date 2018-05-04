@@ -11,7 +11,7 @@ uniform vec3 upper_color;
 uniform vec3 lower_color;
 
 void fragment() {
-	COLOR = vec4(mix(upper_color, lower_color,  min(max(0, UV.y * 3.0 - 1.5), 1.0)), texture(TEXTURE, UV).a);
+	COLOR = vec4(mix(upper_color, lower_color,  UV.y), texture(TEXTURE, UV).a);
 }"
 
 [sub_resource type="ShaderMaterial" id=2]

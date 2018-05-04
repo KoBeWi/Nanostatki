@@ -3,6 +3,11 @@ extends Node
 const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
 var TRIVIA = []
 
+var scoreboard
+var scores = []
+
+var resources = {}
+
 func _ready():
 	var file = File.new()
 	file.open("res://Resources/Trivia.txt", file.READ)
@@ -10,7 +15,47 @@ func _ready():
 	file.close()
 
 func load_nodenames():
-	return [load("res://Sprites/UI/ModenameRace.png"), load("res://Sprites/UI/ModenameDrag.png"), load("res://Sprites/UI/ModenameSumo.png"), load("res://Sprites/UI/ModenameArena.png"), load("res://Sprites/UI/ModenameSurvival.png")]
+	if !resources.has("nodenames"):
+		resources.nodenames = [load("res://Sprites/UI/ModenameRace.png"), load("res://Sprites/UI/ModenameDrag.png"), load("res://Sprites/UI/ModenameSumo.png"), load("res://Sprites/UI/ModenameArena.png"), load("res://Sprites/UI/ModenameSurvival.png")]
+	return resources.nodenames
 
 func load_videos():
-	return [load("res://Resources/Video/Video1.ogm"), null, load("res://Resources/Video/Video3.webm"), null, null]
+	if !resources.has("videos"):
+		resources.videos = [load("res://Resources/Video/Video1.ogm"), null, load("res://Resources/Video/Video3.webm"), null, null]
+	return resources.videos
+
+func load_tracks():
+	if !resources.has("tracks"):
+		resources.tracks = []
+		for i in range(2): resources.tracks.append(load("res://Sprites/Race/Track" + str(i+1) + "/Border.png"))
+	return resources.tracks
+
+func load_arenas():
+	if !resources.has("arenas"):
+		resources.arenas = []
+		for i in range(2): resources.arenas.append(load("res://Sprites/Arena/Arena" + str(i+1) + "/Border.png"))
+	return resources.arenas
+
+func load_scoreboard(name):
+	scoreboard = name
+	scores = []
+	
+	var file = File.new()
+	if file.open("user://" + name, file.READ) == OK:
+		scores = parse_json(file.get_as_text())
+		file.close()
+
+func add_score(name, score):
+	var pos = scores.size()
+	
+	for i in range(scores.size()): if score >= scores[i].score:
+		pos = i
+		break
+	
+	scores.insert(pos, {"name": name, "score": score})
+
+func save_scoreboard():
+	var file = File.new()
+	file.open("user://" + scoreboard, file.WRITE)
+	file.store_string(JSON.print(scores))
+	file.close()

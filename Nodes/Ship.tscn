@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[node name="Ship" type="KinematicBody2D" groups=[
+[node name="Ship" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -42,7 +42,7 @@ player = 0
 
 editor/display_folded = true
 rotation = 1.5708
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Transform" ]
 __meta__ = {
@@ -77,7 +77,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Shape" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( -38.0022, -31.2633, -43.9102, -0.675682, -41.5871, 30.3963, -25.1453, 37.1778, 6.8846, 23.2658, 39.093, 0.659855, 5.914, -24.2937, -25.4688, -37.8821 )
+polygon = PoolVector2Array( -73.1074, -54.6051, -80.6724, -2.19012, -74.1881, 55.6284, -44.4683, 67.5163, 9.56772, 42.6598, 72.2495, -0.569046, 7.40628, -42.7171, -46.0894, -69.1948 )
 __meta__ = {
 "_edit_lock_": true
 }

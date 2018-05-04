@@ -1,12 +1,14 @@
 extends Node2D
 
-const CAMERA_SPEED = 4
+const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 
 onready var camera_target = $Camera.position
 var modenames = Com.load_nodenames()
 var videos = Com.load_videos()
+var tracks = Com.load_tracks()
+var arenas = Com.load_arenas()
 
 var screen = "Title"
 var choice setget move_selection
@@ -97,9 +99,21 @@ func _process(delta):
 				$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
 				$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
 				
+				options[0] = 1
+				if gamemode == 0: options[1] = 3
+				elif gamemode == 3: options[1] = 90
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+				
 				return
 	
 	if screen == "Lobby":
+		if gamemode == 0:
+			if Input.is_action_just_pressed("ui_right"):
+				options[0] += 1
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = tracks[options[0]-1]
+		
 		players_ready = 0
 		start = true
 		
