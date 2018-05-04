@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/DragRace.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=2]
 
-[node name="DragRace" type="Node2D" index="0"]
+[node name="DragRace" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

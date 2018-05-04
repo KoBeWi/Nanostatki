@@ -41,3 +41,10 @@ func _process(delta):
 				Com.update_name(spots[i], names[i])
 		
 		Com.save_scoreboard()
+		
+		var menu = load("res://Scenes/MainMenu.tscn").instance()
+		$"/root".add_child(menu)
+		menu.goto_lobby(Com.MODES.find(mode))
+		menu.get_node("Camera").current = true
+		get_tree().current_scene = menu
+		queue_free()

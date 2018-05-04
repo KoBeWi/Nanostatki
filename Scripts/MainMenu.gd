@@ -160,28 +160,7 @@ func _process(delta):
 				self.choice = 2
 			
 			["Modes", _]:
-				modename_visible = false
-				gamemode = choice
-				camera_target = get_node("ScreenPositions/" + Com.MODES[gamemode]).position
-				
-				$Lobby.position = camera_target
-				$Lobby/Return.position = get_node("ScreenPositions/" + Com.MODES[gamemode] + "/Position2D").position
-				$Lobby/Return.start_pos = $Lobby/Return.position
-				get_node("Modes/Lines/" + Com.MODES[gamemode]).end = NodePath("../../../Lobby/Return")
-				
-				self.choice = -1
-				screen = "Lobby"
-				
-				$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
-				$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
-				$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
-				
-				options[0] = 1
-				if gamemode == 0: options[1] = 3
-				elif gamemode == 3: options[1] = 90
-				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
-				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
-				
+				goto_lobby(choice)
 				return
 	
 	if screen == "Lobby":
@@ -336,3 +315,26 @@ func remove_player(i):
 		if players_joined[j] == i:
 			players_joined[j] = -1
 			return
+
+func goto_lobby(i):
+	modename_visible = false
+	gamemode = i
+	camera_target = get_node("ScreenPositions/" + Com.MODES[gamemode]).position
+	
+	$Lobby.position = camera_target
+	$Lobby/Return.position = get_node("ScreenPositions/" + Com.MODES[gamemode] + "/Position2D").position
+	$Lobby/Return.start_pos = $Lobby/Return.position
+	get_node("Modes/Lines/" + Com.MODES[gamemode]).end = NodePath("../../../Lobby/Return")
+	
+	self.choice = -1
+	screen = "Lobby"
+	
+	$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
+	$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
+	$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
+	
+	options[0] = 1
+	if gamemode == 0: options[1] = 3
+	elif gamemode == 3: options[1] = 90
+	$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+	$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
