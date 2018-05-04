@@ -3,6 +3,7 @@ extends Node2D
 const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
+const SMUTECZEK = "Wygląda na to, że niczego tu nie ma :("
 
 onready var camera_target = $Camera.position
 onready var video = $Modes/VideoPlayer
@@ -31,6 +32,18 @@ func _ready():
 	$Modes.remove_child(video)
 	self.choice = 1
 	Jukebox.play_music("IDY")
+	
+	for j in range(2):
+		Com.load_scoreboard("Race" + str(j+1))
+		var names = ""
+		var scores = ""
+		for i in range(9):
+			var spot = Com.get_score(i)
+			if spot:
+				names += "#" + str(i+1) + "   " + spot.name + "\n"
+				scores += Com.format_time(-int(spot.score)) + "\n"
+		get_node("Scores/Tables/Race/Track" + str(j+1) + "/Names").text = (names if names != "" else SMUTECZEK)
+		get_node("Scores/Tables/Race/Track" + str(j+1) + "/Scores").text = scores
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right") and choice < get_node(screen + "/Nodes").get_child_count()-1:
@@ -70,7 +83,7 @@ func _process(delta):
 				camera_target = $ScreenPositions/Scores.position
 				self.choice = -1
 				screen = "Scores"
-				self.choice = 0
+				self.choice = 5
 			
 			["Title", 1]:
 				camera_target = $ScreenPositions/Modes.position
@@ -206,6 +219,7 @@ func _process(delta):
 			get_node("Lobby/Players/" + str(i+1) + "Active").visible = players_in[i]
 		
 		if players_ready > 0 and start:
+			Jukebox.stop()
 			var game = load("res://Scenes/Loading.tscn").instance()
 			game.setup = [MODES[gamemode], players_joined, options]
 			$"/root".add_child(game)

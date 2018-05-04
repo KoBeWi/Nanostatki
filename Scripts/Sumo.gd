@@ -40,7 +40,7 @@ func _ready():
 	o_wintext = wintext.text
 	
 	$Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
-	Jukebox.play_music("SURDO")
+	get_parent().music = "SURDO"
 
 func _process(delta):
 	if win == -1 and players.get_child_count() == 1:

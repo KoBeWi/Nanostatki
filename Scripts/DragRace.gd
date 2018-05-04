@@ -46,7 +46,7 @@ func _ready():
 	
 	distance = get_parent().register_UI($Distance, self)
 	end = get_parent().register_UI($TheEnd, self)
-	Jukebox.play_music("THISBASS")
+	get_parent().music = "THISBASS"
 
 func init_players(players):
 	for player in players: player.drag_race = 1

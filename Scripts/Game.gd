@@ -9,6 +9,7 @@ var mode
 var players_joined
 var scene
 var settings = {}
+var music
 
 var pause = 3
 

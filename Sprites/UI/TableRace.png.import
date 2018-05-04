@@ -7,10 +7,10 @@ path="res://.import/TableRace.png-de3ad3f99c5852aa2977b15930d6f5e0.stex"
 [deps]
 
 source_file="res://Sprites/UI/TableRace.png"
-source_md5="8610b56a61ad3c5bcf50200ef1e8755e"
+source_md5="e4f784b860c84e8b2ba89d94244cd163"
 
 dest_files=[ "res://.import/TableRace.png-de3ad3f99c5852aa2977b15930d6f5e0.stex" ]
-dest_md5="615f0b3103d7aac4645771ded0d17844"
+dest_md5="dd87663841530b2d2df490aee27661a9"
 
 [params]
 

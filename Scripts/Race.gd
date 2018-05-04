@@ -9,6 +9,8 @@ var ui
 
 export var lap_length = 0
 var laps = [0, 0, 0, 0]
+var lap_time = [0, 0, 0, 0]
+var best_lap = [100000000, 100000000, 100000000, 100000000]
 var won = []
 var start_time = 0
 
@@ -28,10 +30,11 @@ func _ready():
 	get_parent().connect("start", self, "race_start")
 	
 	$Track/Background.set_texture_size(BACKGROUND_W, BACKGROUND_H)
-	Jukebox.play_music("CORTE COSTURA")
+	get_parent().music = "CORTE COSTURA"
 
 func race_start():
 	start_time = OS.get_ticks_msec()
+	for i in range(4): lap_time[i] = start_time
 	ui.start(start_time)
 
 func _process(delta):
@@ -57,6 +60,10 @@ func _process(delta):
 		
 		if player.race_distance >= lap_length * (laps[player.team] + 1):
 			laps[player.team] += 1
+			var time = OS.get_ticks_msec() - lap_time[player.team]
+			if time < best_lap[player.team]: best_lap[player.team] = time
+			lap_time[player.team] = OS.get_ticks_msec()
+			
 			if laps[player.team] == get_parent().settings.laps:
 				player.collision_mask = 0
 				player.collision_layer = 0
@@ -76,7 +83,11 @@ func _process(delta):
 					var results = ui.get_node("Results")
 					results.text = ""
 					for winner in won:
-						results.text += "Gracz " + str(winner.team+1) + ": " + str(winner.time / 60000) + " : " + str(winner.time / 1000 % 60) + " : " + str(winner.time / 10 % 100) + "\n"
+						results.text += "Gracz " + str(winner.team+1) + ": " + Com.format_time(winner.time) + "\n"
+						
+						Com.load_scoreboard("Race1")
+						Com.add_score("Testname2", -best_lap[winner.team])
+						Com.save_scoreboard()
 					results.visible = true
 					
 					ui.get_node("WinText").text = "KONIEC WYŚCIGU!"

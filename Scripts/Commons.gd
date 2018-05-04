@@ -62,3 +62,6 @@ func save_scoreboard():
 	file.open("user://" + scoreboard, file.WRITE)
 	file.store_string(JSON.print(scores))
 	file.close()
+
+func format_time(time):
+	return str(time / 60000) + " : " + str(time / 1000 % 60) + " : " + str(time / 10 % 100)

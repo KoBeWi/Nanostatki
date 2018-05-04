@@ -7,10 +7,10 @@ path="res://.import/ScoreCircle.png-f0ee7d524483843308c29ce92a482927.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreCircle.png"
-source_md5="2b5dff8f204d454a491294bde3175b80"
+source_md5="a48dac7306f67f6d8eea02febe4ccc07"
 
 dest_files=[ "res://.import/ScoreCircle.png-f0ee7d524483843308c29ce92a482927.stex" ]
-dest_md5="1cffe140a29fe571d11521c2d7d88e5d"
+dest_md5="1cb5fca13e12afacf033422519f59139"
 
 [params]
 
