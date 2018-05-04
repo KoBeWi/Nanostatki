@@ -18,7 +18,7 @@ func load_music(name):
 	return music[name]"
 _sections_unfolded = [ "Resource" ]
 
-[node name="Jukebox" type="AudioStreamPlayer" index="0"]
+[node name="Jukebox" type="AudioStreamPlayer"]
 
 stream = null
 volume_db = 0.0

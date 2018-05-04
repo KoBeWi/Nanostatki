@@ -56,7 +56,6 @@ lap_length = 20300
 
 [node name="Track" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -91,9 +90,8 @@ __meta__ = {
 
 [node name="Start" type="Sprite" parent="Track" index="4"]
 
-position = Vector2( -640, 1260 )
+position = Vector2( -631.631, 1318.58 )
 texture = ExtResource( 6 )
-region_enabled = true
 region_rect = Rect2( 0, 0, 64, 512 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 

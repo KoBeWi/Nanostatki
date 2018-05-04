@@ -1824,7 +1824,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( -887.275, 1045.09 )
 _sections_unfolded = [ "Transform" ]
 
@@ -2086,7 +2085,6 @@ end = NodePath("../../NearFrame2")
 
 [node name="Players" type="Node2D" parent="Lobby" index="3"]
 
-editor/display_folded = true
 position = Vector2( -2462.16, -1360.03 )
 
 [node name="1Inactive" type="Node2D" parent="Lobby/Players" index="0"]
@@ -2168,6 +2166,7 @@ texture = ExtResource( 55 )
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
 editor/display_folded = true
+position = Vector2( -15, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/2Inactive" index="0"]
 
@@ -2425,6 +2424,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="3Inactive" type="Node2D" parent="Lobby/Players" index="4"]
 
 editor/display_folded = true
+position = Vector2( -30, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/3Inactive" index="0"]
 
@@ -2628,6 +2628,7 @@ texture = ExtResource( 58 )
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
 editor/display_folded = true
+position = Vector2( -45, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/4Inactive" index="0"]
 
