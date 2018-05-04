@@ -1,10 +1,13 @@
 extends Node2D
 
+const CAN_NAME = {Race = 9, Drag = 9, Sumo = 9, Arena = 4, Survival = 9}
+
 var players
 var names = ["", "", "", ""]
 var spots = [-1, -1, -1, -1]
 var scores
 var mode
+var name_queue = []
 
 func _ready():
 	Jukebox.stop()
@@ -24,7 +27,7 @@ func setup(_players, _scores, scoreboard):
 	
 	for i in range(4):
 		var spot = get_node("Player" + str(i+1))
-		spots[i] = Com.locate_score(_scores[i])
+		if spots[i] < CAN_NAME[mode]: name_queue.append(i)
 		
 		if _players[i] > -1:
 			match mode:
@@ -35,6 +38,9 @@ func setup(_players, _scores, scoreboard):
 			spot.visible = false
 
 func _process(delta):
+	$EnterName/NameInput.grab_focus()
+	$EnterName/TheName.text = $EnterName/NameInput.text + ("" if OS.get_ticks_msec() % 1000 < 500 else "|")
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		for i in range(4):
 			if players[i] > -1:

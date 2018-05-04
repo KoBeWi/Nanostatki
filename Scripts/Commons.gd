@@ -10,6 +10,7 @@ var scores = []
 var resources = {}
 
 func _ready():
+	randomize()
 	var file = File.new()
 	file.open("res://Resources/Trivia.txt", file.READ)
 	TRIVIA = file.get_as_text().split("\n")
