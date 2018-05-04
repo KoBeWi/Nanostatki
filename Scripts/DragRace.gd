@@ -85,12 +85,12 @@ func _process(delta):
 
 func create_particles(track, particle, pos):
 	var e = particle.instance()
-	e.position = pos - Vector2(90, 0)
+	e.position = pos - Vector2(100, 0)
 	e.drag_track = track
 	$Particles.add_child(e)
 	
 	e = particle.instance()
-	e.position = pos + Vector2(90, 0)
+	e.position = pos + Vector2(100, 0)
 	e.drag_track = track
 	$Particles.add_child(e)
 

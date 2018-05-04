@@ -7,10 +7,10 @@ path="res://.import/Background.png-67d17ed88401b4f88bd735ed8ccdb75a.stex"
 [deps]
 
 source_file="res://Sprites/DragRace/Background.png"
-source_md5="58206f1d241d1047913a74f276b3d476"
+source_md5="3627487902dcb495cd59973cd0980436"
 
 dest_files=[ "res://.import/Background.png-67d17ed88401b4f88bd735ed8ccdb75a.stex" ]
-dest_md5="7904f436b020b8c46a00ad711c2c34b9"
+dest_md5="43607753c6bd314f9e1694bed56f74bd"
 
 [params]
 

@@ -55,9 +55,12 @@ func add_score(name, score):
 	
 	scores.insert(pos, {"name": name, "score": score})
 
-func locate_score(name, score):
+func locate_score(score):
 	for i in range(scores.size()): if score >= scores[i].score: return i
 	return scores.size()
+
+func update_name(pos, name):
+	scores[pos].name = name
 
 func get_score(pos):
 	if scores.size() > pos: return scores[pos]

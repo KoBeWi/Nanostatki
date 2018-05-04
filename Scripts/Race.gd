@@ -58,7 +58,7 @@ func _process(delta):
 		
 		player.race_distance = follower.offset
 		
-		if player.race_distance >= lap_length * (laps[player.team] + 1):
+		if player.race_distance >= lap_length * (laps[player.team] + 1) or Input.is_action_just_pressed("ui_randomize"): ##DEBUG
 			laps[player.team] += 1
 			var time = OS.get_ticks_msec() - lap_time[player.team]
 			if time < best_lap[player.team]: best_lap[player.team] = time
@@ -84,24 +84,21 @@ func _process(delta):
 					results.text = ""
 					for winner in won:
 						results.text += "Gracz " + str(winner.team+1) + ": " + Com.format_time(winner.time) + "\n"
-						
-						Com.load_scoreboard("Race1")
-						Com.add_score("Testname2", -best_lap[winner.team])
-						Com.save_scoreboard()
 					results.visible = true
 					
 					ui.get_node("WinText").text = "KONIEC WYŚCIGU!"
 					ui.get_node("WinText").modulate = Com.PLAYER_COLORS[won[0].team]
 					ui.get_node("WinText").visible = true
 					ui.get_node("End").visible = true
+	
+	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
+		for i in range(4): best_lap[i] = -best_lap[i]
+		var summary = load("res://Scenes/Summary.tscn").instance()
+		summary.setup(get_parent().players_joined, best_lap, get_parent().scoreboard)
+		$"/root".add_child(summary)
 		
-		if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
-			var summary = load("res://Scenes/Summary.tscn").instance()
-			summary.setup(get_parent().players_joined, best_lap, get_parent().scoreboard)
-			$"/root".add_child(summary)
-			
-			get_tree().current_scene.queue_free()
-			get_tree().current_scene = summary
+		get_tree().current_scene.queue_free()
+		get_tree().current_scene = summary
 
 func process_camera(camera, players):
 	return

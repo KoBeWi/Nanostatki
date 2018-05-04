@@ -64,7 +64,7 @@ tracks/3/keys = {
 "values": [ 360.0, 0.0 ]
 }
 
-[node name="Ship" type="KinematicBody2D" index="0" groups=[
+[node name="Ship" type="KinematicBody2D" groups=[
 "players",
 ]]
 
@@ -112,7 +112,7 @@ blend_times = [  ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 5.81603
+rotation = 5.00151
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -121,7 +121,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 0.467151
+rotation = 1.28168
 scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -130,7 +130,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 5.81603
+rotation = 5.00151
 scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -139,7 +139,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 0.467151
+rotation = 1.28168
 scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "Visibility" ]

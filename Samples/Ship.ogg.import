@@ -7,10 +7,10 @@ path="res://.import/Ship.ogg-03408a53f88378baaa2f91e05de430b8.oggstr"
 [deps]
 
 source_file="res://Samples/Ship.ogg"
-source_md5="60144b97c95b653181dea5125a775dbf"
+source_md5="873d4492b0770100e619ffcef04c8de5"
 
 dest_files=[ "res://.import/Ship.ogg-03408a53f88378baaa2f91e05de430b8.oggstr" ]
-dest_md5="c71dae74acf908c064254205e661821e"
+dest_md5="9965f5830d9c4fcab04093c8b09eaaef"
 
 [params]
 
