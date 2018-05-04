@@ -1,8 +1,8 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/UI/_wyscigi.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/_przetrwanie.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/MenuNode.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/UI/OptionsFill.png" type="Texture" id=6]
@@ -42,20 +42,25 @@
 [ext_resource path="res://Sprites/UI/TableRace.png" type="Texture" id=40]
 [ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=41]
 [ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=42]
-[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=44]
-[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=45]
-[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=46]
-[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=47]
-[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=48]
-[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=49]
-[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=50]
-[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=51]
-[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=52]
-[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=53]
-[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=54]
-[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=55]
-[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=56]
+[ext_resource path="res://Sprites/UI/TableDrag.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/UI/TableSumo.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/UI/TableArena.png" type="Texture" id=45]
+[ext_resource path="res://Resources/NewCompactFont.tres" type="DynamicFont" id=46]
+[ext_resource path="res://Sprites/UI/TableSurvival.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=51]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=52]
+[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=60]
+[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=61]
 
 [sub_resource type="Shader" id=1]
 
@@ -142,7 +147,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -895,32 +900,12 @@ _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
 end = NodePath("../../Nodes/Survival")
 
-[node name="Label" type="Label" parent="Scores" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -430.0
-margin_top = 100.0
-margin_right = -299.0
-margin_bottom = 114.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Nie działa jeszcze lol"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Tables" type="Node2D" parent="Scores" index="3"]
+[node name="Tables" type="Node2D" parent="Scores" index="2"]
 
 [node name="Race" type="Sprite" parent="Scores/Tables" index="0"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -514.344, 463.059 )
 texture = ExtResource( 40 )
 
@@ -1014,6 +999,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Track2" type="Label" parent="Scores/Tables/Race" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1099,6 +1085,743 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="Drag" type="Sprite" parent="Scores/Tables" index="1"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -514.496, 462.959 )
+texture = ExtResource( 43 )
+
+[node name="Names" type="Label" parent="Scores/Tables/Drag" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -206.0
+margin_top = -127.0
+margin_right = -12.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba
+#5    balsalsal
+#6    ugabauba
+#7    balsalsal
+#8    ugabauba
+#9    balsalsal"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Drag" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = -127.0
+margin_right = 201.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "1nm
+1nm
+1nm
+1nm
+1nm
+1nm
+1nm
+1nm
+1nm"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Sumo" type="Sprite" parent="Scores/Tables" index="2"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -514.496, 462.959 )
+texture = ExtResource( 44 )
+
+[node name="Names" type="Label" parent="Scores/Tables/Sumo" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -206.0
+margin_top = -127.0
+margin_right = -12.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba
+#5    balsalsal
+#6    ugabauba
+#7    balsalsal
+#8    ugabauba
+#9    balsalsal"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Sumo" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = -127.0
+margin_right = 201.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "1
+1
+1
+1
+1
+1
+1
+1
+1"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Arena" type="Sprite" parent="Scores/Tables" index="3"]
+
+position = Vector2( -514.344, 463.059 )
+texture = ExtResource( 45 )
+
+[node name="Arena1" type="Label" parent="Scores/Tables/Arena" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -369.0
+margin_top = -134.0
+margin_right = -146.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 41 )
+text = "ARENA 1 i 2"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 45.0
+margin_right = 128.0
+margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena1" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 45.0
+margin_right = 221.0
+margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Arena2" type="Control" parent="Scores/Tables/Arena" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -369.0
+margin_top = -134.0
+margin_right = -146.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 186.0
+margin_right = 128.0
+margin_bottom = 303.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 186.0
+margin_right = 221.0
+margin_bottom = 303.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Arena3" type="Label" parent="Scores/Tables/Arena" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -134.0
+margin_right = 82.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 41 )
+text = "ARENA 3 i 4"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 45.0
+margin_right = 128.0
+margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 45.0
+margin_right = 221.0
+margin_bottom = 162.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Arena4" type="Control" parent="Scores/Tables/Arena" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -134.0
+margin_right = 82.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 185.0
+margin_right = 128.0
+margin_bottom = 302.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 185.0
+margin_right = 221.0
+margin_bottom = 302.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Arena5" type="Label" parent="Scores/Tables/Arena" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 93.0
+margin_top = -134.0
+margin_right = 369.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 41 )
+text = "ARENA 5, 6 i 7"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena5" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 45.0
+margin_right = 128.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena5" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 45.0
+margin_right = 221.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Arena6" type="Control" parent="Scores/Tables/Arena" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 93.0
+margin_top = -134.0
+margin_right = 369.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena6" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 136.0
+margin_right = 128.0
+margin_bottom = 221.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena6" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 136.0
+margin_right = 221.0
+margin_bottom = 221.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Arena7" type="Control" parent="Scores/Tables/Arena" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 93.0
+margin_top = -134.0
+margin_right = 369.0
+margin_bottom = -99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Names" type="Label" parent="Scores/Tables/Arena/Arena7" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 232.0
+margin_right = 128.0
+margin_bottom = 317.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Arena/Arena7" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 125.0
+margin_top = 232.0
+margin_right = 221.0
+margin_bottom = 317.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 46 )
+text = "10 pkt/s
+10 pkt/s
+10 pkt/s
+10 pkt/s"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Survival" type="Sprite" parent="Scores/Tables" index="4"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -518.496, 459.959 )
+texture = ExtResource( 47 )
+
+[node name="Names" type="Label" parent="Scores/Tables/Survival" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -206.0
+margin_top = -127.0
+margin_right = -12.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "#1    balsalsal
+#2    ugabauba
+#3    balsalsal
+#4    ugabauba
+#5    balsalsal
+#6    ugabauba
+#7    balsalsal
+#8    ugabauba
+#9    balsalsal"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Scores" type="Label" parent="Scores/Tables/Survival" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = -127.0
+margin_right = 201.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 42 )
+text = "1 nm
+1 nm
+1 nm
+1 nm
+1 nm
+1 nm
+1 nm
+1 nm
+1 nm"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
@@ -1137,35 +1860,35 @@ position = Vector2( -2462.16, -1360.03 )
 
 editor/display_folded = true
 position = Vector2( 2391.68, 1148.23 )
-texture = ExtResource( 43 )
+texture = ExtResource( 48 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Dice" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 44 )
+texture = ExtResource( 49 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Dice/Fill" index="0"]
 
 self_modulate = Color( 0.941176, 0.0117647, 0.513726, 1 )
-texture = ExtResource( 45 )
+texture = ExtResource( 50 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
 
 position = Vector2( 2500.06, 1148.23 )
-texture = ExtResource( 43 )
+texture = ExtResource( 48 )
 script = ExtResource( 5 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Vertical" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 44 )
+texture = ExtResource( 49 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Vertical/Fill" index="0"]
 
-texture = ExtResource( 46 )
+texture = ExtResource( 51 )
 
 [node name="VerticalNumber" type="Label" parent="Lobby/RaceArena/Vertical/Fill" index="1"]
 
@@ -1183,7 +1906,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 47 )
+custom_fonts/font = ExtResource( 52 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -1196,17 +1919,17 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
 
 position = Vector2( 2613.22, 1148.23 )
-texture = ExtResource( 43 )
+texture = ExtResource( 48 )
 script = ExtResource( 5 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Horizontal" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 44 )
+texture = ExtResource( 49 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Horizontal/Fill" index="0"]
 
-texture = ExtResource( 48 )
+texture = ExtResource( 53 )
 
 [node name="HorizontalNumber" type="Label" parent="Lobby/RaceArena/Horizontal/Fill" index="1"]
 
@@ -1224,7 +1947,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 47 )
+custom_fonts/font = ExtResource( 52 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -1246,12 +1969,12 @@ position = Vector2( 2698.38, 1207.1 )
 
 editor/display_folded = true
 position = Vector2( 2823.33, 1148.53 )
-texture = ExtResource( 49 )
+texture = ExtResource( 54 )
 
 [node name="Preview" type="Sprite" parent="Lobby/RaceArena/Frame" index="0"]
 
 scale = Vector2( 0.04, 0.04 )
-texture = ExtResource( 50 )
+texture = ExtResource( 55 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RaceText" type="Label" parent="Lobby/RaceArena" index="6"]
@@ -1399,7 +2122,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/1Inactive" index="1"]
 
 position = Vector2( 2158.57, 1313.29 )
-texture = ExtResource( 51 )
+texture = ExtResource( 56 )
 
 [node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
 
@@ -1435,12 +2158,12 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Movement" type="Sprite" parent="Lobby/Players/1Active" index="1"]
 
 position = Vector2( 2163.25, 1472.71 )
-texture = ExtResource( 52 )
+texture = ExtResource( 57 )
 
 [node name="Action" type="Sprite" parent="Lobby/Players/1Active" index="2"]
 
 position = Vector2( 2160.81, 1547.81 )
-texture = ExtResource( 51 )
+texture = ExtResource( 56 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
@@ -1475,7 +2198,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/2Inactive" index="1"]
 
 position = Vector2( 2385.7, 1315.08 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Inactive/Action" index="0"]
 
@@ -1542,7 +2265,7 @@ position = Vector2( 2387.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/2Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/U" index="0"]
 
@@ -1574,7 +2297,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [node name="R" type="Sprite" parent="Lobby/Players/2Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/R" index="0"]
 
@@ -1606,7 +2329,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/2Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/D" index="0"]
 
@@ -1638,7 +2361,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/2Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/L" index="0"]
 
@@ -1670,7 +2393,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/2Active" index="2"]
 
 position = Vector2( 2385.53, 1547.81 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Action" index="0"]
 
@@ -1732,7 +2455,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Inactive" index="1"]
 
 position = Vector2( 2609.94, 1319.9 )
-texture = ExtResource( 54 )
+texture = ExtResource( 59 )
 
 [node name="3Active" type="Node2D" parent="Lobby/Players" index="5"]
 
@@ -1772,7 +2495,7 @@ position = Vector2( 2618.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/3Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/U" index="0"]
 
@@ -1804,7 +2527,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/3Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/R" index="0"]
 
@@ -1836,7 +2559,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/3Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/D" index="0"]
 
@@ -1868,7 +2591,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/3Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/L" index="0"]
 
@@ -1900,7 +2623,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Active" index="2"]
 
 position = Vector2( 2616.53, 1540.46 )
-texture = ExtResource( 54 )
+texture = ExtResource( 59 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
@@ -1935,7 +2658,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/4Inactive" index="1"]
 
 position = Vector2( 2835.47, 1315.08 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Inactive/Action" index="0"]
 
@@ -2002,7 +2725,7 @@ position = Vector2( 2835.61, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/4Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/U" index="0"]
 
@@ -2034,7 +2757,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/4Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/R" index="0"]
 
@@ -2066,7 +2789,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/4Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/D" index="0"]
 
@@ -2098,7 +2821,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/4Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/L" index="0"]
 
@@ -2130,7 +2853,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/4Active" index="2"]
 
 position = Vector2( 2833.17, 1547.81 )
-texture = ExtResource( 53 )
+texture = ExtResource( 58 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Action" index="0"]
 
@@ -2231,10 +2954,12 @@ texture = ExtResource( 22 )
 [node name="Graphic" type="Sprite" parent="Authors" index="1"]
 
 position = Vector2( 1512, -526 )
-texture = ExtResource( 55 )
+texture = ExtResource( 60 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CrossLines" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
 
 [node name="SR" type="Sprite" parent="CrossLines" index="0"]
 
@@ -2274,9 +2999,11 @@ end = NodePath("../../Title/Nodes/Scores")
 
 [node name="Samples" type="Node" parent="." index="8"]
 
+editor/display_folded = true
+
 [node name="Move" type="AudioStreamPlayer" parent="Samples" index="0"]
 
-stream = ExtResource( 56 )
+stream = ExtResource( 61 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0

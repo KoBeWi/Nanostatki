@@ -7,10 +7,10 @@ path="res://.import/TableArena.png-561c82830f150e699d8ac8635daa234f.stex"
 [deps]
 
 source_file="res://Sprites/UI/TableArena.png"
-source_md5="774a045fb5f68fc109305a32cbbaf127"
+source_md5="a17072187c6172f1e9cf1371cc618b42"
 
 dest_files=[ "res://.import/TableArena.png-561c82830f150e699d8ac8635daa234f.stex" ]
-dest_md5="fa11baab8b2a111e9d69e39d6f95612e"
+dest_md5="e78bec77a7352b75679afa7afa73f61e"
 
 [params]
 

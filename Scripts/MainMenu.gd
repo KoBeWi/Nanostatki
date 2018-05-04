@@ -44,6 +44,51 @@ func _ready():
 				scores += Com.format_time(-int(spot.score)) + "\n"
 		get_node("Scores/Tables/Race/Track" + str(j+1) + "/Names").text = (names if names != "" else SMUTECZEK)
 		get_node("Scores/Tables/Race/Track" + str(j+1) + "/Scores").text = scores
+	
+	Com.load_scoreboard("Sumo")
+	var names = ""
+	var scores = ""
+	for i in range(9):
+		var spot = Com.get_score(i)
+		if spot:
+			names += "#" + str(i+1) + "   " + spot.name + "\n"
+			scores += str(spot.score) + " pkt\n"
+	get_node("Scores/Tables/Sumo/Names").text = (names if names != "" else SMUTECZEK)
+	get_node("Scores/Tables/Sumo/Scores").text = scores
+	
+	for j in range(7):
+		Com.load_scoreboard("Arena" + str(j+1))
+		names = ""
+		scores = ""
+		for i in range(4):
+			var spot = Com.get_score(i)
+			if spot:
+				names += "#" + str(i+1) + "   " + spot.name + "\n"
+				scores += Com.format_time(-int(spot.score)) + "\n"
+		get_node("Scores/Tables/Arena/Arena" + str(j+1) + "/Names").text = (names if names != "" else "Pusto :(")
+		get_node("Scores/Tables/Arena/Arena" + str(j+1) + "/Scores").text = scores
+	
+	Com.load_scoreboard("Drag")
+	names = ""
+	scores = ""
+	for i in range(9):
+		var spot = Com.get_score(i)
+		if spot:
+			names += "#" + str(i+1) + "   " + spot.name + "\n"
+			scores += str(spot.score) + " nm\n"
+	get_node("Scores/Tables/Drag/Names").text = (names if names != "" else SMUTECZEK)
+	get_node("Scores/Tables/Drag/Scores").text = scores
+	
+	Com.load_scoreboard("Survival")
+	names = ""
+	scores = ""
+	for i in range(9):
+		var spot = Com.get_score(i)
+		if spot:
+			names += "#" + str(i+1) + "   " + spot.name + "\n"
+			scores += str(spot.score) + " nm\n"
+	get_node("Scores/Tables/Survival/Names").text = (names if names != "" else SMUTECZEK)
+	get_node("Scores/Tables/Survival/Scores").text = scores
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right") and choice < get_node(screen + "/Nodes").get_child_count()-1:
@@ -102,6 +147,12 @@ func _process(delta):
 				exiting = 1
 				yield(get_tree().create_timer(1.1), "timeout")
 				get_tree().quit()
+				
+			["Scores", 5]:
+				camera_target = $ScreenPositions/Title.position
+				self.choice = -1
+				screen = "Title"
+				self.choice = 0
 			
 			["Authors", 0]:
 				camera_target = $ScreenPositions/Title.position
@@ -265,6 +316,9 @@ func move_selection(new_choice):
 		video.rect_position = Vector2(-64, -64)
 		video.stream = videos[choice]
 		video.play()
+	elif screen == "Scores":
+		for i in range(5):
+			$Scores/Tables.get_child(i).visible = (choice == i)
 
 func add_player(i):
 	players_in[i] = true

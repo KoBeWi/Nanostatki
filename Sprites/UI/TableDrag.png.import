@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TableAccelerator.png-6a022d80aa2ad61269be85c2be58b80d.stex"
+path="res://.import/TableDrag.png-05d6a4c7dba70edd9d400cf1566b7f8a.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/TableAccelerator.png"
+source_file="res://Sprites/UI/TableDrag.png"
 source_md5="fab8fbdff0325b1447bd3eedf141c50e"
 
-dest_files=[ "res://.import/TableAccelerator.png-6a022d80aa2ad61269be85c2be58b80d.stex" ]
+dest_files=[ "res://.import/TableDrag.png-05d6a4c7dba70edd9d400cf1566b7f8a.stex" ]
 dest_md5="d188411c065e13c1b4bf3ead4a502012"
 
 [params]
