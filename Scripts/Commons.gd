@@ -33,7 +33,7 @@ func load_tracks():
 func load_arenas():
 	if !resources.has("arenas"):
 		resources.arenas = []
-		for i in range(2): resources.arenas.append(load("res://Sprites/Arena/Arena" + str(i+1) + "/Border.png"))
+		for i in range(7): resources.arenas.append(load("res://Sprites/Arena/Arena" + str(i+1) + "/Border.png"))
 	return resources.arenas
 
 func load_scoreboard(name):

@@ -115,10 +115,55 @@ func _process(delta):
 	
 	if screen == "Lobby":
 		if gamemode == 0:
-			if Input.is_action_just_pressed("ui_right"):
+			if Input.is_action_just_pressed("ui_right") and options[0] < 2:
 				options[0] += 1
+				$Lobby/RaceArena/Horizontal.off_balance = Vector2(16, 0)
 				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
 				$Lobby/RaceArena/Frame/Preview.texture = tracks[options[0]-1]
+			elif Input.is_action_just_pressed("ui_left") and options[0] > 1:
+				options[0] -= 1
+				$Lobby/RaceArena/Horizontal.off_balance = Vector2(-16, 0)
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = tracks[options[0]-1]
+			elif Input.is_action_just_pressed("ui_up") and options[1] < 9:
+				options[1] += 1
+				$Lobby/RaceArena/Vertical.off_balance = Vector2(0, -16)
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+			elif Input.is_action_just_pressed("ui_down") and options[1] > 1:
+				options[1] -= 1
+				$Lobby/RaceArena/Vertical.off_balance = Vector2(0, 16)
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+			elif Input.is_action_just_pressed("ui_randomize"):
+				options[0] = 1 + randi() % 2
+				$Lobby/RaceArena/Dice.off_balance = Vector2(randi() % 16, randi() % 16)
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = tracks[options[0]-1]
+		elif gamemode == 3:
+			if Input.is_action_just_pressed("ui_right") and options[0] < 7:
+				options[0] += 1
+				$Lobby/RaceArena/Horizontal.off_balance = Vector2(16, 0)
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = arenas[options[0]-1]
+			elif Input.is_action_just_pressed("ui_left") and options[0] > 1:
+				options[0] -= 1
+				$Lobby/RaceArena/Horizontal.off_balance = Vector2(-16, 0)
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = arenas[options[0]-1]
+			elif (Input.is_action_just_pressed("ui_up") or !Input.is_key_pressed(KEY_SHIFT) and Input.is_action_pressed("ui_up")) and options[1] < 300:
+				options[1] += 1
+				$Lobby/RaceArena/Vertical.off_balance = Vector2(0, -16)
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+			elif (Input.is_action_just_pressed("ui_down") or !Input.is_key_pressed(KEY_SHIFT) and Input.is_action_pressed("ui_down")) and options[1] > 15:
+				options[1] -= 1
+				$Lobby/RaceArena/Vertical.off_balance = Vector2(0, 16)
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+				$Lobby/RaceArena/Vertical/Fill/VerticalNumber.text = str(options[1])
+			elif Input.is_action_just_pressed("ui_randomize"):
+				options[0] = 1 + randi() % 7
+				$Lobby/RaceArena/Dice.off_balance = Vector2(randi() % 16, randi() % 16)
+				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
+				$Lobby/RaceArena/Frame/Preview.texture = arenas[options[0]-1]
 		
 		players_ready = 0
 		start = true
