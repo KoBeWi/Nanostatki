@@ -39,26 +39,27 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		match screen:
 			"Modes":
-				camera_target = Vector2(512, 300)
+				camera_target = $ScreenPositions/Title.position
 				self.choice = -1
 				screen = "Title"
 				self.choice = 1
 			
 			"Authors":
-				camera_target = Vector2(512, 300)
+				camera_target = $ScreenPositions/Title.position
 				self.choice = -1
 				screen = "Title"
 				self.choice = 2
 			
 			"Lobby":
-				camera_target = Vector2(1082, 987)
+				get_node("Modes/Lines/" + MODES[gamemode]).end = "../../../ScreenPosition/ " + MODES[gamemode] + "/Position2D"
+				camera_target = $ScreenPositions/Modes.position
 				screen = "Modes"
 				self.choice = gamemode+1
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		match [screen, choice]:
 			["Title", 1]:
-				camera_target = Vector2(1082, 987)
+				camera_target = $ScreenPositions/Modes.position
 				self.choice = -1
 				screen = "Modes"
 				self.choice = 1
@@ -76,22 +77,27 @@ func _process(delta):
 				get_tree().quit()
 			
 			["Authors", 0]:
-				camera_target = Vector2(512, 300)
+				camera_target = $ScreenPositions/Title.position
 				self.choice = -1
 				screen = "Title"
 				self.choice = 2
 			
 			["Modes", 0]:
-				camera_target = Vector2(512, 300)
+				camera_target = $ScreenPositions/Title.position
 				self.choice = -1
 				screen = "Title"
 				self.choice = 1
 			
 			["Modes", _]:
-				camera_target = Vector2(2501, 1352)
 				modename_visible = false
 				gamemode = choice-1
-				$CrossLines/MODE.start = NodePath("../../Modes/Nodes/" + $Modes/Nodes.get_child(choice).name)
+				camera_target = get_node("ScreenPositions/" + MODES[gamemode]).position
+				
+				$Lobby.position = camera_target
+				$Lobby/Return.position = get_node("ScreenPositions/" + MODES[gamemode] + "/Position2D").position
+				$Lobby/Return.start_pos = $Lobby/Return.position
+				get_node("Modes/Lines/" + MODES[gamemode]).end = NodePath("../../../Lobby/Return")
+				
 				self.choice = -1
 				screen = "Lobby"
 				
@@ -182,7 +188,7 @@ func move_selection(new_choice):
 			var color = menu.get_node("Fill/Icon").self_modulate
 			menu.get_node("Fill").self_modulate = color
 			menu.self_modulate = color
-			menu.get_node("Fill/Icon").self_modulate = Color(color.r * 2, color.g * 2, color.b * 2)
+			menu.get_node("Fill/Icon").self_modulate = Color(1, 1, 1)
 			
 			if prev_node:
 				menu.off_balance = (menu.position - prev_node.position)/10
