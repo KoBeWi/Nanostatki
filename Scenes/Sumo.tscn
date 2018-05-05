@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Sumo.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Sumo/Background.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Sumo/Frame.png" type="Texture" id=4]
-[ext_resource path="res://Resources/Font32.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 0.01
 
-[node name="Sumo" type="Node2D"]
+[node name="Sumo" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -63,9 +64,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 67.0
+margin_left = 6.0
 margin_top = 240.0
-margin_right = 572.0
+margin_right = 511.0
 margin_bottom = 294.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -75,11 +76,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "WYGRYWA GRACZ %s!"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Continue" type="Label" parent="." index="5"]
 
@@ -99,12 +103,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color_shadow = Color( 0, 0.648438, 1, 1 )
+custom_constants/shadow_as_outline = 1
 text = "ENTER - SPRÓBÓJ PONOWNIE
 ESCAPE - WYJDŹ DO MENU"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Stats" type="Label" parent="." index="6"]
 
@@ -113,15 +119,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 468.0
-margin_bottom = 57.0
+margin_right = 1021.0
+margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_shadow = Color( 0, 0.71875, 1, 1 )
 text = "ZWYCIĘSTWA:
 GRACZ1: 0                   GRACZ2: 0                   GRACZ3: 0                   GRACZ4: 0"
 percent_visible = 1.0

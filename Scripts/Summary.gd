@@ -42,7 +42,9 @@ func setup(_players, _places, _scores, scoreboard):
 				"Race":
 					spot.get_node("Score").text = " Czas: " + Com.format_time(-_scores[i])
 				"Drag":
-					spot.get_node("Score").text = " Dystans: " + str(_scores[i]) + " nm"
+					spot.get_node("Score").text = " Dystans: " + str(_scores[i]) + "nm"
+				"Sumo":
+					spot.get_node("Score").text = " Wynik: " + str(_scores[i]) + "pkt"
 		else:
 			spot.visible = false
 	

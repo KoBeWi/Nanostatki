@@ -80,8 +80,8 @@ func _process(delta):
 		if fail_time[player.team] >= FAIL_TIME:
 			player.paralyzed = true
 			end.get_node(str(player.team+1)).visible = true
+			places[player.team] = players - is_ded
 			is_ded += 1
-			places[player.team] = is_ded
 
 		if player.drag_race < last_particle + 100:
 			last_particle -= max(100, 1600 - last_particle / 1000)

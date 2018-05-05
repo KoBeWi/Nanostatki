@@ -59,6 +59,7 @@ func _process(delta):
 		wintext.text = o_wintext % str(player.team+1)
 		wintext.modulate = Com.PLAYER_COLORS[win]
 		$Arena.modulate = Com.PLAYER_COLORS[player.team]
+		get_parent().finished = true
 		
 		yield(get_tree().create_timer(3), "timeout")
 		
@@ -66,13 +67,25 @@ func _process(delta):
 		
 	elif win > -1:
 		if Input.is_action_just_pressed("ui_accept"):
+			get_parent().finished = false
 			stats.visible = false
 			wintext.visible = false
 			continu.visible = false
 			win = -1
+			$Arena.modulate = Color(1, 1, 1)
 			get_parent().restart_scene()
-#		elif Input.is_action_just_pressed("ui_cancel"): ##może być niepotrzebne, bo jest w game
-#			get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
+		elif Input.is_action_just_pressed("ui_cancel"):
+			var places = [0, 0, 0, 0]
+			var score = [0, 0, 0, 0]
+			
+			for team in teams:
+				for team2 in teams:
+					if wins[team] <= wins[team2]: places[team] += 1
+					
+					if team2 == team: score[team] += wins[team2]
+					else: score[team] -= wins[team2]
+			
+			get_parent().goto_summary(places, score)
 
 func process_camera(camera, players):
 	camera.position = Vector2()
