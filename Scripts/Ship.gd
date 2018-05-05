@@ -4,7 +4,7 @@ const ACCELERATION = 100
 const DAMP = 0.1
 const ROT_SPEED = -PI/60
 const FORCE = 25000
-const FORCE_RANGE = 400
+const FORCE_RANGE = 750
 
 export var team = 0
 export var player = 0

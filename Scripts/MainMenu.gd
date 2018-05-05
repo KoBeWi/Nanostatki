@@ -144,7 +144,7 @@ func _process(delta):
 			["Title", 3]:
 				camera_target.x = 10000
 				exiting = 1
-				yield(get_tree().create_timer(1.1), "timeout")
+				yield(get_tree().create_timer(1.5), "timeout")
 				get_tree().quit()
 				
 			["Scores", 5]:
@@ -261,8 +261,8 @@ func _process(delta):
 	if $Camera.position.distance_squared_to(camera_target) < CAMERA_SPEED*CAMERA_SPEED: $Camera.position = camera_target
 	
 	if exiting:
-		exiting -= 0.005
-		$".".modulate = Color(exiting, exiting, exiting)
+		exiting -= delta
+		modulate = Color(exiting, exiting, exiting)
 
 func move_selection(new_choice):
 	choice = new_choice

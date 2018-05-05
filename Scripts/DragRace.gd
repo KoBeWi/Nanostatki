@@ -14,7 +14,6 @@ var players = 0
 var last_particle
 var fail_time = [0, 0, 0, 0]
 var last_distance = [0, 0, 0, 0]
-var places = [0, 0, 0, 0]
 var started = false
 var the_end = false
 var is_ded = 0
@@ -80,7 +79,6 @@ func _process(delta):
 		if fail_time[player.team] >= FAIL_TIME:
 			player.paralyzed = true
 			end.get_node(str(player.team+1)).visible = true
-			places[player.team] = players - is_ded
 			is_ded += 1
 
 		if player.drag_race < last_particle + 100:
@@ -94,8 +92,17 @@ func _process(delta):
 	
 	if is_ded == players and !get_parent().finished:
 		get_parent().finished = true
-		yield(get_tree().create_timer(3), "timeout")
+		var places = [0, 0, 0, 0]
 		for i in range(4): last_distance[i] = -int(last_distance[i])
+		
+		for team in get_parent().players_joined:
+			if team == -1: continue
+			
+			for team2 in get_parent().players_joined:
+				if team2 == -1: continue
+				if last_distance[team] <= last_distance[team2]: places[team] += 1
+		
+		yield(get_tree().create_timer(3), "timeout")
 		get_parent().goto_summary(places, last_distance)
 
 func create_particles(track, particle, pos):

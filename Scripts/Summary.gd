@@ -41,7 +41,7 @@ func setup(_players, _places, _scores, scoreboard):
 			match mode:
 				"Race":
 					spot.get_node("Score").text = " Czas: " + Com.format_time(-_scores[i])
-				"Drag":
+				"Drag", "Survival":
 					spot.get_node("Score").text = " Dystans: " + str(_scores[i]) + "nm"
 				"Sumo":
 					spot.get_node("Score").text = " Wynik: " + str(_scores[i]) + "pkt"

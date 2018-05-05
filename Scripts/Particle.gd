@@ -1,5 +1,5 @@
 tool
-extends KinematicBody2D
+extends StaticBody2D
 
 const FORCE = 25000
 const FORCE_RANGE = 700

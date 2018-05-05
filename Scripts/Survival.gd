@@ -14,6 +14,7 @@ var distance_label
 var players = [null, null, null, null]
 var healths = [8, 8, 8, 8]
 var distance = [0, 0, 0, 0]
+var the_end
 
 func _ready():
 	get_parent().connect("init_players", self, "init_players")
@@ -23,6 +24,7 @@ func _ready():
 	
 	start_time = OS.get_ticks_msec()
 	distance_label = get_parent().register_UI($Distance, self)
+	the_end = get_parent().register_UI($AllThingsDone, self)
 	get_parent().music = "MAU"
 
 func _physics_process(delta):
@@ -30,7 +32,7 @@ func _physics_process(delta):
 	var maxd = 0
 	
 	for player in players:
-		if !player or !player.visible: continue
+		if !player: continue
 		if distance[player.team] > prev_maxd: prev_maxd = distance[player.team]
 		
 		if player.position.x > distance[player.team]:
@@ -47,6 +49,9 @@ func _physics_process(delta):
 	
 	death.position.x += (OS.get_ticks_msec() - start_time) / 10000 + 1
 	camera.limit_left = death.position.x
+	
+	if get_parent().finished:
+		the_end.modulate.a += delta
 
 func init_players(_players):
 	for player in _players:
@@ -70,7 +75,28 @@ func obstacle_hit(body, team):
 		players[team].get_node("Survival/Indicator").value -= damage
 		
 		if healths[team] <= 0:
-			players[team].visible = false
+			players[team].queue_free()
+			players[team] = null
+			
+			var all_dead = true
+			for player in players:
+				if player: all_dead = false
+			
+			if all_dead:
+				get_parent().finished = true
+				yield(get_tree().create_timer(2), "timeout")
+				
+				var places = [0, 0, 0, 0]
+				
+				for team in get_parent().players_joined:
+					if team == -1: continue
+					
+					for team2 in get_parent().players_joined:
+						if team2 == -1: continue
+						if distance[team] <= distance[team2]: places[team] += 1
+				
+				for i in range(4): distance[i] = int(distance[i])
+				get_parent().goto_summary(places, distance)
 
 func spawn_obstacles(distance):
 	distance += 2048
@@ -93,7 +119,6 @@ func process_camera(camera, players):
 	var playnum = 0
 	
 	for player in players:
-		if !player.visible: continue
 		playnum += 1
 		
 		min_y = min(player.get_pos().y - CAMERA_OFFSET, min_y)
