@@ -247,7 +247,7 @@ func _process(delta):
 			get_node("Lobby/Players/" + str(i+1) + "Inactive").visible = !players_in[i]
 			get_node("Lobby/Players/" + str(i+1) + "Active").visible = players_in[i]
 		
-		if players_ready > 0 and start:
+		if players_ready > (1 if gamemode == 2 else 0) and start:
 			Jukebox.stop()
 			var game = load("res://Scenes/Loading.tscn").instance()
 			game.setup = [Com.MODES[gamemode], players_joined, options]
@@ -255,6 +255,7 @@ func _process(delta):
 			get_tree().current_scene = game
 			queue_free()
 		
+		$Lobby/Need2.visible = (gamemode == 2 and players_ready == 1)
 		$Lobby/RealContinue.visible = (players_ready > 0)
 	
 	$Camera.position += (camera_target - $Camera.position).normalized() * CAMERA_SPEED

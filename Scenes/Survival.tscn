@@ -73,7 +73,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 32768, 10 )
 
-[node name="Survival" type="Node2D" index="0"]
+[node name="Survival" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -251,13 +251,14 @@ _sections_unfolded = [ "Scroll" ]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 4900, 2048 )
+motion_mirroring = Vector2( 9800, 2048 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="Sprite" type="Sprite" parent="Background/Layer" index="0"]
 
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 4096, 2048 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 9800, 2048 )
 _sections_unfolded = [ "Offset", "Region" ]
 __meta__ = {
 "_edit_lock_": true

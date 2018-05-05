@@ -7,10 +7,10 @@ path="res://.import/PosDot.png-5b5ee633fad8a4b23b63bee5d6703914.stex"
 [deps]
 
 source_file="res://Sprites/Race/PosDot.png"
-source_md5="afff8e555ac5a74c42f801700476ad96"
+source_md5="8cbacf0b429a9db2706dad630bc6c38c"
 
 dest_files=[ "res://.import/PosDot.png-5b5ee633fad8a4b23b63bee5d6703914.stex" ]
-dest_md5="3b6ce816b0331ece49e7011d241e0e06"
+dest_md5="338ff63e9db04379f081e62d2d57c44a"
 
 [params]
 

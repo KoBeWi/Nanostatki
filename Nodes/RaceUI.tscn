@@ -11,7 +11,7 @@ script/source = "extends Control
 var dot = load(\"res://Sprites/Race/PosDot.png\")
 var track = load(\"res://Sprites/Race/Track.png\")
 var lap = load(\"res://Sprites/Race/LapLine.png\")
-var font = load(\"res://Resources/Font16.tres\")
+#var font = load(\"res://Resources/Font16.tres\")
 
 var lap_length = 1
 var lap_count = 1
@@ -42,7 +42,7 @@ func _draw():
 	for player in players:
 		var x = 4 + 1000 * clamp(player.race_distance / (lap_length * lap_count), 0, 1)
 		draw_texture(dot, Vector2(x, 4), Com.PLAYER_COLORS[player.team])
-		draw_string(font, Vector2(x - 4, 40), \"P\" + str(player.team+1), Com.PLAYER_COLORS[player.team])"
+#		draw_string(font, Vector2(x - 4, 40), \"P\" + str(player.team+1), Com.PLAYER_COLORS[player.team])"
 _sections_unfolded = [ "Resource" ]
 
 [node name="RaceUI" type="Control"]
