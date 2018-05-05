@@ -103,7 +103,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color_shadow = Color( 0, 0.648438, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "ENTER - SPRÓBÓJ PONOWNIE
 ESCAPE - WYJDŹ DO MENU"
@@ -128,7 +128,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
-custom_colors/font_color_shadow = Color( 0, 0.71875, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 text = "ZWYCIĘSTWA:
 GRACZ1: 0                   GRACZ2: 0                   GRACZ3: 0                   GRACZ4: 0"
 percent_visible = 1.0

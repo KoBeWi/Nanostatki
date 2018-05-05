@@ -45,7 +45,7 @@ func _draw():
 		draw_string(font, Vector2(x - 4, 40), \"P\" + str(player.team+1), Com.PLAYER_COLORS[player.team])"
 _sections_unfolded = [ "Resource" ]
 
-[node name="RaceUI" type="Control"]
+[node name="RaceUI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -105,7 +105,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0.671875, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "0 : 0 : 0"
 align = 1
@@ -132,7 +132,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0.695313, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Gracz 1: 0 : 0 : 0
 Gracz 2: 0 : 0 : 0
@@ -141,7 +141,7 @@ Gracz 4: 0 : 0 : 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="End" type="Label" parent="." index="3"]
 
@@ -161,11 +161,12 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0.671875, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ ENTER, BY WRÓCIĆ DO MENU"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
 
 
