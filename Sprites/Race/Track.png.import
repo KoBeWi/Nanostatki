@@ -7,10 +7,10 @@ path="res://.import/Track.png-69168c528edec6785bcad35328c4213e.stex"
 [deps]
 
 source_file="res://Sprites/Race/Track.png"
-source_md5="56f592c3d98816102987950e6e10446a"
+source_md5="add23b29df0b862ebe0ed1e099daf26b"
 
 dest_files=[ "res://.import/Track.png-69168c528edec6785bcad35328c4213e.stex" ]
-dest_md5="d2811b50888f9501c7b5f58214fa3ccd"
+dest_md5="8f0ace5b9c9dd37b0821811359267e73"
 
 [params]
 

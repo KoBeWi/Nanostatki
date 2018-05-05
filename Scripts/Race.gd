@@ -13,6 +13,7 @@ var lap_time = [0, 0, 0, 0]
 var best_lap = [100000000, 100000000, 100000000, 100000000]
 var won = []
 var start_time = 0
+var places = [0, 0, 0, 0]
 
 onready var camera_track = $TrackPath/CameraTrack
 
@@ -72,13 +73,15 @@ func _process(delta):
 				won.append({team = player.team, time = OS.get_ticks_msec() - start_time})
 				
 				ui.get_node("WinText").text = "GRACZ " + str(player.team+1) + " ZAJMUJE " + str(won.size()) + " MIEJSCE!"
+				places[player.team] = won.size()
 				ui.get_node("WinText").modulate = Com.PLAYER_COLORS[player.team]
 				ui.get_node("WinText").visible = true
+				if won.size() == $"../Players".get_child_count(): ui.get_node("Timer").visible = false
 				yield(get_tree().create_timer(2), "timeout")
 				ui.get_node("WinText").visible = false
 				
 				if won.size() == $"../Players".get_child_count():
-					ui.get_node("Timer").visible = false
+					get_parent().finished = true
 					
 					var results = ui.get_node("Results")
 					results.text = ""
@@ -94,7 +97,7 @@ func _process(delta):
 	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
 		for i in range(4): best_lap[i] = -best_lap[i]
 		var summary = load("res://Scenes/Summary.tscn").instance()
-		summary.setup(get_parent().players_joined, best_lap, get_parent().scoreboard)
+		summary.setup(get_parent().players_joined, places, best_lap, get_parent().scoreboard)
 		$"/root".add_child(summary)
 		
 		get_tree().current_scene.queue_free()

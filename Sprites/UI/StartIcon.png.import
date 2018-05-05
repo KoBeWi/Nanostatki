@@ -7,10 +7,10 @@ path="res://.import/StartIcon.png-dfe224e8f99a9edd52c315888b0d5f78.stex"
 [deps]
 
 source_file="res://Sprites/UI/StartIcon.png"
-source_md5="092547c296f72a3a635aa5ab0df722b5"
+source_md5="fb63a6f3a46ace9d13523cf339de0ace"
 
 dest_files=[ "res://.import/StartIcon.png-dfe224e8f99a9edd52c315888b0d5f78.stex" ]
-dest_md5="eddab4d307c173ba0d6cf4e3cab7f9c6"
+dest_md5="9d21fbd5d2d2dce3969ca0ddec9bbefd"
 
 [params]
 

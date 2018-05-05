@@ -1,10 +1,12 @@
 extends Node2D
 
 const CAN_NAME = {Race = 9, Drag = 9, Sumo = 9, Arena = 4, Survival = 9}
+const PLACE_COLORS = [Color("ffd300"), Color("a3a3a3"), Color("5f3200"), Color(0, 0, 0, 0)]
 
 var players
 var names = ["", "", "", ""]
 var spots = [-1, -1, -1, -1]
+var places
 var scores
 var mode
 var name_queue = []
@@ -12,9 +14,10 @@ var name_queue = []
 func _ready():
 	Jukebox.stop()
 
-func setup(_players, _scores, scoreboard):
+func setup(_players, _places, _scores, scoreboard):
 	Com.load_scoreboard(scoreboard)
 	players = _players
+	places = _places
 	scores = _scores
 	for _mode in Com.MODES: if scoreboard.find(_mode) > -1: mode = _mode
 	
@@ -30,6 +33,9 @@ func setup(_players, _scores, scoreboard):
 		
 		if _players[i] > -1:
 			if spots[i] < CAN_NAME[mode]: name_queue.append(i)
+			spot.get_node("Place").self_modulate = PLACE_COLORS[places[i]-1]
+			if places[i] < 4: spot.get_node("Place/Number").self_modulate = PLACE_COLORS[places[i]-1]
+			spot.get_node("Place/Number").text = str(places[i])
 			
 			match mode:
 				"Race":

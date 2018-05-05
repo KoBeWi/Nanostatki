@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LapLine.png-37a02204afeb07b5735e8cb5926ad1ea.stex"
+path="res://.import/Place.png-119f06f430b8d8497d3571465d5a90a3.stex"
 
 [deps]
 
-source_file="res://Sprites/Race/LapLine.png"
-source_md5="459924fba8d5971c3dd3071bf2859dbb"
+source_file="res://Sprites/UI/Place.png"
+source_md5="3ec7a6c7affe5d9df2b781ffc070bd9b"
 
-dest_files=[ "res://.import/LapLine.png-37a02204afeb07b5735e8cb5926ad1ea.stex" ]
-dest_md5="426696a5396ded101b5a5cd3f0e302f2"
+dest_files=[ "res://.import/Place.png-119f06f430b8d8497d3571465d5a90a3.stex" ]
+dest_md5="fac1cda56b1314e234a488b7df3bdc6a"
 
 [params]
 

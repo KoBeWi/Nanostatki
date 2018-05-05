@@ -7,10 +7,10 @@ path="res://.import/Crown.png-7223690cd6fac6c257678e7f26bd57c7.stex"
 [deps]
 
 source_file="res://Sprites/Arena/Crown.png"
-source_md5="7fbcdd6bdcc3f8c82de825b3a937e8ba"
+source_md5="45ffd9cab7c273ab85f0e2d6bd75bba6"
 
 dest_files=[ "res://.import/Crown.png-7223690cd6fac6c257678e7f26bd57c7.stex" ]
-dest_md5="bb5d208f0ba29bddb5918c7b2e8b80df"
+dest_md5="0d8c679be2b9fbc3be61572830cd726a"
 
 [params]
 

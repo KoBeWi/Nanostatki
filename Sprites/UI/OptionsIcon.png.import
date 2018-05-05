@@ -7,10 +7,10 @@ path="res://.import/OptionsIcon.png-82f487a099660ba5db092c57724ae2e7.stex"
 [deps]
 
 source_file="res://Sprites/UI/OptionsIcon.png"
-source_md5="29ac193e182a2f4a03d254e1972faa00"
+source_md5="98af7a347970bc8e66add8718dc4c6ba"
 
 dest_files=[ "res://.import/OptionsIcon.png-82f487a099660ba5db092c57724ae2e7.stex" ]
-dest_md5="14d37f80e16230c420659118f72d43ac"
+dest_md5="e86de8b0df91d4f1aba6c076de0e36a5"
 
 [params]
 

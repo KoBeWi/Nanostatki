@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Resources/Font32.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -45,7 +45,7 @@ func _draw():
 		draw_string(font, Vector2(x - 4, 40), \"P\" + str(player.team+1), Com.PLAYER_COLORS[player.team])"
 _sections_unfolded = [ "Resource" ]
 
-[node name="RaceUI" type="Control"]
+[node name="RaceUI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -79,12 +79,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "GRACZ 1 ZAJMUJE 1 MIEJSCE!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="Timer" type="Label" parent="." index="1"]
 
@@ -103,12 +105,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
 text = "0 : 0 : 0"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Results" type="Label" parent="." index="2"]
 
@@ -128,6 +132,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0.695313, 1, 1 )
+custom_constants/shadow_as_outline = 1
 text = "Gracz 1: 0 : 0 : 0
 Gracz 2: 0 : 0 : 0
 Gracz 3: 0 : 0 : 0
@@ -155,10 +161,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0.671875, 1, 1 )
+custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ ENTER, BY WRÓCIĆ DO MENU"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
 

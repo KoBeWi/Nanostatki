@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Summary.gd" type="Script" id=1]
 [ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/UI/Place.png" type="Texture" id=3]
+[ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=4]
 
 [sub_resource type="Animation" id=2]
 
@@ -55,7 +56,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Player1" type="Label" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -125,6 +125,35 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0.671875, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Miejsce w rankingu: 999"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Place" type="Sprite" parent="Player1" index="2"]
+
+position = Vector2( -110, 62 )
+texture = ExtResource( 3 )
+
+[node name="Number" type="Label" parent="Player1/Place" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -31.0
+margin_right = 21.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -207,6 +236,37 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="Place" type="Sprite" parent="Player2" index="2"]
+
+editor/display_folded = true
+position = Vector2( -110, 62 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Number" type="Label" parent="Player2/Place" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -31.0
+margin_right = 21.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="Player3" type="Label" parent="." index="3"]
 
 editor/display_folded = true
@@ -279,6 +339,37 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0.671875, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Miejsce w rankingu: 999"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Place" type="Sprite" parent="Player3" index="2"]
+
+editor/display_folded = true
+position = Vector2( -110, 62 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Number" type="Label" parent="Player3/Place" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -31.0
+margin_right = 21.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -361,9 +452,39 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="EnterName" type="Label" parent="." index="5"]
+[node name="Place" type="Sprite" parent="Player4" index="2"]
 
 editor/display_folded = true
+position = Vector2( -110, 62 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Number" type="Label" parent="Player4/Place" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -31.0
+margin_right = 21.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EnterName" type="Label" parent="." index="5"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -404,7 +525,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 custom_constants/shadow_as_outline = 1
