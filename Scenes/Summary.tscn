@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/UI/Place.png" type="Texture" id=3]
 [ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "Idle"
 length = 1.0
@@ -610,7 +610,7 @@ autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Idle = SubResource( 2 )
+anims/Idle = SubResource( 1 )
 blend_times = [  ]
 
 

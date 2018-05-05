@@ -22,6 +22,8 @@ var occupcount = 0
 var players_score = [0, 0, 0, 0]
 var highest_score = 0
 
+signal end
+
 func _ready():
 	$"../Camera".limit_left = -BACKGROUND_W/2
 	$"../Camera".limit_right = BACKGROUND_W/2
@@ -45,7 +47,7 @@ func _ready():
 func _process(delta):
 	if !started: return
 	
-	if pulse_delay <= 0 and occupcount < MAX_PULSES:#occupied.size():
+	if pulse_delay <= 0 and time_left > 0 and occupcount < MAX_PULSES:#occupied.size():
 		var i = randi() % occupied.size()
 		while occupied[i]: i = randi() % occupied.size()
 		occupied[i] = true
@@ -54,6 +56,7 @@ func _process(delta):
 		p.id = i
 		p.position = $PulseSpawners.get_child(i).position
 		p.connect("collected", self, "free_pulse")
+		connect("end", p, "queue_free")
 		
 		add_child(p)
 		occupcount += 1
@@ -65,6 +68,7 @@ func _process(delta):
 	
 	if time_left <= 0 and !win:
 		win = true
+		emit_signal("end")
 		
 		ui.get_node("Time").visible = false
 		ui.get_node("Wintext").visible = true
@@ -77,8 +81,25 @@ func _process(delta):
 			ui.get_node("Wintext").modulate = Com.PLAYER_COLORS[player.team]
 		else:
 			ui.get_node("Wintext").text = "REMIS!"
+		
+		get_parent().finished = true
 	else:
 		ui.get_node("Time").text = TIME_TEXT % str(ceil(time_left))
+	
+	if get_parent().finished and Input.is_action_just_pressed("ui_cancel"):
+		var places = [0, 0, 0, 0]
+		var score = [0, 0, 0, 0]
+		
+		for team in get_parent().players_joined:
+			if team == -1: continue
+			score[team] = players_score[team] / float(get_parent().settings.time)
+			
+			for team2 in get_parent().players_joined:
+				if team2 == -1: continue
+				if players_score[team] <= players_score[team2]: places[team] += 1
+				
+		
+		get_parent().goto_summary(places, score)
 
 func free_pulse(id, player):
 	occupied[id] = false
