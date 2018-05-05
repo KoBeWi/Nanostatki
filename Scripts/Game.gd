@@ -101,3 +101,10 @@ func register_UI(ui, old_owner):
 	old_owner.remove_child(ui)
 	$Camera/UI.add_child(ui)
 	return ui
+
+func goto_summary(places, scores):
+	var summary = load("res://Scenes/Summary.tscn").instance()
+	summary.setup(players_joined, places, scores, scoreboard)
+	$"/root".add_child(summary)
+	get_tree().current_scene = summary
+	queue_free()

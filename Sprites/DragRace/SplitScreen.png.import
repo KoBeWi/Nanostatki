@@ -7,10 +7,10 @@ path="res://.import/SplitScreen.png-bc1c2afbc8dc141fc91d3158b20e9a8c.stex"
 [deps]
 
 source_file="res://Sprites/DragRace/SplitScreen.png"
-source_md5="849084a63cfc6fd97fc67e9e9cc56655"
+source_md5="fd43ca3b68781182e8101c0d28254eb4"
 
 dest_files=[ "res://.import/SplitScreen.png-bc1c2afbc8dc141fc91d3158b20e9a8c.stex" ]
-dest_md5="28a5fd83a9852ec4f442751bc0223692"
+dest_md5="63234ef88725eb1a27038d03508cf32f"
 
 [params]
 

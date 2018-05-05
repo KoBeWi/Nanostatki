@@ -59,7 +59,7 @@ func _process(delta):
 		
 		player.race_distance = follower.offset
 		
-		if player.race_distance >= lap_length * (laps[player.team] + 1) or Input.is_action_just_pressed("ui_randomize"): ##DEBUG
+		if player.race_distance >= lap_length * (laps[player.team] + 1):
 			laps[player.team] += 1
 			var time = OS.get_ticks_msec() - lap_time[player.team]
 			if time < best_lap[player.team]: best_lap[player.team] = time
@@ -94,14 +94,9 @@ func _process(delta):
 					ui.get_node("WinText").visible = true
 					ui.get_node("End").visible = true
 	
-	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"):
+	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"): ##może bez wyników w ogóle, bo po co
 		for i in range(4): best_lap[i] = -best_lap[i]
-		var summary = load("res://Scenes/Summary.tscn").instance()
-		summary.setup(get_parent().players_joined, places, best_lap, get_parent().scoreboard)
-		$"/root".add_child(summary)
-		
-		get_tree().current_scene.queue_free()
-		get_tree().current_scene = summary
+		get_parent().goto_summary(places, best_lap)
 
 func process_camera(camera, players):
 	return

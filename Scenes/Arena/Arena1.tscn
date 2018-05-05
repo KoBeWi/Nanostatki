@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=7]
 [ext_resource path="res://Nodes/Obstacles/Magnetic Field.tscn" type="PackedScene" id=8]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -63,15 +63,17 @@ polygon = PoolVector2Array( -737.802, 60.6599, -1124.17, 545.906, 17.1052, 879.4
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
 position = Vector2( 407.005, -196.249 )
+rotation = -3.14159
+_sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
 position = Vector2( 208.912, -445.222 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
@@ -80,6 +82,8 @@ position = Vector2( -386.267, -238.082 )
 [node name="4" type="Position2D" parent="StartingPositions" index="3"]
 
 position = Vector2( -167.566, 99.4522 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 

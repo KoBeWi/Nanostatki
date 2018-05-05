@@ -36,11 +36,13 @@ func setup(_players, _places, _scores, scoreboard):
 			spot.get_node("Place").self_modulate = PLACE_COLORS[places[i]-1]
 			if places[i] < 4: spot.get_node("Place/Number").self_modulate = PLACE_COLORS[places[i]-1]
 			spot.get_node("Place/Number").text = str(places[i])
+			spot.get_node("Rank").text = "Miejsce w rankingu: " + str(spots[i]+1)
 			
 			match mode:
 				"Race":
 					spot.get_node("Score").text = " Czas: " + Com.format_time(-_scores[i])
-					spot.get_node("Rank").text = "Miejsce w rankingu: " + str(spots[i]+1)
+				"Drag":
+					spot.get_node("Score").text = " Dystans: " + str(_scores[i]) + " nm"
 		else:
 			spot.visible = false
 	
@@ -77,5 +79,6 @@ func set_player():
 	if name_queue.empty(): return
 	
 	var i = name_queue.front()
+	$EnterName.text = "GRACZ " + str(i+1) + " WPISZ SWOJE IMIĘ:"
 	$EnterName.modulate = Com.PLAYER_COLORS[i]
 	$EnterName/NameInput.text = ""
