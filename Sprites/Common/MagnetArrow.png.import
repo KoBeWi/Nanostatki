@@ -7,10 +7,10 @@ path="res://.import/MagnetArrow.png-cdbfe1f17f67076fa51d5b60506ca265.stex"
 [deps]
 
 source_file="res://Sprites/Common/MagnetArrow.png"
-source_md5="f108d59548c9b00aa99019fe62fe5b55"
+source_md5="2127f32ee9e443f66ad30a24b310371f"
 
 dest_files=[ "res://.import/MagnetArrow.png-cdbfe1f17f67076fa51d5b60506ca265.stex" ]
-dest_md5="cf7b299d44f7ce030680a42f4b9b72de"
+dest_md5="690911e53f6359772f2d6adc1d144b56"
 
 [params]
 

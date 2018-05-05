@@ -7,10 +7,10 @@ path="res://.import/Darkness.png-78262d859aa29e85ee3da5a46ac7d3d7.stex"
 [deps]
 
 source_file="res://Sprites/Common/Darkness.png"
-source_md5="90070f2a37178044da3e8b5462ff4709"
+source_md5="7cfa995bbaa3deef97a2140a8aec77eb"
 
 dest_files=[ "res://.import/Darkness.png-78262d859aa29e85ee3da5a46ac7d3d7.stex" ]
-dest_md5="746dd9eb94b7d159fbb7bcaa8210556e"
+dest_md5="a4541291cf2abfbe2da3d251b0110846"
 
 [params]
 

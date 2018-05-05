@@ -27,7 +27,7 @@ func _draw():
 	
 	for x in range(int(width / DDIST) + 2):
 		for y in range(int(height / DDIST) + 2):
-			draw_texture(TEXTURES[orientation], Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), color)
+#			draw_texture(TEXTURES[orientation], Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), color)
 			
 			if !(x % 4 == 0 and y % 2 == 0) and !(x % 4 == 2 and y % 2 == 1): continue
 			draw_set_transform(Vector2(-DDIST/2 - width/2 + x * DDIST, -DDIST/2 - height/2 + y * DDIST), OS.get_ticks_msec() / 250.0 * -(orientation * 2 - 1), Vector2(1, 1))
