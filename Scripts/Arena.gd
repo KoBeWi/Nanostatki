@@ -4,8 +4,8 @@ const PULSE_DELAY = 2
 const MAX_PULSES = 3
 const SCORE_TEXT = "GRACZ %s: %s"
 const TIME_TEXT = "POZOSTAŁY CZAS: %s"
-const BACKGROUND_W = 3508
-const BACKGROUND_H = 2480
+const BACKGROUND_W = 5000
+const BACKGROUND_H = 5000
 
 var pulse = load("res://Nodes/Pulse.tscn")
 var ui

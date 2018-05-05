@@ -20,7 +20,7 @@ func _ready():
 
 func _physics_process(delta):
 	for player in players_in:
-		player.velocity += FORCE_V[direction] * FORCE * player.charge
+		if !player.pause: player.velocity += FORCE_V[direction] * FORCE * player.charge
 	
 	$Sprite.region_rect.position.y += 1
 	$Sprite.rotation_degrees = direction * 90 ##do poprawienia, bo nie działa z prostokątnym polem
