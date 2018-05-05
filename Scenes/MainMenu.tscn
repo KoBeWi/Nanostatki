@@ -146,7 +146,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -621,7 +621,7 @@ end = NodePath("../../Nodes/Survival")
 
 [node name="Race" type="Sprite" parent="Modes/Lines" index="5"]
 
-position = Vector2( -2.87713, 1043.86 )
+position = Vector2( -2.87709, 1043.86 )
 rotation = 3.12498
 texture = ExtResource( 16 )
 region_enabled = true
@@ -669,11 +669,11 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 
 [node name="Survival" type="Sprite" parent="Modes/Lines" index="9"]
 
-position = Vector2( 1055.24, 1140.29 )
-rotation = -0.0220976
+position = Vector2( 1055.25, 1140.29 )
+rotation = -0.0221002
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 123.885, 18 )
+region_rect = Rect2( 0, 0, 123.886, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Survival")

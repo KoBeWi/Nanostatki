@@ -98,6 +98,7 @@ func start():
 	started = true
 
 func process_camera(camera, players):
+	return
 	camera.position = Vector2()
 	camera.zoom = Vector2(3, 3)
 	return true
