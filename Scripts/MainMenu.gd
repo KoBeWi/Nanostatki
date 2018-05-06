@@ -242,11 +242,13 @@ func _process(delta):
 			
 			if players_in[i]:
 				players_ready += 1
+				var node = get_node("Lobby/Players/" + str(i+1) + "Active")
 				if players_out[i] < ACTIVE_TIME:
 					start = false
-					get_node("Lobby/Players/" + str(i+1) + "Active").modulate = Color(1, 1, 1)
+					node.modulate = Color(1, 1, 1)
 				else:
-					get_node("Lobby/Players/" + str(i+1) + "Active").modulate = Com.PLAYER_COLORS[i]
+					if node.modulate == Color(1, 1, 1): Com.play_sample(self, "Ready", false)
+					node.modulate = Com.PLAYER_COLORS[i]
 			
 			get_node("Lobby/Players/" + str(i+1) + "Inactive").visible = !players_in[i]
 			get_node("Lobby/Players/" + str(i+1) + "Active").visible = players_in[i]

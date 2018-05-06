@@ -25,6 +25,7 @@ var charge = 1
 var last_emitter = 0
 var last_collision = 0
 var clang
+var swap = 0
 
 func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
@@ -74,7 +75,7 @@ func _physics_process(delta):
 				clang = Com.play_sample(self, "Clang")
 			elif !clang or !clang.get_ref():
 				clang = null
-				Com.play_sample(self, "Tap")
+#				Com.play_sample(self, "Tap")
 		
 		last_collision = OS.get_ticks_msec()
 
@@ -82,10 +83,20 @@ func _physics_process(delta):
 		if player != self and position.distance_to(player.position) < FORCE_RANGE:
 			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
 			player.velocity -= force
+	
+	update()
+
+func _draw():
+	if swap > 0:
+		var rgb = 0 if charge == -1 else 1
+		draw_circle(Vector2(), (1 - swap/15.0 if charge == 1 else swap/15.0) * FORCE_RANGE, Color(rgb, rgb, rgb, swap/15.0))
+		swap -= 1
 
 func swap_charge():
 	charge = -charge
 	$Sprite/Orb.modulate = (Color(0, 0, 0) if charge < 0 else Color(1, 1, 1))
+	Com.play_sample(self, "Swap" + ("Plus" if charge == 1 else "Minus"))
+	swap = 15
 
 func action(action):
 	return "p" + str(player+1) + "_" + action

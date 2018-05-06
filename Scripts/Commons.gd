@@ -3,7 +3,8 @@ extends Node
 const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 var TRIVIA = []
-var SAMPLE = load("res://Nodes/SampleInstance.tscn")
+var SAMPLE2D = load("res://Nodes/SampleInstance.tscn")
+var SAMPLE = load("res://Nodes/IndependentSampleInstance.tscn")
 
 var scoreboard
 var scores = []
@@ -95,10 +96,10 @@ func round_float(number, digits):
 	var magnitude = pow(10, digits)
 	return float(int(number * magnitude)) / magnitude
 
-func play_sample(source, _sample):
-	var sample = SAMPLE.instance()
+func play_sample(source, _sample, _2d = true):
+	var sample = (SAMPLE2D if _2d else SAMPLE).instance()
 	add_child(sample)
-	sample.position = source.position
+	if _2d: sample.position = source.position
 	
 	if not resources.has(_sample): resources[_sample] = load("res://Samples/" + _sample + ".ogg")
 	sample.stream = resources[_sample]
