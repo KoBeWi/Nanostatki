@@ -75,7 +75,7 @@ func _process(delta):
 			
 			var menu = load("res://Scenes/MainMenu.tscn").instance()
 			$"/root".add_child(menu)
-			menu.goto_lobby(Com.MODES.find(mode))
+			menu.goto_lobby(Com.MODES.find(mode), true)
 			menu.get_node("Camera").current = true
 			get_tree().current_scene = menu
 			queue_free()

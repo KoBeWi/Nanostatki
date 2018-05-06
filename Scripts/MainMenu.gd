@@ -318,9 +318,10 @@ func remove_player(i):
 			players_joined[j] = -1
 			return
 
-func goto_lobby(i):
+func goto_lobby(i, teleport = false):
 	modename_visible = false
 	gamemode = i
+	if teleport: $Camera.position = get_node("ScreenPositions/" + Com.MODES[gamemode]).position
 	camera_target = get_node("ScreenPositions/" + Com.MODES[gamemode]).position
 	
 	$Lobby.position = camera_target
