@@ -264,6 +264,7 @@ func _process(delta):
 	if exiting:
 		exiting -= delta
 		modulate = Color(exiting, exiting, exiting)
+		$ParallaxBackground/ParallaxLayer/Background.modulate = Color(exiting, exiting, exiting)
 
 func move_selection(new_choice):
 	choice = new_choice

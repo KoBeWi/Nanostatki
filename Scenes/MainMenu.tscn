@@ -146,12 +146,15 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenPositions" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+visible = false
 
 [node name="Title" type="Sprite" parent="ScreenPositions" index="0"]
 
@@ -269,6 +272,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Background" type="Sprite" parent="Camera" index="0"]
 
+visible = false
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
@@ -277,6 +281,8 @@ __meta__ = {
 }
 
 [node name="Title" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Nodes" type="Node2D" parent="Title" index="0"]
 
@@ -713,6 +719,8 @@ position = Vector2( 521.949, 979.331 )
 texture = ExtResource( 30 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Nodes" type="Node2D" parent="Scores" index="0"]
 
@@ -1819,6 +1827,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( -887.275, 1045.09 )
 _sections_unfolded = [ "Transform" ]
 
@@ -3030,5 +3039,30 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="9"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 4900, 2048 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+texture = ExtResource( 2 )
 
 

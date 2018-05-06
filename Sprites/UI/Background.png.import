@@ -7,10 +7,10 @@ path="res://.import/Background.png-a7a5badcfdffa64b93e9b69276017cd9.stex"
 [deps]
 
 source_file="res://Sprites/UI/Background.png"
-source_md5="7446a33bdb0194ee5821f423154bd74c"
+source_md5="f1be71cdc658f8f3242e63b8e28bdfcd"
 
 dest_files=[ "res://.import/Background.png-a7a5badcfdffa64b93e9b69276017cd9.stex" ]
-dest_md5="1904d2d2c9a8d15e42c0192c7c9c67bc"
+dest_md5="ab1aa2fc297809ca2f303612c9f96dda"
 
 [params]
 
