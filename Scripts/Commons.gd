@@ -16,6 +16,9 @@ func _ready():
 	TRIVIA = file.get_as_text().split("\n")
 	file.close()
 
+func _process(delta):
+	if Input.is_action_just_pressed("fullscreen"): OS.window_fullscreen = !OS.window_fullscreen
+
 func load_nodenames():
 	if !resources.has("nodenames"):
 		resources.nodenames = [load("res://Sprites/UI/ModenameRace.png"), load("res://Sprites/UI/ModenameDrag.png"), load("res://Sprites/UI/ModenameSumo.png"), load("res://Sprites/UI/ModenameArena.png"), load("res://Sprites/UI/ModenameSurvival.png")]
