@@ -47,7 +47,7 @@ func _physics_process(delta):
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
 	
-	death.position.x += (OS.get_ticks_msec() - start_time) / 10000 + 1
+	death.position.x += (OS.get_ticks_msec() - start_time) / 3000 + 1
 	camera.limit_left = death.position.x
 	
 	if get_parent().finished:

@@ -153,7 +153,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenPositions" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 visible = false
 
 [node name="Title" type="Sprite" parent="ScreenPositions" index="0"]
@@ -444,8 +443,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Return" type="Sprite" parent="Modes" index="0"]
 
 editor/display_folded = true
@@ -526,7 +523,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Arena" type="Sprite" parent="Modes/Nodes" index="3"]
 
-editor/display_folded = true
 position = Vector2( 741.551, 1232.83 )
 texture = ExtResource( 22 )
 script = ExtResource( 4 )

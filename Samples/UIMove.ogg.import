@@ -7,10 +7,10 @@ path="res://.import/UIMove.ogg-4af235b01faf1ab6b9e681b09f0ad029.oggstr"
 [deps]
 
 source_file="res://Samples/UIMove.ogg"
-source_md5="b63141652678a9ae19266853c405e1c9"
+source_md5="444ec2c08acc041d939b0416a8bce524"
 
 dest_files=[ "res://.import/UIMove.ogg-4af235b01faf1ab6b9e681b09f0ad029.oggstr" ]
-dest_md5="363e89e2f0e2a6dec4c6cf997d1904ad"
+dest_md5="05762e9aa70b981199a8ad594aaf7231"
 
 [params]
 

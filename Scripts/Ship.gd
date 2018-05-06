@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if get_slide_count() > 0:
 		
 		if velocity.length() > 800:
-			Com.play_sample(self, "Tap")
+#			Com.play_sample(self, "Tap")
 			
 			for i in range(get_slide_count()):
 				var col = get_slide_collision(i)
@@ -68,7 +68,7 @@ func _physics_process(delta):
 				spark.rotation = col.normal.angle()
 				$"/root/Game".add_child(spark)
 #		if velocity.length() > 800:
-#			Com.play_sample(self, "Clang")
+			Com.play_sample(self, "Clang")
 #		elif velocity.length() > 400:
 #			Com.play_sample(self, "Tap")
 

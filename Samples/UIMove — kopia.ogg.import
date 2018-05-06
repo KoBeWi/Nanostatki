@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/UIMove — kopia.ogg-4b5654655ce46150718968949091d140.oggstr"
+
+[deps]
+
+source_file="res://Samples/UIMove — kopia.ogg"
+source_md5="b63141652678a9ae19266853c405e1c9"
+
+dest_files=[ "res://.import/UIMove — kopia.ogg-4b5654655ce46150718968949091d140.oggstr" ]
+dest_md5="363e89e2f0e2a6dec4c6cf997d1904ad"
+
+[params]
+
+loop=false
+loop_offset=0
