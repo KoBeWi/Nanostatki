@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PlayerJoin.ogg-0583cb8833d792cc39719405c3846e0b.oggstr"
+
+[deps]
+
+source_file="res://Samples/PlayerJoin.ogg"
+source_md5="1e89d577bb20c4f0ed73fb7498c46752"
+
+dest_files=[ "res://.import/PlayerJoin.ogg-0583cb8833d792cc39719405c3846e0b.oggstr" ]
+dest_md5="4efad338a425ee663253bfb3f78112b8"
+
+[params]
+
+loop=false
+loop_offset=0

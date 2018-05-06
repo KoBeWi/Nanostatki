@@ -225,11 +225,13 @@ func _process(delta):
 				if players_in[i]:
 					players_out[i] = 1
 				else:
+					$Samples/Join.play()
 					add_player(i)
 					players_clutch[i] = true
 					
 			if Input.is_action_just_released("p" + str(i+1) + "_action"):
-				if !players_clutch[i] and players_out[i] < 1.5:
+				if players_in[i] and !players_clutch[i] and players_out[i] < 1.5:
+					$Samples/Leave.play()
 					remove_player(i)
 				
 				players_out[i] = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=2]
@@ -60,6 +60,8 @@
 [ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=58]
 [ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=59]
 [ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=60]
+[ext_resource path="res://Samples/PlayerJoin.ogg" type="AudioStream" id=61]
+[ext_resource path="res://Samples/PlayerLeave.ogg" type="AudioStream" id=62]
 
 [sub_resource type="Shader" id=1]
 
@@ -3034,11 +3036,25 @@ end = NodePath("../../Title/Nodes/Scores")
 
 [node name="Samples" type="Node" parent="." index="8"]
 
-editor/display_folded = true
-
 [node name="Move" type="AudioStreamPlayer" parent="Samples" index="0"]
 
 stream = ExtResource( 60 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Join" type="AudioStreamPlayer" parent="Samples" index="1"]
+
+stream = ExtResource( 61 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Leave" type="AudioStreamPlayer" parent="Samples" index="2"]
+
+stream = ExtResource( 62 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
