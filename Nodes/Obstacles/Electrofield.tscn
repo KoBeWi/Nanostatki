@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 192, 192 )
 
-[node name="Electrofield" type="Area2D" index="0"]
+[node name="Electrofield" type="Area2D"]
 
 position = Vector2( 37.0633, -17.5563 )
 input_pickable = true
@@ -35,9 +35,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+scale = Vector2( 2, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 14756, 128, 128 )
+region_rect = Rect2( 0, 14791, 128, 128 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true

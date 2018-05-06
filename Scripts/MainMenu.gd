@@ -137,7 +137,7 @@ func _process(delta):
 				self.choice = 0
 				
 			["Title", 2]:
-				camera_target = Vector2(1512, -526)
+				camera_target = $ScreenPositions/Authors.position
 				self.choice = -1
 				screen = "Authors"
 				self.choice = 0
@@ -161,6 +161,7 @@ func _process(delta):
 				self.choice = 2
 			
 			["Modes", _]:
+				$Samples/Move.play()
 				goto_lobby(choice)
 				return
 	
@@ -260,6 +261,7 @@ func _process(delta):
 		$Lobby/RealContinue.visible = (players_ready > 0)
 	
 	var speed = max((camera_target - $Camera.position).length()/10, CAMERA_SPEED)
+	if exiting: speed = CAMERA_SPEED
 	$Camera.position += (camera_target - $Camera.position).normalized() * speed
 	if $Camera.position.distance_squared_to(camera_target) < speed*speed: $Camera.position = camera_target
 	
