@@ -279,8 +279,6 @@ __meta__ = {
 
 [node name="Title" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="Nodes" type="Node2D" parent="Title" index="0"]
 
 z_index = 1
@@ -309,7 +307,6 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Start" type="Sprite" parent="Title/Nodes" index="1"]
 
-editor/display_folded = true
 position = Vector2( 513.942, 359.778 )
 texture = ExtResource( 7 )
 script = ExtResource( 4 )
@@ -317,7 +314,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Start" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Rect", "Transform" ]
@@ -328,6 +324,7 @@ __meta__ = {
 [node name="Icon" type="Sprite" parent="Title/Nodes/Start/Fill" index="0"]
 
 self_modulate = Color( 0.988235, 0.580392, 0, 1 )
+position = Vector2( 11, -3 )
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
