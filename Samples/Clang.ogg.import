@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Clang.ogg-06a92a571d0eb778f5529bfab16456c2.oggstr"
+
+[deps]
+
+source_file="res://Samples/Clang.ogg"
+source_md5="7f3df7da4c9b959437c743baf6caa80b"
+
+dest_files=[ "res://.import/Clang.ogg-06a92a571d0eb778f5529bfab16456c2.oggstr" ]
+dest_md5="6925cea62f96321a1fffcac1a13f12b2"
+
+[params]
+
+loop=false
+loop_offset=0

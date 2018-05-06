@@ -6,6 +6,8 @@ const ROT_SPEED = -PI/60
 const FORCE = 25000
 const FORCE_RANGE = 750
 
+var SPARKLE = load("res://Nodes/Effects/HitParticle.tscn")
+
 export var team = 0
 export var player = 0
 
@@ -53,6 +55,22 @@ func _physics_process(delta):
 		$Engine.stop()
 	
 	move_and_slide(velocity)
+	
+	if get_slide_count() > 0:
+		
+		if velocity.length() > 800:
+			Com.play_sample(self, "Tap")
+			
+			for i in range(get_slide_count()):
+				var col = get_slide_collision(i)
+				var spark = SPARKLE.instance()
+				spark.position = col.position
+				spark.rotation = col.normal.angle()
+				$"/root/Game".add_child(spark)
+#		if velocity.length() > 800:
+#			Com.play_sample(self, "Clang")
+#		elif velocity.length() > 400:
+#			Com.play_sample(self, "Tap")
 
 	if !drag_race: for player in get_parent().get_children():
 		if player != self and position.distance_to(player.position) < FORCE_RANGE:
