@@ -4,20 +4,18 @@ const FIG_COUNT = 50
 const SWATCHES = [
 [Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
 [Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
-[Color("00e75d"), Color("004a1e"), Color("809e00"), Color("3a4700")],
-[Color("ff420e"), Color("80bd9e"), Color("ff420e"), Color("80bd9e")],
-[Color("00cfff"), Color("e2ff00"), Color("00cfff"), Color("e2ff00")],
-[Color("e33c00"), Color("d8e313"), Color("e33c00"), Color("d8e313")],
-[Color("122275"), Color("1eb2d9"), Color("122275"), Color("1eb2d9")],
-[Color("d72878"), Color("0bf505"), Color("d72878"), Color("0bf505")],
-[Color("fa709a"), Color("fee140"), Color("fa709a"), Color("fee140")],
-[Color("13547a"), Color("80d0c7"), Color("13547a"), Color("80d0c7")]
+[Color("1f0838"), Color("7421c7"), Color("1f0838"), Color("7421c7")],
+[Color("0e350c"), Color("25ac28"), Color("0e350c"), Color("25ac28")],
+[Color("e75900"), Color("ffa100"), Color("e75900"), Color("ffa100")],
+[Color("074f59"), Color("43c1b5"), Color("074f59"), Color("43c1b5")],
+[Color("1a2844"), Color("1e66cb"), Color("1a2844"), Color("1e66cb")]
 ]
 const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSquare", "TiltedTriangle", "WideTriangle"]
 var FIGURE = load("res://Nodes/BackgroundBit.tscn")
 
 var camera
 
+var figure_count = FIG_COUNT
 var figure
 var swatches
 
@@ -36,11 +34,11 @@ func set_texture_size(width, height):
 	rect_position = Vector2(-width/2, -height/2)
 	rect_size = Vector2(width, height)
 	
-	for i in range(FIG_COUNT):
+	for i in range(figure_count):
 		create_figure(false)
 
 func _physics_process(delta):
-	if get_child_count() < FIG_COUNT:
+	if get_child_count() < figure_count:
 		create_figure()
 
 func vec(color):
@@ -55,7 +53,13 @@ func create_figure(check_camera = true):
 	fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 	
 	var angle = randf() * PI * 2
-	fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
-	while check_camera and fig.global_position.distance_to(camera.global_position) < 1536 * camera.zoom.x: fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
 	fig.angle = angle
+	
+	fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
+	var check = Vector2()
+	var check2 = Vector2(1 ,1)
+	if camera:
+		check = camera.global_position
+		check2 = camera.zoom
+	if rect_size.x > 1024: while check_camera and fig.global_position.distance_to(check) < 1536 * check2.x: fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
 	
