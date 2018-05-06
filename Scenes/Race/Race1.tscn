@@ -71,7 +71,7 @@ __meta__ = {
 
 [node name="Start" type="Sprite" parent="Track" index="4"]
 
-position = Vector2( 260, 508.567 )
+position = Vector2( 276.581, 514.596 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 64, 640 )
 _sections_unfolded = [ "Region", "Transform" ]
@@ -666,10 +666,12 @@ orientation = 1
 [node name="DarkMatter" parent="Obstacles" index="7" instance=ExtResource( 12 )]
 
 position = Vector2( 78.0972, 1463.33 )
+rotation = 0.143376
 
 [node name="DarkMatter2" parent="Obstacles" index="8" instance=ExtResource( 12 )]
 
 position = Vector2( -44.6417, 1220.64 )
+rotation = 5.24368
 
 [connection signal="body_entered" from="FloorChangers/ChangerUp1" to="FloorChangers" method="_on_up_enter"]
 

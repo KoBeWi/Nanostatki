@@ -82,17 +82,9 @@ func _process(delta):
 				
 				if won.size() == $"../Players".get_child_count():
 					get_parent().finished = true
-					
-					var results = ui.get_node("Results")
-					results.text = ""
-					for winner in won:
-						results.text += "Gracz " + str(winner.team+1) + ": " + Com.format_time(winner.time) + "\n"
-					results.visible = true
-					
-					ui.get_node("WinText").text = "KONIEC WYŚCIGU!"
-					ui.get_node("WinText").modulate = Com.PLAYER_COLORS[won[0].team]
-					ui.get_node("WinText").visible = true
-					ui.get_node("End").visible = true
+					for i in range(4): best_lap[i] = -best_lap[i]
+					yield(get_tree().create_timer(2), "timeout")
+					get_parent().goto_summary(places, best_lap)
 	
 	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"): ##może bez wyników w ogóle, bo po co
 		for i in range(4): best_lap[i] = -best_lap[i]
