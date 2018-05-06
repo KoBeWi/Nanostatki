@@ -109,7 +109,7 @@ blend_times = [  ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 2.50333
+rotation = 6.08757
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -117,7 +117,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 3.77986
+rotation = 0.195616
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -125,7 +125,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 2.50333
+rotation = 6.08757
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -133,7 +133,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 show_behind_parent = true
 position = Vector2( 4.47762, 264.041 )
-rotation = 3.77986
+rotation = 0.195616
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

@@ -153,8 +153,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenPositions" type="Node2D" parent="." index="0"]
 
-visible = false
-
 [node name="Title" type="Sprite" parent="ScreenPositions" index="0"]
 
 position = Vector2( 512, 300 )
@@ -171,7 +169,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Modes" type="Sprite" parent="ScreenPositions" index="2"]
 
-position = Vector2( 512, 1028 )
+position = Vector2( 512, 2492.33 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -179,7 +178,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Race" type="Sprite" parent="ScreenPositions" index="3"]
 
 editor/display_folded = true
-position = Vector2( -540.849, 1035 )
+position = Vector2( -540.849, 2499.33 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -192,7 +192,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Drag" type="Sprite" parent="ScreenPositions" index="4"]
 
 editor/display_folded = true
-position = Vector2( -515.761, 1702.83 )
+position = Vector2( -515.761, 3167.16 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -205,7 +206,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sumo" type="Sprite" parent="ScreenPositions" index="5"]
 
 editor/display_folded = true
-position = Vector2( 518.525, 1706.26 )
+position = Vector2( 518.525, 3170.59 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -218,7 +220,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Arena" type="Sprite" parent="ScreenPositions" index="6"]
 
 editor/display_folded = true
-position = Vector2( 1559.66, 1651.46 )
+position = Vector2( 1559.66, 3115.79 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -231,7 +234,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Survival" type="Sprite" parent="ScreenPositions" index="7"]
 
 editor/display_folded = true
-position = Vector2( 1559.57, 1024.73 )
+position = Vector2( 1559.57, 2489.06 )
+scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -443,6 +447,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="3"]
 
+position = Vector2( 0, 1464.33 )
+
 [node name="Return" type="Sprite" parent="Modes" index="0"]
 
 editor/display_folded = true
@@ -463,6 +469,7 @@ texture = ExtResource( 21 )
 
 [node name="Nodes" type="Node2D" parent="Modes" index="1"]
 
+editor/display_folded = true
 z_index = 1
 
 [node name="Race" type="Sprite" parent="Modes/Nodes" index="0"]
@@ -523,6 +530,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Arena" type="Sprite" parent="Modes/Nodes" index="3"]
 
+editor/display_folded = true
 position = Vector2( 741.551, 1232.83 )
 texture = ExtResource( 22 )
 script = ExtResource( 4 )
@@ -560,6 +568,8 @@ texture = ExtResource( 28 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Lines" type="Node2D" parent="Modes" index="2"]
+
+editor/display_folded = true
 
 [node name="RR" type="Sprite" parent="Modes/Lines" index="0"]
 
@@ -615,7 +625,7 @@ position = Vector2( 835.442, 1187.95 )
 rotation = -0.445894
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 80.132, 18 )
+region_rect = Rect2( 0, 0, 80.1321, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
@@ -639,7 +649,7 @@ position = Vector2( 78.7783, 1363.44 )
 rotation = 2.57557
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 380.599, 18 )
+region_rect = Rect2( 0, 0, 380.6, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Drag")
@@ -651,7 +661,7 @@ position = Vector2( 530.52, 1339.05 )
 rotation = 1.53244
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 283.246, 18 )
+region_rect = Rect2( 0, 0, 283.245, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
@@ -672,7 +682,7 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 [node name="Survival" type="Sprite" parent="Modes/Lines" index="9"]
 
 position = Vector2( 1055.25, 1140.29 )
-rotation = -0.0221002
+rotation = -0.0221009
 texture = ExtResource( 16 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 123.886, 18 )
@@ -2990,11 +3000,11 @@ editor/display_folded = true
 
 [node name="SR" type="Sprite" parent="CrossLines" index="0"]
 
-position = Vector2( 517.444, 632.422 )
-rotation = 1.55795
+position = Vector2( 517.049, 1364.59 )
+rotation = 1.5677
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 287.332, 18 )
+region_rect = Rect2( 0, 0, 1751.63, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Title/Nodes/Start")
@@ -3060,5 +3070,8 @@ _sections_unfolded = [ "Motion" ]
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 

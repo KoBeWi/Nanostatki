@@ -258,8 +258,9 @@ func _process(delta):
 		$Lobby/Need2.visible = (gamemode == 2 and players_ready == 1)
 		$Lobby/RealContinue.visible = (players_ready > 0)
 	
-	$Camera.position += (camera_target - $Camera.position).normalized() * CAMERA_SPEED
-	if $Camera.position.distance_squared_to(camera_target) < CAMERA_SPEED*CAMERA_SPEED: $Camera.position = camera_target
+	var speed = max((camera_target - $Camera.position).length()/10, CAMERA_SPEED)
+	$Camera.position += (camera_target - $Camera.position).normalized() * speed
+	if $Camera.position.distance_squared_to(camera_target) < speed*speed: $Camera.position = camera_target
 	
 	if exiting:
 		exiting -= delta
