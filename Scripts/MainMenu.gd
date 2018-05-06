@@ -63,7 +63,7 @@ func _ready():
 			var spot = Com.get_score(i)
 			if spot:
 				names += "#" + str(i+1) + "   " + spot.name + "\n"
-				scores += str(spot.score) + "\n"
+				scores += str(Com.round_float(spot.score, 3)) + "pkt/s\n"
 		get_node("Scores/Tables/Arena/Arena" + str(j+1) + "/Names").text = (names if names != "" else "Pusto :(")
 		get_node("Scores/Tables/Arena/Arena" + str(j+1) + "/Scores").text = scores
 	

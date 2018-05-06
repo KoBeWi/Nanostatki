@@ -15,9 +15,20 @@ func _ready():
 	file.open("res://Resources/Trivia.txt", file.READ)
 	TRIVIA = file.get_as_text().split("\n")
 	file.close()
+	
+	var f = File.new()
+	if f.open("user://fullscreen", f.READ) == OK: OS.window_fullscreen = true
 
 func _process(delta):
-	if Input.is_action_just_pressed("fullscreen"): OS.window_fullscreen = !OS.window_fullscreen
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+		
+		if OS.window_fullscreen:
+			var f = File.new()
+			f.open("user://fullscreen", f.WRITE)
+		else:
+			var d = Directory.new()
+			d.remove("user://fullscreen")
 
 func load_nodenames():
 	if !resources.has("nodenames"):
@@ -78,3 +89,7 @@ func save_scoreboard():
 
 func format_time(time):
 	return str(time / 60000) + " : " + str(time / 1000 % 60) + " : " + str(time / 10 % 100)
+
+func round_float(number, digits):
+	var magnitude = pow(10, digits)
+	return float(int(number * magnitude)) / magnitude
