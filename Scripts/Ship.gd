@@ -22,6 +22,10 @@ var velocity = Vector2()
 var direction = Vector2(1, 0)
 var charge = 1
 
+var last_emitter = 0
+var last_collision = 0
+var clang
+
 func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
 
@@ -57,20 +61,22 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 	if get_slide_count() > 0:
+		for i in range(min($Particles.get_child_count(), get_slide_count())):
+			var col = get_slide_collision(i)
+			var emitter = $Particles.get_child((i + last_emitter) % $Particles.get_child_count())
+			emitter.reset_timer()
+			emitter.global_position = col.position
+			emitter.rotation = col.normal.angle()
+			last_emitter += 1
 		
 		if velocity.length() > 800:
-			Com.play_sample(self, "Tap")
-			
-			for i in range(get_slide_count()):
-				var col = get_slide_collision(i)
-				var spark = SPARKLE.instance()
-				spark.position = col.position
-				spark.rotation = col.normal.angle()
-				$"/root/Game".add_child(spark)
-#		if velocity.length() > 800:
-#			Com.play_sample(self, "Clang")
-#		elif velocity.length() > 400:
-#			Com.play_sample(self, "Tap")
+			if OS.get_ticks_msec() - last_collision > 100:
+				clang = Com.play_sample(self, "Clang")
+			elif !clang or !clang.get_ref():
+				clang = null
+				Com.play_sample(self, "Tap")
+		
+		last_collision = OS.get_ticks_msec()
 
 	if !drag_race: for player in get_parent().get_children():
 		if player != self and position.distance_to(player.position) < FORCE_RANGE:

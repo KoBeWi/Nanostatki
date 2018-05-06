@@ -103,3 +103,5 @@ func play_sample(source, _sample):
 	if not resources.has(_sample): resources[_sample] = load("res://Samples/" + _sample + ".ogg")
 	sample.stream = resources[_sample]
 	sample.play()
+	
+	return weakref(sample)

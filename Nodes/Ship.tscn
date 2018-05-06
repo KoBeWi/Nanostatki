@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/Common/ShipOrbPart3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Common/ShipOrbPart4.png" type="Texture" id=7]
 [ext_resource path="res://Samples/Ship.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Nodes/Effects/HitParticle.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -80,6 +81,7 @@ player = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 rotation = 1.5708
 scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 2 )
@@ -159,5 +161,34 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="Particles" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="HitParticle" parent="Particles" index="0" instance=ExtResource( 9 )]
+
+visible = false
+emitting = false
+
+[node name="HitParticle2" parent="Particles" index="1" instance=ExtResource( 9 )]
+
+visible = false
+emitting = false
+
+[node name="HitParticle3" parent="Particles" index="2" instance=ExtResource( 9 )]
+
+visible = false
+emitting = false
+
+[node name="HitParticle4" parent="Particles" index="3" instance=ExtResource( 9 )]
+
+visible = false
+emitting = false
+
+[node name="HitParticle5" parent="Particles" index="4" instance=ExtResource( 9 )]
+
+visible = false
+emitting = false
 
 

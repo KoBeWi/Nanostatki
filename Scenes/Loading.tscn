@@ -28,7 +28,8 @@ func _process(delta):
 		$\"/root\".add_child(game)
 		$CanvasLayer/Loading.visible = false
 		$CanvasLayer/RealAnyKey.visible = true
-		$CanvasLayer/TextureRect.visible = false
+	else:
+		$CanvasLayer/TextureRect.modulate.a -= delta
 
 func _input(event):
 	if load_time and event.is_pressed() and !event.is_echo() and OS.get_ticks_msec() - load_time > 1000:
@@ -39,7 +40,7 @@ func _input(event):
 		get_tree().paused = false"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=2]
 
 code = "shader_type canvas_item;
 
@@ -52,14 +53,13 @@ void fragment() {
 	COLOR.rgb = vec3(average/2.0);
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 
 render_priority = 0
-shader = SubResource( 3 )
+shader = SubResource( 2 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Idle"
 length = 1.0
 loop = true
 step = 0.1
@@ -76,7 +76,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Loading" type="Node2D"]
+[node name="Loading" type="Node2D" index="0"]
 
 pause_mode = 2
 z_index = 4096
@@ -93,7 +93,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Shader" type="ColorRect" parent="CanvasLayer" index="0"]
 
-material = SubResource( 4 )
+material = SubResource( 3 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -252,7 +252,7 @@ autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Idle = SubResource( 2 )
+anims/Idle = SubResource( 4 )
 blend_times = [  ]
 
 
