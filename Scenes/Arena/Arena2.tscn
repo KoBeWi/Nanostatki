@@ -64,15 +64,13 @@ polygon = PoolVector2Array( 1148.7, 1.48271, 1141.76, 92.336, 1122.57, 191.119, 
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
 position = Vector2( 153.47, 18.4227 )
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
-position = Vector2( 15.062, -306.758 )
+position = Vector2( 6.85974, -193.978 )
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
@@ -235,26 +233,34 @@ position = Vector2( -17.9857, -375.304 )
 
 [node name="DarkMatter" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -434.913, 572.148 )
+position = Vector2( -0.458374, 891.763 )
+rotation = 2.28463
 
 [node name="DarkMatter2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 472.04, 588.176 )
+position = Vector2( -398.472, -562.846 )
+rotation = 0.492616
 
 [node name="DarkMatter3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -410.72, -557.864 )
+position = Vector2( 274.521, 350.64 )
+rotation = 4.93753
 
-[node name="DarkMatter" parent="Obstacles/DarkMatter3" index="2" instance=ExtResource( 6 )]
+[node name="DarkMatter4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 908.572, 5.16229 )
+position = Vector2( -841.994, -89.2036 )
+rotation = 5.74343
+scale = Vector2( 1, 1 )
 
-[node name="DarkMatter2" parent="Obstacles/DarkMatter3" index="3" instance=ExtResource( 6 )]
+[node name="DarkMatter5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( -242.63, 593.669 )
+position = Vector2( -558.414, 500.438 )
+rotation = 0.905165
+scale = Vector2( 1, 1 )
 
-[node name="DarkMatter3" parent="Obstacles/DarkMatter3" index="4" instance=ExtResource( 6 )]
+[node name="DarkMatter6" parent="Obstacles" index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 1202.82, 567.857 )
+position = Vector2( 533.89, -361.787 )
+rotation = 0.711297
 
 
