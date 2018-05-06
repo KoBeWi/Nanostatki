@@ -64,7 +64,7 @@ tracks/3/keys = {
 "values": [ 360.0, 0.0 ]
 }
 
-[node name="Ship" type="KinematicBody2D" groups=[
+[node name="Ship" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 

@@ -146,7 +146,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -170,7 +170,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Modes" type="Sprite" parent="ScreenPositions" index="2"]
 
 position = Vector2( 512, 2492.33 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -179,7 +178,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 editor/display_folded = true
 position = Vector2( -540.849, 2499.33 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -193,7 +191,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( -515.761, 3167.16 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -207,7 +204,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 518.525, 3170.59 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -221,7 +217,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 1559.66, 3115.79 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -235,7 +230,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 1559.57, 2489.06 )
-scale = Vector2( 1, 1 )
 z_index = -10
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -651,7 +645,7 @@ position = Vector2( 78.7783, 1363.44 )
 rotation = 2.57557
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 380.6, 18 )
+region_rect = Rect2( 0, 0, 380.599, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Drag")
@@ -664,7 +658,7 @@ position = Vector2( 530.52, 1339.05 )
 rotation = 1.53244
 texture = ExtResource( 16 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 283.245, 18 )
+region_rect = Rect2( 0, 0, 283.246, 18 )
 script = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
@@ -687,7 +681,7 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 
 visible = false
 position = Vector2( 1055.25, 1140.29 )
-rotation = -0.0221009
+rotation = -0.0220996
 texture = ExtResource( 16 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 123.886, 18 )

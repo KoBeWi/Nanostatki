@@ -14,6 +14,7 @@ config/name="Particle Racer"
 run/main_scene="res://Scenes/MainMenu.tscn"
 boot_splash/image="res://GSA.png"
 boot_splash/fullsize=false
+config/icon="res://icon.png"
 
 [autoload]
 
