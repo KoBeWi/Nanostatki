@@ -633,6 +633,7 @@ end = NodePath("../../Nodes/Survival")
 
 [node name="Race" type="Sprite" parent="Modes/Lines" index="5"]
 
+visible = false
 position = Vector2( -2.87709, 1043.86 )
 rotation = 3.12498
 texture = ExtResource( 16 )
@@ -645,6 +646,7 @@ end = NodePath("../../../ScreenPositions/Race/Position2D")
 
 [node name="Drag" type="Sprite" parent="Modes/Lines" index="6"]
 
+visible = false
 position = Vector2( 78.7783, 1363.44 )
 rotation = 2.57557
 texture = ExtResource( 16 )
@@ -657,6 +659,7 @@ end = NodePath("../../../ScreenPositions/Drag/Position2D")
 
 [node name="Sumo" type="Sprite" parent="Modes/Lines" index="7"]
 
+visible = false
 position = Vector2( 530.52, 1339.05 )
 rotation = 1.53244
 texture = ExtResource( 16 )
@@ -669,6 +672,7 @@ end = NodePath("../../../ScreenPositions/Sumo/Position2D")
 
 [node name="Arena" type="Sprite" parent="Modes/Lines" index="8"]
 
+visible = false
 position = Vector2( 952.189, 1417.83 )
 rotation = 0.720697
 texture = ExtResource( 16 )
@@ -681,6 +685,7 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 
 [node name="Survival" type="Sprite" parent="Modes/Lines" index="9"]
 
+visible = false
 position = Vector2( 1055.25, 1140.29 )
 rotation = -0.0221009
 texture = ExtResource( 16 )
