@@ -7,10 +7,10 @@ path="res://.import/Impulse.png-1f7a7981f7755c4f1169687aba1f4e10.stex"
 [deps]
 
 source_file="res://Sprites/UI/Impulse.png"
-source_md5="e220944e88649b07d22c8f46227b932e"
+source_md5="bdafd7db16607f9abbb2b6b17ff9373a"
 
 dest_files=[ "res://.import/Impulse.png-1f7a7981f7755c4f1169687aba1f4e10.stex" ]
-dest_md5="1b2bdbd00c2a2a9b289a2924d44ea932"
+dest_md5="d008a61407781a043115a42749261f96"
 
 [params]
 

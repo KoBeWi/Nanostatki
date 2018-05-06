@@ -14,7 +14,9 @@ var players_in = []
 
 func _ready():
 	$Shape.shape.extents.x = width/2
-	$Sprite.region_rect.size.x = width
+#	$Sprite.region_rect.size.x = width
+	$Sprite.region_rect.size.x = 64
+	$Sprite.scale.x = width/64
 	$Shape.shape.extents.y = height/2
 	$Sprite.region_rect.size.y = height
 
@@ -29,7 +31,8 @@ func set_width(neww):
 	width = neww
 	if has_node("Shape"):
 		$Shape.shape.extents.x = neww/2
-		$Sprite.region_rect.size.x = neww
+#		$Sprite.region_rect.size.x = neww
+		$Sprite.scale.x = neww/64
 
 func set_height(newh):
 	height = newh
