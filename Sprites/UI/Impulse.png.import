@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Electrofield.png-4240d371d9edcaf7dea8025648d9a285.stex"
+path="res://.import/Impulse.png-1f7a7981f7755c4f1169687aba1f4e10.stex"
 
 [deps]
 
-source_file="res://Sprites/Common/Electrofield.png"
-source_md5="6193348b7e09c6a48168db97169716bd"
+source_file="res://Sprites/UI/Impulse.png"
+source_md5="e220944e88649b07d22c8f46227b932e"
 
-dest_files=[ "res://.import/Electrofield.png-4240d371d9edcaf7dea8025648d9a285.stex" ]
-dest_md5="a26f3daabdae78d07a9b8533f55a717a"
+dest_files=[ "res://.import/Impulse.png-1f7a7981f7755c4f1169687aba1f4e10.stex" ]
+dest_md5="1b2bdbd00c2a2a9b289a2924d44ea932"
 
 [params]
 
@@ -18,8 +18,8 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

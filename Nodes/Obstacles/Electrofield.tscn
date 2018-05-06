@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 128, 256 )
+extents = Vector2( 64, 64 )
 
-[node name="Electrofield" type="Area2D"]
+[node name="Electrofield" type="Area2D" index="0"]
 
 position = Vector2( 37.0633, -17.5563 )
 input_pickable = true
@@ -37,7 +37,7 @@ __meta__ = {
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( -150249, 14034, 128, 128 )
+region_rect = Rect2( 0, 300, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 __meta__ = {
 "_edit_lock_": true
