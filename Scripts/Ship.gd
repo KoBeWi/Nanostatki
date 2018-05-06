@@ -105,5 +105,6 @@ func get_pos():
 		return position
 
 func set_paralyzed(value):
+	if value: $EngineDown.play()
 	paralyzed = value
 	$Sprite/Orb.modulate.a = 0.5 if value else 1

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Paralyzed.ogg-130932290644ff1eb07b656b42a5ec10.oggstr"
+
+[deps]
+
+source_file="res://Samples/Paralyzed.ogg"
+source_md5="2aab4524bd7cec019a1fed5795889c72"
+
+dest_files=[ "res://.import/Paralyzed.ogg-130932290644ff1eb07b656b42a5ec10.oggstr" ]
+dest_md5="d94eb03ceaeed43e120c6f1b5cf24bc2"
+
+[params]
+
+loop=false
+loop_offset=0

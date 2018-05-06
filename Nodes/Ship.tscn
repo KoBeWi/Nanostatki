@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Common/Ship.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Sprites/Common/ShipOrbPart3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Common/ShipOrbPart4.png" type="Texture" id=7]
 [ext_resource path="res://Samples/Ship.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Nodes/Effects/HitParticle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Samples/Paralyzed.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Nodes/Effects/HitParticle.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -65,7 +66,7 @@ tracks/3/keys = {
 "values": [ 360.0, 0.0 ]
 }
 
-[node name="Ship" type="KinematicBody2D" groups=[
+[node name="Ship" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -162,31 +163,41 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Particles" type="Node2D" parent="." index="3"]
+[node name="EngineDown" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Particles" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
 
-[node name="HitParticle" parent="Particles" index="0" instance=ExtResource( 9 )]
+[node name="HitParticle" parent="Particles" index="0" instance=ExtResource( 10 )]
 
 visible = false
 emitting = false
 
-[node name="HitParticle2" parent="Particles" index="1" instance=ExtResource( 9 )]
+[node name="HitParticle2" parent="Particles" index="1" instance=ExtResource( 10 )]
 
 visible = false
 emitting = false
 
-[node name="HitParticle3" parent="Particles" index="2" instance=ExtResource( 9 )]
+[node name="HitParticle3" parent="Particles" index="2" instance=ExtResource( 10 )]
 
 visible = false
 emitting = false
 
-[node name="HitParticle4" parent="Particles" index="3" instance=ExtResource( 9 )]
+[node name="HitParticle4" parent="Particles" index="3" instance=ExtResource( 10 )]
 
 visible = false
 emitting = false
 
-[node name="HitParticle5" parent="Particles" index="4" instance=ExtResource( 9 )]
+[node name="HitParticle5" parent="Particles" index="4" instance=ExtResource( 10 )]
 
 visible = false
 emitting = false
