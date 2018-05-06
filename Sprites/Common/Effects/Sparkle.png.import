@@ -7,10 +7,10 @@ path="res://.import/Sparkle.png-c1112eabb6ac28e94279735998f2d6ca.stex"
 [deps]
 
 source_file="res://Sprites/Common/Effects/Sparkle.png"
-source_md5="59a1d6af18a1a3a5dd3bcfbda5db2d76"
+source_md5="deb8c3a4bf7801c06454a78b51d456c3"
 
 dest_files=[ "res://.import/Sparkle.png-c1112eabb6ac28e94279735998f2d6ca.stex" ]
-dest_md5="7017d830e4f9f74263ebb0e8bfd04f0c"
+dest_md5="276df1781ce8df0399b0bc5f12f6cdf7"
 
 [params]
 
