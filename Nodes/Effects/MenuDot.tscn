@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/UI/MenuDot1.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "MenuDot"
+script/source = "extends Sprite
+
+signal free_spawn
+
+var time = 0
+var dx
+var dy
+var spawn
+
+func _ready():
+	texture = Com.load_dots()[randi() % 4]
+
+func set_direction(_spawn):
+	var x = _spawn.x
+	var y = _spawn.y
+	var direction = randi() % 8
+	dx = sin(deg2rad(direction * 45))
+	dy = cos(deg2rad(direction * 45))
+	
+	if x == -4 and dx < 0 or x == 3 and dx > 0: dx = -dx
+	if y == -2 and dy < 0 or y == 2 and dy > 0: dy = -dy
+	
+	spawn = _spawn
+
+func _process(delta):
+	time += delta
+	position += Vector2(dx, dy) * pow(max(sin(time * PI * 2 * 0.81), 0), 2) * 10
+
+func _on_animation_finished(anim_name):
+	emit_signal(\"free_spawn\", spawn)
+	queue_free()"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Idle"
+length = 10.0
+loop = false
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[node name="MenuDot" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+hframes = 10
+frame = 9
+script = SubResource( 1 )
+_sections_unfolded = [ "Animation" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = "Idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 12.0
+anims/Idle = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+
+

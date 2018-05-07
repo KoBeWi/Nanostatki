@@ -3,6 +3,7 @@ extends Node2D
 const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
 const SMUTECZEK = "Wygląda na to, że niczego tu nie ma :("
+const DOT_SPAWN = 0.05
 
 onready var camera_target = $Camera.position
 onready var video = $Modes/VideoPlayer
@@ -16,6 +17,8 @@ var choice setget move_selection
 var exiting
 var prev_node
 var modename_visible
+var dot_delay = 0
+var possible_spawns = []
 
 var gamemode
 var options = [1, 1]
@@ -31,6 +34,10 @@ func _ready():
 	$Modes.remove_child(video)
 	self.choice = 1
 	Jukebox.play_music("IDY")
+	
+	for x in range(-4, 4):
+		for y in range(-2, 3):
+			possible_spawns.append(Vector2(x, y))
 	
 	for j in range(2):
 		Com.load_scoreboard("Race" + str(j+1))
@@ -264,6 +271,20 @@ func _process(delta):
 		$Lobby/Need2.visible = (gamemode == 2 and players_ready == 1)
 		$Lobby/RealContinue.visible = (players_ready > 0)
 	
+	if dot_delay <= 0:
+		dot_delay = DOT_SPAWN
+		
+		var spawn = possible_spawns[randi() % possible_spawns.size()]
+		possible_spawns.erase(spawn)
+		var dot = preload("res://Nodes/Effects/MenuDot.tscn").instance()
+		dot.set_direction(spawn)
+		
+		add_child(dot)
+		dot.connect("free_spawn", self, "free_spawn")
+		dot.position = $Camera.position + Vector2(64 + spawn.x * 128, spawn.y * 128)
+	else:
+		dot_delay -= delta
+	
 	var speed = max((camera_target - $Camera.position).length()/10, CAMERA_SPEED)
 	if exiting: speed = CAMERA_SPEED
 	$Camera.position += (camera_target - $Camera.position).normalized() * speed
@@ -273,6 +294,9 @@ func _process(delta):
 		exiting -= delta
 		modulate = Color(exiting, exiting, exiting)
 		$ParallaxBackground/ParallaxLayer/Background.modulate = Color(exiting, exiting, exiting)
+
+func free_spawn(spawn):
+	possible_spawns.append(spawn)
 
 func move_selection(new_choice):
 	choice = new_choice

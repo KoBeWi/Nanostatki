@@ -1,67 +1,67 @@
 [gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/MenuNode.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/UI/OptionsFill.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/UI/OptionsIcon.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/UI/StartCircle.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/StartFill.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/UI/StartIcon.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/UI/AuthorsCircle.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/UI/AuthorsFill.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/UI/AuthorsIcon.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/UI/ExitCircle.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/UI/ExitFill.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/UI/ExitIcon.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/UI/Line.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/UILine.gd" type="Script" id=17]
-[ext_resource path="res://Sprites/UI/Title.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/UI/ReturnCircle.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/UI/ReturnFill.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/UI/ReturnIcon.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/UI/ModeCircle.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/UI/ModeFill.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/UI/ModeRace.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/UI/ModeDrag.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/UI/ModeSumo.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/UI/ModeArena.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/UI/ModeSurvival.png" type="Texture" id=28]
-[ext_resource path="res://Resources/Video/Video1.ogm" type="VideoStream" id=29]
-[ext_resource path="res://Sprites/UI/ModenameRace.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/UI/ScoreCircle.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/UI/ScoreFill.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/UI/ScoreRace.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/UI/ScoreDrag.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/UI/ScoreSumo.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/UI/ScoreArena.png" type="Texture" id=36]
-[ext_resource path="res://Sprites/UI/ScoreSurvival.png" type="Texture" id=37]
-[ext_resource path="res://Sprites/UI/ScoreReturn.png" type="Texture" id=38]
-[ext_resource path="res://Sprites/UI/TableRace.png" type="Texture" id=39]
-[ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=40]
-[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=41]
-[ext_resource path="res://Sprites/UI/TableDrag.png" type="Texture" id=42]
-[ext_resource path="res://Sprites/UI/TableSumo.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/UI/TableArena.png" type="Texture" id=44]
-[ext_resource path="res://Resources/NewCompactFont.tres" type="DynamicFont" id=45]
-[ext_resource path="res://Sprites/UI/TableSurvival.png" type="Texture" id=46]
-[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=47]
-[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=48]
-[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=49]
-[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=50]
-[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=51]
-[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=52]
-[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=53]
-[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=54]
-[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=55]
-[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=56]
-[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=57]
-[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=58]
-[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=59]
-[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=60]
-[ext_resource path="res://Samples/PlayerJoin.ogg" type="AudioStream" id=61]
-[ext_resource path="res://Samples/PlayerLeave.ogg" type="AudioStream" id=62]
+[ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/MenuNode.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/UI/OptionsFill.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/OptionsIcon.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/StartCircle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/StartFill.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/StartIcon.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/AuthorsCircle.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/UI/AuthorsFill.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/UI/AuthorsIcon.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/ExitCircle.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/UI/ExitFill.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/UI/ExitIcon.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/UI/Line.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/UILine.gd" type="Script" id=16]
+[ext_resource path="res://Sprites/UI/Title.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/UI/ReturnCircle.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/UI/ReturnFill.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/UI/ReturnIcon.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/UI/ModeCircle.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/UI/ModeFill.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/UI/ModeRace.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/UI/ModeDrag.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/UI/ModeSumo.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/UI/ModeArena.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/UI/ModeSurvival.png" type="Texture" id=27]
+[ext_resource path="res://Resources/Video/Video1.ogm" type="VideoStream" id=28]
+[ext_resource path="res://Sprites/UI/ModenameRace.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/UI/ScoreCircle.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/UI/ScoreFill.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/UI/ScoreRace.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/UI/ScoreDrag.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/UI/ScoreSumo.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/UI/ScoreArena.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/UI/ScoreSurvival.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/UI/ScoreReturn.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/UI/TableRace.png" type="Texture" id=38]
+[ext_resource path="res://Resources/NewMediumFont.tres" type="DynamicFont" id=39]
+[ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=40]
+[ext_resource path="res://Sprites/UI/TableDrag.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/UI/TableSumo.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/UI/TableArena.png" type="Texture" id=43]
+[ext_resource path="res://Resources/NewCompactFont.tres" type="DynamicFont" id=44]
+[ext_resource path="res://Sprites/UI/TableSurvival.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/UI/LobbyCircle.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/UI/LobbyFill.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/UI/LobbyDice.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/UI/LobbyUpDown.png" type="Texture" id=49]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=50]
+[ext_resource path="res://Sprites/UI/LobbyLeftRight.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=58]
+[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=59]
+[ext_resource path="res://Samples/PlayerJoin.ogg" type="AudioStream" id=60]
+[ext_resource path="res://Samples/PlayerLeave.ogg" type="AudioStream" id=61]
+[ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=62]
 
 [sub_resource type="Shader" id=1]
 
@@ -79,7 +79,7 @@ void fragment() {
 
 render_priority = 0
 shader = SubResource( 1 )
-shader_param/mask = ExtResource( 23 )
+shader_param/mask = ExtResource( 22 )
 _sections_unfolded = [ "shader_param" ]
 
 [sub_resource type="Animation" id=3]
@@ -154,6 +154,8 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenPositions" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="Title" type="Node2D" parent="ScreenPositions" index="0"]
 
@@ -240,7 +242,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 512, 300 )
 anchor_mode = 1
 rotating = false
@@ -264,19 +265,31 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Background" type="Sprite" parent="Camera" index="0"]
+[node name="Background" type="ColorRect" parent="Camera" index="0"]
 
-visible = false
-z_index = -10
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
+modulate = Color( 0.129412, 0.0862745, 0.0156863, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect", "Visibility", "Z Index" ]
 
 [node name="Title" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Nodes" type="Node2D" parent="Title" index="0"]
 
@@ -286,13 +299,13 @@ _sections_unfolded = [ "Z Index" ]
 [node name="Scores" type="Sprite" parent="Title/Nodes" index="0"]
 
 position = Vector2( 236.587, 299.081 )
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Scores" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -301,20 +314,20 @@ __meta__ = {
 [node name="Icon" type="Sprite" parent="Title/Nodes/Scores/Fill" index="0"]
 
 self_modulate = Color( 1, 0.796875, 0, 1 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Start" type="Sprite" parent="Title/Nodes" index="1"]
 
 position = Vector2( 513.942, 359.778 )
-texture = ExtResource( 7 )
-script = ExtResource( 4 )
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Start" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -324,21 +337,21 @@ __meta__ = {
 
 self_modulate = Color( 0.988235, 0.580392, 0, 1 )
 position = Vector2( 11, 0 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Authors" type="Sprite" parent="Title/Nodes" index="2"]
 
 editor/display_folded = true
 position = Vector2( 790.963, 295.751 )
-texture = ExtResource( 10 )
-script = ExtResource( 4 )
+texture = ExtResource( 9 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Authors" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -347,21 +360,21 @@ __meta__ = {
 [node name="Icon" type="Sprite" parent="Title/Nodes/Authors/Fill" index="0"]
 
 self_modulate = Color( 0.611765, 0.65098, 0.831373, 1 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Exit" type="Sprite" parent="Title/Nodes" index="3"]
 
 editor/display_folded = true
 position = Vector2( 936.976, 517.129 )
-texture = ExtResource( 13 )
-script = ExtResource( 4 )
+texture = ExtResource( 12 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Exit" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
@@ -370,7 +383,7 @@ __meta__ = {
 [node name="Icon" type="Sprite" parent="Title/Nodes/Exit/Fill" index="0"]
 
 self_modulate = Color( 0.996078, 0.160784, 0.160784, 1 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="Lines" type="Node2D" parent="Title" index="1"]
@@ -381,10 +394,10 @@ editor/display_folded = true
 
 position = Vector2( 684.605, 320.333 )
 rotation = -0.227138
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 88.3239, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Start")
 end = NodePath("../../Nodes/Authors")
@@ -393,10 +406,10 @@ end = NodePath("../../Nodes/Authors")
 
 position = Vector2( 869.2, 414.37 )
 rotation = 0.987727
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 154.194, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Authors")
 end = NodePath("../../Nodes/Exit")
@@ -405,10 +418,10 @@ end = NodePath("../../Nodes/Exit")
 
 position = Vector2( 342.051, 322.161 )
 rotation = 0.215446
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 89.9189, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Scores")
 end = NodePath("../../Nodes/Start")
@@ -417,10 +430,10 @@ end = NodePath("../../Nodes/Start")
 
 position = Vector2( 2991.49, 515.452 )
 rotation = -0.000816151
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 4017.03, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Exit")
 end = NodePath("../../Out")
@@ -428,7 +441,7 @@ end = NodePath("../../Out")
 [node name="Title" type="Sprite" parent="Title" index="2"]
 
 position = Vector2( 502.121, 97.6002 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Out" type="Position2D" parent="Title" index="3"]
 
@@ -437,25 +450,26 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 0, 1464.33 )
 
 [node name="Return" type="Sprite" parent="Modes" index="0"]
 
 editor/display_folded = true
 position = Vector2( 519.906, 824.072 )
-texture = ExtResource( 19 )
-script = ExtResource( 4 )
+texture = ExtResource( 18 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Modes/Return" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Modes/Return/Fill" index="0"]
 
 self_modulate = Color( 1, 0.160784, 0.160784, 1 )
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Nodes" type="Node2D" parent="Modes" index="1"]
 
@@ -466,95 +480,95 @@ z_index = 1
 
 editor/display_folded = true
 position = Vector2( 152.22, 1041.28 )
-texture = ExtResource( 22 )
-script = ExtResource( 4 )
+texture = ExtResource( 21 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Modes/Nodes/Race" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Race/Fill" index="0"]
 
 self_modulate = Color( 0.921569, 0.607843, 0, 1 )
-texture = ExtResource( 24 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Drag" type="Sprite" parent="Modes/Nodes" index="1"]
 
 editor/display_folded = true
 position = Vector2( 293.417, 1227.06 )
-texture = ExtResource( 22 )
-script = ExtResource( 4 )
+texture = ExtResource( 21 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Modes/Nodes/Drag" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Drag/Fill" index="0"]
 
 self_modulate = Color( 0.0392157, 0.443137, 0.823529, 1 )
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Sumo" type="Sprite" parent="Modes/Nodes" index="2"]
 
 editor/display_folded = true
 position = Vector2( 522.635, 1133.58 )
-texture = ExtResource( 22 )
-script = ExtResource( 4 )
+texture = ExtResource( 21 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Modes/Nodes/Sumo" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Sumo/Fill" index="0"]
 
 self_modulate = Color( 0.0784314, 0.882353, 0.32549, 1 )
-texture = ExtResource( 26 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Arena" type="Sprite" parent="Modes/Nodes" index="3"]
 
 editor/display_folded = true
 position = Vector2( 741.551, 1232.83 )
-texture = ExtResource( 22 )
-script = ExtResource( 4 )
+texture = ExtResource( 21 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Modes/Nodes/Arena" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Arena/Fill" index="0"]
 
 self_modulate = Color( 0.760784, 0.890196, 0.0313726, 1 )
-texture = ExtResource( 27 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Survival" type="Sprite" parent="Modes/Nodes" index="4"]
 
 editor/display_folded = true
 position = Vector2( 929.333, 1143.07 )
-texture = ExtResource( 22 )
-script = ExtResource( 4 )
+texture = ExtResource( 21 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Modes/Nodes/Survival" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Survival/Fill" index="0"]
 
 self_modulate = Color( 1, 0.376471, 0, 1 )
 position = Vector2( 0, -2.51758 )
-texture = ExtResource( 28 )
+texture = ExtResource( 27 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Lines" type="Node2D" parent="Modes" index="2"]
@@ -565,10 +579,10 @@ editor/display_folded = true
 
 position = Vector2( 342.951, 928.607 )
 rotation = 2.60801
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 315.051, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Return")
 end = NodePath("../../Nodes/Race")
@@ -577,10 +591,10 @@ end = NodePath("../../Nodes/Race")
 
 position = Vector2( 222.818, 1134.17 )
 rotation = -2.22068
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 105.347, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Drag")
 end = NodePath("../../Nodes/Race")
@@ -589,10 +603,10 @@ end = NodePath("../../Nodes/Race")
 
 position = Vector2( 408.026, 1180.32 )
 rotation = 2.75436
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 119.547, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
 end = NodePath("../../Nodes/Drag")
@@ -601,10 +615,10 @@ end = NodePath("../../Nodes/Drag")
 
 position = Vector2( 632.093, 1183.2 )
 rotation = 0.425653
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 112.364, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
 end = NodePath("../../Nodes/Arena")
@@ -613,10 +627,10 @@ end = NodePath("../../Nodes/Arena")
 
 position = Vector2( 835.442, 1187.95 )
 rotation = -0.445894
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 80.132, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 80.1321, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
 end = NodePath("../../Nodes/Survival")
@@ -624,12 +638,12 @@ end = NodePath("../../Nodes/Survival")
 [node name="Race" type="Sprite" parent="Modes/Lines" index="5"]
 
 visible = false
-position = Vector2( 308.337, 495.057 )
-rotation = -1.29241
-texture = ExtResource( 16 )
+position = Vector2( -283.162, 1043.49 )
+rotation = 3.13652
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1008.19, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 742.774, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Race")
 end = NodePath("../../../ScreenPositions/Race/Position2D")
@@ -637,12 +651,12 @@ end = NodePath("../../../ScreenPositions/Race/Position2D")
 [node name="Drag" type="Sprite" parent="Modes/Lines" index="6"]
 
 visible = false
-position = Vector2( 366.724, 463.007 )
-rotation = -1.47514
-texture = ExtResource( 16 )
+position = Vector2( -116.905, 1543.12 )
+rotation = 2.48524
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1407.12, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 907.876, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Drag")
 end = NodePath("../../../ScreenPositions/Drag/Position2D")
@@ -650,12 +664,12 @@ end = NodePath("../../../ScreenPositions/Drag/Position2D")
 [node name="Sumo" type="Sprite" parent="Modes/Lines" index="7"]
 
 visible = false
-position = Vector2( 258.882, 423.95 )
-rotation = -1.92665
-texture = ExtResource( 16 )
+position = Vector2( 522.627, 1647.96 )
+rotation = 1.57081
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1386.12, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 900.75, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
 end = NodePath("../../../ScreenPositions/Sumo/Position2D")
@@ -663,12 +677,12 @@ end = NodePath("../../../ScreenPositions/Sumo/Position2D")
 [node name="Arena" type="Sprite" parent="Modes/Lines" index="8"]
 
 visible = false
-position = Vector2( 126.957, 547.157 )
-rotation = -2.30158
-texture = ExtResource( 16 )
+position = Vector2( 1196.63, 1582.08 )
+rotation = 0.654572
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1713.6, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1019.3, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
 end = NodePath("../../../ScreenPositions/Arena/Position2D")
@@ -676,12 +690,12 @@ end = NodePath("../../../ScreenPositions/Arena/Position2D")
 [node name="Survival" type="Sprite" parent="Modes/Lines" index="9"]
 
 visible = false
-position = Vector2( 217.869, 609.428 )
-rotation = -2.49805
-texture = ExtResource( 16 )
+position = Vector2( 1541.45, 1140.88 )
+rotation = -0.00357843
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1650.71, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1096.25, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Survival")
 end = NodePath("../../../ScreenPositions/Survival/Position2D")
@@ -705,7 +719,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 audio_track = 0
-stream = ExtResource( 29 )
+stream = ExtResource( 28 )
 volume_db = 0.0
 autoplay = false
 paused = false
@@ -717,7 +731,7 @@ _sections_unfolded = [ "Material", "Rect" ]
 [node name="Modename" type="Sprite" parent="Modes" index="4"]
 
 position = Vector2( 521.949, 979.331 )
-texture = ExtResource( 30 )
+texture = ExtResource( 29 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
 
@@ -733,112 +747,112 @@ z_index = 1
 
 editor/display_folded = true
 position = Vector2( -896.914, 147.562 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Race" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Race/Fill" index="0"]
 
 self_modulate = Color( 0.921569, 0.607843, 0, 1 )
-texture = ExtResource( 33 )
+texture = ExtResource( 32 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Drag" type="Sprite" parent="Scores/Nodes" index="1"]
 
 editor/display_folded = true
 position = Vector2( -704.458, 205.835 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Drag" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Drag/Fill" index="0"]
 
 self_modulate = Color( 0.0392157, 0.443137, 0.823529, 1 )
-texture = ExtResource( 34 )
+texture = ExtResource( 33 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Sumo" type="Sprite" parent="Scores/Nodes" index="2"]
 
 editor/display_folded = true
 position = Vector2( -516.286, 135.887 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Sumo" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Sumo/Fill" index="0"]
 
 self_modulate = Color( 0.0784314, 0.882353, 0.32549, 1 )
-texture = ExtResource( 35 )
+texture = ExtResource( 34 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Arena" type="Sprite" parent="Scores/Nodes" index="3"]
 
 editor/display_folded = true
 position = Vector2( -308.105, 180.409 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Arena" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Arena/Fill" index="0"]
 
 self_modulate = Color( 0.760784, 0.890196, 0.0313726, 1 )
-texture = ExtResource( 36 )
+texture = ExtResource( 35 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Survival" type="Sprite" parent="Scores/Nodes" index="4"]
 
 editor/display_folded = true
 position = Vector2( -111.197, 136.927 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Survival" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Survival/Fill" index="0"]
 
 self_modulate = Color( 1, 0.376471, 0, 1 )
 position = Vector2( 0, -2.51758 )
-texture = ExtResource( 37 )
+texture = ExtResource( 36 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Return" type="Sprite" parent="Scores/Nodes" index="5"]
 
 editor/display_folded = true
 position = Vector2( -57.4957, 259.117 )
-texture = ExtResource( 31 )
-script = ExtResource( 4 )
+texture = ExtResource( 30 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Return" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 32 )
+texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Return/Fill" index="0"]
 
 self_modulate = Color( 1, 0.160784, 0.160784, 1 )
-texture = ExtResource( 38 )
+texture = ExtResource( 37 )
 
 [node name="Lines" type="Node2D" parent="Scores" index="1"]
 
@@ -846,12 +860,12 @@ editor/display_folded = true
 
 [node name="RR" type="Sprite" parent="Scores/Lines" index="0"]
 
-position = Vector2( -84.3463, 198.022 )
+position = Vector2( -84.3464, 198.022 )
 rotation = -1.98488
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 57.4699, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 57.47, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Return")
 end = NodePath("../../Nodes/Survival")
@@ -860,10 +874,10 @@ end = NodePath("../../Nodes/Survival")
 
 position = Vector2( -800.686, 176.699 )
 rotation = -2.84758
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 125.085, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Drag")
 end = NodePath("../../Nodes/Race")
@@ -872,22 +886,22 @@ end = NodePath("../../Nodes/Race")
 
 position = Vector2( -610.372, 170.861 )
 rotation = 2.7857
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 124.752, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
 end = NodePath("../../Nodes/Drag")
 
 [node name="SA" type="Sprite" parent="Scores/Lines" index="3"]
 
-position = Vector2( -412.195, 158.148 )
+position = Vector2( -412.196, 158.148 )
 rotation = 0.210688
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 136.889, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Sumo")
 end = NodePath("../../Nodes/Arena")
@@ -896,10 +910,10 @@ end = NodePath("../../Nodes/Arena")
 
 position = Vector2( -209.651, 158.668 )
 rotation = -0.217336
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 125.652, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Arena")
 end = NodePath("../../Nodes/Survival")
@@ -911,7 +925,7 @@ end = NodePath("../../Nodes/Survival")
 editor/display_folded = true
 visible = false
 position = Vector2( -514.344, 463.059 )
-texture = ExtResource( 39 )
+texture = ExtResource( 38 )
 
 [node name="Track1" type="Label" parent="Scores/Tables/Race" index="0"]
 
@@ -930,7 +944,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
+custom_fonts/font = ExtResource( 39 )
 text = "TRASA 1"
 align = 1
 percent_visible = 1.0
@@ -954,7 +968,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -985,7 +999,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "21:37:00
 21:37:00
 21:37:00
@@ -1018,7 +1032,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
+custom_fonts/font = ExtResource( 39 )
 text = "TRASA 2"
 align = 1
 percent_visible = 1.0
@@ -1042,7 +1056,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1073,7 +1087,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "21:37:00
 21:37:00
 21:37:00
@@ -1094,7 +1108,7 @@ _sections_unfolded = [ "custom_fonts" ]
 editor/display_folded = true
 visible = false
 position = Vector2( -514.496, 462.959 )
-texture = ExtResource( 42 )
+texture = ExtResource( 41 )
 
 [node name="Names" type="Label" parent="Scores/Tables/Drag" index="0"]
 
@@ -1112,7 +1126,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1143,7 +1157,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "1nm
 1nm
 1nm
@@ -1164,7 +1178,7 @@ _sections_unfolded = [ "custom_fonts" ]
 editor/display_folded = true
 visible = false
 position = Vector2( -514.496, 462.959 )
-texture = ExtResource( 43 )
+texture = ExtResource( 42 )
 
 [node name="Names" type="Label" parent="Scores/Tables/Sumo" index="0"]
 
@@ -1182,7 +1196,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1213,7 +1227,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "1
 1
 1
@@ -1233,7 +1247,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 editor/display_folded = true
 position = Vector2( -514.344, 463.059 )
-texture = ExtResource( 44 )
+texture = ExtResource( 43 )
 
 [node name="Arena1" type="Label" parent="Scores/Tables/Arena" index="0"]
 
@@ -1252,7 +1266,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
+custom_fonts/font = ExtResource( 39 )
 text = "ARENA 1 i 2"
 align = 1
 percent_visible = 1.0
@@ -1276,7 +1290,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1302,7 +1316,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1348,7 +1362,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1374,7 +1388,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1402,7 +1416,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
+custom_fonts/font = ExtResource( 39 )
 text = "ARENA 3 i 4"
 align = 1
 percent_visible = 1.0
@@ -1426,7 +1440,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1452,7 +1466,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1498,7 +1512,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1524,7 +1538,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1552,7 +1566,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
+custom_fonts/font = ExtResource( 39 )
 text = "ARENA 5, 6 i 7"
 align = 1
 percent_visible = 1.0
@@ -1576,7 +1590,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1602,7 +1616,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1648,7 +1662,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1674,7 +1688,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1720,7 +1734,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1746,7 +1760,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 45 )
+custom_fonts/font = ExtResource( 44 )
 text = "10 pkt/s
 10 pkt/s
 10 pkt/s
@@ -1762,7 +1776,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 editor/display_folded = true
 visible = false
 position = Vector2( -518.496, 459.959 )
-texture = ExtResource( 46 )
+texture = ExtResource( 45 )
 
 [node name="Names" type="Label" parent="Scores/Tables/Survival" index="0"]
 
@@ -1780,7 +1794,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "#1    balsalsal
 #2    ugabauba
 #3    balsalsal
@@ -1811,7 +1825,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 text = "1 nm
 1 nm
 1 nm
@@ -1841,20 +1855,20 @@ position = Vector2( -2462.16, -1360.03 )
 
 editor/display_folded = true
 position = Vector2( 451, 223 )
-texture = ExtResource( 19 )
-script = ExtResource( 4 )
+texture = ExtResource( 18 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Lobby/Return" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Lobby/Return/Fill" index="0"]
 
 self_modulate = Color( 1, 0.160784, 0.160784, 1 )
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="RaceArena" type="Node2D" parent="Lobby" index="2"]
 
@@ -1865,35 +1879,35 @@ position = Vector2( -2462.16, -1360.03 )
 
 editor/display_folded = true
 position = Vector2( 2391.68, 1148.23 )
-texture = ExtResource( 47 )
-script = ExtResource( 4 )
+texture = ExtResource( 46 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Dice" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 48 )
+texture = ExtResource( 47 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Dice/Fill" index="0"]
 
 self_modulate = Color( 0.941176, 0.0117647, 0.513726, 1 )
-texture = ExtResource( 49 )
+texture = ExtResource( 48 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
 
 position = Vector2( 2500.06, 1148.23 )
-texture = ExtResource( 47 )
-script = ExtResource( 4 )
+texture = ExtResource( 46 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Vertical" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 48 )
+texture = ExtResource( 47 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Vertical/Fill" index="0"]
 
-texture = ExtResource( 50 )
+texture = ExtResource( 49 )
 
 [node name="VerticalNumber" type="Label" parent="Lobby/RaceArena/Vertical/Fill" index="1"]
 
@@ -1911,7 +1925,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 51 )
+custom_fonts/font = ExtResource( 50 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -1924,17 +1938,17 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
 
 position = Vector2( 2613.22, 1148.23 )
-texture = ExtResource( 47 )
-script = ExtResource( 4 )
+texture = ExtResource( 46 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Lobby/RaceArena/Horizontal" index="0"]
 
 show_behind_parent = true
-texture = ExtResource( 48 )
+texture = ExtResource( 47 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Horizontal/Fill" index="0"]
 
-texture = ExtResource( 52 )
+texture = ExtResource( 51 )
 
 [node name="HorizontalNumber" type="Label" parent="Lobby/RaceArena/Horizontal/Fill" index="1"]
 
@@ -1952,7 +1966,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 51 )
+custom_fonts/font = ExtResource( 50 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.501961 )
 custom_constants/shadow_as_outline = 1
 text = "3"
@@ -1974,12 +1988,12 @@ position = Vector2( 2698.38, 1207.1 )
 
 editor/display_folded = true
 position = Vector2( 2823.33, 1148.53 )
-texture = ExtResource( 53 )
+texture = ExtResource( 52 )
 
 [node name="Preview" type="Sprite" parent="Lobby/RaceArena/Frame" index="0"]
 
 scale = Vector2( 0.04, 0.04 )
-texture = ExtResource( 54 )
+texture = ExtResource( 53 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RaceText" type="Label" parent="Lobby/RaceArena" index="6"]
@@ -1999,7 +2013,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ TRASĘ
@@ -2027,7 +2041,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ ARENĘ
@@ -2046,10 +2060,10 @@ editor/display_folded = true
 
 position = Vector2( 2445.87, 1148.23 )
 rotation = 3.14159
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 18.3801, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Vertical")
 end = NodePath("../../Dice")
@@ -2057,10 +2071,10 @@ end = NodePath("../../Dice")
 [node name="VH" type="Sprite" parent="Lobby/RaceArena/Lines" index="1"]
 
 position = Vector2( 2556.64, 1148.23 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 23.1599, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Vertical")
 end = NodePath("../../Horizontal")
@@ -2069,10 +2083,10 @@ end = NodePath("../../Horizontal")
 
 position = Vector2( 2674.06, 1103.79 )
 rotation = -0.63082
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 60.6785, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Horizontal")
 end = NodePath("../../NearFrame1")
@@ -2081,10 +2095,10 @@ end = NodePath("../../NearFrame1")
 
 position = Vector2( 2674.31, 1190.46 )
 rotation = 0.604855
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 58.5272, 18 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Horizontal")
 end = NodePath("../../NearFrame2")
@@ -2114,7 +2128,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -2127,7 +2141,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/1Inactive" index="1"]
 
 position = Vector2( 2158.57, 1313.29 )
-texture = ExtResource( 55 )
+texture = ExtResource( 54 )
 
 [node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
 
@@ -2150,7 +2164,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 1, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2163,12 +2177,12 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Movement" type="Sprite" parent="Lobby/Players/1Active" index="1"]
 
 position = Vector2( 2163.25, 1472.71 )
-texture = ExtResource( 56 )
+texture = ExtResource( 55 )
 
 [node name="Action" type="Sprite" parent="Lobby/Players/1Active" index="2"]
 
 position = Vector2( 2160.81, 1547.81 )
-texture = ExtResource( 55 )
+texture = ExtResource( 54 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
@@ -2191,7 +2205,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -2204,7 +2218,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/2Inactive" index="1"]
 
 position = Vector2( 2385.7, 1315.08 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Inactive/Action" index="0"]
 
@@ -2222,7 +2236,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CTRL"
@@ -2254,7 +2268,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2271,7 +2285,7 @@ position = Vector2( 2387.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/2Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/U" index="0"]
 
@@ -2289,7 +2303,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "W"
@@ -2303,7 +2317,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [node name="R" type="Sprite" parent="Lobby/Players/2Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/R" index="0"]
 
@@ -2321,7 +2335,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "D"
@@ -2335,7 +2349,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/2Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/D" index="0"]
 
@@ -2353,7 +2367,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "S"
@@ -2367,7 +2381,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/2Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/L" index="0"]
 
@@ -2385,7 +2399,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "A"
@@ -2399,7 +2413,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/2Active" index="2"]
 
 position = Vector2( 2385.53, 1547.81 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Active/Action" index="0"]
 
@@ -2417,7 +2431,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CTRL"
@@ -2449,7 +2463,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -2462,7 +2476,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Inactive" index="1"]
 
 position = Vector2( 2609.94, 1319.9 )
-texture = ExtResource( 58 )
+texture = ExtResource( 57 )
 
 [node name="3Active" type="Node2D" parent="Lobby/Players" index="5"]
 
@@ -2485,7 +2499,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 0, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0.752941, 0.752941, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2502,7 +2516,7 @@ position = Vector2( 2618.97, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/3Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/U" index="0"]
 
@@ -2520,7 +2534,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "I"
@@ -2534,7 +2548,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/3Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/R" index="0"]
 
@@ -2552,7 +2566,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "L"
@@ -2566,7 +2580,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/3Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/D" index="0"]
 
@@ -2584,7 +2598,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "K"
@@ -2598,7 +2612,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/3Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/L" index="0"]
 
@@ -2616,7 +2630,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "J"
@@ -2630,7 +2644,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Active" index="2"]
 
 position = Vector2( 2616.53, 1540.46 )
-texture = ExtResource( 58 )
+texture = ExtResource( 57 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
@@ -2653,7 +2667,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
@@ -2666,7 +2680,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 [node name="Action" type="Sprite" parent="Lobby/Players/4Inactive" index="1"]
 
 position = Vector2( 2835.47, 1315.08 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Inactive/Action" index="0"]
 
@@ -2684,7 +2698,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "5"
@@ -2716,7 +2730,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 1, 0, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0, 1, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2733,7 +2747,7 @@ position = Vector2( 2835.61, 1472.71 )
 [node name="U" type="Sprite" parent="Lobby/Players/4Active/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/U" index="0"]
 
@@ -2751,7 +2765,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "8"
@@ -2765,7 +2779,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="R" type="Sprite" parent="Lobby/Players/4Active/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/R" index="0"]
 
@@ -2783,7 +2797,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "6"
@@ -2797,7 +2811,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="D" type="Sprite" parent="Lobby/Players/4Active/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/D" index="0"]
 
@@ -2815,7 +2829,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "2"
@@ -2829,7 +2843,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="L" type="Sprite" parent="Lobby/Players/4Active/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/L" index="0"]
 
@@ -2847,7 +2861,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "4"
@@ -2861,7 +2875,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/4Active" index="2"]
 
 position = Vector2( 2833.17, 1547.81 )
-texture = ExtResource( 57 )
+texture = ExtResource( 56 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Active/Action" index="0"]
 
@@ -2879,7 +2893,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
 text = "5"
@@ -2916,7 +2930,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2945,7 +2959,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 41 )
+custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "PRZYTRZYMAJ AKCJĘ, BY ROZPOCZĄĆ
@@ -2971,24 +2985,24 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 1427.35, -300.602 )
-texture = ExtResource( 19 )
-script = ExtResource( 4 )
+texture = ExtResource( 18 )
+script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Authors/Nodes/Return" index="0"]
 
 editor/display_folded = true
 show_behind_parent = true
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Authors/Nodes/Return/Fill" index="0"]
 
 self_modulate = Color( 1, 0.160784, 0.160784, 1 )
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Graphic" type="Sprite" parent="Authors" index="1"]
 
 position = Vector2( 1512, -526 )
-texture = ExtResource( 59 )
+texture = ExtResource( 58 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CrossLines" type="Node2D" parent="." index="7"]
@@ -2997,45 +3011,47 @@ editor/display_folded = true
 
 [node name="SR" type="Sprite" parent="CrossLines" index="0"]
 
-position = Vector2( 517.457, 633.422 )
-rotation = 1.55795
-texture = ExtResource( 16 )
+position = Vector2( 517.052, 1365.59 )
+rotation = 1.5677
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 285.332, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1749.63, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Title/Nodes/Start")
 end = NodePath("../../Modes/Return")
 
 [node name="AR" type="Sprite" parent="CrossLines" index="1"]
 
-position = Vector2( 1115.36, -8.23764 )
-rotation = -0.752934
-texture = ExtResource( 16 )
+position = Vector2( 1413.15, -366.694 )
+rotation = -0.816725
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 759.138, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1687.64, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Title/Nodes/Authors")
 end = NodePath("../../Authors/Nodes/Return")
 
 [node name="RS" type="Sprite" parent="CrossLines" index="2"]
 
-position = Vector2( 77.1595, 277.416 )
-rotation = 0.135066
-texture = ExtResource( 16 )
+position = Vector2( -586.479, 302.024 )
+rotation = -0.00357546
+texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 195.786, 18 )
-script = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1520.14, 18 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Scores/Nodes/Return")
 end = NodePath("../../Title/Nodes/Scores")
 
 [node name="Samples" type="Node" parent="." index="8"]
 
+editor/display_folded = true
+
 [node name="Move" type="AudioStreamPlayer" parent="Samples" index="0"]
 
-stream = ExtResource( 60 )
+stream = ExtResource( 59 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3043,7 +3059,7 @@ bus = "Master"
 
 [node name="Join" type="AudioStreamPlayer" parent="Samples" index="1"]
 
-stream = ExtResource( 61 )
+stream = ExtResource( 60 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3051,7 +3067,7 @@ bus = "Master"
 
 [node name="Leave" type="AudioStreamPlayer" parent="Samples" index="2"]
 
-stream = ExtResource( 62 )
+stream = ExtResource( 61 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3059,6 +3075,7 @@ bus = "Master"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="9"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -3073,6 +3090,7 @@ scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
+visible = false
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 4900, 2048 )
@@ -3080,7 +3098,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 62 )
 __meta__ = {
 "_edit_lock_": true
 }
