@@ -7,10 +7,10 @@ path="res://.import/ScoreArena.png-ee0d46ba4825c127b61707aadfd2b7ab.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreArena.png"
-source_md5="1dc68fc2f3ae0ddb63ed5ccfc20077ce"
+source_md5="994c303fe6b5892607d31bf79e2d5ed9"
 
 dest_files=[ "res://.import/ScoreArena.png-ee0d46ba4825c127b61707aadfd2b7ab.stex" ]
-dest_md5="698b574ea61db38e6ad9b0d9300a4c3d"
+dest_md5="6fe4539ed1864a8e36fd120d61c112c7"
 
 [params]
 

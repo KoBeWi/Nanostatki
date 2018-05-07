@@ -7,10 +7,10 @@ path="res://.import/ScoreReturn.png-91898dfcee0feb4e06fa6c22d25dbd72.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreReturn.png"
-source_md5="26ce174fcb07632d82a240c3370f1986"
+source_md5="3a7627b36c345367f66d0f26dfc0d922"
 
 dest_files=[ "res://.import/ScoreReturn.png-91898dfcee0feb4e06fa6c22d25dbd72.stex" ]
-dest_md5="45507ade579042d695b272aae0f4cbc4"
+dest_md5="179120a1cbc72ec45aea4bf035daa0f6"
 
 [params]
 

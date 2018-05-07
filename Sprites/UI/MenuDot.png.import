@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ScoreDrag.png-3e5050267c27d5c84db28276a1cdaf2f.stex"
+path="res://.import/MenuDot.png-40f8e6a51df460bcc5b411597924d01f.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/ScoreDrag.png"
-source_md5="6333de6a49d00c6ab64822df98fef021"
+source_file="res://Sprites/UI/MenuDot.png"
+source_md5="dacaa06293df0ef4981c22b2fca842fa"
 
-dest_files=[ "res://.import/ScoreDrag.png-3e5050267c27d5c84db28276a1cdaf2f.stex" ]
-dest_md5="a390b2d43ef8a6101a10f41dca6e80d5"
+dest_files=[ "res://.import/MenuDot.png-40f8e6a51df460bcc5b411597924d01f.stex" ]
+dest_md5="6a04dcf2199b0b4df2a68bbfdd863f08"
 
 [params]
 

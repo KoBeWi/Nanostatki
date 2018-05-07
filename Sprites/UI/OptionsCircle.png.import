@@ -7,10 +7,10 @@ path="res://.import/OptionsCircle.png-981ba2ceaccf772a20d8366cfe6a3a59.stex"
 [deps]
 
 source_file="res://Sprites/UI/OptionsCircle.png"
-source_md5="c91cbf42ef37bc1c9ca3043de023655c"
+source_md5="1cd6175ef9a0379d27ab3cb33c6ebcc1"
 
 dest_files=[ "res://.import/OptionsCircle.png-981ba2ceaccf772a20d8366cfe6a3a59.stex" ]
-dest_md5="b2976dca70252c987646bf559da43206"
+dest_md5="e91d9c206610afeea0209accecdf70cd"
 
 [params]
 

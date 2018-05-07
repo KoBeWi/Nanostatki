@@ -15,6 +15,8 @@ var dy
 var spawn
 
 func _ready():
+	var greenshift = randf() * 0.5
+	modulate = Color(0, greenshift, 1 - greenshift)
 	texture = Com.load_dots()[randi() % 4]
 
 func set_direction(_spawn):
@@ -31,7 +33,7 @@ func set_direction(_spawn):
 
 func _process(delta):
 	time += delta
-	position += Vector2(dx, dy) * pow(max(sin(time * PI * 2 * 0.81), 0), 2) * 10
+	position += Vector2(dx, dy) * pow(max(sin(time * PI * 2 * 0.81), 0), 2) * 2
 
 func _on_animation_finished(anim_name):
 	emit_signal(\"free_spawn\", spawn)
@@ -57,13 +59,15 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[node name="MenuDot" type="Sprite" index="0"]
+[node name="MenuDot" type="Sprite"]
 
+modulate = Color( 0.12549, 0.12549, 0.12549, 1 )
+z_index = -2
 texture = ExtResource( 1 )
 hframes = 10
 frame = 9
 script = SubResource( 1 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Visibility", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 

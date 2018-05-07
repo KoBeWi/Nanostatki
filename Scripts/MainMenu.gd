@@ -117,6 +117,10 @@ func _process(delta):
 				self.choice = 2
 			
 			"Lobby":
+				var players_joined = [-1, -1, -1, -1]
+				var players_in = [false, false, false, false]
+				var players_clutch = [false, false, false, false]
+				var players_out = [0, 0, 0, 0]
 				get_node("Modes/Lines/" + Com.MODES[gamemode]).end = "../../../ScreenPositions/" + Com.MODES[gamemode] + "/Position2D"
 				get_node("Modes/Lines/" + Com.MODES[gamemode]).visible = false
 				camera_target = $ScreenPositions/Modes.position
@@ -307,16 +311,16 @@ func move_selection(new_choice):
 		
 		if i == choice:
 			var color = menu.get_node("Fill/Icon").self_modulate
-			menu.get_node("Fill").self_modulate = color
-			menu.self_modulate = color
-			menu.get_node("Fill/Icon").self_modulate = Color(1, 1, 1)
+			menu.get_node("Fill").self_modulate = Color(0, 0.5, 1)
+			menu.self_modulate = Color(0, 0.5, 1)
+#			menu.get_node("Fill/Icon").self_modulate = Color(1, 1, 1)
 			
 			if prev_node:
 				menu.impulse(prev_node)
 			prev_node = menu
 		else:
 			if menu.self_modulate != Color(1, 1, 1):
-				menu.get_node("Fill/Icon").self_modulate = menu.self_modulate
+#				menu.get_node("Fill/Icon").self_modulate = menu.self_modulate
 				menu.get_node("Fill").self_modulate = Color(1, 1, 1)
 				menu.self_modulate = Color(1, 1, 1)
 	

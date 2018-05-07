@@ -17,14 +17,16 @@ func goto(_from, _to):
 	distance = _from.distance_to(_to)
 	rotation = (_to - _from).angle()
 	goto = (_to - _from).normalized()
+	position += goto * texture.get_width()/2
 
 func _process(delta):
-	position += goto * delta * SPEED
-	distance -= delta * SPEED
-	if distance <= 0: queue_free()"
+	var move = delta * SPEED * max(distance/20, 1)
+	position += goto * move
+	distance -= move
+	if distance <= texture.get_width()/2: queue_free()"
 _sections_unfolded = [ "Resource" ]
 
-[node name="MenuImpulse" type="Sprite" index="0"]
+[node name="MenuImpulse" type="Sprite"]
 
 show_behind_parent = true
 z_index = -2

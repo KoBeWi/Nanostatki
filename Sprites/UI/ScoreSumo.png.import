@@ -7,10 +7,10 @@ path="res://.import/ScoreSumo.png-ce1aad11264b1292101aa2c90f40e1c4.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreSumo.png"
-source_md5="d192e933bbb2917285924d149e86371f"
+source_md5="e9ceceb1ed442183452579ca43feb617"
 
 dest_files=[ "res://.import/ScoreSumo.png-ce1aad11264b1292101aa2c90f40e1c4.stex" ]
-dest_md5="04196bf25ebe59dab9195e2ae844ee85"
+dest_md5="70978fcc7771cd5eb11ccc95cb0f34e5"
 
 [params]
 

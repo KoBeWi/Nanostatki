@@ -7,10 +7,10 @@ path="res://.import/PlayerJoin.ogg-0583cb8833d792cc39719405c3846e0b.oggstr"
 [deps]
 
 source_file="res://Samples/PlayerJoin.ogg"
-source_md5="1e89d577bb20c4f0ed73fb7498c46752"
+source_md5="6e2e40105ec4253a12b0a92bf659347b"
 
 dest_files=[ "res://.import/PlayerJoin.ogg-0583cb8833d792cc39719405c3846e0b.oggstr" ]
-dest_md5="4efad338a425ee663253bfb3f78112b8"
+dest_md5="81ea594300a113f1355e3d9b3d6082e2"
 
 [params]
 

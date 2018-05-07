@@ -7,10 +7,10 @@ path="res://.import/ModeSurvival.png-18771a0996ef94ba7118ea327645dae7.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModeSurvival.png"
-source_md5="ea5aaf5bb9efa21fba19ed38563e4223"
+source_md5="f7ae9dfe705c2f37e36866778a581c15"
 
 dest_files=[ "res://.import/ModeSurvival.png-18771a0996ef94ba7118ea327645dae7.stex" ]
-dest_md5="c855d0d2ed18e86613f21ff5eb5fb380"
+dest_md5="03163f7ccf3c38f18fc33430c34b594d"
 
 [params]
 

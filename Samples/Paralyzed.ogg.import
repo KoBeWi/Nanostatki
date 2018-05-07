@@ -7,10 +7,10 @@ path="res://.import/Paralyzed.ogg-130932290644ff1eb07b656b42a5ec10.oggstr"
 [deps]
 
 source_file="res://Samples/Paralyzed.ogg"
-source_md5="2aab4524bd7cec019a1fed5795889c72"
+source_md5="4ece60b75e0c5fa9edcacbe7a5c6e95f"
 
 dest_files=[ "res://.import/Paralyzed.ogg-130932290644ff1eb07b656b42a5ec10.oggstr" ]
-dest_md5="d94eb03ceaeed43e120c6f1b5cf24bc2"
+dest_md5="2042d3ea425a634c1dac3c63c3918ed3"
 
 [params]
 

@@ -243,6 +243,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Camera" type="Camera2D" parent="." index="1"]
 
 position = Vector2( 512, 300 )
+z_index = -3
 anchor_mode = 1
 rotating = false
 current = true
@@ -269,7 +270,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Background" type="ColorRect" parent="Camera" index="0"]
 
-modulate = Color( 0.129412, 0.0862745, 0.0156863, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -284,12 +284,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
 _sections_unfolded = [ "Rect", "Visibility", "Z Index" ]
 
 [node name="Title" type="Node2D" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="Nodes" type="Node2D" parent="Title" index="0"]
 
@@ -298,9 +296,10 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Scores" type="Sprite" parent="Title/Nodes" index="0"]
 
-position = Vector2( 236.587, 299.081 )
+position = Vector2( 236.587, 300 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Scores" index="0"]
 
@@ -313,7 +312,6 @@ __meta__ = {
 
 [node name="Icon" type="Sprite" parent="Title/Nodes/Scores/Fill" index="0"]
 
-self_modulate = Color( 1, 0.796875, 0, 1 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -335,21 +333,18 @@ __meta__ = {
 
 [node name="Icon" type="Sprite" parent="Title/Nodes/Start/Fill" index="0"]
 
-self_modulate = Color( 0.988235, 0.580392, 0, 1 )
-position = Vector2( 11, 0 )
+position = Vector2( 12, 0 )
 texture = ExtResource( 8 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Rect", "Transform", "Visibility" ]
 
 [node name="Authors" type="Sprite" parent="Title/Nodes" index="2"]
 
-editor/display_folded = true
 position = Vector2( 790.963, 295.751 )
 texture = ExtResource( 9 )
 script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Authors" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Visibility" ]
@@ -359,20 +354,17 @@ __meta__ = {
 
 [node name="Icon" type="Sprite" parent="Title/Nodes/Authors/Fill" index="0"]
 
-self_modulate = Color( 0.611765, 0.65098, 0.831373, 1 )
 texture = ExtResource( 11 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Rect", "Transform", "Visibility" ]
 
 [node name="Exit" type="Sprite" parent="Title/Nodes" index="3"]
 
-editor/display_folded = true
 position = Vector2( 936.976, 517.129 )
 texture = ExtResource( 12 )
 script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Title/Nodes/Exit" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 13 )
 _sections_unfolded = [ "Rect", "Visibility" ]
@@ -382,7 +374,6 @@ __meta__ = {
 
 [node name="Icon" type="Sprite" parent="Title/Nodes/Exit/Fill" index="0"]
 
-self_modulate = Color( 0.996078, 0.160784, 0.160784, 1 )
 texture = ExtResource( 14 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -392,11 +383,11 @@ editor/display_folded = true
 
 [node name="SA" type="Sprite" parent="Title/Lines" index="0"]
 
-position = Vector2( 684.605, 320.333 )
+position = Vector2( 683.143, 320.671 )
 rotation = -0.227138
 texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 88.3239, 18 )
+region_rect = Rect2( 0, 0, 91.324, 18 )
 script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Start")
@@ -416,11 +407,11 @@ end = NodePath("../../Nodes/Exit")
 
 [node name="OS" type="Sprite" parent="Title/Lines" index="2"]
 
-position = Vector2( 342.051, 322.161 )
-rotation = 0.215446
+position = Vector2( 345.938, 323.568 )
+rotation = 0.212282
 texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 89.9189, 18 )
+region_rect = Rect2( 0, 0, 87.7238, 18 )
 script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Nodes/Scores")
@@ -441,7 +432,9 @@ end = NodePath("../../Out")
 [node name="Title" type="Sprite" parent="Title" index="2"]
 
 position = Vector2( 502.121, 97.6002 )
+z_index = 1
 texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Out" type="Position2D" parent="Title" index="3"]
 
@@ -450,35 +443,29 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 0, 1464.33 )
 
 [node name="Return" type="Sprite" parent="Modes" index="0"]
 
-editor/display_folded = true
 position = Vector2( 519.906, 824.072 )
 texture = ExtResource( 18 )
 script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Modes/Return" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Modes/Return/Fill" index="0"]
 
-self_modulate = Color( 1, 0.160784, 0.160784, 1 )
 texture = ExtResource( 20 )
 
 [node name="Nodes" type="Node2D" parent="Modes" index="1"]
 
-editor/display_folded = true
 z_index = 1
 
 [node name="Race" type="Sprite" parent="Modes/Nodes" index="0"]
 
-editor/display_folded = true
 position = Vector2( 152.22, 1041.28 )
 texture = ExtResource( 21 )
 script = ExtResource( 3 )
@@ -490,7 +477,6 @@ texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Race/Fill" index="0"]
 
-self_modulate = Color( 0.921569, 0.607843, 0, 1 )
 texture = ExtResource( 23 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -508,7 +494,6 @@ texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Drag/Fill" index="0"]
 
-self_modulate = Color( 0.0392157, 0.443137, 0.823529, 1 )
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -528,7 +513,6 @@ texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Sumo/Fill" index="0"]
 
-self_modulate = Color( 0.0784314, 0.882353, 0.32549, 1 )
 texture = ExtResource( 25 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -547,7 +531,6 @@ texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Arena/Fill" index="0"]
 
-self_modulate = Color( 0.760784, 0.890196, 0.0313726, 1 )
 texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -566,7 +549,6 @@ texture = ExtResource( 22 )
 
 [node name="Icon" type="Sprite" parent="Modes/Nodes/Survival/Fill" index="0"]
 
-self_modulate = Color( 1, 0.376471, 0, 1 )
 position = Vector2( 0, -2.51758 )
 texture = ExtResource( 27 )
 _sections_unfolded = [ "Visibility" ]
@@ -735,12 +717,10 @@ texture = ExtResource( 29 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( -1327.05, 45.7603 )
 
 [node name="Nodes" type="Node2D" parent="Scores" index="0"]
 
-editor/display_folded = true
 z_index = 1
 
 [node name="Race" type="Sprite" parent="Scores/Nodes" index="0"]
@@ -757,7 +737,6 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Race/Fill" index="0"]
 
-self_modulate = Color( 0.921569, 0.607843, 0, 1 )
 texture = ExtResource( 32 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -775,7 +754,6 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Drag/Fill" index="0"]
 
-self_modulate = Color( 0.0392157, 0.443137, 0.823529, 1 )
 texture = ExtResource( 33 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -794,7 +772,6 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Sumo/Fill" index="0"]
 
-self_modulate = Color( 0.0784314, 0.882353, 0.32549, 1 )
 texture = ExtResource( 34 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -813,7 +790,6 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Arena/Fill" index="0"]
 
-self_modulate = Color( 0.760784, 0.890196, 0.0313726, 1 )
 texture = ExtResource( 35 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -832,17 +808,16 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Survival/Fill" index="0"]
 
-self_modulate = Color( 1, 0.376471, 0, 1 )
 position = Vector2( 0, -2.51758 )
 texture = ExtResource( 36 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Return" type="Sprite" parent="Scores/Nodes" index="5"]
 
-editor/display_folded = true
 position = Vector2( -57.4957, 259.117 )
 texture = ExtResource( 30 )
 script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Scores/Nodes/Return" index="0"]
 
@@ -851,7 +826,6 @@ texture = ExtResource( 31 )
 
 [node name="Icon" type="Sprite" parent="Scores/Nodes/Return/Fill" index="0"]
 
-self_modulate = Color( 1, 0.160784, 0.160784, 1 )
 texture = ExtResource( 37 )
 
 [node name="Lines" type="Node2D" parent="Scores" index="1"]
@@ -3011,11 +2985,11 @@ editor/display_folded = true
 
 [node name="SR" type="Sprite" parent="CrossLines" index="0"]
 
-position = Vector2( 517.052, 1365.59 )
+position = Vector2( 517.048, 1364.09 )
 rotation = 1.5677
 texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1749.63, 18 )
+region_rect = Rect2( 0, 0, 1752.63, 18 )
 script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Title/Nodes/Start")
@@ -3035,11 +3009,11 @@ end = NodePath("../../Authors/Nodes/Return")
 
 [node name="RS" type="Sprite" parent="CrossLines" index="2"]
 
-position = Vector2( -586.479, 302.024 )
-rotation = -0.00357546
+position = Vector2( -588.979, 302.484 )
+rotation = -0.00300858
 texture = ExtResource( 15 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1520.14, 18 )
+region_rect = Rect2( 0, 0, 1515.14, 18 )
 script = ExtResource( 16 )
 _sections_unfolded = [ "Region" ]
 start = NodePath("../../Scores/Nodes/Return")

@@ -7,10 +7,10 @@ path="res://.import/PlayerLeave.ogg-a4bf6cea65b5e99bbf2ddd57fe8f73c6.oggstr"
 [deps]
 
 source_file="res://Samples/PlayerLeave.ogg"
-source_md5="b8921781eb872a16b25e9cd4f6c6057a"
+source_md5="1b0c5f1447e761966ac975d83c408cf9"
 
 dest_files=[ "res://.import/PlayerLeave.ogg-a4bf6cea65b5e99bbf2ddd57fe8f73c6.oggstr" ]
-dest_md5="931289ad5dc6c7a41bac28c8bc3652db"
+dest_md5="f5a3a384c9e2eabd2443129876238261"
 
 [params]
 

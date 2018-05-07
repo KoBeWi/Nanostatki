@@ -7,10 +7,10 @@ path="res://.import/ModeDrag.png-a1c0a81a0df5d355c140af331e9e136e.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModeDrag.png"
-source_md5="319c3697c998f14a2b28ed9f571687c2"
+source_md5="2013d9977ffe2e2d49b62073b2ca32fb"
 
 dest_files=[ "res://.import/ModeDrag.png-a1c0a81a0df5d355c140af331e9e136e.stex" ]
-dest_md5="7722808cd8d14259fa5b1db6f7a77e3a"
+dest_md5="26b0742481497e66607a69683d76ab4f"
 
 [params]
 

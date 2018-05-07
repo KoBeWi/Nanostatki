@@ -7,10 +7,10 @@ path="res://.import/StartCircle.png-9b132b44618d4a7211ea4b551df03216.stex"
 [deps]
 
 source_file="res://Sprites/UI/StartCircle.png"
-source_md5="b9cddc4c2c30909ce16e88aa49515ff5"
+source_md5="ed6db04b16993ea03c85ba111229abf1"
 
 dest_files=[ "res://.import/StartCircle.png-9b132b44618d4a7211ea4b551df03216.stex" ]
-dest_md5="a6e40bbf69010320cc565c8273b092fb"
+dest_md5="e9993cae66ffc0190b13a274974b96b2"
 
 [params]
 

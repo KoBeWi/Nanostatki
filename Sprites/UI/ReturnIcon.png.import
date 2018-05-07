@@ -7,10 +7,10 @@ path="res://.import/ReturnIcon.png-49801309fa8af1f00ba6d31f77639573.stex"
 [deps]
 
 source_file="res://Sprites/UI/ReturnIcon.png"
-source_md5="71c3b88cdf48cb0b1f53e73bbbc622b7"
+source_md5="6f81312c47c0c0bff39d1bae6fa11ee7"
 
 dest_files=[ "res://.import/ReturnIcon.png-49801309fa8af1f00ba6d31f77639573.stex" ]
-dest_md5="c0b20f907e570d53ef95fc0701c77dc5"
+dest_md5="af87a3a63eb0f84ec67ee517e7522b81"
 
 [params]
 
