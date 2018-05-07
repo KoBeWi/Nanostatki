@@ -288,7 +288,7 @@ func move_selection(new_choice):
 			menu.get_node("Fill/Icon").self_modulate = Color(1, 1, 1)
 			
 			if prev_node:
-				menu.off_balance = (menu.position - prev_node.position)/10
+				menu.impulse(prev_node)
 			prev_node = menu
 		else:
 			if menu.self_modulate != Color(1, 1, 1):

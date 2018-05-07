@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/UI/Impulse.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+resource_name = "MenuImpulse"
+script/source = "extends Sprite
+
+var SPEED = 300
+
+var distance
+var goto
+
+func goto(_from, _to):
+	global_position = _from
+	distance = _from.distance_to(_to)
+	rotation = (_to - _from).angle()
+	goto = (_to - _from).normalized()
+
+func _process(delta):
+	position += goto * delta * SPEED
+	distance -= delta * SPEED
+	if distance <= 0: queue_free()"
+_sections_unfolded = [ "Resource" ]
+
+[node name="MenuImpulse" type="Sprite" index="0"]
+
+show_behind_parent = true
+z_index = -2
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+
