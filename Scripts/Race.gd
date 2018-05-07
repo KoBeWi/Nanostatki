@@ -68,7 +68,7 @@ func _process(delta):
 			if laps[player.team] == get_parent().settings.laps:
 				player.collision_mask = 0
 				player.collision_layer = 0
-				player.visible = false
+				player.fade_out = true
 				player.pause = true
 				won.append({team = player.team, time = OS.get_ticks_msec() - start_time})
 				
@@ -85,19 +85,23 @@ func _process(delta):
 					for i in range(4): best_lap[i] = -best_lap[i]
 					yield(get_tree().create_timer(2), "timeout")
 					get_parent().goto_summary(places, best_lap)
-	
-	if ui.get_node("End").visible and Input.is_action_just_pressed("ui_accept"): ##może bez wyników w ogóle, bo po co
-		for i in range(4): best_lap[i] = -best_lap[i]
-		get_parent().goto_summary(places, best_lap)
 
 func process_camera(camera, players):
-	return
-	var player = players[0]
+	var cam_pos = Vector2()
+	var min_y = 10000
+	var min_x = 10000
+	var max_y = -10000
+	var max_x = -10000
 	
-	for _player in players:
-		_player.race_leader = false
-		if (_player.race_distance > player.race_distance and _player.visible) or !player.visible: player = _player
+	for player in players:
+		min_y = min(player.get_pos().y - get_parent().CAMERA_OFFSET, min_y)
+		min_x = min(player.get_pos().x - get_parent().CAMERA_OFFSET, min_x)
+		max_y = max(player.get_pos().y + get_parent().CAMERA_OFFSET, max_y)
+		max_x = max(player.get_pos().x + get_parent().CAMERA_OFFSET, max_x)
+		cam_pos += player.get_pos()
 	
-	player.race_leader = true
+	camera.position = cam_pos / players.size()
 	
-	return false
+	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
+	camera.zoom = Vector2(new_zoom, new_zoom)
+	return true
