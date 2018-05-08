@@ -5,7 +5,7 @@
 [sub_resource type="Gradient" id=1]
 
 offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 1, 0.515625, 0, 1, 1, 0, 0, 0 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=2]
 
@@ -51,9 +51,9 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Emission Shape", "Gravity", "Linear Accel", "Scale" ]
+_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Linear Accel", "Scale" ]
 
-[node name="ShipDamage" type="Particles2D"]
+[node name="ShipDamage" type="Particles2D" index="0"]
 
 z_index = 100
 emitting = false
