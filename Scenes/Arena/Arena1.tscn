@@ -8,7 +8,7 @@
 [ext_resource path="res://Nodes/Obstacles/Laser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=7]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -183,7 +183,6 @@ position = Vector2( -17.9857, -375.304 )
 
 [node name="Laser" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( -1059.62, 832.196 )
 
 [node name="End" type="Sprite" parent="Obstacles/Laser" index="2"]
@@ -197,17 +196,16 @@ position = Vector2( 1364.43, -519.208 )
 
 [node name="End" type="Sprite" parent="Obstacles/Laser3" index="2"]
 
-position = Vector2( 262.726, 532.108 )
+position = Vector2( 267.726, 533.108 )
 texture = ExtResource( 7 )
 
 [node name="Laser2" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( -1679.5, -533.67 )
 
 [node name="End" type="Sprite" parent="Obstacles/Laser2" index="2"]
 
-position = Vector2( 944.273, 277.822 )
+position = Vector2( 941.571, 277.822 )
 texture = ExtResource( 7 )
 
 
