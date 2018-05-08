@@ -93,5 +93,9 @@ func process_camera(camera, players):
 	return true
 
 func _player_left(body):
-	if body.is_in_group("players") and players.get_child_count() > 1:
-		body.queue_free()
+	if get_parent().pause: return
+	
+	if body.is_in_group("players") and !body.fade_out and players.get_child_count() > 1:
+		Com.play_sample(body, "Disappear")
+		body.fade_out = true
+		body.connect("faded", body, "queue_free")

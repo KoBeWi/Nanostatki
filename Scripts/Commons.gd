@@ -57,7 +57,7 @@ func load_arenas():
 func load_dots():
 	if !resources.has("dots"):
 		resources.dots = []
-		for i in range(4): resources.dots.append(load("res://Sprites/UI/MenuDot" + str(i+1) + ".png"))
+		for i in range(6): resources.dots.append(load("res://Sprites/UI/MenuDot" + str(i+1) + ".png"))
 	return resources.dots
 
 func load_scoreboard(name):

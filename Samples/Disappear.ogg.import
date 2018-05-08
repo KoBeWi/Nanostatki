@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Disappear.ogg-7d81aa66f3f330582e24ee2d418dc64c.oggstr"
+
+[deps]
+
+source_file="res://Samples/Disappear.ogg"
+source_md5="1a53313fe5c4cf96e3462874fb4a631f"
+
+dest_files=[ "res://.import/Disappear.ogg-7d81aa66f3f330582e24ee2d418dc64c.oggstr" ]
+dest_md5="c0920bcb94789b0a90104244a30fb015"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -28,15 +28,20 @@ var clang
 var swap = 0
 var fade_out
 
+signal faded
+
 func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
+	if fade_out:
+		modulate.a -= delta
+		if modulate.a <= 0:
+			fade_out = false
+			emit_signal("faded")
+	
 	if pause:
 		$Engine.stop()
-		
-		if fade_out:
-			modulate.a -= delta
 		
 		return
 	var move = false

@@ -17,7 +17,8 @@ var spawn
 func _ready():
 	var greenshift = randf() * 0.5
 	modulate = Color(0, greenshift, 1 - greenshift)
-	texture = Com.load_dots()[randi() % 4]
+	var dots = Com.load_dots()
+	texture = dots[randi() % dots.size()]
 
 func set_direction(_spawn):
 	var x = _spawn.x
