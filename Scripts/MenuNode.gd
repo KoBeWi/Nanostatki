@@ -3,7 +3,7 @@ extends Sprite
 var IMPULSE = preload("res://Nodes/Effects/MenuImpulse.tscn")
 onready var start_pos = self.position
 
-var off_balance
+var off_balance setget push
 var connected = {}
 
 func _process(delta):
@@ -16,9 +16,12 @@ func _process(delta):
 	
 	if (position - start_pos).length_squared() > 256: position = start_pos + (position - start_pos)/2
 
-func impulse(from):
-	off_balance = (position - from.position)/10
+func push(bal):
 	$"/root/MainMenu/Samples/Move".play()
+	off_balance = bal
+
+func impulse(from):
+	self.off_balance = (position - from.position)/10
 	if from.connected.has(self):
 		var line = from.connected[self][0]
 		var start = from.connected[self][1]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/UI/OptionsCircle.png" type="Texture" id=2]
@@ -54,14 +54,18 @@
 [ext_resource path="res://Sprites/UI/LobbyFrame.png" type="Texture" id=52]
 [ext_resource path="res://Sprites/Race/Track1/Border.png" type="Texture" id=53]
 [ext_resource path="res://Sprites/UI/KeyEnter.png" type="Texture" id=54]
-[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=55]
-[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=56]
-[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=57]
-[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=58]
-[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=59]
-[ext_resource path="res://Samples/PlayerJoin.ogg" type="AudioStream" id=60]
-[ext_resource path="res://Samples/PlayerLeave.ogg" type="AudioStream" id=61]
-[ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/UI/GamepadLB.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/UI/KeyArrows.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/UI/GamepadA.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/UI/GamepadLT.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/UI/GamepadRT.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/UI/KeyGeneric.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/UI/KeySpace.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/UI/Authors.png" type="Texture" id=62]
+[ext_resource path="res://Samples/UIMove.ogg" type="AudioStream" id=63]
+[ext_resource path="res://Samples/PlayerJoin.ogg" type="AudioStream" id=64]
+[ext_resource path="res://Samples/PlayerLeave.ogg" type="AudioStream" id=65]
+[ext_resource path="res://Sprites/UI/Background.png" type="Texture" id=66]
 
 [sub_resource type="Shader" id=1]
 
@@ -289,6 +293,8 @@ _sections_unfolded = [ "Rect", "Visibility", "Z Index" ]
 
 [node name="Title" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Nodes" type="Node2D" parent="Title" index="0"]
 
 z_index = 1
@@ -443,6 +449,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Modes" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 0, 1464.33 )
 
 [node name="Return" type="Sprite" parent="Modes" index="0"]
@@ -462,6 +469,7 @@ texture = ExtResource( 20 )
 
 [node name="Nodes" type="Node2D" parent="Modes" index="1"]
 
+editor/display_folded = true
 z_index = 1
 
 [node name="Race" type="Sprite" parent="Modes/Nodes" index="0"]
@@ -717,6 +725,7 @@ texture = ExtResource( 29 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( -1327.05, 45.7603 )
 
 [node name="Nodes" type="Node2D" parent="Scores" index="0"]
@@ -1817,7 +1826,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( -887.275, 1045.09 )
 _sections_unfolded = [ "Transform" ]
 
@@ -1835,14 +1843,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Fill" type="Sprite" parent="Lobby/Return" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Lobby/Return/Fill" index="0"]
 
-self_modulate = Color( 1, 0.160784, 0.160784, 1 )
 texture = ExtResource( 20 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="RaceArena" type="Node2D" parent="Lobby" index="2"]
 
@@ -1851,7 +1858,6 @@ position = Vector2( -2462.16, -1360.03 )
 
 [node name="Dice" type="Sprite" parent="Lobby/RaceArena" index="0"]
 
-editor/display_folded = true
 position = Vector2( 2391.68, 1148.23 )
 texture = ExtResource( 46 )
 script = ExtResource( 3 )
@@ -1864,7 +1870,6 @@ texture = ExtResource( 47 )
 
 [node name="Icon" type="Sprite" parent="Lobby/RaceArena/Dice/Fill" index="0"]
 
-self_modulate = Color( 0.941176, 0.0117647, 0.513726, 1 )
 texture = ExtResource( 48 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -2079,7 +2084,6 @@ end = NodePath("../../NearFrame2")
 
 [node name="Players" type="Node2D" parent="Lobby" index="3"]
 
-editor/display_folded = true
 position = Vector2( -2462.16, -1360.03 )
 
 [node name="1Inactive" type="Node2D" parent="Lobby/Players" index="0"]
@@ -2117,10 +2121,13 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 position = Vector2( 2158.57, 1313.29 )
 texture = ExtResource( 54 )
 
-[node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
+[node name="Action2" type="Sprite" parent="Lobby/Players/1Inactive" index="2"]
 
-editor/display_folded = true
-visible = false
+position = Vector2( 2157.38, 1313.51 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
 
 [node name="Name" type="Label" parent="Lobby/Players/1Active" index="0"]
 
@@ -2148,15 +2155,43 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Movement" type="Sprite" parent="Lobby/Players/1Active" index="1"]
+[node name="Standard" type="Node2D" parent="Lobby/Players/1Active" index="1"]
+
+editor/display_folded = true
+
+[node name="Movement" type="Sprite" parent="Lobby/Players/1Active/Standard" index="0"]
 
 position = Vector2( 2163.25, 1472.71 )
-texture = ExtResource( 55 )
+texture = ExtResource( 56 )
 
-[node name="Action" type="Sprite" parent="Lobby/Players/1Active" index="2"]
+[node name="Action" type="Sprite" parent="Lobby/Players/1Active/Standard" index="1"]
 
 position = Vector2( 2160.81, 1547.81 )
 texture = ExtResource( 54 )
+
+[node name="Gamepad" type="Node2D" parent="Lobby/Players/1Active" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2160.89, 1450.28 )
+
+[node name="Forward" type="Sprite" parent="Lobby/Players/1Active/Gamepad" index="0"]
+
+texture = ExtResource( 57 )
+
+[node name="Left" type="Sprite" parent="Lobby/Players/1Active/Gamepad" index="1"]
+
+position = Vector2( -48.6326, 48.0922 )
+texture = ExtResource( 58 )
+
+[node name="Rgiht" type="Sprite" parent="Lobby/Players/1Active/Gamepad" index="2"]
+
+position = Vector2( 49.7131, 48.0922 )
+texture = ExtResource( 59 )
+
+[node name="Action" type="Sprite" parent="Lobby/Players/1Active/Gamepad" index="3"]
+
+position = Vector2( -0.00012207, 96.1843 )
+texture = ExtResource( 55 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
@@ -2191,8 +2226,9 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 
 [node name="Action" type="Sprite" parent="Lobby/Players/2Inactive" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2385.7, 1315.08 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
 [node name="Label" type="Label" parent="Lobby/Players/2Inactive/Action" index="0"]
 
@@ -2221,10 +2257,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
+[node name="Action2" type="Sprite" parent="Lobby/Players/2Inactive" index="2"]
+
+position = Vector2( 2384.22, 1315.37 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="2Active" type="Node2D" parent="Lobby/Players" index="3"]
 
-editor/display_folded = true
-visible = false
+position = Vector2( -13.5376, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/2Active" index="0"]
 
@@ -2252,16 +2293,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Movement" type="Node2D" parent="Lobby/Players/2Active" index="1"]
+[node name="Standard" type="Node2D" parent="Lobby/Players/2Active" index="1"]
 
+editor/display_folded = true
+
+[node name="Movement" type="Node2D" parent="Lobby/Players/2Active/Standard" index="0"]
+
+editor/display_folded = true
 position = Vector2( 2387.97, 1472.71 )
 
-[node name="U" type="Sprite" parent="Lobby/Players/2Active/Movement" index="0"]
+[node name="U" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/U" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Movement/U" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2288,12 +2334,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="R" type="Sprite" parent="Lobby/Players/2Active/Movement" index="1"]
+[node name="R" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/R" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Movement/R" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2320,12 +2366,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/2Active/Movement" index="2"]
+[node name="D" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/D" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Movement/D" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2352,12 +2398,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="L" type="Sprite" parent="Lobby/Players/2Active/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Movement/L" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Movement/L" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2384,12 +2430,13 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Action" type="Sprite" parent="Lobby/Players/2Active" index="2"]
+[node name="Action" type="Sprite" parent="Lobby/Players/2Active/Standard" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2385.53, 1547.81 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Action" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Action" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2415,6 +2462,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="Gamepad" type="Node2D" parent="Lobby/Players/2Active" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2386.73, 1450.28 )
+
+[node name="Forward" type="Sprite" parent="Lobby/Players/2Active/Gamepad" index="0"]
+
+texture = ExtResource( 57 )
+
+[node name="Left" type="Sprite" parent="Lobby/Players/2Active/Gamepad" index="1"]
+
+position = Vector2( -48.6326, 48.0922 )
+texture = ExtResource( 58 )
+
+[node name="Rgiht" type="Sprite" parent="Lobby/Players/2Active/Gamepad" index="2"]
+
+position = Vector2( 49.7131, 48.0922 )
+texture = ExtResource( 59 )
+
+[node name="Action" type="Sprite" parent="Lobby/Players/2Active/Gamepad" index="3"]
+
+position = Vector2( -0.00012207, 96.1843 )
+texture = ExtResource( 55 )
 
 [node name="3Inactive" type="Node2D" parent="Lobby/Players" index="4"]
 
@@ -2450,12 +2521,17 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 [node name="Action" type="Sprite" parent="Lobby/Players/3Inactive" index="1"]
 
 position = Vector2( 2609.94, 1319.9 )
-texture = ExtResource( 57 )
+texture = ExtResource( 61 )
+
+[node name="Action2" type="Sprite" parent="Lobby/Players/3Inactive" index="2"]
+
+position = Vector2( 2609.94, 1318.34 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="3Active" type="Node2D" parent="Lobby/Players" index="5"]
 
-editor/display_folded = true
-visible = false
+position = Vector2( -37.9053, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/3Active" index="0"]
 
@@ -2483,16 +2559,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Movement" type="Node2D" parent="Lobby/Players/3Active" index="1"]
+[node name="Standard" type="Node2D" parent="Lobby/Players/3Active" index="1"]
 
+editor/display_folded = true
+
+[node name="Movement" type="Node2D" parent="Lobby/Players/3Active/Standard" index="0"]
+
+editor/display_folded = true
 position = Vector2( 2618.97, 1472.71 )
 
-[node name="U" type="Sprite" parent="Lobby/Players/3Active/Movement" index="0"]
+[node name="U" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/U" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/3Active/Standard/Movement/U" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2519,12 +2600,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="R" type="Sprite" parent="Lobby/Players/3Active/Movement" index="1"]
+[node name="R" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/R" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/3Active/Standard/Movement/R" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2551,12 +2632,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/3Active/Movement" index="2"]
+[node name="D" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/D" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/3Active/Standard/Movement/D" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2583,12 +2664,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="L" type="Sprite" parent="Lobby/Players/3Active/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/3Active/Movement/L" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/3Active/Standard/Movement/L" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2615,10 +2696,34 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Action" type="Sprite" parent="Lobby/Players/3Active" index="2"]
+[node name="Action" type="Sprite" parent="Lobby/Players/3Active/Standard" index="1"]
 
-position = Vector2( 2616.53, 1540.46 )
+position = Vector2( 2827.7, 1540.46 )
+texture = ExtResource( 61 )
+
+[node name="Gamepad" type="Node2D" parent="Lobby/Players/3Active" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2617.35, 1450.28 )
+
+[node name="Forward" type="Sprite" parent="Lobby/Players/3Active/Gamepad" index="0"]
+
 texture = ExtResource( 57 )
+
+[node name="Left" type="Sprite" parent="Lobby/Players/3Active/Gamepad" index="1"]
+
+position = Vector2( -48.6326, 48.0922 )
+texture = ExtResource( 58 )
+
+[node name="Rgiht" type="Sprite" parent="Lobby/Players/3Active/Gamepad" index="2"]
+
+position = Vector2( 49.7131, 48.0922 )
+texture = ExtResource( 59 )
+
+[node name="Action" type="Sprite" parent="Lobby/Players/3Active/Gamepad" index="3"]
+
+position = Vector2( -0.00012207, 96.1843 )
+texture = ExtResource( 55 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
@@ -2653,8 +2758,9 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 
 [node name="Action" type="Sprite" parent="Lobby/Players/4Inactive" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2835.47, 1315.08 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
 [node name="Label" type="Label" parent="Lobby/Players/4Inactive/Action" index="0"]
 
@@ -2683,10 +2789,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
+[node name="Action2" type="Sprite" parent="Lobby/Players/4Inactive" index="2"]
+
+position = Vector2( 2835.9, 1316.71 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="4Active" type="Node2D" parent="Lobby/Players" index="7"]
 
-editor/display_folded = true
-visible = false
+position = Vector2( -42.4175, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/4Active" index="0"]
 
@@ -2714,16 +2825,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Movement" type="Node2D" parent="Lobby/Players/4Active" index="1"]
+[node name="Standard" type="Node2D" parent="Lobby/Players/4Active" index="1"]
 
+editor/display_folded = true
+
+[node name="Movement" type="Node2D" parent="Lobby/Players/4Active/Standard" index="0"]
+
+editor/display_folded = true
 position = Vector2( 2835.61, 1472.71 )
 
-[node name="U" type="Sprite" parent="Lobby/Players/4Active/Movement" index="0"]
+[node name="U" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="0"]
 
 position = Vector2( -1.76221, -23.0132 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/U" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Movement/U" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2750,12 +2866,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="R" type="Sprite" parent="Lobby/Players/4Active/Movement" index="1"]
+[node name="R" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="1"]
 
 position = Vector2( 47.0918, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/R" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Movement/R" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2782,12 +2898,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/4Active/Movement" index="2"]
+[node name="D" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="2"]
 
 position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/D" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Movement/D" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2814,12 +2930,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="L" type="Sprite" parent="Lobby/Players/4Active/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="3"]
 
 position = Vector2( -51.4966, 27.1613 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Movement/L" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Movement/L" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2846,12 +2962,13 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="Action" type="Sprite" parent="Lobby/Players/4Active" index="2"]
+[node name="Action" type="Sprite" parent="Lobby/Players/4Active/Standard" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2833.17, 1547.81 )
-texture = ExtResource( 56 )
+texture = ExtResource( 60 )
 
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Action" index="0"]
+[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Action" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2877,6 +2994,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="Gamepad" type="Node2D" parent="Lobby/Players/4Active" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2833.04, 1450.28 )
+
+[node name="Forward" type="Sprite" parent="Lobby/Players/4Active/Gamepad" index="0"]
+
+texture = ExtResource( 57 )
+
+[node name="Left" type="Sprite" parent="Lobby/Players/4Active/Gamepad" index="1"]
+
+position = Vector2( -48.6326, 48.0922 )
+texture = ExtResource( 58 )
+
+[node name="Rgiht" type="Sprite" parent="Lobby/Players/4Active/Gamepad" index="2"]
+
+position = Vector2( 49.7131, 48.0922 )
+texture = ExtResource( 59 )
+
+[node name="Action" type="Sprite" parent="Lobby/Players/4Active/Gamepad" index="3"]
+
+position = Vector2( -0.00012207, 96.1843 )
+texture = ExtResource( 55 )
 
 [node name="Blink" type="AnimationPlayer" parent="Lobby/Players" index="8"]
 
@@ -2945,38 +3086,36 @@ _sections_unfolded = [ "Visibility", "custom_constants" ]
 
 [node name="Authors" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 596.352, -722.145 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Nodes" type="Node2D" parent="Authors" index="0"]
 
+editor/display_folded = true
 position = Vector2( 0, 6 )
 z_index = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="Return" type="Sprite" parent="Authors/Nodes" index="0"]
 
-editor/display_folded = true
 position = Vector2( 1427.35, -300.602 )
 texture = ExtResource( 18 )
 script = ExtResource( 3 )
 
 [node name="Fill" type="Sprite" parent="Authors/Nodes/Return" index="0"]
 
-editor/display_folded = true
 show_behind_parent = true
 texture = ExtResource( 19 )
 
 [node name="Icon" type="Sprite" parent="Authors/Nodes/Return/Fill" index="0"]
 
-self_modulate = Color( 1, 0.160784, 0.160784, 1 )
 texture = ExtResource( 20 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Graphic" type="Sprite" parent="Authors" index="1"]
 
 position = Vector2( 1512, -526 )
-texture = ExtResource( 58 )
+texture = ExtResource( 62 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CrossLines" type="Node2D" parent="." index="7"]
@@ -3025,7 +3164,7 @@ editor/display_folded = true
 
 [node name="Move" type="AudioStreamPlayer" parent="Samples" index="0"]
 
-stream = ExtResource( 59 )
+stream = ExtResource( 63 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3033,7 +3172,7 @@ bus = "Master"
 
 [node name="Join" type="AudioStreamPlayer" parent="Samples" index="1"]
 
-stream = ExtResource( 60 )
+stream = ExtResource( 64 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3041,7 +3180,7 @@ bus = "Master"
 
 [node name="Leave" type="AudioStreamPlayer" parent="Samples" index="2"]
 
-stream = ExtResource( 61 )
+stream = ExtResource( 65 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -3072,7 +3211,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-texture = ExtResource( 62 )
+texture = ExtResource( 66 )
 __meta__ = {
 "_edit_lock_": true
 }

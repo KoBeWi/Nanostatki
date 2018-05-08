@@ -46,7 +46,7 @@ func setup(_players, _places, _scores, scoreboard):
 				"Sumo":
 					spot.get_node("Score").text = " Wynik: " + str(_scores[i]) + "pkt"
 				"Arena":
-					spot.get_node("Score").text = " Skuteczność: " + str(Com.round_float(_scores[i], 3)) + "pkt/s"
+					spot.get_node("Score").text = " Szybk.: " + str(Com.round_float(_scores[i], 3)) + "pkt/s"
 					$EnterName/NameInput.max_length = 8
 		else:
 			spot.visible = false

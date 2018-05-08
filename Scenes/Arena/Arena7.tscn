@@ -233,7 +233,7 @@ texture = ExtResource( 7 )
 [node name="Laser2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
 editor/display_folded = true
-position = Vector2( -403.898, 512.599 )
+position = Vector2( -403.898, 549.431 )
 
 [node name="End" type="Sprite" parent="Obstacles/Laser2" index="2"]
 

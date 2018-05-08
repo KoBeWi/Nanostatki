@@ -4,6 +4,7 @@ const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
 const SMUTECZEK = "Wygląda na to, że niczego tu nie ma :("
 const DOT_SPAWN = 0.05
+const GAMEPAD = [3, 1, 0, 2]
 
 onready var camera_target = $Camera.position
 onready var video = $Modes/VideoPlayer
@@ -262,7 +263,11 @@ func _process(delta):
 					node.modulate = Com.PLAYER_COLORS[i]
 			
 			get_node("Lobby/Players/" + str(i+1) + "Inactive").visible = !players_in[i]
+			get_node("Lobby/Players/" + str(i+1) + "Inactive/Action").visible = Input.get_connected_joypads().size() <= GAMEPAD[i]
+			get_node("Lobby/Players/" + str(i+1) + "Inactive/Action2").visible = Input.get_connected_joypads().size() > GAMEPAD[i]
 			get_node("Lobby/Players/" + str(i+1) + "Active").visible = players_in[i]
+			get_node("Lobby/Players/" + str(i+1) + "Active/Standard").visible = Input.get_connected_joypads().size() <= GAMEPAD[i]
+			get_node("Lobby/Players/" + str(i+1) + "Active/Gamepad").visible = Input.get_connected_joypads().size() > GAMEPAD[i]
 		
 		if players_ready > (1 if gamemode == 2 else 0) and start:
 			Jukebox.stop()
