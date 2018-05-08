@@ -41,7 +41,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 3.0
 scale_random = 0.0
 color_ramp = SubResource( 2 )
 hue_variation = 0.0
@@ -51,13 +51,13 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Emission Shape", "Gravity", "Linear Accel" ]
+_sections_unfolded = [ "Emission Shape", "Gravity", "Linear Accel", "Scale" ]
 
-[node name="ShipDamage" type="Particles2D" index="0"]
+[node name="ShipDamage" type="Particles2D"]
 
 z_index = 100
 emitting = false
-amount = 128
+amount = 32
 lifetime = 1.0
 one_shot = true
 preprocess = 0.0
