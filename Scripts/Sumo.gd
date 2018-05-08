@@ -6,7 +6,6 @@ const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.
 const BACKGROUND_W = 3508
 const BACKGROUND_H = 2480
 
-onready var players = $"../Players"
 var wintext
 var o_wintext
 var continu
@@ -15,6 +14,9 @@ var stats
 var win = -1
 var wins = [0, 0, 0, 0]
 var teams = []
+var start_players = 0
+var players
+var won
 
 func _ready():
 	$Inside/Shape.shape.radius = ARENA_SIZE
@@ -23,10 +25,10 @@ func _ready():
 	$"../Camera".limit_top = -BACKGROUND_H/2
 	$"../Camera".limit_bottom = BACKGROUND_H/2
 	
-	var players = 0
 	for i in range(4): if get_parent().players_joined[i] > -1:
-		players += 1
+		start_players += 1
 		teams.append(i)
+	players = start_players
 	
 	var deg = 360 / players
 	for i in range(players):
@@ -43,8 +45,11 @@ func _ready():
 	get_parent().music = "SURDO"
 
 func _process(delta):
-	if win == -1 and players.get_child_count() == 1:
-		var player = players.get_child(0)
+	if win == -1 and players == 1 and !won:
+		won = true
+		yield(get_tree().create_timer(1.5), "timeout")
+		won = false
+		var player = $"../Players".get_child(0)
 		player.pause = true
 		win = player.team
 		wins[win] += 1
@@ -61,12 +66,12 @@ func _process(delta):
 		$Arena.modulate = Com.PLAYER_COLORS[player.team]
 		get_parent().finished = true
 		
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(2), "timeout")
 		
 		if stats.visible: continu.visible = true
-		
 	elif win > -1:
 		if Input.is_action_just_pressed("ui_accept"):
+			players = start_players
 			get_parent().finished = false
 			stats.visible = false
 			wintext.visible = false
@@ -95,7 +100,8 @@ func process_camera(camera, players):
 func _player_left(body):
 	if get_parent().pause: return
 	
-	if body.is_in_group("players") and !body.fade_out and players.get_child_count() > 1:
+	if body.is_in_group("players") and body.modulate.a == 1 and players > 1:
+		players -= 1
 		Com.play_sample(body, "Disappear")
 		body.fade_out = true
 		body.connect("faded", body, "queue_free")
