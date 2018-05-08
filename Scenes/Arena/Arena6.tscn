@@ -179,21 +179,21 @@ position = Vector2( 691.281, 321.396 )
 [node name="DarkMatter" parent="Obstacles" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -807.656, 306.217 )
-rotation = 2.62825
+rotation = 3.21051
 
 [node name="DarkMatter2" parent="Obstacles" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 277.65, 943.739 )
-rotation = 4.36641
+rotation = 3.04624
 
 [node name="DarkMatter3" parent="Obstacles" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 285.24, -297.153 )
-rotation = 5.7278
+rotation = 2.76913
 
 [node name="DarkMatter4" parent="Obstacles" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 1378.14, 283.448 )
-rotation = 0.0810616
+rotation = 0.989323
 
 

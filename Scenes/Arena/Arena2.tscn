@@ -13,8 +13,6 @@ script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
@@ -32,7 +30,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="UpperBoundary" type="StaticBody2D" parent="Arena" index="3"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -43,6 +40,7 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="Arena/UpperBoundary" index="0"]
 
+position = Vector2( 0, -1.10803 )
 build_mode = 0
 polygon = PoolVector2Array( -1146.76, -3.59753, -1138.64, -130.85, -1097.12, -286.08, -1023.12, -435.895, -912.11, -566.757, -792.98, -657.91, -651.288, -729.207, -518.62, -767.112, -327.29, -779.747, -310.143, -895.267, -231.175, -1021.07, -112.615, -1103.06, 1.51239, -1124.12, 111, -1110, 231, -1053, 308, -960, 349, -860, 361, -796, 497, -784, 645.32, -749.155, 770.767, -685.98, 875.457, -613.78, 972.025, -518.115, 1062.27, -380.033, 1126.35, -218.485, 1143.49, -110.53, 1149.48, 0.522476, 2102.45, -1071.15, -1575.98, -1318.08 )
 
@@ -234,31 +232,31 @@ position = Vector2( -17.9857, -375.304 )
 [node name="DarkMatter" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( -0.458374, 891.763 )
-rotation = 1.52391
+rotation = 0.464615
 
 [node name="DarkMatter2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -398.472, -562.846 )
-rotation = 0.167584
+rotation = 2.74647
 
 [node name="DarkMatter3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 274.521, 350.64 )
-rotation = 2.23999
+rotation = 5.61457
 
 [node name="DarkMatter4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( -841.994, -89.2036 )
-rotation = 2.36565
+rotation = 3.05329
 
 [node name="DarkMatter5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -558.414, 500.438 )
-rotation = 3.34918
+rotation = 5.44433
 
 [node name="DarkMatter6" parent="Obstacles" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 533.89, -361.787 )
-rotation = 5.19724
+rotation = 4.56999
 
 
