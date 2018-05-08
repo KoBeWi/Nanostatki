@@ -69,7 +69,9 @@ func init_players(_players):
 func obstacle_hit(body, team):
 	if body.is_in_group("obstacles"):
 		var damage = 1
-		if body.name == "Death": damage = 8
+		if body.name == "Death":
+			Com.play_sample(body, "Darkness", false)
+			damage = 8
 		
 		healths[team] -= damage
 		players[team].get_node("Survival/Indicator").value -= damage
