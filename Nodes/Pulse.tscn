@@ -15,6 +15,7 @@ signal collected
 
 func _on_collect(body):
 	if body.is_in_group(\"players\"):
+		Com.play_sample(self, \"Collect\")
 		emit_signal(\"collected\", id, body.team)
 		queue_free()"
 _sections_unfolded = [ "Resource" ]
