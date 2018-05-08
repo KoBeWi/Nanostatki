@@ -119,7 +119,21 @@ func start():
 	started = true
 
 func process_camera(camera, players):
-	return
-	camera.position = Vector2()
-	camera.zoom = Vector2(3, 3)
+	var cam_pos = Vector2()
+	var min_y = 10000
+	var min_x = 10000
+	var max_y = -10000
+	var max_x = -10000
+	
+	for player in players:
+		min_y = min(player.get_pos().y - get_parent().CAMERA_OFFSET, min_y)
+		min_x = min(player.get_pos().x - get_parent().CAMERA_OFFSET, min_x)
+		max_y = max(player.get_pos().y + get_parent().CAMERA_OFFSET, max_y)
+		max_x = max(player.get_pos().x + get_parent().CAMERA_OFFSET, max_x)
+		cam_pos += player.get_pos()
+	
+	camera.position = cam_pos / players.size()
+	
+	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
+	camera.zoom = Vector2(new_zoom, new_zoom)
 	return true

@@ -8,7 +8,7 @@
 [ext_resource path="res://Nodes/Obstacles/Electron.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Nodes/Obstacles/Proton.tscn" type="PackedScene" id=7]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
