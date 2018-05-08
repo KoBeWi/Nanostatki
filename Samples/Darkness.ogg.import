@@ -7,10 +7,10 @@ path="res://.import/Darkness.ogg-2fc7fb8b094f46dde2fa299b053f232e.oggstr"
 [deps]
 
 source_file="res://Samples/Darkness.ogg"
-source_md5="b7f73f01b21e13e4be0c159f3dce8696"
+source_md5="5dd640db64210ca0e45899925fa8f7d1"
 
 dest_files=[ "res://.import/Darkness.ogg-2fc7fb8b094f46dde2fa299b053f232e.oggstr" ]
-dest_md5="fafc3b3b6ba6bed321547e80781ff786"
+dest_md5="036ddb3aa89e6f6e4bdbfcaf1216c2ac"
 
 [params]
 

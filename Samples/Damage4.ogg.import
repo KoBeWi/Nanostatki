@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Damage4.ogg-6bf09b1e6cd064591f2bfe870889cab2.oggstr"
+
+[deps]
+
+source_file="res://Samples/Damage4.ogg"
+source_md5="14fbbfd33d3262e341e657342da779f4"
+
+dest_files=[ "res://.import/Damage4.ogg-6bf09b1e6cd064591f2bfe870889cab2.oggstr" ]
+dest_md5="4d43133f50a72e30e2e987427a8f6c98"
+
+[params]
+
+loop=false
+loop_offset=0

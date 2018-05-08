@@ -20,10 +20,10 @@ func goto(_from, _to):
 	position += goto * texture.get_width()/2
 
 func _process(delta):
-	var move = delta * SPEED * max(distance/20, 1)
+	var move = delta * SPEED * max(distance/40, 1)
 	position += goto * move
 	distance -= move
-	if distance <= texture.get_width()/999999: queue_free()"
+	if distance <= texture.get_width()/2: queue_free()"
 _sections_unfolded = [ "Resource" ]
 
 [node name="MenuImpulse" type="Sprite"]

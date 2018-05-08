@@ -6,6 +6,7 @@ onready var death = $WallOfDeath
 onready var camera = $"/root/Game/Camera"
 
 var health = load("res://Nodes/ShipHealth.tscn")
+var damage_fx = load("res://Nodes/Effects/ShipDamage.tscn")
 var electron = load("res://Nodes/Obstacles/Electron.tscn")
 var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
@@ -99,6 +100,13 @@ func obstacle_hit(body, team):
 				
 				for i in range(4): distance[i] = int(distance[i])
 				get_parent().goto_summary(places, distance)
+		else:
+			Com.play_sample(body, "Damage"+str(1+randi()%4))
+			var fx = damage_fx.instance()
+			fx.emitting = true
+			add_child(fx)
+			fx.position = players[team].position
+			get_tree().create_timer(1).connect("timeout", fx, "queue_free")
 
 func spawn_obstacles(distance):
 	distance += 2048
