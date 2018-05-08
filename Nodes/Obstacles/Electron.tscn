@@ -6,11 +6,6 @@
 [ext_resource path="res://Sprites/Common/ShipOrbPart3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Common/ShipOrbPart4.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 32.0
-
 [sub_resource type="Animation" id=2]
 
 resource_name = "Idle"
@@ -66,6 +61,11 @@ tracks/3/keys = {
 "values": [ 360.0, 0.0 ]
 }
 
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 32.0
+
 [node name="Electron" type="StaticBody2D" groups=[
 "obstacles",
 ]]
@@ -81,15 +81,10 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 charge = -1
 
-[node name="Shape" type="CollisionShape2D" parent="." index="0"]
-
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Orb" type="Node2D" parent="." index="1"]
+[node name="Orb" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0, 0, 0.501961, 1 )
 show_behind_parent = true
 position = Vector2( -2.63074, -64.6027 )
 scale = Vector2( 0.25, 0.25 )
@@ -136,5 +131,10 @@ position = Vector2( 4.47762, 264.041 )
 rotation = 0.195616
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
