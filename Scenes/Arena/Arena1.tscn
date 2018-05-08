@@ -8,7 +8,7 @@
 [ext_resource path="res://Nodes/Obstacles/Laser.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Common/LaserEmitter.png" type="Texture" id=7]
 
-[node name="Arena" type="Node2D"]
+[node name="Arena" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -18,14 +18,14 @@ script = ExtResource( 1 )
 
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
 
-position = Vector2( 8.40692, -7.62695 )
-scale = Vector2( 2, 2 )
+position = Vector2( 7.50443, -3.11444 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Border" type="Sprite" parent="Arena" index="2"]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 10
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -42,9 +42,9 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="Arena/UpperBoundary" index="0"]
 
-position = Vector2( 337.088, -1839.94 )
+position = Vector2( 339.796, -1839.94 )
 build_mode = 0
-polygon = PoolVector2Array( -2848.19, 1491.67, -1292.93, 449.683, -300.563, 808.425, -11.7061, 86.2827, 393.625, 142.19, 598.62, 887.627, 1586.32, 542.863, 2182.01, 1884.76, 2853.57, -668.472, 1049.51, -1272.64, -2458.71, -89.2533 )
+polygon = PoolVector2Array( -2223.37, 1581.93, -1054.67, 794.012, -316.47, 1062.63, -90.8407, 523.657, 212.661, 566.221, 360.71, 1130.66, 1106.51, 867.872, 1552.51, 1867.21, 2853.57, -668.472, 1049.51, -1272.64, -2458.71, -89.2533 )
 
 [node name="LowerBoundary" type="StaticBody2D" parent="Arena" index="4"]
 
@@ -60,7 +60,7 @@ bounce = 0.0
 
 position = Vector2( 97.8433, 911.187 )
 build_mode = 0
-polygon = PoolVector2Array( -2619.13, -1247.15, -1578.36, -788.283, -2343.69, 178.447, -63.9734, 841.82, -58.3944, -315.824, 315.399, -561.3, 1244.3, -20.1364, 2428.79, -878.422, 40.2148, 1520.99, -3803.17, 285.815 )
+polygon = PoolVector2Array( -1982.76, -1170.54, -1205.71, -817.345, -1780.72, -93.4499, -74.0649, 407.954, -70.3308, -464.98, 217.879, -651.512, 908.292, -241.777, 1795.1, -876.13, 40.2148, 1520.99, -3803.17, 285.815 )
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
@@ -181,27 +181,9 @@ position = Vector2( -17.9857, -375.304 )
 
 [node name="Obstacles" type="Node2D" parent="." index="4"]
 
-[node name="Laser" parent="Obstacles" index="0" instance=ExtResource( 6 )]
+[node name="Laser2" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -1059.62, 832.196 )
-
-[node name="End" type="Sprite" parent="Obstacles/Laser" index="2"]
-
-position = Vector2( 164.3, 25.6247 )
-texture = ExtResource( 7 )
-
-[node name="Laser3" parent="Obstacles" index="1" instance=ExtResource( 6 )]
-
-position = Vector2( 1364.43, -519.208 )
-
-[node name="End" type="Sprite" parent="Obstacles/Laser3" index="2"]
-
-position = Vector2( 267.726, 533.108 )
-texture = ExtResource( 7 )
-
-[node name="Laser2" parent="Obstacles" index="2" instance=ExtResource( 6 )]
-
-position = Vector2( -1679.5, -533.67 )
+position = Vector2( -1020.7, 148.504 )
 
 [node name="End" type="Sprite" parent="Obstacles/Laser2" index="2"]
 
