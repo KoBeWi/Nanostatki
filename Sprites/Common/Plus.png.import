@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shade.png-730ded56a1ddf5f15ede712bed7a7aad.stex"
+path="res://.import/Plus.png-58915637c2829693731f73338d3abfc6.stex"
 
 [deps]
 
-source_file="res://Sprites/Race/Track2/Shade.png"
-source_md5="72018c2d985f9837212d84dc93149791"
+source_file="res://Sprites/Common/Plus.png"
+source_md5="b72a595e8b85314daa35368be5f34264"
 
-dest_files=[ "res://.import/Shade.png-730ded56a1ddf5f15ede712bed7a7aad.stex" ]
-dest_md5="51bc974dc945b0cec759458de0c20408"
+dest_files=[ "res://.import/Plus.png-58915637c2829693731f73338d3abfc6.stex" ]
+dest_md5="461fa358dd68b58c03e3912cac0fffb8"
 
 [params]
 
