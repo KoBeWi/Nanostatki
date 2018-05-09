@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Survival.gd" type="Script" id=1]
 [ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Resources/Font16.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Survival/Death.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Survival/Death.png" type="Texture" id=4]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -73,7 +72,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 32768, 10 )
 
-[node name="Survival" type="Node2D"]
+[node name="Survival" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -140,7 +139,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -167,7 +166,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.501961, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -194,7 +193,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.501961, 1, 1 )
 custom_constants/shadow_as_outline = 1
@@ -221,7 +220,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0, 247.92, 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0, 1, 1 )
 custom_constants/shadow_as_outline = 1
@@ -256,7 +255,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Sprite" type="Sprite" parent="Background/Layer" index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 9800, 2048 )
 _sections_unfolded = [ "Offset", "Region" ]
@@ -285,7 +284,7 @@ visibility_rect = Rect2( -1024, -512, 2048, 1024 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1

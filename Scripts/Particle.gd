@@ -34,19 +34,18 @@ func _physics_process(delta):
 			if player.survival: force /= 4
 			player.velocity -= force
 	
-	if !drag_track:
-		if circle_delay <= 0:
-			circles.append(0)
-			circle_delay = 1
-		else:
-			circle_delay -= delta
+	if circle_delay <= 0:
+		circles.append(0)
+		circle_delay = 1
+	else:
+		circle_delay -= delta
 	
 	update()
 
 func _draw():
 	if Engine.editor_hint:
 		draw_circle(Vector2(), FORCE_RANGE, Color(1, 1, 1, 0.1))
-	elif !drag_track:
+	else:
 		var trash = []
 		
 		for i in range(circles.size()):
@@ -59,7 +58,3 @@ func _draw():
 			draw_circle(Vector2(), circles[i] if charge == 1 else FORCE_RANGE - circles[i], color)
 		
 		for i in trash: circles.erase(i)
-	
-#	if players.get_child(0).drag_race and position.y < $"/root/Game/Camera".position.y - 512:
-#		$"../..".self_modulate = [Color(0, 0, 1), Color(1, 0, 0)][(charge + 1)/2]
-#		draw_texture($Sprite.texture, Vector2(-32, $"/root/Game/Camera".position.y - position.y - 332))

@@ -726,7 +726,6 @@ texture = ExtResource( 29 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( -1327.05, 45.7603 )
 
 [node name="Nodes" type="Node2D" parent="Scores" index="0"]
@@ -752,7 +751,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Drag" type="Sprite" parent="Scores/Nodes" index="1"]
 
-editor/display_folded = true
 position = Vector2( -704.458, 205.835 )
 texture = ExtResource( 30 )
 script = ExtResource( 3 )
@@ -1854,7 +1852,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="RaceArena" type="Node2D" parent="Lobby" index="2"]
 
-editor/display_folded = true
 position = Vector2( -2462.16, -1360.03 )
 
 [node name="Dice" type="Sprite" parent="Lobby/RaceArena" index="0"]
@@ -1876,6 +1873,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Vertical" type="Sprite" parent="Lobby/RaceArena" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2500.06, 1148.23 )
 texture = ExtResource( 46 )
 script = ExtResource( 3 )
@@ -1994,7 +1992,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ TRASĘ
 R - LOSUJ TRASĘ
@@ -2002,7 +2000,7 @@ GÓRA/DÓŁ - ZMIEŃ LICZBĘ OKRĄŻEŃ"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_constants" ]
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="ArenaText" type="Label" parent="Lobby/RaceArena" index="7"]
 
@@ -2022,7 +2020,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "LEWO/PRAWO - ZMIEŃ ARENĘ
 R - LOSUJ ARENĘ
@@ -2085,11 +2083,10 @@ end = NodePath("../../NearFrame2")
 
 [node name="Players" type="Node2D" parent="Lobby" index="3"]
 
+editor/display_folded = true
 position = Vector2( -2462.16, -1360.03 )
 
 [node name="1Inactive" type="Node2D" parent="Lobby/Players" index="0"]
-
-editor/display_folded = true
 
 [node name="Join" type="Label" parent="Lobby/Players/1Inactive" index="0"]
 
@@ -2108,7 +2105,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
 BY DOŁĄCZYĆ"
@@ -2196,7 +2193,6 @@ texture = ExtResource( 55 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
-editor/display_folded = true
 position = Vector2( -15, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/2Inactive" index="0"]
@@ -2216,7 +2212,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
 BY DOŁĄCZYĆ"
@@ -2490,7 +2486,6 @@ texture = ExtResource( 55 )
 
 [node name="3Inactive" type="Node2D" parent="Lobby/Players" index="4"]
 
-editor/display_folded = true
 position = Vector2( -30, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/3Inactive" index="0"]
@@ -2510,7 +2505,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
 BY DOŁĄCZYĆ"
@@ -2726,7 +2721,6 @@ texture = ExtResource( 55 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
-editor/display_folded = true
 position = Vector2( -45, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/4Inactive" index="0"]
@@ -2746,7 +2740,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WCIŚNIJ AKCJĘ
 BY DOŁĄCZYĆ"
@@ -3056,7 +3050,6 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 
 [node name="RealContinue" type="Node2D" parent="Lobby" index="5"]
 
-editor/display_folded = true
 position = Vector2( -95.7426, 238.72 )
 
 [node name="Continue" type="Label" parent="Lobby/RealContinue" index="0"]
@@ -3074,14 +3067,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.589844, 0.769287, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "PRZYTRZYMAJ AKCJĘ, BY ROZPOCZĄĆ
 WCIŚNIJ AKCJĘ, BY SIĘ WYCOFAĆ"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Visibility", "custom_constants" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 
 [node name="Authors" type="Node2D" parent="." index="6"]
 

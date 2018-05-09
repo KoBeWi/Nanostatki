@@ -85,6 +85,12 @@ func _process(delta):
 					for i in range(4): best_lap[i] = -best_lap[i]
 					yield(get_tree().create_timer(2), "timeout")
 					get_parent().goto_summary(places, best_lap)
+			else:
+				Com.play_sample(self, "Lap")
+				var text = preload("res://Nodes/Effects/NewLap.tscn").instance()
+				text.get_node("Lap").text += str(laps[player.team]+1) + "/" + str(get_parent().settings.laps)
+				text.get_node("Time").text += Com.format_time(time)
+				player.add_child(text)
 
 func process_camera(camera, players):
 	var cam_pos = Vector2()
