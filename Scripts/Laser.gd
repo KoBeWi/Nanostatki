@@ -4,13 +4,6 @@ extends Sprite
 var last_position
 
 func _ready():
-#	if !has_node("End"):
-#		var end = Sprite.new()
-#		end.texture = texture
-#		end.position += Vector2(64, 0)
-#		end.name = "End"
-#		add_child(end)
-	
 	move_end()
 	last_position = $End.position
 

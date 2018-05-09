@@ -11,7 +11,7 @@ var FAIL_TIME = 2
 var width = track.get_width()
 var tracks = [null, null, null, null]
 var players = 0
-var last_particle
+var last_particle = [-400, -400, -400, -400]
 var fail_time = [0, 0, 0, 0]
 var last_distance = [0, 0, 0, 0]
 var started = false
@@ -45,9 +45,8 @@ func _ready():
 	camera = $"../Camera"
 	camera.smoothing_enabled = false
 	
-	last_particle = -400
 	for i in range(4):
-		if tracks[i] != null: create_particles(i, electron, Vector2(tracks[i], last_particle))
+		if tracks[i] != null: create_particles(i, electron, Vector2(tracks[i], last_particle[i]))
 	
 	distance = get_parent().register_UI($Distance, self)
 	end = get_parent().register_UI($TheEnd, self)
@@ -81,14 +80,13 @@ func _process(delta):
 			end.get_node(str(player.team+1)).visible = true
 			is_ded += 1
 
-		if player.drag_race < last_particle + 100:
-			last_particle -= max(100, 1600 - last_particle / 1000)
-			for i in range(4):
-				if tracks[i] == null: continue
-				create_particles(i, electron if randi()%2 == 0 else proton, Vector2(tracks[i], last_particle))
+		if player.drag_race < last_particle[player.team] - 100:
+			last_particle[player.team] -= max(100, 4800 - last_particle[player.team] / 1000)
+			create_particles(player.team, electron if randi()%2 == 0 else proton, Vector2(tracks[player.team], -4800))
 	
 	for particle in $Particles.get_children(): 
 		particle.position.y -= move[particle.drag_track]
+		if particle.position.y > 2400: particle.queue_free()
 	
 	if is_ded == players and !get_parent().finished:
 		get_parent().finished = true

@@ -152,7 +152,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -726,6 +726,7 @@ texture = ExtResource( 29 )
 
 [node name="Scores" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( -1327.05, 45.7603 )
 
 [node name="Nodes" type="Node2D" parent="Scores" index="0"]
@@ -1825,6 +1826,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( -887.275, 1045.09 )
 _sections_unfolded = [ "Transform" ]
 
