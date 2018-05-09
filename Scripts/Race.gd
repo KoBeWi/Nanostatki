@@ -80,7 +80,7 @@ func _process(delta):
 				yield(get_tree().create_timer(2), "timeout")
 				ui.get_node("WinText").visible = false
 				
-				if won.size() == $"../Players".get_child_count():
+				if !get_parent().finished and won.size() == $"../Players".get_child_count():
 					get_parent().finished = true
 					for i in range(4): best_lap[i] = -best_lap[i]
 					yield(get_tree().create_timer(2), "timeout")

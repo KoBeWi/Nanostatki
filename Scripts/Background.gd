@@ -2,13 +2,13 @@ extends ColorRect
 
 const FIG_COUNT = 50
 const SWATCHES = [
-#[Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
-#[Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
-#[Color("1f0838"), Color("7421c7"), Color("1f0838"), Color("7421c7")],
-#[Color("0e350c"), Color("25ac28"), Color("0e350c"), Color("25ac28")],
-[Color("e75900"), Color("ffa100"), Color("e75900"), Color("ffa100")]#,
-#[Color("074f59"), Color("43c1b5"), Color("074f59"), Color("43c1b5")],
-#[Color("1a2844"), Color("1e66cb"), Color("1a2844"), Color("1e66cb")]
+[Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
+[Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
+[Color("1f0838"), Color("7421c7"), Color("1f0838"), Color("7421c7")],
+[Color("0e350c"), Color("25ac28"), Color("0e350c"), Color("25ac28")],
+[Color("e75900"), Color("ffa100"), Color("e75900"), Color("ffa100")],
+[Color("074f59"), Color("43c1b5"), Color("074f59"), Color("43c1b5")],
+[Color("1a2844"), Color("1e66cb"), Color("1a2844"), Color("1e66cb")]
 ]
 const FIGURES = ["Square", "Triangle", "Diamond", "Pentagon", "Rectangle", "StraightSquare", "TiltedTriangle", "WideTriangle"]
 var FIGURE = load("res://Nodes/BackgroundBit.tscn")
