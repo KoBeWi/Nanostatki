@@ -66,7 +66,7 @@ tracks/3/keys = {
 custom_solver_bias = 0.0
 radius = 32.0
 
-[node name="Proton" type="StaticBody2D" groups=[
+[node name="Proton" type="StaticBody2D" index="0" groups=[
 "obstacles",
 ]]
 
@@ -78,13 +78,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 charge = 1
 
 [node name="Orb" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
-modulate = Color( 1, 1, 0.847059, 1 )
 show_behind_parent = true
 position = Vector2( -2.63074, -64.6027 )
 scale = Vector2( 0.25, 0.25 )

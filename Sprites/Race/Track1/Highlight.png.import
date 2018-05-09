@@ -7,10 +7,10 @@ path="res://.import/Highlight.png-a8c14d05ef552662f4f8fde3f0aa7ef2.stex"
 [deps]
 
 source_file="res://Sprites/Race/Track1/Highlight.png"
-source_md5="de8eb8684c4215ed5620d14f86059d59"
+source_md5="a09f050c905d0d4c2ef506d22ad46044"
 
 dest_files=[ "res://.import/Highlight.png-a8c14d05ef552662f4f8fde3f0aa7ef2.stex" ]
-dest_md5="77e8b47d5a52bd2d2804547d98d41a47"
+dest_md5="ba3ec2a51b9a973727d9f20f17ea9502"
 
 [params]
 

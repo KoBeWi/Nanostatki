@@ -1827,7 +1827,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lobby" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( -887.275, 1045.09 )
 _sections_unfolded = [ "Transform" ]
 
@@ -2563,8 +2562,6 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="Standard" type="Node2D" parent="Lobby/Players/3Active" index="1"]
 
-editor/display_folded = true
-
 [node name="Movement" type="Node2D" parent="Lobby/Players/3Active/Standard" index="0"]
 
 editor/display_folded = true
@@ -2700,7 +2697,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="Action" type="Sprite" parent="Lobby/Players/3Active/Standard" index="1"]
 
-position = Vector2( 2827.7, 1540.46 )
+position = Vector2( 2614.68, 1540.46 )
 texture = ExtResource( 61 )
 
 [node name="Gamepad" type="Node2D" parent="Lobby/Players/3Active" index="2"]

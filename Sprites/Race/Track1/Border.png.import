@@ -7,10 +7,10 @@ path="res://.import/Border.png-5e228464ff3ffee29397aec1bf4bf54a.stex"
 [deps]
 
 source_file="res://Sprites/Race/Track1/Border.png"
-source_md5="c7a1bcb7e5f8702d5b3961fb5c53494d"
+source_md5="ae5f9e9799a806cf0111a8d60756ed84"
 
 dest_files=[ "res://.import/Border.png-5e228464ff3ffee29397aec1bf4bf54a.stex" ]
-dest_md5="2d5846fb4def66a2f9bfd4dabcd5ab1f"
+dest_md5="ceb972a839eb3d77ebd6a2d436a6b45d"
 
 [params]
 

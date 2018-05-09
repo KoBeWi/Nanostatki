@@ -4,7 +4,7 @@ const CAMERA_SPEED = 16
 const ACTIVE_TIME = 1.5
 const SMUTECZEK = "Wygląda na to, że niczego tu nie ma :("
 const DOT_SPAWN = 0.05
-const GAMEPAD = [3, 1, 0, 2]
+const GAMEPAD = [3, 2, 0, 1]
 
 onready var camera_target = $Camera.position
 onready var video = $Modes/VideoPlayer

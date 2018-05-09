@@ -10,6 +10,8 @@ onready var players = $"/root/Game/Players"
 export var charge = 1
 
 var drag_track
+var circles = []
+var circle_delay = 0
 
 func _physics_process(delta):
 	if !Engine.editor_hint:
@@ -32,12 +34,31 @@ func _physics_process(delta):
 			if player.survival: force /= 4
 			player.velocity -= force
 	
+	if !drag_track:
+		if circle_delay <= 0:
+			circles.append(0)
+			circle_delay = 1
+		else:
+			circle_delay -= delta
+	
 	update()
 
 func _draw():
 	if Engine.editor_hint:
 		draw_circle(Vector2(), FORCE_RANGE, Color(1, 1, 1, 0.1))
-		return
+	elif !drag_track:
+		var trash = []
+		
+		for i in range(circles.size()):
+			circles[i] += FORCE_RANGE/120
+			if circles[i] >= FORCE_RANGE: trash.append(circles[i])
+			
+			var color = $Orb.modulate
+			color.a = 0.5 - 0.5 * circles[i] / FORCE_RANGE
+			if charge == -1: color.a = 0.5 - color.a
+			draw_circle(Vector2(), circles[i] if charge == 1 else FORCE_RANGE - circles[i], color)
+		
+		for i in trash: circles.erase(i)
 	
 #	if players.get_child(0).drag_race and position.y < $"/root/Game/Camera".position.y - 512:
 #		$"../..".self_modulate = [Color(0, 0, 1), Color(1, 0, 0)][(charge + 1)/2]
