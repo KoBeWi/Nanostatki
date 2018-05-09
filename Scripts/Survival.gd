@@ -75,7 +75,6 @@ func obstacle_hit(body, team):
 		if body.name == "Death":
 			Com.play_sample(body, "Darkness", false)
 			damage = 8
-			trigger_dead()
 		
 		healths[team] -= damage
 		players[team].get_node("Survival/Indicator").value -= damage
@@ -84,6 +83,9 @@ func obstacle_hit(body, team):
 			if body.name != "Death":
 				players[team].explode()
 				players[team].connect("exploded", self, "trigger_dead")
+			else:
+				players[team] = null
+				trigger_dead()
 			players[team] = null
 		else:
 			Com.play_sample(body, "Damage"+str(1+randi()%4))

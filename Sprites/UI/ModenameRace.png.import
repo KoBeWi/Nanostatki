@@ -7,10 +7,10 @@ path="res://.import/ModenameRace.png-c796d1daa51269eda71ef2c8489a7b34.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModenameRace.png"
-source_md5="1f1ac9e53ae05f984905ab56309e0934"
+source_md5="66b6fdb257a0c4049437dbb5e44e62d8"
 
 dest_files=[ "res://.import/ModenameRace.png-c796d1daa51269eda71ef2c8489a7b34.stex" ]
-dest_md5="3726b8ee43bc15c02883e49c44b024bf"
+dest_md5="d74e842d8cee079f3d83975755b30e8f"
 
 [params]
 

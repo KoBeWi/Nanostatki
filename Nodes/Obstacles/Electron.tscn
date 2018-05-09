@@ -116,7 +116,7 @@ charge = -1
 [node name="Orb" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
-modulate = Color( 0, 0, 0.501961, 1 )
+modulate = Color( 0.0745098, 0.454902, 0.741176, 1 )
 show_behind_parent = true
 position = Vector2( -2.63074, -64.6027 )
 scale = Vector2( 0.25, 0.25 )
