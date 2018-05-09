@@ -13,7 +13,7 @@
 custom_solver_bias = 0.0
 radius = 0.01
 
-[node name="Sumo" type="Node2D"]
+[node name="Sumo" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -44,7 +44,6 @@ editor/display_folded = true
 
 [node name="Inside" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

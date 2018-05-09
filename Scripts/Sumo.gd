@@ -1,7 +1,7 @@
 extends Node
 
 const START = 0.4
-const ARENA_SIZE = 764
+const ARENA_SIZE = 720
 const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.5, 1, 0), Color(0, 1, 1): Color(0.25, 0.5, 1), Color(1, 0, 1): Color(0.5, 0, 1)}
 const BACKGROUND_W = 3508
 const BACKGROUND_H = 2480

@@ -30,6 +30,7 @@ var players_clutch = [false, false, false, false]
 var players_out = [0, 0, 0, 0]
 var players_ready = 0
 var start
+var force_active
 
 func _ready():
 	$Modes.remove_child(video)
@@ -98,6 +99,8 @@ func _ready():
 	get_node("Scores/Tables/Survival/Scores").text = scores
 
 func _process(delta):
+	if force_active: return
+	
 	if Input.is_action_just_pressed("ui_right") and choice < get_node(screen + "/Nodes").get_child_count()-1:
 		self.choice += 1
 	elif Input.is_action_just_pressed("ui_left") and choice > 0:
@@ -270,6 +273,8 @@ func _process(delta):
 			get_node("Lobby/Players/" + str(i+1) + "Active/Gamepad").visible = Input.get_connected_joypads().size() > GAMEPAD[i]
 		
 		if players_ready > (1 if gamemode == 2 else 0) and start:
+			force_active = true
+			yield(get_tree().create_timer(0.5), "timeout")
 			Jukebox.stop()
 			var game = load("res://Scenes/Loading.tscn").instance()
 			game.setup = [Com.MODES[gamemode], players_joined, options]
