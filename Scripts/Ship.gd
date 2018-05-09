@@ -27,8 +27,11 @@ var last_collision = 0
 var clang
 var swap = 0
 var fade_out
+var exploding
+var camera
 
 signal faded
+signal exploded
 
 func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
@@ -40,10 +43,28 @@ func _physics_process(delta):
 			fade_out = false
 			emit_signal("faded")
 	
+	if exploding:
+		if exploding < 1.4: material.set_shader_param("whiteness", abs(OS.get_ticks_msec() * 100 % 2000 - 1000) / 1000.0)
+		exploding += delta
+		
+		if exploding >= 1 and exploding < 1.4:
+			$Survival/Indicator.visible = false
+			$Explosion.visible = true
+			$Explosion.scale -= Vector2(delta, delta) * 10
+			$Explosion.rotation += PI * delta * 10
+		elif exploding >= 1.5 and exploding <= 3:
+			survival.visible = true
+			survival.color.a = 0.9 - (exploding - 1.5) / 1.5 * 0.9
+		
+		if exploding >= 3.5:
+			survival.visible = false
+			queue_free()
+			emit_signal("exploded")
+	
 	if pause:
 		$Engine.stop()
-		
 		return
+	
 	var move = false
 	
 	if !drag_race and !paralyzed:
@@ -101,6 +122,11 @@ func _draw():
 		var rgb = 0 if charge == -1 else 1
 		draw_circle(Vector2(), (1 - swap/15.0 if charge == 1 else swap/15.0) * FORCE_RANGE, Color(rgb, rgb, rgb, swap/15.0))
 		swap -= 1
+	
+	if exploding and exploding > 1.4:
+		$Sprite.visible = false
+		material = null
+		draw_circle(Vector2(), min((exploding - 1.4) * 500, 480), Color(1, 1, 1, 1 - max(0, exploding - 2.5)))
 
 func swap_charge():
 	charge = -charge
@@ -129,3 +155,9 @@ func set_paralyzed(value):
 	if value: $EngineDown.play()
 	paralyzed = value
 	$Sprite/Orb.modulate.a = 0.5 if value else 1
+
+func explode():
+	Com.play_sample(self, "Explosion")
+	material = load("res://Resources/Explode.tres")
+	paralyzed = true
+	exploding = 0.000001

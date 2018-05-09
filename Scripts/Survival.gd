@@ -16,6 +16,7 @@ var players = [null, null, null, null]
 var healths = [8, 8, 8, 8]
 var distance = [0, 0, 0, 0]
 var the_end
+var explosion
 
 func _ready():
 	get_parent().connect("init_players", self, "init_players")
@@ -26,6 +27,7 @@ func _ready():
 	start_time = OS.get_ticks_msec()
 	distance_label = get_parent().register_UI($Distance, self)
 	the_end = get_parent().register_UI($AllThingsDone, self)
+	explosion = get_parent().register_UI($Explosion, self)
 	get_parent().music = "MAU"
 
 func _physics_process(delta):
@@ -61,45 +63,28 @@ func init_players(_players):
 		hl.modulate = Com.PLAYER_COLORS[player.team]
 		hl.connect("body_entered", self, "obstacle_hit", [player.team])
 		
-		player.survival = true
+		player.survival = explosion
 		player.collision_layer = 4
 		player.collision_mask = 4
 		player.add_child(hl)
 		players[player.team] = player
 
 func obstacle_hit(body, team):
-	if body.is_in_group("obstacles"):
+	if body.is_in_group("obstacles") and players[team]:
 		var damage = 1
 		if body.name == "Death":
 			Com.play_sample(body, "Darkness", false)
 			damage = 8
+			trigger_dead()
 		
 		healths[team] -= damage
 		players[team].get_node("Survival/Indicator").value -= damage
 		
 		if healths[team] <= 0:
-			players[team].queue_free()
+			if body.name != "Death":
+				players[team].explode()
+				players[team].connect("exploded", self, "trigger_dead")
 			players[team] = null
-			
-			var all_dead = true
-			for player in players:
-				if player: all_dead = false
-			
-			if all_dead:
-				get_parent().finished = true
-				yield(get_tree().create_timer(2), "timeout")
-				
-				var places = [0, 0, 0, 0]
-				
-				for team in get_parent().players_joined:
-					if team == -1: continue
-					
-					for team2 in get_parent().players_joined:
-						if team2 == -1: continue
-						if distance[team] <= distance[team2]: places[team] += 1
-				
-				for i in range(4): distance[i] = int(distance[i])
-				get_parent().goto_summary(places, distance)
 		else:
 			Com.play_sample(body, "Damage"+str(1+randi()%4))
 			var fx = damage_fx.instance()
@@ -144,3 +129,24 @@ func process_camera(camera, players):
 	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 3.5), 2)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 	return true
+
+func trigger_dead():
+	var all_dead = true
+	for player in players:
+		if player: all_dead = false
+	
+	if all_dead:
+		get_parent().finished = true
+		yield(get_tree().create_timer(2), "timeout")
+		
+		var places = [0, 0, 0, 0]
+		
+		for team in get_parent().players_joined:
+			if team == -1: continue
+			
+			for team2 in get_parent().players_joined:
+				if team2 == -1: continue
+				if distance[team] <= distance[team2]: places[team] += 1
+		
+		for i in range(4): distance[i] = int(distance[i])
+		get_parent().goto_summary(places, distance)

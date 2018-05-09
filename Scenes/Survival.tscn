@@ -51,7 +51,7 @@ _sections_unfolded = [ "Angle", "Emission Shape", "Initial Velocity", "Scale", "
 custom_solver_bias = 0.0
 extents = Vector2( 16, 1024 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Node2D
 
@@ -68,7 +68,7 @@ func _draw():
 "
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32768, 10 )
@@ -268,6 +268,7 @@ __meta__ = {
 
 [node name="WallOfDeath" type="Particles2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( -1151.2, -10.3246 )
 z_index = 15
 emitting = true
@@ -312,7 +313,7 @@ shape = SubResource( 2 )
 
 editor/display_folded = true
 z_index = 10
-script = SubResource( 4 )
+script = SubResource( 3 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Upper" type="StaticBody2D" parent="Border" index="0"]
@@ -330,7 +331,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Shape" type="CollisionShape2D" parent="Border/Upper" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Lower" type="StaticBody2D" parent="Border" index="1"]
@@ -348,7 +349,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Shape" type="CollisionShape2D" parent="Border/Lower" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AllThingsDone" type="ColorRect" parent="." index="6"]
@@ -367,6 +368,24 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Explosion" type="ColorRect" parent="." index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 0.0980392 )
 _sections_unfolded = [ "Visibility" ]
 
 

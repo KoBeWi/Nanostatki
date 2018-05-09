@@ -53,7 +53,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Linear Accel", "Scale" ]
 
-[node name="ShipDamage" type="Particles2D" index="0"]
+[node name="ShipDamage" type="Particles2D"]
 
 z_index = 100
 emitting = false
