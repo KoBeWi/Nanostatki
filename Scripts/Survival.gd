@@ -17,20 +17,25 @@ var healths = [8, 8, 8, 8]
 var distance = [0, 0, 0, 0]
 var the_end
 var explosion
+var started
 
 func _ready():
 	get_parent().connect("init_players", self, "init_players")
+	get_parent().connect("start", self, "start")
 	
 	$"/root/Game/Camera".limit_top = -1048
 	$"/root/Game/Camera".limit_bottom = 1048
 	
-	start_time = OS.get_ticks_msec()
 	distance_label = get_parent().register_UI($Distance, self)
 	the_end = get_parent().register_UI($AllThingsDone, self)
 	explosion = get_parent().register_UI($Explosion, self)
 	get_parent().music = "MAU"
 
+func start():
+	started = true
+
 func _physics_process(delta):
+	if !started: start_time = OS.get_ticks_msec()
 	var prev_maxd = 0
 	var maxd = 0
 	
