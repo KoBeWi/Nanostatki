@@ -6,9 +6,10 @@ var TRIVIA = []
 var SAMPLE2D = load("res://Nodes/SampleInstance.tscn")
 var SAMPLE = load("res://Nodes/IndependentSampleInstance.tscn")
 
+var mute_music
+
 var scoreboard
 var scores = []
-
 var resources = {}
 
 func _ready():
@@ -20,17 +21,29 @@ func _ready():
 	
 	var f = File.new()
 	if f.open("user://fullscreen", f.READ) == OK: OS.window_fullscreen = true
+	if f.open("user://mute_music", f.READ) == OK: mute_music = true
 
 func _process(delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
+		save_setting("setting", OS.window_fullscreen)
+			
+	if Input.is_action_just_pressed("mute_music"):
+		mute_music = !mute_music
+		save_setting("mute_music", mute_music)
 		
-		if OS.window_fullscreen:
-			var f = File.new()
-			f.open("user://fullscreen", f.WRITE)
+		if mute_music:
+			Jukebox.stop()
 		else:
-			var d = Directory.new()
-			d.remove("user://fullscreen")
+			Jukebox.play()
+
+func save_setting(setting, set):
+	if set:
+		var f = File.new()
+		f.open("user://" + setting, f.WRITE)
+	else:
+		var d = Directory.new()
+		d.remove("user://" + setting)
 
 func load_nodenames():
 	if !resources.has("nodenames"):

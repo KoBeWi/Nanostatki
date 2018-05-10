@@ -98,7 +98,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ) ]
 }
 
-[node name="Electron" type="StaticBody2D" index="0" groups=[
+[node name="Electron" type="StaticBody2D" groups=[
 "obstacles",
 ]]
 

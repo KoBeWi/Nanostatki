@@ -9,7 +9,8 @@ var music = {}
 
 func play_music(name):
 	stream = load_music(name)
-	play()
+	if !Com.mute_music:
+		play()
 
 func load_music(name):
 	if !music.has(name):
@@ -18,7 +19,7 @@ func load_music(name):
 	return music[name]"
 _sections_unfolded = [ "Resource" ]
 
-[node name="Jukebox" type="AudioStreamPlayer"]
+[node name="Jukebox" type="AudioStreamPlayer" index="0"]
 
 stream = null
 volume_db = 0.0
