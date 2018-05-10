@@ -130,7 +130,7 @@ func _draw():
 
 func swap_charge():
 	charge = -charge
-	$Sprite/Orb.modulate = (Color(0, 0, 0) if charge < 0 else Color(1, 1, 1))
+	$Sprite/Orb.modulate = (Color(0, 0, 0.25) if charge < 0 else Color(1, 1, 1))
 	Com.play_sample(self, "Swap" + ("Plus" if charge == 1 else "Minus"))
 	swap = 15
 

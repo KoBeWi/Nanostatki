@@ -61,7 +61,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[node name="MenuDot" type="Sprite" index="0"]
+[node name="MenuDot" type="Sprite"]
 
 modulate = Color( 0.12549, 0.12549, 0.12549, 1 )
 z_index = -2
