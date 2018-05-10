@@ -13,7 +13,7 @@ func _process(delta):
 	get_child(0).position.y = sin(phase) * 1024"
 _sections_unfolded = [ "Resource" ]
 
-[node name="ParticleMover" type="Node2D" index="0"]
+[node name="ParticleMover" type="Node2D"]
 
 script = SubResource( 1 )
 
