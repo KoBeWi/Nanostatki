@@ -246,7 +246,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 512, 300 )
 z_index = -3
 anchor_mode = 1
