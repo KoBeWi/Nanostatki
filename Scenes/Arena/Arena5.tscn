@@ -17,7 +17,7 @@ extents = Vector2( 153.403, 151.916 )
 custom_solver_bias = 0.0
 extents = Vector2( 79.2281, 79.5955 )
 
-[node name="Arena" type="Node2D"]
+[node name="Arena" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -40,6 +40,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="UpperBoundary" type="StaticBody2D" parent="Arena" index="3"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -57,6 +58,7 @@ polygon = PoolVector2Array( -871.367, 2.34687, -862.672, -149.996, -612.339, -14
 
 [node name="LowerBoundary" type="StaticBody2D" parent="Arena" index="4"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -74,6 +76,7 @@ polygon = PoolVector2Array( -867.378, 17.1156, -863.658, 171.674, -608.42, 170.8
 
 [node name="Inner1" type="StaticBody2D" parent="Arena" index="5"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -90,6 +93,7 @@ shape = SubResource( 1 )
 
 [node name="Inner2" type="StaticBody2D" parent="Arena" index="6"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -106,6 +110,7 @@ shape = SubResource( 2 )
 
 [node name="Inner3" type="StaticBody2D" parent="Arena" index="7"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -122,6 +127,7 @@ shape = SubResource( 2 )
 
 [node name="Inner4" type="StaticBody2D" parent="Arena" index="8"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -138,6 +144,7 @@ shape = SubResource( 2 )
 
 [node name="Inner5" type="StaticBody2D" parent="Arena" index="9"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -158,23 +165,23 @@ editor/display_folded = true
 
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
-position = Vector2( 0.491882, -249.413 )
+position = Vector2( -1.17828, -567.687 )
 rotation = 1.56731
 _sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
-position = Vector2( 228.926, 2.0639 )
+position = Vector2( 567.241, 2.0639 )
 rotation = -3.1015
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
-position = Vector2( 9.75623, 263.339 )
+position = Vector2( 9.75623, 600.902 )
 rotation = -1.50713
 
 [node name="4" type="Position2D" parent="StartingPositions" index="3"]
 
-position = Vector2( -257.211, 2.37808 )
+position = Vector2( -582.333, 2.37808 )
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 
@@ -185,51 +192,51 @@ __meta__ = {
 
 [node name="Spawner1" type="Position2D" parent="PulseSpawners" index="0"]
 
-position = Vector2( 0.23291, -730.839 )
+position = Vector2( 0.23291, -1104.83 )
 
 [node name="Spawner2" type="Position2D" parent="PulseSpawners" index="1"]
 
-position = Vector2( -512.852, -502.114 )
+position = Vector2( -769.711, -772.673 )
 
 [node name="Spawner3" type="Position2D" parent="PulseSpawners" index="2"]
 
-position = Vector2( -698.305, 1.69833 )
+position = Vector2( -1051.06, -1.39252 )
 
 [node name="Spawner4" type="Position2D" parent="PulseSpawners" index="3"]
 
-position = Vector2( -509.761, 545.692 )
+position = Vector2( -778.667, 820.78 )
 
 [node name="Spawner5" type="Position2D" parent="PulseSpawners" index="4"]
 
-position = Vector2( -5.94879, 752.781 )
+position = Vector2( -5.94879, 1095.87 )
 
 [node name="Spawner6" type="Position2D" parent="PulseSpawners" index="5"]
 
-position = Vector2( 500.955, 548.783 )
+position = Vector2( 785.315, 802.235 )
 
 [node name="Spawner7" type="Position2D" parent="PulseSpawners" index="6"]
 
-position = Vector2( 757.497, 29.5161 )
+position = Vector2( 1044.95, 29.5161 )
 
 [node name="Spawner8" type="Position2D" parent="PulseSpawners" index="7"]
 
-position = Vector2( 516.409, -486.66 )
+position = Vector2( 769.861, -780.293 )
 
 [node name="Spawner9" type="Position2D" parent="PulseSpawners" index="8"]
 
-position = Vector2( 222.776, -205.39 )
+position = Vector2( 342.725, -328.129 )
 
 [node name="Spawner10" type="Position2D" parent="PulseSpawners" index="9"]
 
-position = Vector2( -231.583, -214.663 )
+position = Vector2( -326.427, -345.77 )
 
 [node name="Spawner11" type="Position2D" parent="PulseSpawners" index="10"]
 
-position = Vector2( -203.688, 265.134 )
+position = Vector2( -318.058, 371.136 )
 
 [node name="Spawner12" type="Position2D" parent="PulseSpawners" index="11"]
 
-position = Vector2( 231.477, 267.923 )
+position = Vector2( 340.268, 365.556 )
 
 [node name="ArenaUI" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -237,29 +244,29 @@ position = Vector2( 231.477, 267.923 )
 
 [node name="Electrofield" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -5.51062, 376.295 )
+position = Vector2( 0.0684814, 579.929 )
 direction = 3
-width = 384
-height = 384
+width = 480
+height = 480
 
 [node name="Electrofield2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -391.521, 19.2369 )
-width = 384
-height = 384
+position = Vector2( -581.208, 19.2369 )
+width = 480
+height = 480
 
 [node name="Electrofield3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -16.2813, -376.874 )
+position = Vector2( -19.3428, -572.14 )
 direction = 1
-width = 384
-height = 384
+width = 480
+height = 480
 
 [node name="Electrofield4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 381.175, 2.49988 )
+position = Vector2( 557.403, 2.49988 )
 direction = 2
-width = 384
-height = 384
+width = 480
+height = 480
 
 

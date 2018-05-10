@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Nodes/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Obstacles/Electrofield.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Sprites/Common/Electron.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=9]
 
 [sub_resource type="Shader" id=1]
 
@@ -160,8 +161,10 @@ editor_draw_drag_margin = false
 
 [node name="Electrofield" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -6.716, 243.521 )
+position = Vector2( -474.763, 618.413 )
 direction = 1
+width = 256
+height = 256
 
 [node name="Magnetic Field" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -190,6 +193,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="DarkMatter" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 762.475, 49.6752 )
+rotation = 4.00932
 
 [node name="Laser2" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -279,5 +283,12 @@ material = SubResource( 4 )
 position = Vector2( 701.881, -69.3292 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Material" ]
+
+[node name="Background" type="Sprite" parent="." index="12"]
+
+position = Vector2( -625.486, 610.294 )
+z_index = -999
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Material", "Z Index" ]
 
 
