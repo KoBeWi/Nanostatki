@@ -81,9 +81,11 @@ func _physics_process(delta):
 	if !paralyzed and Input.is_action_just_pressed(action("action")): swap_charge()
 	
 	if drag_race:
-		if !paralyzed and velocity.y > -70: velocity.y -= 40
-		velocity.y *= 1 - DAMP / 100
+		#if !paralyzed and velocity.y > -70: velocity.y -= 40
+		if (velocity.y < -10): velocity.y += 5
+		velocity.y *= 1 - DAMP / 50
 		if velocity.length() > 5000: velocity *= DAMP * 9
+		print(velocity)
 	else:
 		velocity *= 1-DAMP
 		if velocity.length() > 2000: velocity *= DAMP * 8
