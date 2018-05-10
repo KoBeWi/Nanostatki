@@ -7,10 +7,10 @@ path="res://.import/ScoreDrag.png-3e5050267c27d5c84db28276a1cdaf2f.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreDrag.png"
-source_md5="6333de6a49d00c6ab64822df98fef021"
+source_md5="04c128181fe55d0d38f3e46311b8c70d"
 
 dest_files=[ "res://.import/ScoreDrag.png-3e5050267c27d5c84db28276a1cdaf2f.stex" ]
-dest_md5="a390b2d43ef8a6101a10f41dca6e80d5"
+dest_md5="c83801e6e65c8d626bacad7288e6009c"
 
 [params]
 

@@ -7,10 +7,10 @@ path="res://.import/ScoreRace.png-ef014ef76b2b42299e62cc4caf522be1.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreRace.png"
-source_md5="13e79081d1f0baa3cdbfdac7bca9eecf"
+source_md5="ec1405f958791a8c1fb12132f7163f3f"
 
 dest_files=[ "res://.import/ScoreRace.png-ef014ef76b2b42299e62cc4caf522be1.stex" ]
-dest_md5="9309f9c3147cb5f272ecb2fb2c932008"
+dest_md5="4337694880b4e4f73020fd8800782323"
 
 [params]
 

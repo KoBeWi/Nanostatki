@@ -7,10 +7,10 @@ path="res://.import/ScoreSurvival.png-8122593803a3d910635b495aad87ad49.stex"
 [deps]
 
 source_file="res://Sprites/UI/ScoreSurvival.png"
-source_md5="6ba247ae6735859f233e35b2d4cf7e80"
+source_md5="f65d053b00354a7af5623e3bb3714659"
 
 dest_files=[ "res://.import/ScoreSurvival.png-8122593803a3d910635b495aad87ad49.stex" ]
-dest_md5="91f34b3de881742ee98f9d4d8d25d7b8"
+dest_md5="c93dc8ad0df6dc1df2720386b7cfa726"
 
 [params]
 

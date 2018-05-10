@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.png-5cf4ae956ed6d836669b60b29268a7c7.stex"
+path="res://.import/ShipOrb.png-cda4637ecba5b44a78e76898c022186e.stex"
 
 [deps]
 
-source_file="res://Sprites/Survival/Background.png"
-source_md5="0a113e589f734931366b5b829027c1f4"
+source_file="res://Sprites/Common/ShipOrb.png"
+source_md5="6aa057db19365b11d237279d5417fa3c"
 
-dest_files=[ "res://.import/Background.png-5cf4ae956ed6d836669b60b29268a7c7.stex" ]
-dest_md5="dce51a72b5c246e5e941076ac8b6e172"
+dest_files=[ "res://.import/ShipOrb.png-cda4637ecba5b44a78e76898c022186e.stex" ]
+dest_md5="c24beb40ea4e18908ef2f34a4f0c01b4"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
