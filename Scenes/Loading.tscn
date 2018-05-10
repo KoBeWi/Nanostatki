@@ -37,7 +37,9 @@ func _input(event):
 		Jukebox.play_music(game.music)
 		load_time = null
 		queue_free()
-		get_tree().paused = false"
+		get_tree().paused = false
+		Com.play_sample(self, \"Countdown\", false)
+		game.emit_signal(\"round_enter\")"
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Shader" id=2]
@@ -76,7 +78,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Loading" type="Node2D"]
+[node name="Loading" type="Node2D" index="0"]
 
 pause_mode = 2
 z_index = 4096

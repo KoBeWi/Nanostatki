@@ -4,8 +4,8 @@ const PULSE_DELAY = 2
 const MAX_PULSES = 3
 const SCORE_TEXT = "GRACZ %s: %s"
 const TIME_TEXT = "POZOSTAŁY CZAS: %s"
-const BACKGROUND_W = 5000
-const BACKGROUND_H = 5000
+const BACKGROUND_W = 8192
+const BACKGROUND_H = 4800
 
 var pulse = load("res://Nodes/Pulse.tscn")
 var ui
@@ -13,6 +13,7 @@ var timer
 var crown
 var started
 var win
+var countdown_start
 
 onready var time_left = get_parent().settings.time
 var pulse_delay = 0
@@ -35,6 +36,7 @@ func _ready():
 	
 	occupied.resize($PulseSpawners.get_child_count())
 	get_parent().connect("start", self, "start")
+	get_parent().connect("round_enter", self, "countdown")
 	
 	ui = get_parent().register_UI($ArenaUI, self)
 	for i in range(ui.get_node("Scores").get_children().size()):
@@ -97,7 +99,6 @@ func _process(delta):
 			for team2 in get_parent().players_joined:
 				if team2 == -1: continue
 				if players_score[team] <= players_score[team2]: places[team] += 1
-				
 		
 		get_parent().goto_summary(places, score)
 
@@ -115,10 +116,14 @@ func free_pulse(id, player):
 		
 	occupcount -= 1
 
-func start():
-	started = true
+func start(): started = true
+func countdown(): countdown_start = OS.get_ticks_msec()
 
 func process_camera(camera, players):
+	var min_zoom = 2
+	if !started:
+		min_zoom = 5 - (OS.get_ticks_msec() - countdown_start) / 1000.0
+	
 	var cam_pos = Vector2()
 	var min_y = 10000
 	var min_x = 10000
@@ -134,6 +139,6 @@ func process_camera(camera, players):
 	
 	camera.position = cam_pos / players.size()
 	
-	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
+	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), min_zoom)
 	camera.zoom = Vector2(new_zoom, new_zoom)
 	return true

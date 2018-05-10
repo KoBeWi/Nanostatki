@@ -17,6 +17,7 @@ var pause = 3
 
 signal init_players
 signal start
+signal round_enter
 
 func setup(_mode, _players_joined, options):
 	mode = _mode
@@ -39,7 +40,7 @@ func _ready():
 	
 	start_scene()
 	
-	emit_signal("init_players", players.get_children())
+	emit_signal("init_players", players.get_children())\
 
 func _physics_process(delta):
 	if pause:
