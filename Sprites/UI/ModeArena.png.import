@@ -7,10 +7,10 @@ path="res://.import/ModeArena.png-39ac934a4e3b2c4f05e25a701512df18.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModeArena.png"
-source_md5="d8a4c7b864e0e495797ee34fbb1f7c13"
+source_md5="ece1539c8562b372a4643eff437dd8d3"
 
 dest_files=[ "res://.import/ModeArena.png-39ac934a4e3b2c4f05e25a701512df18.stex" ]
-dest_md5="f1df5d6f492b32ce4584bbe058852580"
+dest_md5="2926bd57b1547956e9fe2d9dd9bf46d9"
 
 [params]
 

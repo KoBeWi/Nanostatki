@@ -7,10 +7,10 @@ path="res://.import/ModeRace.png-505c13ba49d46acb6c7cd13ed274ba5d.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModeRace.png"
-source_md5="2a6338a132a620e0b88973c199091e51"
+source_md5="bdb7cc619d1e48ea760ddd5a8b5fc86b"
 
 dest_files=[ "res://.import/ModeRace.png-505c13ba49d46acb6c7cd13ed274ba5d.stex" ]
-dest_md5="81fa29c3160f6d760cfa27e74ed43680"
+dest_md5="526e5f64cde6a9189e1af72db68068a3"
 
 [params]
 

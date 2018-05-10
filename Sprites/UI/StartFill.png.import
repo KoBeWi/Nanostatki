@@ -7,10 +7,10 @@ path="res://.import/StartFill.png-8a28e2c9287ab46fb8c9b2a04dcefdce.stex"
 [deps]
 
 source_file="res://Sprites/UI/StartFill.png"
-source_md5="39187423c96983c7f9f13247a406d974"
+source_md5="afa22666fad6afe30a51a747d72ad700"
 
 dest_files=[ "res://.import/StartFill.png-8a28e2c9287ab46fb8c9b2a04dcefdce.stex" ]
-dest_md5="1d146d8a25e741c4cca1e0d554228f12"
+dest_md5="561977eb28eb5f6dcb7e3352e9e0441c"
 
 [params]
 
