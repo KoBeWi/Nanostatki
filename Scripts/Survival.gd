@@ -52,7 +52,7 @@ func _physics_process(delta):
 	
 	if maxd > prev_maxd and int(maxd) % PARTICLE_DISTANCE < int(prev_maxd) % PARTICLE_DISTANCE:
 		spawn_obstacles(int(maxd))
-		PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 10, 256)
+		PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 50 + randi() % 50, 512)
 	
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()

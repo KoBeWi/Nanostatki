@@ -7,10 +7,10 @@ path="res://.import/Background.png-5cf4ae956ed6d836669b60b29268a7c7.stex"
 [deps]
 
 source_file="res://Sprites/Survival/Background.png"
-source_md5="f1be71cdc658f8f3242e63b8e28bdfcd"
+source_md5="e3bf398a370cbed0328234ba430d353e"
 
 dest_files=[ "res://.import/Background.png-5cf4ae956ed6d836669b60b29268a7c7.stex" ]
-dest_md5="6223f5f1c85810e41b8e3845c31fb24c"
+dest_md5="c41fbd5cb5442d88d44c351575319c69"
 
 [params]
 
