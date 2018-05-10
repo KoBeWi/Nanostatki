@@ -1,7 +1,7 @@
 extends Node2D
 
 const CAMERA_OFFSET = 128
-const PARTICLE_DISTANCE = 2048
+var PARTICLE_DISTANCE = 2048
 
 onready var death = $WallOfDeath
 onready var camera = $"/root/Game/Camera"
@@ -52,11 +52,12 @@ func _physics_process(delta):
 	
 	if maxd > prev_maxd and int(maxd) % PARTICLE_DISTANCE < int(prev_maxd) % PARTICLE_DISTANCE:
 		spawn_obstacles(int(maxd))
+		PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 10, 256)
 	
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
 	
-	death.position.x += (OS.get_ticks_msec() - start_time) / 3000 + 1
+	death.position.x += min((OS.get_ticks_msec() - start_time) / 3000 + 1, 16)
 	camera.limit_left = death.position.x
 	
 	if get_parent().finished:
