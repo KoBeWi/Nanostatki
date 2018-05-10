@@ -17,10 +17,10 @@ func _physics_process(delta):
 	if !Engine.editor_hint:
 		for player in players.get_children():
 			if player.pause: break
-			var d = position.distance_to(player.position)
+			var d = global_position.distance_to(player.global_position)
 			if d > FORCE_RANGE or d == 0 or (d > FORCE_RANGE*1.7 and player.drag_race): continue
 			
-			var dist = (position - player.position)
+			var dist = (global_position - player.global_position)
 			
 			var force = Vector2()
 			
@@ -38,7 +38,7 @@ func _physics_process(delta):
 					else: force.y += 10*300/d
 			
 			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
-			if player.survival: force /= 4
+#			if player.survival: force /= 4
 			player.velocity -= force
 	
 	if circle_delay <= 0:
