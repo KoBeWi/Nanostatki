@@ -7,10 +7,10 @@ path="res://.import/LaserEmitter.png-92819f02e29dfac2aad0795a2792f4ed.stex"
 [deps]
 
 source_file="res://Sprites/Common/LaserEmitter.png"
-source_md5="6051816fa176f43ee7c10e2454bb2881"
+source_md5="6b3431ef1c2b2d8e88e93b36287d0235"
 
 dest_files=[ "res://.import/LaserEmitter.png-92819f02e29dfac2aad0795a2792f4ed.stex" ]
-dest_md5="97e332bc66de88c10c71d5f7d03205e4"
+dest_md5="941c737a79858ba9eb37b306d4e5f698"
 
 [params]
 

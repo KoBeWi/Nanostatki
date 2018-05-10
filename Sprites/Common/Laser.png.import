@@ -7,10 +7,10 @@ path="res://.import/Laser.png-a7a76eb790c49b32e3f71bf7bda6a4e5.stex"
 [deps]
 
 source_file="res://Sprites/Common/Laser.png"
-source_md5="e7a67263713e2fe75e45d0e7bd9d5100"
+source_md5="4262ddf82f1d797a9f0057c1f5cd903a"
 
 dest_files=[ "res://.import/Laser.png-a7a76eb790c49b32e3f71bf7bda6a4e5.stex" ]
-dest_md5="4754c9775d467142e9923ee616d9cd1b"
+dest_md5="f2417467817e7ee4e0d744d9965bf561"
 
 [params]
 
