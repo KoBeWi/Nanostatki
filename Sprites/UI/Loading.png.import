@@ -7,10 +7,10 @@ path="res://.import/Loading.png-24491fa65f4419d1a8d40b3afd6746f4.stex"
 [deps]
 
 source_file="res://Sprites/UI/Loading.png"
-source_md5="394f7d3f5592337edadbc58c8e516a6c"
+source_md5="c3902db7006312bad167a3f281902dd6"
 
 dest_files=[ "res://.import/Loading.png-24491fa65f4419d1a8d40b3afd6746f4.stex" ]
-dest_md5="1bde09e346d4ee82eb715369a0a4a802"
+dest_md5="3a15bf3fd2440caa7594b428c970c153"
 
 [params]
 

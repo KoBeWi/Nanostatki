@@ -7,10 +7,10 @@ path="res://.import/ModeSumo.png-9a3fe67fea3c1aaa1924f45f85eb164d.stex"
 [deps]
 
 source_file="res://Sprites/UI/ModeSumo.png"
-source_md5="100c967c54f245b2e395647f853e6e1a"
+source_md5="342e63a1260ba2b1c06b314dab44a4e9"
 
 dest_files=[ "res://.import/ModeSumo.png-9a3fe67fea3c1aaa1924f45f85eb164d.stex" ]
-dest_md5="5e4557bf355559319c345f2762aabe60"
+dest_md5="56b58167cb0cfcfef0eb8fd289e998ca"
 
 [params]
 
