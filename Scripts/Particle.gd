@@ -18,7 +18,7 @@ func _physics_process(delta):
 		for player in players.get_children():
 			if player.pause: break
 			var d = position.distance_to(player.position)
-			if d > FORCE_RANGE or d == 0: continue
+			if d > FORCE_RANGE or d == 0 or (d > FORCE_RANGE*1.7 and player.drag_race): continue
 			
 			var dist = (position - player.position)
 			
@@ -28,7 +28,14 @@ func _physics_process(delta):
 				force = dist / dist.length() / sqrt(dist.length()) / 20 * FORCE * charge * player.charge
 			elif abs(dist.y) > 100:
 				force.y = sign(dist.y) / sqrt(abs(dist.y)) / 50 * FORCE * charge * player.charge
-			else: force.y = sign(dist.y) / sqrt(50) / 50 * FORCE * charge * player.charge
+				if (player.velocity.y > -70):
+					if(d<300): force.y += 40
+					else: force.y += 40*300/d
+			else:
+				force.y = sign(dist.y) / sqrt(50) / 50 * FORCE * charge * player.charge
+				if (player.velocity.y > -70):
+					if(d<300): force.y += 10
+					else: force.y += 10*300/d
 			
 			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
 			if player.survival: force /= 4

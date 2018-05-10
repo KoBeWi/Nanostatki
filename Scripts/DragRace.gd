@@ -68,7 +68,7 @@ func _process(delta):
 		player.drag_race += move[player.team]
 		player.position.y = 0
 	
-		if player.drag_race >= last_distance[player.team]:
+		if player.drag_race >= last_distance[player.team]-100:
 			fail_time[player.team] += delta
 		else:
 			distance.get_node(str(player.team+1)).text = str(int(max(0, -player.drag_race)))
