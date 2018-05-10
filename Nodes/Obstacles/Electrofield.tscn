@@ -20,14 +20,12 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform" ]
-direction = 0
 width = 64
 height = 64
 elevation = 0
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
-visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -35,7 +33,7 @@ shape = SubResource( 1 )
 scale = Vector2( 0.5, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 564864, 128, 64 )
+region_rect = Rect2( 0, 565696, 128, 64 )
 _sections_unfolded = [ "Material", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
