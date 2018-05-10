@@ -172,6 +172,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sign" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
+visible = false
 modulate = Color( 1, 1, 1, 0.995733 )
 scale = Vector2( 0.252142, 0.252142 )
 texture = ExtResource( 6 )

@@ -245,7 +245,6 @@ position = Vector2( 340.268, 365.556 )
 [node name="Electrofield" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 0.0684814, 579.929 )
-direction = 3
 width = 480
 height = 480
 
@@ -258,14 +257,12 @@ height = 480
 [node name="Electrofield3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( -19.3428, -572.14 )
-direction = 1
 width = 480
 height = 480
 
 [node name="Electrofield4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 557.403, 2.49988 )
-direction = 2
 width = 480
 height = 480
 

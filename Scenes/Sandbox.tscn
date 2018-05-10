@@ -162,7 +162,6 @@ editor_draw_drag_margin = false
 [node name="Electrofield" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -474.763, 618.413 )
-direction = 1
 width = 256
 height = 256
 
