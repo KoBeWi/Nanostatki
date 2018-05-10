@@ -85,6 +85,7 @@ func _physics_process(delta):
 		if (velocity.y < -10): velocity.y += 5
 		velocity.y *= 1 - DAMP / 50
 		if velocity.length() > 5000: velocity *= DAMP * 9
+		print(velocity)
 	else:
 		velocity *= 1-DAMP
 		if velocity.length() > 2000: velocity *= DAMP * 8
