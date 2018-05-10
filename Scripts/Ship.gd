@@ -17,6 +17,7 @@ var race_distance = 0
 var race_leader = false
 var drag_race = false
 var survival = false
+var time = 0
 
 var velocity = Vector2()
 var direction = Vector2(1, 0)
@@ -37,6 +38,8 @@ func _ready():
 	$Sprite/Indicator.modulate = Com.PLAYER_COLORS[team]
 
 func _physics_process(delta):
+	time += 1
+	
 	if fade_out:
 		modulate.a -= delta
 		if modulate.a <= 0:
@@ -114,6 +117,14 @@ func _physics_process(delta):
 		if player != self and position.distance_to(player.position) < FORCE_RANGE:
 			var force = (position - player.position) / position.distance_squared_to(player.position) * FORCE * charge * player.charge
 			player.velocity -= force
+	
+	if time % 4 == 0:
+		var trace = $Sprite/Orb.duplicate(DUPLICATE_USE_INSTANCING | DUPLICATE_SCRIPTS)
+		$"/root/Game".add_child(trace)
+		trace.z_index = z_index
+		trace.transform = $Sprite/Orb.global_transform
+		trace.position += Vector2(-4 + randi() % 9, -4 + randi() % 9)
+		trace.vanishing = true
 	
 	update()
 

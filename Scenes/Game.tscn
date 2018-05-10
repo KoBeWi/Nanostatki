@@ -12,6 +12,7 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Camera" type="Camera2D" parent="." index="1"]
 
+editor/display_folded = true
 z_index = 50
 anchor_mode = 1
 rotating = false
@@ -39,6 +40,7 @@ _sections_unfolded = [ "Smoothing", "Z Index" ]
 
 [node name="Countdown" type="Node2D" parent="Camera" index="0"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Label" type="Label" parent="Camera/Countdown" index="0"]
