@@ -61,5 +61,9 @@ func create_figure(check_camera = true):
 	if camera:
 		check = camera.global_position
 		check2 = camera.zoom
-	if rect_size.x > 1024: while check_camera and fig.global_position.distance_to(check) < 1536 * check2.x: fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
-	
+	if rect_size.x > 1024:
+		var i = 0
+		while check_camera and fig.global_position.distance_to(check) < 1536 * check2.x:
+			fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
+			i += 1
+			if i >= 1000: break

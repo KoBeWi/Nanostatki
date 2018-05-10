@@ -105,7 +105,7 @@ custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
 custom_constants/shadow_as_outline = 1
 text = "ENTER - SPRÓBÓJ PONOWNIE
-ESCAPE - WYJDŹ DO MENU"
+ESCAPE - ZAKOŃCZ POJEDYNEK"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

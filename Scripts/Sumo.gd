@@ -3,8 +3,8 @@ extends Node
 const START = 0.4
 const ARENA_SIZE = 720
 const ARENA_COLORS = {Color(1, 1, 0): Color(1, 0.5, 0), Color(0, 1, 0): Color(0.5, 1, 0), Color(0, 1, 1): Color(0.25, 0.5, 1), Color(1, 0, 1): Color(0.5, 0, 1)}
-const BACKGROUND_W = 3508
-const BACKGROUND_H = 2480
+const BACKGROUND_W = 4800
+const BACKGROUND_H = 4800
 
 var wintext
 var o_wintext
@@ -66,7 +66,7 @@ func _process(delta):
 		$Arena.modulate = Com.PLAYER_COLORS[player.team]
 		get_parent().finished = true
 		
-		yield(get_tree().create_timer(2), "timeout")
+		yield(get_tree().create_timer(1.5), "timeout")
 		
 		if stats.visible: continu.visible = true
 	elif win > -1:
