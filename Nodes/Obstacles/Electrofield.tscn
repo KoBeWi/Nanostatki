@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 125, 350 )
 
 [sub_resource type="Animation" id=2]
 
@@ -51,10 +51,11 @@ shape = SubResource( 1 )
 
 editor/display_folded = true
 rotation = -1.5708
+scale = Vector2( 0.147465, 0.288288 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 3
-region_rect = Rect2( 0, 582752, 128, 64 )
+region_rect = Rect2( 0, 585760, 128, 64 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -66,9 +67,10 @@ root_node = NodePath("..")
 autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 8.0
 anims/Idle = SubResource( 2 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [connection signal="body_entered" from="." to="." method="_on_enter"]
 
