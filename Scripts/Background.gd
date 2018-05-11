@@ -1,6 +1,7 @@
 extends ColorRect
 
-const FIG_COUNT = 50
+export var FIG_COUNT = 50
+
 const SWATCHES = [
 [Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
 [Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
@@ -15,16 +16,17 @@ var FIGURE = load("res://Nodes/BackgroundBit.tscn")
 
 var camera
 
-var figure_count = FIG_COUNT
+var figure_count
 var figure
 var swatches
 
 func _ready():
+	figure_count = FIG_COUNT
 	figure = load("res://Sprites/Common/BackgroundBits/" + FIGURES[randi() % FIGURES.size()] + ".png")
 	swatches = SWATCHES[randi() % SWATCHES.size()]
 	set_colors(vec(swatches[0]), vec(swatches[1]))
 	
-	if $"/root".has_node("Game/Camera"): camera = $"/root/Game/Camera"
+	if $"/root".has_node("Game/Camera"): camera = weakref($"/root/Game/Camera")
 
 func set_colors(upper_color, lower_color):
 	material.set_shader_param("upper_color", upper_color)
@@ -48,7 +50,7 @@ func create_figure(check_camera = true):
 	var fig = FIGURE.instance()
 	add_child(fig)
 	
-	fig.camera = camera
+	if camera: fig.camera = camera.get_ref()
 	fig.texture = figure
 	fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 	
@@ -58,9 +60,9 @@ func create_figure(check_camera = true):
 	fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
 	var check = Vector2()
 	var check2 = Vector2(1 ,1)
-	if camera:
-		check = camera.global_position
-		check2 = camera.zoom
+	if camera and camera.get_ref():
+		check = camera.get_ref().global_position
+		check2 = camera.get_ref().zoom
 	if rect_size.x > 1024:
 		var i = 0
 		while check_camera and fig.global_position.distance_to(check) < 1536 * check2.x:

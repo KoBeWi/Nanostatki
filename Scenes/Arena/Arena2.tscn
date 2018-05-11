@@ -17,6 +17,8 @@ editor/display_folded = true
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
+FIG_COUNT = 50
+
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
 
 texture = ExtResource( 3 )
