@@ -7,10 +7,10 @@ path="res://.import/Authors.png-88bf4c45e6f4c435504d75403d448be9.stex"
 [deps]
 
 source_file="res://Sprites/UI/Authors.png"
-source_md5="e64f12d197ed20326f5833311ca2ebdf"
+source_md5="3de7d62c1b4c8aca734fba2841de30b4"
 
 dest_files=[ "res://.import/Authors.png-88bf4c45e6f4c435504d75403d448be9.stex" ]
-dest_md5="1c74dd42148c520eae325b3fdab81103"
+dest_md5="0f8f6200d76d62377dafb5d85001411c"
 
 [params]
 
