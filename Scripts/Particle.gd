@@ -38,7 +38,7 @@ func _physics_process(delta):
 					else: force.y += 10*300/d
 			
 			if force.length() > MAX_FORCE: force = force.normalized() * MAX_FORCE
-#			if player.survival: force /= 4
+			if player.survival: force /= 4
 			player.velocity -= force
 	
 	if circle_delay <= 0:
