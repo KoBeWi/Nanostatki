@@ -55,7 +55,7 @@ scale = Vector2( 0.147465, 0.288288 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 3
-region_rect = Rect2( 0, 585760, 128, 64 )
+region_rect = Rect2( 0, 587296, 128, 64 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
