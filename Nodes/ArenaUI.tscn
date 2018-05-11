@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Sprites/Arena/Crown.png" type="Texture" id=2]
-[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/PlayerColorText.gd" type="Script" id=3]
+[ext_resource path="res://Resources/NewBiggerFont.tres" type="DynamicFont" id=4]
 
-[node name="ArenaUI" type="Control"]
+[node name="ArenaUI" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,7 +108,9 @@ text = "GRACZ1: 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+player = 0
 
 [node name="Player2" type="Label" parent="Scores" index="1"]
 
@@ -133,7 +136,9 @@ text = "GRACZ2: 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+player = 1
 
 [node name="Player3" type="Label" parent="Scores" index="2"]
 
@@ -159,7 +164,9 @@ text = "GRACZ3: 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+player = 2
 
 [node name="Player4" type="Label" parent="Scores" index="3"]
 
@@ -185,7 +192,9 @@ text = "GRACZ4: 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+player = 3
 
 [node name="Wintext" type="Label" parent="." index="3"]
 
@@ -204,7 +213,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "WYGRYWA GRACZ %s!"

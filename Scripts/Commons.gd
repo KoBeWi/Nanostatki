@@ -1,6 +1,6 @@
 extends Node
 
-const PLAYER_COLORS = [Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(1, 0, 1)]
+const PLAYER_COLORS = [Color("9e2525"), Color("0082d3"), Color("679300"), Color("eab334")]
 const MODES = ["Race", "Drag", "Sumo", "Arena", "Survival"]
 var TRIVIA = []
 var SAMPLE2D = load("res://Nodes/SampleInstance.tscn")

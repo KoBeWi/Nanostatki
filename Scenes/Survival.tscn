@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Survival.gd" type="Script" id=1]
 [ext_resource path="res://Resources/NewFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Survival/Death.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/PlayerColorText.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Survival/Background.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Survival/Death.png" type="Texture" id=5]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -72,7 +73,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 32768, 10 )
 
-[node name="Survival" type="Node2D"]
+[node name="Survival" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -101,7 +102,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Distance" type="Label" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -148,7 +148,9 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+player = 0
 
 [node name="2" type="Label" parent="Distance" index="1"]
 
@@ -175,7 +177,9 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+player = 1
 
 [node name="3" type="Label" parent="Distance" index="2"]
 
@@ -202,7 +206,9 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+player = 2
 
 [node name="4" type="Label" parent="Distance" index="3"]
 
@@ -229,7 +235,9 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 3 )
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+player = 3
 
 [node name="Background" type="ParallaxBackground" parent="." index="2"]
 
@@ -255,7 +263,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Sprite" type="Sprite" parent="Background/Layer" index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 9800, 2048 )
 _sections_unfolded = [ "Offset", "Region" ]
@@ -284,7 +292,7 @@ visibility_rect = Rect2( -1024, -512, 2048, 1024 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 normal_map = null
 h_frames = 1
 v_frames = 1
