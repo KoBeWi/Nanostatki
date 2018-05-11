@@ -16,7 +16,7 @@ var circle_delay = 0
 func _physics_process(delta):
 	if !Engine.editor_hint:
 		for player in players.get_children():
-			if player.pause: break
+			if player.pause: continue
 			var d = global_position.distance_to(player.global_position)
 			if d > FORCE_RANGE and (d > FORCE_RANGE*1.3 or !player.drag_race) or d == 0: continue
 			

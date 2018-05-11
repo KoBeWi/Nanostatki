@@ -99,14 +99,17 @@ func process_camera(camera, players):
 	var max_y = -10000
 	var max_x = -10000
 	
+	var pl_num = 0
 	for player in players:
+		if player.modulate.a < 1: continue
+		pl_num += 1
 		min_y = min(player.get_pos().y - get_parent().CAMERA_OFFSET, min_y)
 		min_x = min(player.get_pos().x - get_parent().CAMERA_OFFSET, min_x)
 		max_y = max(player.get_pos().y + get_parent().CAMERA_OFFSET, max_y)
 		max_x = max(player.get_pos().x + get_parent().CAMERA_OFFSET, max_x)
 		cam_pos += player.get_pos()
 	
-	camera.position = cam_pos / players.size()
+	camera.position = cam_pos / pl_num
 	
 	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
 	camera.zoom = Vector2(new_zoom, new_zoom)
