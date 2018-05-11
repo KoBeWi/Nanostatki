@@ -13,6 +13,8 @@ script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
@@ -61,6 +63,8 @@ build_mode = 0
 polygon = PoolVector2Array( 1148.7, 1.48271, 1141.76, 92.336, 1122.57, 191.119, 1075.47, 308.545, 1029.03, 393.462, 956.713, 491.649, 868.478, 577.23, 759.014, 652.86, 667.703, 696.882, 540.771, 736.398, 358.156, 754.361, 341.99, 892.07, 279.123, 1002.84, 217.453, 1060.91, 147.401, 1099.23, 68.3676, 1122.58, -22.6405, 1122.58, -93.2914, 1108.81, -174.121, 1064.51, -253.154, 996.849, -298.059, 919.013, -326.799, 830.999, -327.398, 762.144, -468.699, 760.348, -550.128, 745.379, -655.505, 713.646, -745.316, 669.939, -829.139, 617.25, -905.777, 553.185, -970.441, 483.731, -1026.72, 406.494, -1065.04, 334.646, -1103.96, 250.224, -1128.51, 152.031, -1147.07, 42.4623, -1147.67, -9.62784, -1511.18, 1227.53, 2006.07, 1227.53 )
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
@@ -232,31 +236,31 @@ position = Vector2( -17.9857, -375.304 )
 [node name="DarkMatter" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( -0.458374, 891.763 )
-rotation = 0.817458
+rotation = 4.03239
 
 [node name="DarkMatter2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -398.472, -562.846 )
-rotation = 4.31686
+rotation = 7.53172
 
 [node name="DarkMatter3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 274.521, 350.64 )
-rotation = 5.52766
+rotation = 8.74255
 
 [node name="DarkMatter4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( -841.994, -89.2036 )
-rotation = 1.66992
+rotation = 4.88483
 
 [node name="DarkMatter5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -558.414, 500.438 )
-rotation = 4.64122
+rotation = 7.85608
 
 [node name="DarkMatter6" parent="Obstacles" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 533.89, -361.787 )
-rotation = 1.59106
+rotation = 4.80598
 
 
