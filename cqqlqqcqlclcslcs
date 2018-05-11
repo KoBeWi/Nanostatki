@@ -1,0 +1,160 @@
+[1mdiff --git a/Nodes/Obstacles/Laser.tscn b/Nodes/Obstacles/Laser.tscn[m
+[1mindex b56294f..a89b40d 100644[m
+[1m--- a/Nodes/Obstacles/Laser.tscn[m
+[1m+++ b/Nodes/Obstacles/Laser.tscn[m
+[36m@@ -7,7 +7,7 @@[m
+ [sub_resource type="RectangleShape2D" id=1][m
+ [m
+ custom_solver_bias = 0.0[m
+[31m-extents = Vector2( 490.852, 8 )[m
+[32m+[m[32mextents = Vector2( 250.882, 8 )[m
+ [m
+ [sub_resource type="Animation" id=2][m
+ [m
+[36m@@ -28,7 +28,7 @@[m [mtracks/0/keys = {[m
+ "values": [ 0, 1 ][m
+ }[m
+ [m
+[31m-[node name="Laser" type="Sprite"][m
+[32m+[m[32m[node name="Laser" type="Sprite" index="0"][m
+ [m
+ texture = ExtResource( 1 )[m
+ script = ExtResource( 2 )[m
+[36m@@ -55,13 +55,14 @@[m [mshape = SubResource( 1 )[m
+ [m
+ [node name="Sprite" type="Sprite" parent="." index="1"][m
+ [m
+[32m+[m[32meditor/display_folded = true[m
+ show_behind_parent = true[m
+ position = Vector2( 32, 0 )[m
+ texture = ExtResource( 3 )[m
+ hframes = 2[m
+ frame = 1[m
+ region_enabled = true[m
+[31m-region_rect = Rect2( 136438, 0, 64, 8 )[m
+[32m+[m[32mregion_rect = Rect2( 155788, 0, 64, 8 )[m
+ _sections_unfolded = [ "Animation", "Transform", "Visibility" ][m
+ [m
+ [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"][m
+[1mdiff --git a/Nodes/Ship.tscn b/Nodes/Ship.tscn[m
+[1mindex 783bb57..309adea 100644[m
+[1m--- a/Nodes/Ship.tscn[m
+[1m+++ b/Nodes/Ship.tscn[m
+[36m@@ -12,7 +12,7 @@[m
+ [ext_resource path="res://Nodes/Effects/HitParticle.tscn" type="PackedScene" id=10][m
+ [ext_resource path="res://Sprites/Common/Effects/Preexplosion.png" type="Texture" id=11][m
+ [m
+[31m-[sub_resource type="GDScript" id=2][m
+[32m+[m[32m[sub_resource type="GDScript" id=1][m
+ [m
+ script/source = "extends Node2D[m
+ [m
+[36m@@ -23,7 +23,7 @@[m [mfunc _process(delta):[m
+ 		modulate.a -= delta*2[m
+ 		if modulate.a <= 0: queue_free()"[m
+ [m
+[31m-[sub_resource type="Animation" id=1][m
+[32m+[m[32m[sub_resource type="Animation" id=2][m
+ [m
+ length = 1.0[m
+ loop = true[m
+[36m@@ -87,7 +87,7 @@[m [mcollision_layer = 1[m
+ collision_mask = 1[m
+ collision/safe_margin = 0.08[m
+ script = ExtResource( 1 )[m
+[31m-_sections_unfolded = [ "Animation", "Material", "Transform", "Z Index" ][m
+[32m+[m[32m_sections_unfolded = [ "Animation", "Transform", "Z Index", "collision" ][m
+ team = 0[m
+ player = 0[m
+ [m
+[36m@@ -114,7 +114,7 @@[m [m_sections_unfolded = [ "Material" ][m
+ [m
+ editor/display_folded = true[m
+ show_behind_parent = true[m
+[31m-script = SubResource( 2 )[m
+[32m+[m[32mscript = SubResource( 1 )[m
+ _sections_unfolded = [ "Visibility" ][m
+ [m
+ [node name="OrbAnimator" type="AnimationPlayer" parent="Sprite/Orb" index="0"][m
+[36m@@ -124,7 +124,7 @@[m [mautoplay = "Idle"[m
+ playback_process_mode = 1[m
+ playback_default_blend_time = 0.0[m
+ playback_speed = 1.0[m
+[31m-anims/Idle = SubResource( 1 )[m
+[32m+[m[32manims/Idle = SubResource( 2 )[m
+ blend_times = [  ][m
+ [m
+ [node name="Orb1" type="Sprite" parent="Sprite/Orb" index="1"][m
+[1mdiff --git a/Scenes/Race/Race1.tscn b/Scenes/Race/Race1.tscn[m
+[1mindex 7cb759c..cb8118e 100644[m
+[1m--- a/Scenes/Race/Race1.tscn[m
+[1m+++ b/Scenes/Race/Race1.tscn[m
+[36m@@ -43,10 +43,10 @@[m [mfunc _ready():[m
+ 	angle = position.angle()[m
+ [m
+ func _process(delta):[m
+[31m-	angle += PI * delta * 0.2[m
+[32m+[m	[32mangle += PI * delta * 0.3[m
+ 	position = Vector2(sin(angle), cos(angle)) * length"[m
+ [m
+[31m-[node name="Race" type="Node2D" index="0"][m
+[32m+[m[32m[node name="Race" type="Node2D"][m
+ [m
+ script = ExtResource( 1 )[m
+ lap_length = 19900[m
+[36m@@ -678,36 +678,35 @@[m [melevation = 1[m
+ [node name="DarkMatter" parent="Obstacles" index="6" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( 883.117, 1228.3 )[m
+[31m-rotation = 2.78696[m
+[32m+[m[32mrotation = 3.32307[m
+ [m
+ [node name="DarkMatter2" parent="Obstacles" index="7" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( 336.586, 1464.92 )[m
+[31m-rotation = 0.590041[m
+[32m+[m[32mrotation = 0.259107[m
+ [m
+ [node name="DarkMatter3" parent="Obstacles" index="8" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( -159.38, 1192.88 )[m
+[31m-rotation = 6.19801[m
+[32m+[m[32mrotation = 0.625699[m
+ [m
+ [node name="DarkMatter4" parent="Obstacles" index="9" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( -557.264, 1479.73 )[m
+[31m-rotation = 2.76107[m
+[32m+[m[32mrotation = 5.80659[m
+ [m
+ [node name="DarkMatter5" parent="Obstacles" index="10" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( -1055.08, 1191.03 )[m
+[31m-rotation = 3.78037[m
+[32m+[m[32mrotation = 0.017143[m
+ [m
+ [node name="DarkMatter6" parent="Obstacles" index="11" instance=ExtResource( 11 )][m
+ [m
+ position = Vector2( -1599.2, -1301.24 )[m
+[31m-rotation = 3.06578[m
+[32m+[m[32mrotation = 1.42071[m
+ [m
+ [node name="Laser" parent="Obstacles" index="12" instance=ExtResource( 12 )][m
+ [m
+[31m-editor/display_folded = true[m
+ position = Vector2( -776.591, -295.968 )[m
+ [m
+ [node name="End" type="Sprite" parent="Obstacles/Laser" index="2"][m
+[1mdiff --git a/Scenes/Survival.tscn b/Scenes/Survival.tscn[m
+[1mindex fb2bded..be79253 100644[m
+[1m--- a/Scenes/Survival.tscn[m
+[1m+++ b/Scenes/Survival.tscn[m
+[36m@@ -72,7 +72,7 @@[m [m_sections_unfolded = [ "Resource" ][m
+ custom_solver_bias = 0.0[m
+ extents = Vector2( 32768, 10 )[m
+ [m
+[31m-[node name="Survival" type="Node2D" index="0"][m
+[32m+[m[32m[node name="Survival" type="Node2D"][m
+ [m
+ script = ExtResource( 1 )[m
+ [m

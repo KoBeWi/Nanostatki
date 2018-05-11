@@ -6,10 +6,10 @@ var fx = load("res://Sprites/Common/DarknessFX.png")
 var counter = 0
 
 func _physics_process(delta):
-	rotation = randf() * PI*2
+#	rotation = randf() * PI*2
 	counter += 1
 	
-	if counter%2 == 0: update()
+#	if counter%2 == 0: update()
 
 func _draw():
 	for i in range(3):
