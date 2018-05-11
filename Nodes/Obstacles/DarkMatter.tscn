@@ -27,7 +27,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 radius = 32.0
 
-[node name="DarkMatter" type="Area2D" index="0"]
+[node name="DarkMatter" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -43,12 +43,15 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 show_behind_parent = true
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
 frame = 10
-_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Animation", "Material", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
