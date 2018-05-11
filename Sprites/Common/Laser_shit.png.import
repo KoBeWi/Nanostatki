@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Floor.png-89c8f493d644a7c01cdef84f60eafb43.stex"
+path="res://.import/Laser_shit.png-5ddd8c0ed8399c39ec68820e1f4e2e12.stex"
 
 [deps]
 
-source_file="res://Sprites/Arena/Arena3/Floor.png"
-source_md5="1a76c311256fad9d8c8eeb779edb6f4f"
+source_file="res://Sprites/Common/Laser_shit.png"
+source_md5="f9ed361905fd2f02817760d2757ed0c7"
 
-dest_files=[ "res://.import/Floor.png-89c8f493d644a7c01cdef84f60eafb43.stex" ]
-dest_md5="3328d89cb099850cddc78ea1e1df74f8"
+dest_files=[ "res://.import/Laser_shit.png-5ddd8c0ed8399c39ec68820e1f4e2e12.stex" ]
+dest_md5="a08da1c03b018bc2201058a9d1e1e4b7"
 
 [params]
 
