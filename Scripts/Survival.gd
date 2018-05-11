@@ -1,6 +1,7 @@
 extends Node2D
 
 const CAMERA_OFFSET = 128
+var PARTICLE_DISTANCE = 2048
 
 onready var death = $WallOfDeath
 onready var camera = $"/root/Game/Camera"
@@ -49,13 +50,14 @@ func _physics_process(delta):
 			
 			if distance[player.team] > maxd: maxd = distance[player.team]
 	
-	if maxd > prev_maxd and int(maxd) % 512 < int(prev_maxd) % 512:
+	if maxd > prev_maxd and int(maxd) % PARTICLE_DISTANCE < int(prev_maxd) % PARTICLE_DISTANCE:
 		spawn_obstacles(int(maxd))
+		PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 50 + randi() % 50, 512)
 	
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
 	
-	death.position.x += (OS.get_ticks_msec() - start_time) / 3000 + 1
+	death.position.x += min((OS.get_ticks_msec() - start_time) / 3000 + 1, 16)
 	camera.limit_left = death.position.x
 	
 	if get_parent().finished:
@@ -93,7 +95,7 @@ func obstacle_hit(body, team):
 				trigger_dead()
 			players[team] = null
 		else:
-			Com.play_sample(body, "Damage"+str(1+randi()%4))
+			Com.play_sample(body, "Damage"+str(1+randi()%4), false)
 			var fx = damage_fx.instance()
 			fx.emitting = true
 			add_child(fx)
@@ -103,13 +105,22 @@ func obstacle_hit(body, team):
 func spawn_obstacles(distance):
 	distance += 2048
 	
-	var x = int(distance) / 512 * 512
+	var x = int(distance) / PARTICLE_DISTANCE * PARTICLE_DISTANCE
+	var mover = preload("res://Nodes/ParticleMover.tscn").instance()
+	mover.position = Vector2(x, 0)
+	mover.phase = randf() * 10
+	mover.speed = x / 10000.0
+	var particle = (proton if randi()%2 == 0 else electron).instance()
+	mover.add_child(particle)
+	$Obstacles.add_child(mover)
+	
+	return
 	var y = -976 + x/512%2 * 256
 	
-	for i in range(4):
-		var particle = (proton if randi()%2 == 0 else electron).instance()
-		particle.position = Vector2(x, y + i * 568)
-		$Obstacles.add_child(particle)
+#	for i in range(4):
+#		var particle = (proton if randi()%2 == 0 else electron).instance()
+#		particle.position = Vector2(x, y + i * 568)
+#		$Obstacles.add_child(particle)
 
 func process_camera(camera, players):
 	var cam_pos = Vector2()
