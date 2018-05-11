@@ -15,9 +15,10 @@ func _ready():
 	$Shape.shape = RectangleShape2D.new()
 	$Shape.shape.extents.x = width/2
 	$Shape.shape.extents.y = height/2
-	$Sprite.region_rect.size.x = 128
-	$Sprite.scale.x = width/128.0
-	$Sprite.region_rect.size.y = height
+#	$Sprite.region_rect.size.x = 128
+	$Sprite.scale.x = height/434.0
+	$Sprite.scale.y = width/222.0
+#	$Sprite.region_rect.size.y = height
 
 func _physics_process(delta):
 	for player in players_in:
@@ -32,14 +33,16 @@ func set_width(neww):
 	width = neww
 	if has_node("Shape"):
 		$Shape.shape.extents.x = neww/2
+		$Sprite.scale.y = width/222.0
 #		$Sprite.region_rect.size.x = neww
-		$Sprite.scale.x = neww/128.0
+#		$Sprite.scale.x = neww/128.0
 
 func set_height(newh):
 	height = newh
 	if has_node("Shape"):
 		$Shape.shape.extents.y = newh/2
-		$Sprite.region_rect.size.y = newh
+		$Sprite.scale.x = height/434.0
+#		$Sprite.region_rect.size.y = newh
 
 func set_elevation(newe):
 	elevation = newe
