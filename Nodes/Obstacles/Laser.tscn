@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 490.852, 8 )
+extents = Vector2( 250.882, 8 )
 
 [sub_resource type="Animation" id=2]
 
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Laser" type="Sprite"]
+[node name="Laser" type="Sprite" index="0"]
 
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -55,13 +55,14 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 32, 0 )
 texture = ExtResource( 3 )
 hframes = 2
 frame = 1
 region_enabled = true
-region_rect = Rect2( 136438, 0, 64, 8 )
+region_rect = Rect2( 155788, 0, 64, 8 )
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
