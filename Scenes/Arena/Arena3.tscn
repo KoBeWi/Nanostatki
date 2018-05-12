@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Arena/Arena3/Floor.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Arena/Arena3/Border.png" type="Texture" id=4]
+[ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=5]
 
-[node name="Arena" type="Node2D"]
+[node name="Arena" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
@@ -63,27 +66,7 @@ position = Vector2( -89.4917, 1939.81 )
 build_mode = 0
 polygon = PoolVector2Array( 2085.51, -1597.5, 1593.18, -742.995, 1381.64, -387.281, 1313.62, -259.405, 1267.37, -207.711, 1203.43, -169.621, 805.492, -172.806, 735.492, -172.806, 661.492, -183.806, 611.492, -226.806, 582.492, -266.806, 439.492, -555.806, 327.492, -794.806, 283.492, -852.806, 248.492, -876.806, 192.492, -891.806, 116.492, -894.806, 45.4916, -893.806, -13.5084, -889.806, -60.5083, -866.806, -114.508, -816.806, -414.707, -239.77, -484.854, -187.994, -582.121, -183.709, -1047.89, -183.709, -1132.3, -244.002, -1912.57, -1637.85, -1923.45, -1692.26, -1912.57, -1748.04, -2037.72, -1715.39, -1217.58, 142.484, 1619.8, 190.252, 2365.43, -1674.85, 2061.02, -1782.8, 2096.22, -1725.04, 2108.41, -1660.99 )
 
-[node name="Inner1" type="StaticBody2D" parent="Arena" index="5"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner2" type="StaticBody2D" parent="Arena" index="6"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner3" type="StaticBody2D" parent="Arena" index="7"]
+[node name="Inner3" type="StaticBody2D" parent="Arena" index="5"]
 
 input_pickable = false
 collision_layer = 1
@@ -126,6 +109,7 @@ position = Vector2( -575.509, 2.07639 )
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -179,5 +163,7 @@ position = Vector2( 352.227, 454.502 )
 position = Vector2( 450.76, -297.503 )
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
+
+[node name="ArenaUI" parent="." index="4" instance=ExtResource( 5 )]
 
 
