@@ -19,6 +19,8 @@ editor/display_folded = true
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
+FIG_COUNT = 50
+
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
 
 texture = ExtResource( 3 )
@@ -252,11 +254,9 @@ position = Vector2( 699.002, 10.4372 )
 [node name="Electrofield2" parent="Obstacles" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 1300.4, -5.7233 )
-direction = 2
 
 [node name="Electrofield3" parent="Obstacles" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( -669.095, 9.45584 )
-direction = 2
 
 

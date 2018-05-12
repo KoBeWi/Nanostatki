@@ -1,18 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Arena/Arena3/Floor.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Arena/Arena3/Border.png" type="Texture" id=4]
-[ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=5]
 
 [node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
-
-editor/display_folded = true
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
@@ -129,7 +126,6 @@ position = Vector2( -575.509, 2.07639 )
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -183,7 +179,5 @@ position = Vector2( 352.227, 454.502 )
 position = Vector2( 450.76, -297.503 )
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
-
-[node name="ArenaUI" parent="." index="4" instance=ExtResource( 5 )]
 
 

@@ -17,6 +17,8 @@ script = ExtResource( 1 )
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
+FIG_COUNT = 50
+
 [node name="Floor" type="Sprite" parent="Arena" index="1"]
 
 position = Vector2( 8.42975, -3.9657 )
@@ -45,10 +47,10 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="Arena/UpperBoundary" index="0"]
 
-position = Vector2( -10.394, 298.937 )
+position = Vector2( -1309.21, -137.985 )
 scale = Vector2( 1.62756, 1.84529 )
 build_mode = 0
-polygon = PoolVector2Array( -1312.69, -145.622, -1304.71, -520.714, -639.762, -521.684, -570.794, -671.693, 5.05115, -882.867, 577.875, -668.208, 648.145, -520.063, 1338.85, -518.551, 1337.88, -131.922, 1704.07, -1173.28, -1719.73, -815.34 )
+polygon = PoolVector2Array( 360.385, -794.741, 668.426, -854.155, 733.101, -860.76, 799.486, -849.74, 863.385, -819.934, 982.582, -764.659, 1120.82, -700.713, 1494.39, -525.673, 1742, -410.245, 1787.12, -360.59, 1790.47, -328.152, 1783.78, -250.745, 1781.47, -115.049, 1771.24, 23.3483, 1771.24, 169.769, 1759.5, 248.43, 1763.28, 361.775, 1748.16, 515.124, 1934.63, 210.648, 2471.07, -663.19, 604.888, -1059.96, -536.092, -1014.64, -351.03, -164.949, -321.064, 154.212, -160.827, 450.77, -169.203, 311.636, -171.167, 176.444, -166.426, -20.2894, -161.878, -117.569, -163.015, -191.782, -160.741, -306.111, -154.321, -362.517, -127.032, -394.609, 66.2656, -563.094, 295.115, -759.098, 324.534, -779.724 )
 
 [node name="LowerBoundary" type="StaticBody2D" parent="Arena" index="4"]
 
@@ -62,10 +64,10 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="Arena/LowerBoundary" index="0"]
 
-position = Vector2( -9.42261, 146.169 )
+position = Vector2( 571.128, 330.959 )
 scale = Vector2( 1.16789, 1.32844 )
 build_mode = 0
-polygon = PoolVector2Array( -1828.9, -136.749, -1823.98, 296.506, -943.778, 299.121, -801.704, 592.582, -1.13696, 883.002, 798.376, 591.203, 938.449, 300.448, 1860.13, 294.202, 1859.54, -111.558, 2631.58, 1279.17, -2275.95, 1279.17 )
+polygon = PoolVector2Array( 450.324, 801.03, 645.832, 602.656, 784.928, 455.234, 823.566, 387.297, 831.293, 315.284, 1095.7, 275.348, 2631.58, 1279.17, -2275.95, 1279.17, -1835.9, 234.346, -1822.83, 346.756, -1795.59, 394.645, -1748.9, 439.113, -1653.58, 478.451, -1414.29, 601.594, -962.944, 820.515, -634.164, 981.286, -536.892, 1029.17, -470.747, 1047.99, -311.221, 1042.86, -112.786, 1034.31, 13.6677, 1027.46, 181.404, 1016.39, 221.588, 1004.16, 288.818, 966.116 )
 
 [node name="Inner1" type="StaticBody2D" parent="Arena" index="5"]
 
@@ -79,10 +81,31 @@ bounce = 0.0
 
 [node name="Shape" type="CollisionPolygon2D" parent="Arena/Inner1" index="0"]
 
-position = Vector2( -6.84566, 15.3958 )
+position = Vector2( -228.01, 268.296 )
 scale = Vector2( 1.49506, 1.49506 )
 build_mode = 0
-polygon = PoolVector2Array( -548.467, 133.109, -282.68, 130.938, -234.005, 237.266, 8.14343, 336.779, 254.273, 233.285, 294.742, 132.445, 570.725, 130.455, 571.388, -180.026, 281.473, -182.017, 251.619, -254.993, 6.8166, -353.18, -240.577, -251.419, -269.622, -181.52, -549.586, -178.866 )
+polygon = PoolVector2Array( -316.197, 115.763, -377.236, 179.058, -375.898, 307.48, -256.171, 375.705, -187.947, 372.36, -135.775, 312.831, -129.637, 238.647, -128.417, 177.051, -262.575, 104.591 )
+
+[node name="Shape2" type="CollisionPolygon2D" parent="Arena/Inner1" index="1"]
+
+position = Vector2( -225.221, -989.766 )
+scale = Vector2( 1.49506, 1.49506 )
+build_mode = 0
+polygon = PoolVector2Array( -316.197, 115.763, -377.236, 179.058, -378.883, 307.724, -256.171, 375.705, -187.947, 372.36, -135.775, 312.831, -129.637, 238.647, -128.417, 177.051, -262.575, 104.591 )
+
+[node name="Shape3" type="CollisionPolygon2D" parent="Arena/Inner1" index="2"]
+
+position = Vector2( 1000.6, -991.102 )
+scale = Vector2( 1.49506, 1.49506 )
+build_mode = 0
+polygon = PoolVector2Array( -316.197, 115.763, -377.236, 179.058, -378.883, 307.724, -256.171, 375.705, -187.947, 372.36, -135.775, 312.831, -129.637, 238.647, -128.417, 177.051, -262.575, 104.591 )
+
+[node name="Shape4" type="CollisionPolygon2D" parent="Arena/Inner1" index="3"]
+
+position = Vector2( 1004.1, 267.481 )
+scale = Vector2( 1.49506, 1.49506 )
+build_mode = 0
+polygon = PoolVector2Array( -316.197, 115.763, -377.236, 179.058, -378.883, 307.724, -256.171, 375.705, -187.947, 372.36, -135.775, 312.831, -129.637, 238.647, -128.417, 177.051, -262.575, 104.591 )
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
@@ -184,21 +207,21 @@ position = Vector2( 691.281, 321.396 )
 [node name="DarkMatter" parent="Obstacles" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -807.656, 306.217 )
-rotation = 5.75791
+rotation = 828.061
 
 [node name="DarkMatter2" parent="Obstacles" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 277.65, 943.739 )
-rotation = 1.46096
+rotation = 823.76
 
 [node name="DarkMatter3" parent="Obstacles" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 285.24, -297.153 )
-rotation = 4.34449
+rotation = 826.647
 
 [node name="DarkMatter4" parent="Obstacles" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 1378.14, 283.448 )
-rotation = 5.4861
+rotation = 827.789
 
 

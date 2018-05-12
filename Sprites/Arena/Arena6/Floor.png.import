@@ -7,10 +7,10 @@ path="res://.import/Floor.png-24e2bcb7e094d89c257f7496b3485d3c.stex"
 [deps]
 
 source_file="res://Sprites/Arena/Arena6/Floor.png"
-source_md5="b1b2ba03c978741dee4ada2c47c3389a"
+source_md5="884018915501ab891921d47618034e13"
 
 dest_files=[ "res://.import/Floor.png-24e2bcb7e094d89c257f7496b3485d3c.stex" ]
-dest_md5="6acee39b6262e7a2e01ee5c4ca58dce4"
+dest_md5="9db61c643d3673ebe5d6ad0fba9aa372"
 
 [params]
 
