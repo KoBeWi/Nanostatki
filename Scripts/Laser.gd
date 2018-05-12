@@ -4,11 +4,12 @@ extends Sprite
 var last_position
 
 func _ready():
+	$Effector/Shape.shape = RectangleShape2D.new()
 	move_end()
 	last_position = $End.position
 
 func _process(delta):
-	$Sprite.region_rect.position.x += 1
+#	$Sprite.region_rect.position.x += 1
 	
 	if has_node("End") and $End.position != last_position:
 		move_end()
@@ -23,7 +24,8 @@ func _on_enter(body):
 func move_end():
 	$Sprite.position = $End.position/2
 	$Sprite.rotation = $End.position.angle()
-	$Sprite.region_rect.size.x = $End.position.length()
+#	$Sprite.region_rect.size.x = $End.position.length()
+	$Sprite.scale.x = $End.position.length() / 1280
 	
 	$Effector.position = $End.position/2
 	$Effector.rotation = $End.position.angle()

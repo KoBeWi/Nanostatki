@@ -59,6 +59,8 @@ __meta__ = {
 
 [node name="Background" parent="Track" index="0" instance=ExtResource( 2 )]
 
+FIG_COUNT = 50
+
 [node name="Shade" type="Sprite" parent="Track" index="1"]
 
 z_index = 5

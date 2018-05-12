@@ -52,7 +52,7 @@ func load_nodenames():
 
 func load_videos():
 	if !resources.has("videos"):
-		resources.videos = [load("res://Resources/Video/Video1.ogm"), null, load("res://Resources/Video/Video3.webm"), null, null]
+		resources.videos = [null, null, null, null, null]
 	return resources.videos
 
 func load_tracks():
