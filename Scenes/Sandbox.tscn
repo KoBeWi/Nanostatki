@@ -122,7 +122,7 @@ shader_param/sizey = 80.0
 shader_param/outline_color = null
 _sections_unfolded = [ "shader_param" ]
 
-[node name="Sandbox" type="Sprite"]
+[node name="Sandbox" type="Sprite" index="0"]
 
 position = Vector2( 0.902527, 0 )
 
@@ -180,27 +180,38 @@ orientation = 1
 
 [node name="Laser" parent="." index="4" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 position = Vector2( 163.346, -122.261 )
 
 [node name="End" type="Sprite" parent="Laser" index="1"]
 
-position = Vector2( 215.851, -97.3933 )
+position = Vector2( 217.7, -91.2503 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="DarkMatter" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 762.475, 49.6752 )
-rotation = 4.00932
+rotation = 107.401
 
 [node name="Laser2" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 179.122, -302.972 )
 
+[node name="End" type="Sprite" parent="Laser2" index="2"]
+
+position = Vector2( 125.924, 82.4607 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Laser3" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 143.958, -417.066 )
+
+[node name="End" type="Sprite" parent="Laser3" index="2"]
+
+position = Vector2( 317.088, 115.555 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Label" type="Label" parent="." index="8"]
 
