@@ -118,7 +118,7 @@ func obstacle_hit(body, team):
 				trigger_dead()
 			players[team] = null
 		else:
-			Com.play_sample(body, "Damage"+str(1+randi()%4))
+			Com.play_sample(players[team], "Damage"+str(1+randi()%4))
 			var fx = damage_fx.instance()
 			fx.emitting = true
 			add_child(fx)

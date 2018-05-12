@@ -14,7 +14,7 @@ func _physics_process(delta):
 	position -= Vector2(cos(angle), -sin(angle)) * speed
 	rotation += rotating
 	
-	if camera and global_position.distance_to(camera.global_position) > 2048 * camera.zoom.x or !camera and position.length() > 2048:
+	if camera and camera.get_ref() and global_position.distance_to(camera.get_ref().global_position) > 2048 * camera.zoom.x or (!camera or !camera.get_ref()) and position.length() > 2048:
 		queue_free()
 
 func set_colors(upper_color, lower_color):

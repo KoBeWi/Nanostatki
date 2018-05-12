@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Arena/Arena5/Floor.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Arena/Arena5/Border.png" type="Texture" id=4]
 [ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/Obstacles/Proton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=7]
 
 [node name="Arena" type="Node2D"]
 
@@ -44,7 +46,7 @@ bounce = 0.0
 position = Vector2( 12.2191, -981.909 )
 scale = Vector2( 1.48898, 1.66237 )
 build_mode = 0
-polygon = PoolVector2Array( -1575.21, 1230.52, -904.005, 1581.34, -904.005, 1190.65, -908.067, 1170.25, -915.556, 1157.98, -929.861, 1143.6, -1323.81, 934.019, -1330.5, 920.45, -1327.76, 908.19, -1314.59, 895.05, -1291.4, 879.416, -1233.6, 849.713, -937.129, 697.235, -921.977, 684.749, -909.854, 672.805, -904.399, 654.346, -903.454, 430.059, -903.454, 255.024, -898.507, 236.56, -879.301, 218.063, -843.262, 192.986, -735.059, 137.436, -537.858, 38.7884, -485.023, 6.79462, -467.907, -13.2015, -466.263, -33.6953, -465.675, -427.121, -453.478, -448.211, -434.673, -456.031, -413.853, -452.422, -15.5598, -251.268, 19.1087, -250.938, 326.806, -412.848, 409.594, -452.72, 433.89, -455.44, 453.319, -444.7, 461.785, -425.145, 462.235, -23.832, 472.258, -5.11279, 484.164, 10.8841, 569.742, 56.2086, 636.716, 90.8685, 760.246, 153.523, 886.618, 222.409, 899.532, 241.163, 901.773, 277.237, 903.237, 309.832, 900.651, 659.022, 918.37, 685.86, 1031.75, 749.332, 1307.1, 889.877, 1235.89, 325.748, 1442.6, 79.2342, 1692.57, 102.63, 1574.25, -144.658, 1803.05, -1021.17, -1104.3, -760.257 )
+polygon = PoolVector2Array( -1575.21, 1230.52, -904.005, 1581.34, -904.005, 1190.65, -908.067, 1170.25, -915.556, 1157.98, -929.861, 1143.6, -1323.81, 934.019, -1330.5, 920.45, -1327.76, 908.19, -1314.59, 895.05, -1291.4, 879.416, -1233.6, 849.713, -937.129, 697.235, -921.977, 684.749, -909.854, 672.805, -904.399, 654.346, -903.454, 430.059, -903.454, 255.024, -898.507, 236.56, -879.301, 218.063, -843.262, 192.986, -735.059, 137.436, -537.858, 38.7884, -485.023, 6.79462, -467.907, -13.2015, -466.263, -33.6953, -465.675, -427.121, -453.478, -448.211, -434.673, -456.031, -413.853, -452.422, -15.5598, -251.268, 19.1087, -250.938, 326.806, -412.848, 409.594, -452.72, 433.89, -455.44, 453.319, -444.7, 461.785, -425.145, 462.235, -23.832, 472.258, -5.11279, 484.164, 10.8841, 569.742, 56.2086, 636.716, 90.8685, 760.246, 153.523, 886.618, 222.409, 899.532, 241.163, 901.773, 277.237, 903.237, 309.832, 900.651, 659.022, 918.37, 685.86, 1031.75, 749.332, 1307.1, 889.877, 1803.05, -1021.17, -1104.3, -760.257 )
 
 [node name="LowerBoundary" type="StaticBody2D" parent="Arena" index="4"]
 
@@ -61,64 +63,25 @@ bounce = 0.0
 position = Vector2( 1400.83, 1479.16 )
 scale = Vector2( 1.45748, 1.53429 )
 build_mode = 0
-polygon = PoolVector2Array( -2000.69, 204.945, -1877.71, 104.12, -1870.13, 128.126, -1847.38, 144.13, -1821.27, 138.529, -1569.4, 1.6947, -1415.25, -80.7256, -1385.76, -80.7256, -973.845, 144.13, -942.678, 146.53, -521.493, -80.7256, -489.483, -80.7256, -79.2498, 143.33, -59.033, 144.93, -32.7465, 108.53, -31.4518, -294.368, -29.7559, -336.072, -3.90063, -365.545, 387.807, -583.047, 403.577, -609.188, 392.201, -632.767, 351.867, -658.31, 637.308, -720.203, 983.792, 980.133, -1068.12, 887.629 )
+polygon = PoolVector2Array( -2000.69, 204.945, -1877.71, 104.12, -1870.13, 128.126, -1847.38, 144.13, -1821.27, 138.529, -1569.4, 1.6947, -1415.25, -80.7256, -1385.76, -80.7256, -973.845, 144.13, -942.678, 146.53, -521.493, -80.7256, -489.483, -80.7256, -79.2498, 143.33, -59.033, 144.93, -32.7465, 108.53, -31.4518, -294.368, -29.7559, -336.072, -3.90063, -365.545, 387.807, -583.047, 403.577, -609.188, 392.201, -632.767, 351.867, -658.31, 637.308, -720.203, 983.792, 980.133 )
 
-[node name="Shape2" type="CollisionPolygon2D" parent="Arena/LowerBoundary" index="1"]
+[node name="Inner1" type="StaticBody2D" parent="Arena" index="5"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Shape2" type="CollisionPolygon2D" parent="Arena/Inner1" index="0"]
 
 position = Vector2( 585.783, -137.933 )
 scale = Vector2( 0.486535, 0.509851 )
 build_mode = 0
 polygon = PoolVector2Array( -1570.86, 270.205, -1558.77, 72.6816, -1383.51, -32.568, -1379.63, -145.405, -1372.01, -235.283, -1184.08, -139.259, -991.769, -231.605, -987.664, -32.5679, -895.501, 23.6613, -801.902, 78.4499, -803.757, 266.083, -790.545, 287.283, -644.186, 366.747, -626.522, 390.828, -805.685, 494.373, -803.162, 660.527, -815.779, 696.647, -999.989, 602.734, -1181.68, 696.647, -1365.89, 607.55, -1557.26, 695.528, -1563.31, 495.121, -1749.14, 384.105 )
-
-[node name="Inner1" type="StaticBody2D" parent="Arena" index="5"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner2" type="StaticBody2D" parent="Arena" index="6"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner3" type="StaticBody2D" parent="Arena" index="7"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner4" type="StaticBody2D" parent="Arena" index="8"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Inner5" type="StaticBody2D" parent="Arena" index="9"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
@@ -126,38 +89,37 @@ editor/display_folded = true
 
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
-position = Vector2( -1.17828, -567.687 )
+position = Vector2( -388.353, -732.882 )
 rotation = 1.56731
 _sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
-position = Vector2( 567.241, 2.0639 )
+position = Vector2( 484.644, -715.5 )
 rotation = -3.1015
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
-position = Vector2( 9.75623, 600.902 )
+position = Vector2( 536.314, 988.077 )
 rotation = -1.50713
 
 [node name="4" type="Position2D" parent="StartingPositions" index="3"]
 
-position = Vector2( -582.333, 2.37808 )
+position = Vector2( -587.495, 936.76 )
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Spawner1" type="Position2D" parent="PulseSpawners" index="0"]
 
-position = Vector2( 0.23291, -1104.83 )
+position = Vector2( 15.7197, -1208.08 )
 
 [node name="Spawner2" type="Position2D" parent="PulseSpawners" index="1"]
 
-position = Vector2( -769.711, -772.673 )
+position = Vector2( -903.931, -364.849 )
 
 [node name="Spawner3" type="Position2D" parent="PulseSpawners" index="2"]
 
@@ -165,23 +127,23 @@ position = Vector2( -1051.06, -1.39252 )
 
 [node name="Spawner4" type="Position2D" parent="PulseSpawners" index="3"]
 
-position = Vector2( -778.667, 820.78 )
+position = Vector2( -1031.62, 480.066 )
 
 [node name="Spawner5" type="Position2D" parent="PulseSpawners" index="4"]
 
-position = Vector2( -5.94879, 1095.87 )
+position = Vector2( -0.786682, 1240.42 )
 
 [node name="Spawner6" type="Position2D" parent="PulseSpawners" index="5"]
 
-position = Vector2( 785.315, 802.235 )
+position = Vector2( 874.047, 561.391 )
 
 [node name="Spawner7" type="Position2D" parent="PulseSpawners" index="6"]
 
-position = Vector2( 1044.95, 29.5161 )
+position = Vector2( 1076.64, -312.735 )
 
 [node name="Spawner8" type="Position2D" parent="PulseSpawners" index="7"]
 
-position = Vector2( 769.861, -780.293 )
+position = Vector2( 617.749, -780.293 )
 
 [node name="Spawner9" type="Position2D" parent="PulseSpawners" index="8"]
 
@@ -189,18 +151,64 @@ position = Vector2( 342.725, -328.129 )
 
 [node name="Spawner10" type="Position2D" parent="PulseSpawners" index="9"]
 
-position = Vector2( -326.427, -345.77 )
+position = Vector2( -503.89, -276.052 )
 
 [node name="Spawner11" type="Position2D" parent="PulseSpawners" index="10"]
 
-position = Vector2( -318.058, 371.136 )
+position = Vector2( -362.424, 510.572 )
 
 [node name="Spawner12" type="Position2D" parent="PulseSpawners" index="11"]
 
-position = Vector2( 340.268, 365.556 )
+position = Vector2( 397.31, 485.978 )
 
 [node name="ArenaUI" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="Obstacles" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Proton" parent="Obstacles" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -1153.85, 831.872 )
+
+[node name="DarkMatter" parent="Obstacles" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( -1520.38, 563.431 )
+rotation = 64.0279
+
+[node name="DarkMatter2" parent="Obstacles" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( -1081.58, 1286.16 )
+rotation = 62.8823
+scale = Vector2( 1, 1 )
+
+[node name="DarkMatter3" parent="Obstacles" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 1096.92, 1255.18 )
+rotation = 67.1822
+
+[node name="DarkMatter4" parent="Obstacles" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 1406.66, 584.08 )
+rotation = 65.8664
+scale = Vector2( 1, 1 )
+
+[node name="Proton2" parent="Obstacles" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1112.41, 852.521 )
+
+[node name="Proton3" parent="Obstacles" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -12.9792, -938.807 )
+
+[node name="DarkMatter5" parent="Obstacles" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -425.966, -1227.9 )
+rotation = 61.9741
+
+[node name="DarkMatter6" parent="Obstacles" index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 358.708, -1279.52 )
+rotation = 66.9737
 
 

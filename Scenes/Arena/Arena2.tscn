@@ -7,7 +7,7 @@
 [ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=6]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -238,31 +238,31 @@ position = Vector2( -17.9857, -375.304 )
 [node name="DarkMatter" parent="Obstacles" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( -0.458374, 891.763 )
-rotation = 260.324
+rotation = 261.301
 
 [node name="DarkMatter2" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -398.472, -562.846 )
-rotation = 263.827
+rotation = 264.804
 
 [node name="DarkMatter3" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 274.521, 350.64 )
-rotation = 265.039
+rotation = 266.016
 
 [node name="DarkMatter4" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( -841.994, -89.2036 )
-rotation = 261.178
+rotation = 262.155
 
 [node name="DarkMatter5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -558.414, 500.438 )
-rotation = 264.152
+rotation = 265.129
 
 [node name="DarkMatter6" parent="Obstacles" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 533.89, -361.787 )
-rotation = 261.099
+rotation = 262.076
 
 

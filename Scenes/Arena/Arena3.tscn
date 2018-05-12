@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Nodes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Arena/Arena3/Floor.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Arena/Arena3/Border.png" type="Texture" id=4]
-[ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/Obstacles/Electrofield.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/Obstacles/Electron.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nodes/Obstacles/Proton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/Obstacles/DarkMatter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Nodes/ArenaUI.tscn" type="PackedScene" id=9]
 
-[node name="Arena" type="Node2D" index="0"]
+[node name="Arena" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Arena" type="Node2D" parent="." index="0"]
-
-editor/display_folded = true
 
 [node name="Background" parent="Arena" index="0" instance=ExtResource( 2 )]
 
@@ -85,27 +87,25 @@ polygon = PoolVector2Array( 570.779, -137.102, 602.242, -185.357, 780.847, -182.
 
 [node name="StartingPositions" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="1" type="Position2D" parent="StartingPositions" index="0"]
 
-position = Vector2( -4.42239, -674.087 )
+position = Vector2( 357.185, -703.52 )
 rotation = 1.56665
 _sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Position2D" parent="StartingPositions" index="1"]
 
-position = Vector2( 566.148, 2.875 )
+position = Vector2( 755.361, 28.1035 )
 rotation = -3.1015
 
 [node name="3" type="Position2D" parent="StartingPositions" index="2"]
 
-position = Vector2( 2.30774, 699.092 )
+position = Vector2( -325.662, 581.359 )
 rotation = -1.50713
 
 [node name="4" type="Position2D" parent="StartingPositions" index="3"]
 
-position = Vector2( -575.509, 2.07639 )
+position = Vector2( -659.604, 60.9427 )
 
 [node name="PulseSpawners" type="Node2D" parent="." index="2"]
 
@@ -116,54 +116,130 @@ __meta__ = {
 
 [node name="Spawner1" type="Position2D" parent="PulseSpawners" index="0"]
 
-position = Vector2( 957.216, -502.09 )
+position = Vector2( 826.869, -994.045 )
 
 [node name="Spawner2" type="Position2D" parent="PulseSpawners" index="1"]
 
-position = Vector2( 1571.86, 1.3573 )
+position = Vector2( 1285.94, -124.785 )
 
 [node name="Spawner3" type="Position2D" parent="PulseSpawners" index="2"]
 
-position = Vector2( 951.105, 567.664 )
+position = Vector2( 1653.3, 576.073 )
 
 [node name="Spawner4" type="Position2D" parent="PulseSpawners" index="3"]
 
-position = Vector2( 4.49829, 1114.68 )
+position = Vector2( 551.115, 1350.15 )
 
 [node name="Spawner5" type="Position2D" parent="PulseSpawners" index="4"]
 
-position = Vector2( -955.578, 569.781 )
+position = Vector2( -568.741, 1318.23 )
 
 [node name="Spawner6" type="Position2D" parent="PulseSpawners" index="5"]
 
-position = Vector2( -1563.18, 5.64624 )
+position = Vector2( -1613.64, 539.649 )
 
 [node name="Spawner7" type="Position2D" parent="PulseSpawners" index="6"]
 
-position = Vector2( 2.10962, -1087.52 )
+position = Vector2( -1276.13, -95.2007 )
 
 [node name="Spawner8" type="Position2D" parent="PulseSpawners" index="7"]
 
-position = Vector2( -959.061, -502.894 )
+position = Vector2( -765.643, -923.368 )
 
 [node name="Spawner9" type="Position2D" parent="PulseSpawners" index="8"]
 
-position = Vector2( -404.805, -307.764 )
+position = Vector2( -421.624, -1556.57 )
 
 [node name="Spawner10" type="Position2D" parent="PulseSpawners" index="9"]
 
-position = Vector2( -350.969, 432.82 )
+position = Vector2( -1242.37, 1299 )
 
 [node name="Spawner11" type="Position2D" parent="PulseSpawners" index="10"]
 
-position = Vector2( 352.227, 454.502 )
+position = Vector2( 1214.2, 1240.79 )
 
 [node name="Spawner12" type="Position2D" parent="PulseSpawners" index="11"]
 
-position = Vector2( 450.76, -297.503 )
+position = Vector2( 333.027, -1567.34 )
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
 
-[node name="ArenaUI" parent="." index="4" instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="Electrofield" parent="Obstacles" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( -884.378, 1338.43 )
+width = 384
+height = 640
+
+[node name="Electrofield6" parent="Obstacles" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( -1434.62, 279.69 )
+rotation = 2.078
+width = 384
+height = 640
+
+[node name="Electrofield2" parent="Obstacles" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 892.874, 1310.62 )
+rotation = -0.170807
+width = 384
+height = 640
+
+[node name="Electrofield3" parent="Obstacles" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1449.23, 197.902 )
+rotation = -2.00928
+width = 384
+height = 640
+
+[node name="Electrofield4" parent="Obstacles" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 540.515, -1288.81 )
+rotation = -2.00928
+width = 384
+height = 640
+
+[node name="Electrofield5" parent="Obstacles" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -590.745, -1270.26 )
+rotation = -4.17181
+width = 384
+height = 640
+
+[node name="Electron" parent="Obstacles" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -163.182, 111.43 )
+rotation = 2.078
+mode = 1
+
+[node name="Proton" parent="Obstacles" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 160.401, 111.43 )
+rotation = 2.078
+mode = 1
+
+[node name="Proton2" parent="Obstacles" index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -4.18005, -178.679 )
+rotation = 2.078
+mode = 1
+
+[node name="DarkMatter" parent="Obstacles" index="9" instance=ExtResource( 8 )]
+
+position = Vector2( -645.768, -237.259 )
+rotation = 292.177
+
+[node name="DarkMatter2" parent="Obstacles" index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 709.449, -319.648 )
+rotation = 277.646
+
+[node name="DarkMatter3" parent="Obstacles" index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 0.731934, 881.415 )
+rotation = 270.997
+
+[node name="ArenaUI" parent="." index="4" instance=ExtResource( 9 )]
 
 

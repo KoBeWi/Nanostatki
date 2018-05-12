@@ -191,7 +191,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="DarkMatter" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 762.475, 49.6752 )
-rotation = 1253.44
+rotation = 1257.94
 
 [node name="Laser2" parent="." index="6" instance=ExtResource( 4 )]
 

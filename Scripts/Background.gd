@@ -3,7 +3,7 @@ extends ColorRect
 export var FIG_COUNT = 50
 
 const SWATCHES = [
-[Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
+#[Color("368fdc"), Color("1d1f65"), Color("3da4ff"), Color("1d2469")],
 [Color("ff4161"), Color("590d19"), Color("d92d49"), Color("771121")],
 [Color("1f0838"), Color("7421c7"), Color("1f0838"), Color("7421c7")],
 [Color("0e350c"), Color("25ac28"), Color("0e350c"), Color("25ac28")],
@@ -50,7 +50,7 @@ func create_figure(check_camera = true):
 	var fig = FIGURE.instance()
 	add_child(fig)
 	
-	if camera: fig.camera = camera.get_ref()
+	if camera: fig.camera = camera
 	fig.texture = figure
 	fig.set_colors(vec(swatches[2]), vec(swatches[3]))
 	
