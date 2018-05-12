@@ -1,9 +1,9 @@
 tool
-extends StaticBody2D
+extends RigidBody2D
 
-const FORCE = 25000
+var FORCE = 25000
 const FORCE_RANGE = 700
-const MAX_FORCE = 1000
+var MAX_FORCE = 1000
 
 onready var players = $"/root/Game/Players"
 

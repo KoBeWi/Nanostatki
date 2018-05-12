@@ -1,6 +1,12 @@
 extends Node2D
 
 const CAMERA_OFFSET = 128
+var PARTICLE_DISTANCE = 1024
+var tryb_spawnu = false
+var drogi_zmiany = [2048,1536]
+var droga_do_zmiany = 2048
+var nowa_jezdzaca = 512
+
 
 onready var death = $WallOfDeath
 onready var camera = $"/root/Game/Camera"
@@ -47,10 +53,29 @@ func _physics_process(delta):
 			distance[player.team] = player.position.x
 			distance_label.get_child(player.team).text = str(int(distance[player.team]))
 			
-			if distance[player.team] > maxd: maxd = distance[player.team]
+		if distance[player.team] > maxd: maxd = distance[player.team]
 	
-	if maxd > prev_maxd and int(maxd) % 512 < int(prev_maxd) % 512:
-		spawn_obstacles(int(maxd))
+	droga_do_zmiany -= maxd-prev_maxd
+	nowa_jezdzaca -= maxd-prev_maxd
+	if droga_do_zmiany <= 0:
+		if tryb_spawnu == false:
+			tryb_spawnu = true
+			droga_do_zmiany = drogi_zmiany[1]
+			drogi_zmiany[0]=1536+(randi()%1536)
+			nowa_jezdzaca = 256
+		else:
+			tryb_spawnu = false
+			droga_do_zmiany = drogi_zmiany[0]
+			drogi_zmiany[1]=1024+(randi()%1024)
+	if tryb_spawnu == false:
+		if maxd > prev_maxd and int(maxd) % 512 < int(prev_maxd) % 512:
+			spawn_obstacles_pole(int(maxd))
+	else:
+		if droga_do_zmiany + 256 < drogi_zmiany[1] and maxd > prev_maxd and nowa_jezdzaca <= 0:
+		# and int(maxd) % PARTICLE_DISTANCE < int(prev_maxd) % PARTICLE_DISTANCE:
+			spawn_obstacles_jezdzi(int(maxd))
+			PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 50 + randi() % 50, 512)
+			nowa_jezdzaca = 256 + (384+randi()%256)*100/sqrt(maxd)
 	
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
@@ -100,7 +125,7 @@ func obstacle_hit(body, team):
 			fx.position = players[team].position
 			get_tree().create_timer(1).connect("timeout", fx, "queue_free")
 
-func spawn_obstacles(distance):
+func spawn_obstacles_pole(distance):
 	distance += 2048
 	
 	var x = int(distance) / 512 * 512
@@ -110,6 +135,21 @@ func spawn_obstacles(distance):
 		var particle = (proton if randi()%2 == 0 else electron).instance()
 		particle.position = Vector2(x, y + i * 568)
 		$Obstacles.add_child(particle)
+		
+func spawn_obstacles_jezdzi(distance):
+	distance += 2048
+	
+	var x = int(distance)# / PARTICLE_DISTANCE * PARTICLE_DISTANCE
+	var mover = preload("res://Nodes/ParticleMover.tscn").instance()
+	mover.position = Vector2(x, 0)
+	mover.phase = randf() * 10
+	mover.speed = x / 10000.0
+	var particle = (proton if randi()%2 == 0 else electron).instance()
+	mover.add_child(particle)
+	$Obstacles.add_child(mover)
+	
+	return
+	var y = -976 + x/512%2 * 256
 
 func process_camera(camera, players):
 	var cam_pos = Vector2()

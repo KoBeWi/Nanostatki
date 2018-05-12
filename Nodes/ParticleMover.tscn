@@ -8,6 +8,10 @@ script/source = "extends Node2D
 var phase = 0
 var speed = 0.25
 
+func _ready():
+	get_child(0).FORCE *= 3
+	get_child(0).MAX_FORCE *= 3
+
 func _process(delta):
 	phase += delta * speed
 	get_child(0).position.y = sin(phase) * 1024"
