@@ -1,0 +1,20 @@
+dŸwiêk do³¹czenia/od³¹czenia --mo¿e byæ do wymiany
+dŸwiêk aktywnoœci --mo¿e byæ do wymiany
+mo¿e: tajne ruchy: EMP (trzymanie), magnetyzm (spam), turbo (skrêcanie w oba kierunki)
+
+dŸwiêk wygranej
+dodaæ filmiki
+porozk³adaæ przeszkody na mapach
+tutorial
+ekran podsumowania
+wy³¹czanie startu po wyjœciu
+
+#1. Ile jest miejsc w rankingu, dok³adnie jak w zgodzie z natur¹, miejsce x z y.
+#2. Wyœcig - gracze jechali w z³ym kierunku, napis ¿e jedziesz w z³ym kierunku, mo¿e z efektem czerwieni ekranu.
+#3. Arena punktowa - punkty które siê zbiera s¹ s³abo widoczne na jasnym tle.
+#4. Arena punktowa - zrobiæ efekt kto zebra³ punkt.
+#5. Wyœcig - czytelniejszy interfejs pokazuj¹cy który gracz jest kim.
+#6. Drag race - jakiœ problem z podzia³em ekranu.
+#7. Wyœcig - koniec gry, czarny ekran.
+#8. Wszystkie pady mog¹ sterowaæ w menu
+#9. Nieinsuicyjne u³o¿enie klawiszy jak kp2 kp5.
