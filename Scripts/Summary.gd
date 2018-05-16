@@ -36,7 +36,7 @@ func setup(_players, _places, _scores, scoreboard):
 			spot.get_node("Place").self_modulate = PLACE_COLORS[places[i]-1]
 			if places[i] < 4: spot.get_node("Place/Number").self_modulate = PLACE_COLORS[places[i]-1]
 			spot.get_node("Place/Number").text = str(places[i])
-			spot.get_node("Rank").text = "Miejsce w rankingu: " + str(spots[i]+1)
+			spot.get_node("Rank").text = "Miejsce w rankingu: " + str(spots[i]+1) + " z " + str(Com.score_count())
 			
 			match mode:
 				"Race":

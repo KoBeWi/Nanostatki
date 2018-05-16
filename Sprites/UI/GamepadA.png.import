@@ -7,10 +7,10 @@ path="res://.import/GamepadA.png-deea60be2786fb15134e79c8899ff60d.stex"
 [deps]
 
 source_file="res://Sprites/UI/GamepadA.png"
-source_md5="113acf5fd282a73f677b8bd164abe839"
+source_md5="f6f3e87897f1538821e76439ef6f6c28"
 
 dest_files=[ "res://.import/GamepadA.png-deea60be2786fb15134e79c8899ff60d.stex" ]
-dest_md5="2f1475bb6d7578999c823d274c28da3d"
+dest_md5="db0db9dc56183aa2b3343e32314731ff"
 
 [params]
 

@@ -7,10 +7,10 @@ path="res://.import/GamepadLB.png-2094de03b4171a60ab52741b0e1fee38.stex"
 [deps]
 
 source_file="res://Sprites/UI/GamepadLB.png"
-source_md5="9d8bfabe77555c9516897817dbec0d77"
+source_md5="57837ca2c586c33ee94c71ab4dda2580"
 
 dest_files=[ "res://.import/GamepadLB.png-2094de03b4171a60ab52741b0e1fee38.stex" ]
-dest_md5="af08d3eaabe72b9d071d75cae8064a02"
+dest_md5="3d5bb413264a4070823b2db8316f6374"
 
 [params]
 

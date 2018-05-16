@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KeyArrows.png-c7111c4fb9419a8248239d17786eaa7e.stex"
+path="res://.import/GamepadX.png-a2cd945c95332f85bcfabd491f67d24b.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/KeyArrows.png"
-source_md5="108ce8c3ec6785483d89864a01b346fd"
+source_file="res://Sprites/UI/GamepadX.png"
+source_md5="d5489de9857c3826c70c2680a8780bca"
 
-dest_files=[ "res://.import/KeyArrows.png-c7111c4fb9419a8248239d17786eaa7e.stex" ]
-dest_md5="1632054bfe1e6fb5b741fb250cf2ca2a"
+dest_files=[ "res://.import/GamepadX.png-a2cd945c95332f85bcfabd491f67d24b.stex" ]
+dest_md5="0fcd4a57e855fb180b5949dd506ae893"
 
 [params]
 
