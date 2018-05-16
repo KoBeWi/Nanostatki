@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GamepadA.png-deea60be2786fb15134e79c8899ff60d.stex"
+path="res://.import/GamepadX.png-a2cd945c95332f85bcfabd491f67d24b.stex"
 
 [deps]
 
-source_file="res://Sprites/UI/GamepadA.png"
-source_md5="f6f3e87897f1538821e76439ef6f6c28"
+source_file="res://Sprites/UI/GamepadX.png"
+source_md5="d5489de9857c3826c70c2680a8780bca"
 
-dest_files=[ "res://.import/GamepadA.png-deea60be2786fb15134e79c8899ff60d.stex" ]
-dest_md5="db0db9dc56183aa2b3343e32314731ff"
+dest_files=[ "res://.import/GamepadX.png-a2cd945c95332f85bcfabd491f67d24b.stex" ]
+dest_md5="0fcd4a57e855fb180b5949dd506ae893"
 
 [params]
 

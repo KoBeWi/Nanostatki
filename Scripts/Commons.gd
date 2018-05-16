@@ -102,6 +102,8 @@ func update_name(pos, name):
 func get_score(pos):
 	if scores.size() > pos: return scores[pos]
 
+func score_count(): return scores.size()
+
 func save_scoreboard():
 	var file = File.new()
 	file.open("user://" + scoreboard, file.WRITE)
