@@ -114,6 +114,7 @@ func obstacle_hit(body, team):
 				players[team].explode()
 				players[team].connect("exploded", self, "trigger_dead")
 			else:
+				players[team].queue_free()
 				players[team] = null
 				trigger_dead()
 			players[team] = null

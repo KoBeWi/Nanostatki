@@ -6,7 +6,6 @@ dŸwiêk wygranej
 dodaæ filmiki
 porozk³adaæ przeszkody na mapach
 tutorial
-ekran podsumowania
 wy³¹czanie startu po wyjœciu
 
 #1. Ile jest miejsc w rankingu, dok³adnie jak w zgodzie z natur¹, miejsce x z y.

@@ -7,10 +7,10 @@ path="res://.import/Border.png-7ddc2429173f8b3ba5aa59ddb2013770.stex"
 [deps]
 
 source_file="res://Sprites/Arena/Arena1/Border.png"
-source_md5="6e861955f89b6ff4b94ace82bbc0d441"
+source_md5="1cc9f1f3f0a862b2384a98f7618e4cd1"
 
 dest_files=[ "res://.import/Border.png-7ddc2429173f8b3ba5aa59ddb2013770.stex" ]
-dest_md5="72bd06fdfe41f3d6f65bc147076b3dfb"
+dest_md5="cf49a8e0119ce175587ac5e32b57a674"
 
 [params]
 

@@ -73,35 +73,35 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 32768, 10 )
 
-[node name="Survival" type="Node2D"]
+[node name="Survival" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="StartingPositions" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="1" type="Node2D" parent="StartingPositions" index="0"]
 
+position = Vector2( 0, -600 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="2" type="Node2D" parent="StartingPositions" index="1"]
 
-position = Vector2( 0, -384 )
+position = Vector2( 0, -200 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="3" type="Node2D" parent="StartingPositions" index="2"]
 
-position = Vector2( 0, 384 )
+position = Vector2( 0, 200 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="4" type="Node2D" parent="StartingPositions" index="3"]
 
-position = Vector2( 0, 768 )
+position = Vector2( 0, 600 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Distance" type="Label" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
