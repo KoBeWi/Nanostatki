@@ -14,6 +14,7 @@ var best_lap = [100000000, 100000000, 100000000, 100000000]
 var won = []
 var start_time = 0
 var places = [0, 0, 0, 0]
+var wrong_direction = [0, 0, 0, 0]
 
 onready var camera_track = $TrackPath/CameraTrack
 
@@ -57,6 +58,14 @@ func _process(delta):
 			
 			if follower.offset != start_offset: break
 		
+		if follower.offset < player.race_distance:
+			wrong_direction[player.team] += 100
+			
+			if wrong_direction[player.team] >= 1000:
+				wrong_direction[player.team] = 0
+				Com.play_sample(self, "WrongDirection")
+				player.add_child(preload("res://Nodes/Effects/WrongDirection.tscn").instance())
+		elif wrong_direction[player.team] > 0: wrong_direction[player.team] -= 1
 		player.race_distance = follower.offset
 		
 		if player.race_distance >= lap_length * (laps[player.team] + 1):

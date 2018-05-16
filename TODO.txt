@@ -6,7 +6,6 @@ dŸwiêk wygranej
 dodaæ filmiki
 porozk³adaæ przeszkody na mapach
 tutorial
-wy³¹czanie startu po wyjœciu
 
 #2. Wyœcig - gracze jechali w z³ym kierunku, napis ¿e jedziesz w z³ym kierunku, mo¿e z efektem czerwieni ekranu.
 #3. Arena punktowa - punkty które siê zbiera s¹ s³abo widoczne na jasnym tle.
