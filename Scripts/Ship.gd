@@ -82,7 +82,7 @@ func _physics_process(delta):
 	
 	if drag_race:
 		#if !paralyzed and velocity.y > -70: velocity.y -= 40
-		if (velocity.y < -10):
+		if (velocity.y < -5):
 			velocity.y += 5
 			if Com.easy_mode == true: velocity.y -=2
 		if Com.easy_mode == true:
