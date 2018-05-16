@@ -153,7 +153,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -2296,11 +2296,8 @@ player = 1
 
 [node name="Standard" type="Node2D" parent="Lobby/Players/2Active" index="1"]
 
-editor/display_folded = true
-
 [node name="Movement" type="Node2D" parent="Lobby/Players/2Active/Standard" index="0"]
 
-editor/display_folded = true
 position = Vector2( 2387.97, 1472.71 )
 
 [node name="U" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="0"]
@@ -2367,39 +2364,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="2"]
-
-position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 61 )
-
-[node name="Label" type="Label" parent="Lobby/Players/2Active/Standard/Movement/D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -18.0
-margin_top = -18.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
-custom_constants/shadow_as_outline = 1
-text = "S"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_constants" ]
-
-[node name="L" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/2Active/Standard/Movement" index="2"]
 
 position = Vector2( -51.4966, 27.1613 )
 texture = ExtResource( 61 )
@@ -2466,7 +2431,6 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="Gamepad" type="Node2D" parent="Lobby/Players/2Active" index="2"]
 
-editor/display_folded = true
 position = Vector2( 2386.73, 1450.28 )
 
 [node name="Forward" type="Sprite" parent="Lobby/Players/2Active/Gamepad" index="0"]
@@ -2565,7 +2529,6 @@ player = 2
 
 [node name="Movement" type="Node2D" parent="Lobby/Players/3Active/Standard" index="0"]
 
-editor/display_folded = true
 position = Vector2( 2618.97, 1472.71 )
 
 [node name="U" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="0"]
@@ -2632,39 +2595,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="2"]
-
-position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 61 )
-
-[node name="Label" type="Label" parent="Lobby/Players/3Active/Standard/Movement/D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -18.0
-margin_top = -18.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
-custom_constants/shadow_as_outline = 1
-text = "K"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_constants" ]
-
-[node name="L" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/3Active/Standard/Movement" index="2"]
 
 position = Vector2( -51.4966, 27.1613 )
 texture = ExtResource( 61 )
@@ -2780,7 +2711,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
-text = "5"
+text = "0"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -2828,11 +2759,8 @@ player = 3
 
 [node name="Standard" type="Node2D" parent="Lobby/Players/4Active" index="1"]
 
-editor/display_folded = true
-
 [node name="Movement" type="Node2D" parent="Lobby/Players/4Active/Standard" index="0"]
 
-editor/display_folded = true
 position = Vector2( 2835.61, 1472.71 )
 
 [node name="U" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="0"]
@@ -2899,39 +2827,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
-[node name="D" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="2"]
-
-position = Vector2( -2.20239, 27.1613 )
-texture = ExtResource( 61 )
-
-[node name="Label" type="Label" parent="Lobby/Players/4Active/Standard/Movement/D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -18.0
-margin_top = -18.0
-margin_right = 18.0
-margin_bottom = 18.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 40 )
-custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
-custom_constants/shadow_as_outline = 1
-text = "2"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_constants" ]
-
-[node name="L" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="3"]
+[node name="L" type="Sprite" parent="Lobby/Players/4Active/Standard/Movement" index="2"]
 
 position = Vector2( -51.4966, 27.1613 )
 texture = ExtResource( 61 )
@@ -2965,7 +2861,6 @@ _sections_unfolded = [ "custom_colors", "custom_constants" ]
 
 [node name="Action" type="Sprite" parent="Lobby/Players/4Active/Standard" index="1"]
 
-editor/display_folded = true
 position = Vector2( 2833.17, 1547.81 )
 texture = ExtResource( 61 )
 
@@ -2988,7 +2883,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 40 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.207843, 0.690196, 1 )
 custom_constants/shadow_as_outline = 1
-text = "5"
+text = "0"
 align = 1
 valign = 1
 percent_visible = 1.0

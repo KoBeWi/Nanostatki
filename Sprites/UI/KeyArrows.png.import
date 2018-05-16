@@ -7,10 +7,10 @@ path="res://.import/KeyArrows.png-c7111c4fb9419a8248239d17786eaa7e.stex"
 [deps]
 
 source_file="res://Sprites/UI/KeyArrows.png"
-source_md5="15314f59c64cfd047f0563a98a46b719"
+source_md5="108ce8c3ec6785483d89864a01b346fd"
 
 dest_files=[ "res://.import/KeyArrows.png-c7111c4fb9419a8248239d17786eaa7e.stex" ]
-dest_md5="01cef4febfabfbbcea4901cb1a14a2d1"
+dest_md5="1632054bfe1e6fb5b741fb250cf2ca2a"
 
 [params]
 
