@@ -15,6 +15,4 @@ wy³¹czanie startu po wyjœciu
 #4. Arena punktowa - zrobiæ efekt kto zebra³ punkt.
 #5. Wyœcig - czytelniejszy interfejs pokazuj¹cy który gracz jest kim.
 #6. Drag race - jakiœ problem z podzia³em ekranu.
-#7. Wyœcig - koniec gry, czarny ekran.
-#8. Wszystkie pady mog¹ sterowaæ w menu
 #9. Nieinsuicyjne u³o¿enie klawiszy jak kp2 kp5.

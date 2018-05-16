@@ -109,8 +109,12 @@ func process_camera(camera, players):
 		max_x = max(player.get_pos().x + get_parent().CAMERA_OFFSET, max_x)
 		cam_pos += player.get_pos()
 	
-	camera.position = cam_pos / pl_num
-	
 	var new_zoom = max(min(max(abs(max_x - min_x) / 680, abs(max_y - min_y) / 400), 8), 2)
+	if pl_num == 0:
+		camera.position = $"StartingPositions/1".position
+		new_zoom = 1
+	else:
+		camera.position = cam_pos / pl_num
+	
 	camera.zoom = Vector2(new_zoom, new_zoom)
 	return true

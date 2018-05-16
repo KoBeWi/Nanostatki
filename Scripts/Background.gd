@@ -26,7 +26,10 @@ func _ready():
 	swatches = SWATCHES[randi() % SWATCHES.size()]
 	set_colors(vec(swatches[0]), vec(swatches[1]))
 	
-	if $"/root".has_node("Game/Camera"): camera = weakref($"/root/Game/Camera")
+	if get_parent().name != "Summary" and $"/root".has_node("Game/Camera"): camera = $"/root/Game/Camera"
+	else:
+		camera = Camera2D.new()
+		get_parent().call_deferred("add_child", camera)
 
 func set_colors(upper_color, lower_color):
 	material.set_shader_param("upper_color", upper_color)
@@ -60,9 +63,9 @@ func create_figure(check_camera = true):
 	fig.position = Vector2(randi() % int(rect_size.x), randi() % int(rect_size.y))
 	var check = Vector2()
 	var check2 = Vector2(1 ,1)
-	if camera and camera.get_ref():
-		check = camera.get_ref().global_position
-		check2 = camera.get_ref().zoom
+	if camera:
+		check = camera.global_position
+		check2 = camera.zoom
 	if rect_size.x > 1024:
 		var i = 0
 		while check_camera and fig.global_position.distance_to(check) < 1536 * check2.x:
