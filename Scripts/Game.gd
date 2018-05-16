@@ -13,6 +13,7 @@ var music
 var finished
 var scoreboard
 
+var start_sample
 var pause = 3
 
 signal init_players
@@ -76,6 +77,7 @@ func _physics_process(delta):
 		camera.zoom = Vector2(new_zoom, new_zoom)
 	
 	if Input.is_key_pressed(KEY_ESCAPE) and !finished: ##zrobić, że trzeba chwilę
+		if start_sample.get_ref(): start_sample.get_ref().stop()
 		get_tree().change_scene_to(load("res://Scenes/MainMenu.tscn"))
 
 func restart_scene():

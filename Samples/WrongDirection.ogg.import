@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WrongDirection.ogg-fa0e98a8f08ceef7615c55c98cff0f81.oggstr"
+
+[deps]
+
+source_file="res://Samples/WrongDirection.ogg"
+source_md5="6608e1c4a30da9d9446a405db5fd9a2d"
+
+dest_files=[ "res://.import/WrongDirection.ogg-fa0e98a8f08ceef7615c55c98cff0f81.oggstr" ]
+dest_md5="38d3dc8e79ebb1b5a102255e902c68bf"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -38,7 +38,7 @@ func _input(event):
 		load_time = null
 		queue_free()
 		get_tree().paused = false
-		Com.play_sample(self, \"Countdown\", false)
+		game.start_sample = Com.play_sample(self, \"Countdown\", false)
 		game.emit_signal(\"round_enter\")"
 _sections_unfolded = [ "Resource" ]
 
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Loading" type="Node2D" index="0"]
+[node name="Loading" type="Node2D"]
 
 pause_mode = 2
 z_index = 4096
