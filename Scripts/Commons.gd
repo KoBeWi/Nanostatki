@@ -7,6 +7,7 @@ var SAMPLE2D = load("res://Nodes/SampleInstance.tscn")
 var SAMPLE = load("res://Nodes/IndependentSampleInstance.tscn")
 
 var mute_music
+var easy_mode = false
 
 var scoreboard
 var scores = []
