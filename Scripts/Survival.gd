@@ -72,7 +72,6 @@ func _physics_process(delta):
 			spawn_obstacles_pole(int(maxd))
 	else:
 		if droga_do_zmiany + 256 < drogi_zmiany[1] and maxd > prev_maxd and nowa_jezdzaca <= 0:
-		# and int(maxd) % PARTICLE_DISTANCE < int(prev_maxd) % PARTICLE_DISTANCE:
 			spawn_obstacles_jezdzi(int(maxd))
 			PARTICLE_DISTANCE = max(PARTICLE_DISTANCE - 50 + randi() % 50, 512)
 			nowa_jezdzaca = 256 + (384+randi()%256)*100/sqrt(maxd)
@@ -80,8 +79,12 @@ func _physics_process(delta):
 	for obstacle in $Obstacles.get_children():
 		if obstacle.position.x < death.position.x - 512: obstacle.queue_free()
 	
-	death.position.x += (OS.get_ticks_msec() - start_time) / 3000 + 1
+	if Com.easy_mode == false:
+		death.position.x += (OS.get_ticks_msec() - start_time) / 3000 + 1
+	else:
+		death.position.x += (OS.get_ticks_msec() - start_time) / 5000 + 1
 	camera.limit_left = death.position.x
+	print ((OS.get_ticks_msec() - start_time) / 3000 + 1)
 	
 	if get_parent().finished:
 		the_end.modulate.a += delta
@@ -102,6 +105,8 @@ func init_players(_players):
 func obstacle_hit(body, team):
 	if body.is_in_group("obstacles") and players[team]:
 		var damage = 1
+		if Com.easy_mode == true: damage = 0.5
+		
 		if body.name == "Death":
 			Com.play_sample(body, "Darkness", false)
 			damage = 8

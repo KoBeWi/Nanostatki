@@ -8,6 +8,7 @@ var proton = load("res://Nodes/Obstacles/Proton.tscn")
 
 var FAIL_TIME = 2
 
+
 var width = track.get_width()
 var tracks = [null, null, null, null]
 var players = 0
@@ -26,6 +27,8 @@ func _ready():
 	get_parent().connect("init_players", self, "init_players")
 	get_parent().connect("start", self, "start")
 	for i in get_parent().players_joined: if i > -1: players += 1
+	
+	if Com.easy_mode == true: FAIL_TIME *= 2
 	
 	var dx = 3072 / players
 	var x0 = [0, -768, -1024, -1152][players-1]
@@ -81,7 +84,10 @@ func _process(delta):
 			is_ded += 1
 
 		if player.drag_race < last_particle[player.team] - 100:
-			last_particle[player.team] -= max(100, 4800 - last_particle[player.team] / 1000)
+			if Com.easy_mode == false:
+				last_particle[player.team] -= 4800 - last_particle[player.team] / 35
+			else:
+				last_particle[player.team] -= 4800 - last_particle[player.team] / 50
 			create_particles(player.team, electron if randi()%2 == 0 else proton, Vector2(tracks[player.team], -4800))
 	
 	for particle in $Particles.get_children(): 
