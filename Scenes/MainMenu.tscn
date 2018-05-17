@@ -153,7 +153,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -1854,9 +1854,11 @@ _sections_unfolded = [ "Visibility" ]
 [node name="RaceArena" type="Node2D" parent="Lobby" index="2"]
 
 position = Vector2( -2462.16, -1360.03 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Dice" type="Sprite" parent="Lobby/RaceArena" index="0"]
 
+editor/display_folded = true
 position = Vector2( 2391.68, 1148.23 )
 texture = ExtResource( 46 )
 script = ExtResource( 3 )
@@ -1916,6 +1918,7 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Horizontal" type="Sprite" parent="Lobby/RaceArena" index="2"]
 
+editor/display_folded = true
 position = Vector2( 2613.22, 1148.23 )
 texture = ExtResource( 46 )
 script = ExtResource( 3 )
@@ -2082,11 +2085,43 @@ _sections_unfolded = [ "Region" ]
 start = NodePath("../../Horizontal")
 end = NodePath("../../NearFrame2")
 
-[node name="Players" type="Node2D" parent="Lobby" index="3"]
+[node name="DragSurvival" type="Node2D" parent="Lobby" index="3"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="EasyText" type="Label" parent="Lobby/DragSurvival" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -452.16
+margin_top = -292.03
+margin_right = -97.16
+margin_bottom = -169.03
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 40 )
+custom_colors/font_color_shadow = Color( 0, 0.627451, 1, 1 )
+custom_constants/shadow_as_outline = 1
+text = "R - ŁATWY POZIOM TRUDNOŚCI"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="Players" type="Node2D" parent="Lobby" index="4"]
 
 position = Vector2( -2462.16, -1360.03 )
 
 [node name="1Inactive" type="Node2D" parent="Lobby/Players" index="0"]
+
+editor/display_folded = true
 
 [node name="Join" type="Label" parent="Lobby/Players/1Inactive" index="0"]
 
@@ -2126,6 +2161,8 @@ texture = ExtResource( 55 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="1Active" type="Node2D" parent="Lobby/Players" index="1"]
+
+editor/display_folded = true
 
 [node name="Name" type="Label" parent="Lobby/Players/1Active" index="0"]
 
@@ -2195,6 +2232,7 @@ texture = ExtResource( 55 )
 
 [node name="2Inactive" type="Node2D" parent="Lobby/Players" index="2"]
 
+editor/display_folded = true
 position = Vector2( -15, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/2Inactive" index="0"]
@@ -2264,6 +2302,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="2Active" type="Node2D" parent="Lobby/Players" index="3"]
 
+editor/display_folded = true
 position = Vector2( -13.5376, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/2Active" index="0"]
@@ -2454,6 +2493,7 @@ texture = ExtResource( 55 )
 
 [node name="3Inactive" type="Node2D" parent="Lobby/Players" index="4"]
 
+editor/display_folded = true
 position = Vector2( -30, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/3Inactive" index="0"]
@@ -2495,6 +2535,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="3Active" type="Node2D" parent="Lobby/Players" index="5"]
 
+editor/display_folded = true
 position = Vector2( -37.9053, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/3Active" index="0"]
@@ -2658,6 +2699,7 @@ texture = ExtResource( 55 )
 
 [node name="4Inactive" type="Node2D" parent="Lobby/Players" index="6"]
 
+editor/display_folded = true
 position = Vector2( -45, 0 )
 
 [node name="Join" type="Label" parent="Lobby/Players/4Inactive" index="0"]
@@ -2688,7 +2730,6 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_constants"
 
 [node name="Action" type="Sprite" parent="Lobby/Players/4Inactive" index="1"]
 
-editor/display_folded = true
 position = Vector2( 2835.47, 1315.08 )
 texture = ExtResource( 61 )
 
@@ -2727,6 +2768,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="4Active" type="Node2D" parent="Lobby/Players" index="7"]
 
+editor/display_folded = true
 position = Vector2( -42.4175, 0 )
 
 [node name="Name" type="Label" parent="Lobby/Players/4Active" index="0"]
@@ -2925,7 +2967,7 @@ playback_speed = 1.0
 anims/Idle = SubResource( 3 )
 blend_times = [  ]
 
-[node name="Need2" type="Label" parent="Lobby" index="4"]
+[node name="Need2" type="Label" parent="Lobby" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2951,7 +2993,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants" ]
 
-[node name="RealContinue" type="Node2D" parent="Lobby" index="5"]
+[node name="RealContinue" type="Node2D" parent="Lobby" index="6"]
 
 position = Vector2( -95.7426, 238.72 )
 
@@ -2961,7 +3003,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 255.0
+margin_right = 293.0
 margin_bottom = 57.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

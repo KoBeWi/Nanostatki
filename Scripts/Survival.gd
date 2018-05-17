@@ -84,7 +84,6 @@ func _physics_process(delta):
 	else:
 		death.position.x += (OS.get_ticks_msec() - start_time) / 5000 + 1
 	camera.limit_left = death.position.x
-	print ((OS.get_ticks_msec() - start_time) / 3000 + 1)
 	
 	if get_parent().finished:
 		the_end.modulate.a += delta

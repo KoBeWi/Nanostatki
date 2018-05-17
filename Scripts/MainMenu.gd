@@ -97,6 +97,8 @@ func _ready():
 			scores += str(spot.score) + " nm\n"
 	get_node("Scores/Tables/Survival/Names").text = (names if names != "" else SMUTECZEK)
 	get_node("Scores/Tables/Survival/Scores").text = scores
+	
+	Com.easy_mode = false
 
 func _process(delta):
 	if force_active: return
@@ -231,6 +233,11 @@ func _process(delta):
 				$Lobby/RaceArena/Dice.off_balance = Vector2(randi() % 16, randi() % 16)
 				$Lobby/RaceArena/Horizontal/Fill/HorizontalNumber.text = str(options[0])
 				$Lobby/RaceArena/Frame/Preview.texture = arenas[options[0]-1]
+		if gamemode == 1 or gamemode == 4:
+			if Input.is_action_just_pressed("ui_randomize"):
+				Com.play_sample(self, "Collect", false)
+				Com.easy_mode = !Com.easy_mode
+				$Lobby/DragSurvival/EasyText.visible = !Com.easy_mode
 		
 		players_ready = 0
 		start = true
@@ -382,6 +389,7 @@ func goto_lobby(i, teleport = false):
 	$Lobby/RaceArena.visible = (gamemode == 0 or gamemode == 3)
 	$Lobby/RaceArena/RaceText.visible = (gamemode == 0)
 	$Lobby/RaceArena/ArenaText.visible = (gamemode == 3)
+	$Lobby/DragSurvival/EasyText.visible = ((gamemode == 1 or gamemode == 4) and !Com.easy_mode)
 	
 	options[0] = 1
 	if gamemode == 0: options[1] = 3

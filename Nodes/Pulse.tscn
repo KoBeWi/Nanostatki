@@ -112,7 +112,7 @@ tracks/2/keys = {
 custom_solver_bias = 0.0
 radius = 16.0
 
-[node name="Pulse" type="Node2D" index="0"]
+[node name="Pulse" type="Node2D"]
 
 position = Vector2( 157.035, 108.3 )
 script = SubResource( 1 )

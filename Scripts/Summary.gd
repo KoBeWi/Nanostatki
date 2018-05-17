@@ -15,6 +15,8 @@ func _ready():
 	Jukebox.stop()
 
 func setup(_players, _places, _scores, scoreboard):
+	if Com.easy_mode: for i in range(_scores.size()): _scores[i] /= 10
+	
 	Com.load_scoreboard(scoreboard)
 	players = _players
 	places = _places
