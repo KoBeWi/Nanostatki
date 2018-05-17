@@ -141,8 +141,11 @@ func _draw():
 	var j = 0
 	var k = 1
 	for i in range(players-1):
-		while j < 4 and tracks[j] == null: j += 1
-		while k < 4 and tracks[k] == null: k += 1
+		while j < 3 and tracks[j] == null:
+			j += 1
+			if k < 3: k += 1
+		while k < 3 and tracks[k] == null: k += 1
+		
 		draw_texture(split, Vector2((tracks[j] + tracks[k])/2 - split.get_width()/2, camera.position.y - 900))
 		j += 1
 		k += 1
