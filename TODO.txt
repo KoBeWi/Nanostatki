@@ -6,6 +6,7 @@ dŸwiêk wygranej
 dodaæ filmiki
 porozk³adaæ przeszkody na mapach
 tutorial
+dŸwiêk countdown gdy koñczy siê czas na arenie
 
 #3. Arena punktowa - punkty które siê zbiera s¹ s³abo widoczne na jasnym tle.
 #5. Wyœcig - czytelniejszy interfejs pokazuj¹cy który gracz jest kim.
