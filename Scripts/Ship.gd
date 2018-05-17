@@ -6,8 +6,6 @@ const ROT_SPEED = -PI/60
 const FORCE = 25000
 const FORCE_RANGE = 750
 
-var SPARKLE = load("res://Nodes/Effects/HitParticle.tscn")
-
 export var team = 0
 export var player = 0
 

@@ -16,6 +16,11 @@ signal collected
 func _on_collect(body):
 	if body.is_in_group(\"players\"):
 		Com.play_sample(self, \"Collect\")
+		var particle = preload(\"res://Nodes/Effects/CollectParticle.tscn\").instance()
+		particle.modulate = Com.PLAYER_COLORS[body.team]
+		particle.position = position
+		get_tree().create_timer(1.9).connect(\"timeout\", particle, \"queue_free\")
+		get_parent().add_child(particle)
 		emit_signal(\"collected\", id, body.team)
 		queue_free()"
 _sections_unfolded = [ "Resource" ]

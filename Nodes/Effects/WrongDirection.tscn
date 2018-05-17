@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="NewLap" type="Node2D" index="0"]
+[node name="NewLap" type="Node2D"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Material", "Visibility" ]

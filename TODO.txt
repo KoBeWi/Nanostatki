@@ -7,8 +7,6 @@ dodaæ filmiki
 porozk³adaæ przeszkody na mapach
 tutorial
 
-#2. Wyœcig - gracze jechali w z³ym kierunku, napis ¿e jedziesz w z³ym kierunku, mo¿e z efektem czerwieni ekranu.
 #3. Arena punktowa - punkty które siê zbiera s¹ s³abo widoczne na jasnym tle.
-#4. Arena punktowa - zrobiæ efekt kto zebra³ punkt.
 #5. Wyœcig - czytelniejszy interfejs pokazuj¹cy który gracz jest kim.
 #6. Drag race - jakiœ problem z podzia³em ekranu.
